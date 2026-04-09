@@ -18,14 +18,7 @@ ACTIVE_WORKFLOWS = [
     "Markdown report drafting",
 ]
 
-EXPERIMENTAL_MODULES = [
-    {
-        "label": "ECM modeling registry",
-        "path": "data/workflows/modeling/ecm_model_registry.json",
-        "status": "retained_but_inactive",
-        "reason": "Kept as a scaffold for future governed fitting work, but the ECM fitting flow is parked in the current publish build.",
-    },
-]
+EXPERIMENTAL_MODULES = []
 
 
 def _read_json(path: Path) -> dict[str, Any]:

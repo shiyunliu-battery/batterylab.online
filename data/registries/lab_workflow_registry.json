@@ -129,19 +129,6 @@
     "source_title": "Unknown source",
     "source_pages": null
   },
-  "ecm_model_registry": {
-    "label": "ECM modeling registry",
-    "category": "workflow",
-    "path": "data/workflows/modeling/ecm_model_registry.json",
-    "collection_key": "models",
-    "trust_level": "draft_input",
-    "fill_priority": 2,
-    "next_step": "Define the ECM families, fitting inputs, and deliverables you want to support before rebuilding modeling tools.",
-    "description": "Starter registry for lightweight ECM modeling and parameter-identification workflows.",
-    "objective_key": "ecm_model_registry",
-    "source_title": "Unknown source",
-    "source_pages": null
-  },
   "literature_evidence_cards": {
     "label": "Literature evidence cards",
     "category": "reference",

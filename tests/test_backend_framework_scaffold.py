@@ -13,7 +13,6 @@ class BackendFrameworkScaffoldTests(unittest.TestCase):
         self.assertIn("extract_uploaded_cell_datasheet_to_provisional_asset", tool_names)
         self.assertIn("parse_raw_cycler_export", tool_names)
         self.assertNotIn("list_available_standards", tool_names)
-        self.assertNotIn("identify_ecm_parameters", tool_names)
         self.assertNotIn("preview_method_with_modeling", tool_names)
         self.assertNotIn("simulate_protocol", tool_names)
         self.assertNotIn("simulate_simple_discharge", tool_names)
@@ -30,7 +29,6 @@ class BackendFrameworkScaffoldTests(unittest.TestCase):
         self.assertIn("method_handbook_evidence_cards", asset_ids)
         self.assertIn("data_adapter_registry", asset_ids)
         self.assertIn("doe_template_registry", asset_ids)
-        self.assertIn("ecm_model_registry", asset_ids)
         self.assertNotIn("model preview", payload["ui_markdown"].lower())
 
     def test_demo_asset_listing_includes_workflow_asset_groups(self) -> None:

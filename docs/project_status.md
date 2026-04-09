@@ -16,7 +16,7 @@ data-handling assistant, not as an autonomous approval system for lab release.
 
 - generated plans still require human review before execution
 - several workflow asset families are still scaffolded rather than complete
-- model-based preview and ECM fitting are not part of the publish surface
+- model-based preview and advanced fitting workflows are not part of the publish surface
 - the default local UI does not include production auth, role control, or audit logging
 
 ## Good Contribution Areas

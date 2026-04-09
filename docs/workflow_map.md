@@ -17,7 +17,7 @@ remaining scaffold-only areas still exist.
 | Uploaded datasheet review and promotion | attachment -> `extract_uploaded_cell_datasheet_to_provisional_asset` / `register_provisional_cell_asset` -> review -> promote | provisional cell asset store, manual cell assets, governance rules | reviewed asset promoted into formal planning surface |
 | Equipment/manual lookup | `search_equipment_manual_knowledge`, `load_equipment_manual_knowledge` | equipment manual index and summaries | equipment-backed notes and operating boundaries |
 | Knowledge evidence lookup | `search_knowledge_evidence_cards`, `load_knowledge_source` | unified knowledge source index and evidence cards | source-backed handbook or literature summaries |
-| Post-test analysis | `run_cycle_data_analysis` | deterministic CSV parser and KPI rules | plots, KPI summary, starter analysis payload |
+| Post-test analysis (starter path) | `run_cycle_data_analysis` | normalized cycle-summary CSV, deterministic KPI rules | plots, KPI summary, starter analysis payload |
 | Report drafting | `generate_lab_report_markdown` | protocol output, analysis output, report scaffold | markdown report draft |
 
 ## Workflow Details
@@ -145,8 +145,8 @@ flowchart LR
 2. The extracted candidate is sent to the provisional cell asset store.
 3. A reviewer edits, approves, rejects, or requests changes.
 4. Approved records are promoted to `manual_cell_assets.json`.
-5. Formal governance decides whether the promoted record becomes
-   planning-eligible.
+5. Promoted records are then re-evaluated against the current manual-catalog
+   governance checks before they participate in planning.
 
 Main files:
 
@@ -208,7 +208,7 @@ Main files:
 
 ### 10. Post-test analysis and report drafting
 
-This is the current post-test path.
+This is the current starter post-test path.
 
 1. User supplies a normalized cycle-level CSV.
 2. `run_cycle_data_analysis` computes starter KPIs and charts.
@@ -218,6 +218,9 @@ Important boundary:
 
 - This is still starter analysis and currently expects a normalized CSV, not raw
   Arbin/BioLogic/Neware exports.
+- `parse_raw_cycler_export` is available as an adjacent inspection and
+  normalization tool, but the full raw-export -> normalized cycle summary ->
+  starter analysis handoff is still in active development.
 
 Main files:
 
@@ -241,10 +244,9 @@ These workflows are already real:
 - normalized CSV analysis
 - report drafting
 
-These areas still exist mostly as scaffold or partial workflow:
+These areas are still in active development or only partially closed-loop:
 
 - raw instrument datasheet -> approved equipment asset promotion
-- raw cycler export adapters for multiple vendor formats
+- raw cycler export -> normalized cycle summary -> starter analysis closure
 - richer QA/release gates beyond draft protocol review
-- ECM-first modeling workflow
 - DOE campaign builder
