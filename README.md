@@ -13,10 +13,10 @@ It is not a generic chatbot. The repository is intentionally organized so that h
 
 ## Documentation
 
+- Website:
+  `https://batterylab.online`
 - Public docs site:
   `https://doc.batterylab.online`
-- Docs source repo:
-  `https://github.com/shiyunliu-battery/doc_batterylab.online`
 - Local architecture and workflow notes:
   [docs/](./docs)
 
