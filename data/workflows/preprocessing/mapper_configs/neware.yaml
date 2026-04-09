@@ -1,0 +1,35 @@
+column_names:
+  cycle_index: "Cycle ID"
+  step_index: "Step ID"
+  data_point_index: "Record ID"
+  step_time_s: "Time(h:min:s.ms)"
+  voltage_v: "Voltage(V)"
+  current_a: "Current(mA)"
+  temperature_c: "Temperature(C)"
+  charge_capacity_ah: "Capacitance_Chg(mAh)"
+  discharge_capacity_ah: "Capacitance_DChg(mAh)"
+  charge_energy_wh: "Engy_Chg(mWh)"
+  discharge_energy_wh: "Engy_DChg(mWh)"
+  timestamp_iso: "Realtime"
+  internal_resistance_ohm: "DCIR(O)"
+
+data_types:
+  data_point_index: "int32"
+  step_index: "int32"
+  cycle_index: "int32"
+  voltage_v: "float64"
+  current_a: "float64"
+  temperature_c: "float64"
+  charge_capacity_ah: "float64"
+  discharge_capacity_ah: "float64"
+  charge_energy_wh: "float64"
+  discharge_energy_wh: "float64"
+  internal_resistance_ohm: "float64"
+  timestamp_iso: "string"
+
+scales:
+  current_a: 0.001
+  charge_capacity_ah: 0.001
+  discharge_capacity_ah: 0.001
+  charge_energy_wh: 0.001
+  discharge_energy_wh: 0.001

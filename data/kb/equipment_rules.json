@@ -1,0 +1,185 @@
+{
+  "arbin_bt2000": {
+    "label": "Arbin BT2000",
+    "max_current_a": 30,
+    "max_voltage_v": 5,
+    "max_parallel_channels": 16,
+    "min_sampling_seconds": 2,
+    "temperature_channels": 4,
+    "notes": [
+      "Good general-purpose cycler for multi-sample baseline work.",
+      "Use extra temperature channels when sample count exceeds 4."
+    ]
+  },
+  "biologic_bcs815": {
+    "label": "BioLogic BCS-815",
+    "max_current_a": 15,
+    "max_voltage_v": 5,
+    "max_parallel_channels": 8,
+    "min_sampling_seconds": 1,
+    "temperature_channels": 2,
+    "notes": [
+      "Useful for pulse work where faster logging matters.",
+      "Channel count is lower, so replicate planning matters."
+    ]
+  },
+  "maccor_series4000": {
+    "label": "Maccor Series 4000",
+    "max_current_a": 50,
+    "max_voltage_v": 6,
+    "max_parallel_channels": 16,
+    "min_sampling_seconds": 1,
+    "temperature_channels": 8,
+    "notes": [
+      "Higher current headroom supports aggressive rate ladders and pack-facing demos.",
+      "Confirm rack-specific channel allocation before launching multi-string work."
+    ]
+  },
+  "neware_bts4000_5v6a_8ch": {
+    "label": "Neware BTS4000-5V6A-8CH",
+    "aliases": [
+      "neware 5v6a",
+      "neware bts4000 5v6a",
+      "ct-4008-5v6a-s1",
+      "neware_bts4000_5v6a"
+    ],
+    "max_current_a": 6,
+    "max_voltage_v": 5,
+    "max_parallel_channels": 8,
+    "min_sampling_seconds": 0.1,
+    "temperature_channels": 0,
+    "source_asset_id": "neware_bts4000_5v6a_8ch_datasheet",
+    "notes": [
+      "Eight-channel low-voltage Neware rack for throughput-oriented small-cell ageing and screening.",
+      "Treat the 5 V ceiling, 6 A ceiling, 30 W per-channel limit, and 500 ms minimum pulse width together."
+    ]
+  },
+  "neware_ct4008_5v30a_na": {
+    "label": "Neware CT-4008-5V30A-NA",
+    "aliases": [
+      "neware 5v30a",
+      "neware 400 5v30a",
+      "ct-4008-5v30a-na",
+      "neware_ct4008_5v30a_na_datasheet"
+    ],
+    "max_current_a": 30,
+    "max_voltage_v": 5,
+    "max_parallel_channels": 8,
+    "min_sampling_seconds": 0.1,
+    "temperature_channels": 0,
+    "source_asset_id": "neware_ct4008_5v30a_na_datasheet",
+    "notes": [
+      "Eight-channel Neware platform for medium- to high-current single-cell work within 5 V / 30 A / 150 W per channel.",
+      "Treat the 5 V ceiling, 30 A current range, 150 W per-channel rating, and 500 ms minimum pulse width as hard planning bounds."
+    ]
+  },
+  "neware_bts4000_100v60a_1ch": {
+    "label": "Neware BTS4000-100V60A-1CH",
+    "aliases": [
+      "neware 100v60a",
+      "neware bts4000 100v60a",
+      "ct-4001-100v60a-na",
+      "neware_bts4000_100v60a"
+    ],
+    "max_current_a": 60,
+    "max_voltage_v": 100,
+    "max_parallel_channels": 1,
+    "min_sampling_seconds": 0.1,
+    "temperature_channels": 0,
+    "source_asset_id": "neware_bts4000_100v60a_1ch_datasheet",
+    "notes": [
+      "Single-channel high-power Neware system for pack, module, or large-cell work within a 100 V / 60 A / 6000 W envelope.",
+      "Treat the 500 ms minimum pulse width and the pulse-disabled parallel mode above 100 A as hard constraints."
+    ]
+  },
+  "iviumstat2h_datasheet": {
+    "label": "Ivium Technologies IviumStat2.h",
+    "aliases": [
+      "iviumstat2h",
+      "ivium stat2h",
+      "iviumstat 2h",
+      "ivium eis"
+    ],
+    "max_current_a": 5,
+    "max_voltage_v": 10,
+    "frequency_range_hz": [0.00001, 8000000],
+    "typical_eis_frequency_range_hz": [0.01, 10000],
+    "amplitude_mv_rms_typical": 5,
+    "max_parallel_channels": 1,
+    "min_sampling_seconds": null,
+    "temperature_channels": 0,
+    "source_asset_id": "iviumstat2h_datasheet",
+    "notes": [
+      "Four-electrode potentiostat/galvanostat with integrated FRA for EIS.",
+      "Recommended amplitude for battery EIS: 5 mV rms. Keep below 10 mV to stay in the linear regime.",
+      "Run EIS at open-circuit condition after sufficient rest. Do not disconnect cell between RPT and EIS steps to avoid contact-resistance artefacts.",
+      "Minimize lead inductance: keep cables short, use four-wire Kelvin connection, and subtract lead contribution at reference."
+    ]
+  },
+  "thermal_chambers": {
+    "binder_lit_mk": {
+      "label": "BINDER LIT MK 240 / 720",
+      "aliases": [
+        "binder lit mk",
+        "lit mk 240",
+        "lit mk 720",
+        "binder_lit_mk_240",
+        "binder_lit_mk_720"
+      ],
+      "temperature_range_c": [
+        -40,
+        110
+      ],
+      "operating_ambient_range_c": [
+        18,
+        32
+      ],
+      "average_heating_rate_k_per_min": {
+        "LIT MK 240": 5.0,
+        "LIT MK 720": 4.0
+      },
+      "average_cooling_rate_k_per_min": {
+        "LIT MK 240": 3.5,
+        "LIT MK 720": 3.4
+      },
+      "allowed_eucar_scope": {
+        "0-3": "cells, modules, and battery systems",
+        "4-6": "individual cells only",
+        "7": "not permitted"
+      },
+      "defined_load_without_operator_inertization": {
+        "LIT MK 240": "max one 18650 cell",
+        "LIT MK 720": "max three 18650 cells"
+      },
+      "gas_detection_channels": [
+        "O2",
+        "H2",
+        "CO"
+      ],
+      "integrated_safety_systems": [
+        "CO2 fire suppression",
+        "mechanical door lock",
+        "heated pressure relief flap",
+        "class 2 safety controller"
+      ],
+      "startup_requirements": [
+        "Switch on gas detection and allow about 5 minutes for initialization.",
+        "Confirm the CO2 cylinder, coil connector, and valve path before operation.",
+        "Verify the measuring and dilution gas ratio remains 1:1.",
+        "Check any operator-provided inertization or exhaust connection before release."
+      ],
+      "not_permitted": [
+        "EUCAR 7 work",
+        "abuse testing or deliberate destructive testing",
+        "short-circuit generation inside the chamber",
+        "deeply discharged or mechanically damaged cells"
+      ],
+      "notes": [
+        "This chamber is a battery-test chamber with integrated safety systems, not a generic explosion-protected oven.",
+        "For EUCAR 4-6 work, the manual only permits individual cells and the defined-load envelope unless additional operator inertization is approved.",
+        "The temperature-performance data are specified for an unloaded chamber at about 22 C ambient."
+      ],
+      "source_asset_id": "binder_lit_mk_battery_test_chamber_manual"
+    }
+  }
+}

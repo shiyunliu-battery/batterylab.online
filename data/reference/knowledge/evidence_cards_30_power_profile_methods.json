@@ -1,0 +1,304 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "cards": [
+    {
+      "card_id": "battery_understanding_v3_constant_power_discharge_test_scope",
+      "title": "Constant-power discharge scope",
+      "source_id": "battery_understanding_v3_constant_power_discharge_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M7]",
+        "style": "IEEE",
+        "ieee_reference": "[M7] \"Test methods for improved battery cell understanding,\" v3.0, \"Constant power discharge test,\" pp. 25-27.",
+        "title": "Constant power discharge test",
+        "url": "",
+        "linked_reference_markdown": "[M7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 25-27.",
+        "supporting_pages": "pp. 25-27"
+      },
+      "page_refs": [
+        "pp. 25-27"
+      ],
+      "key_takeaways": [
+        "The chapter frames constant-power discharge as a way to map capacity and energy under application-like power demand.",
+        "Temperature dependence is part of the method scope rather than an optional afterthought."
+      ],
+      "limitations": [
+        "The exact power matrix still has to be aligned to the target cell and application."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Power-rate and temperature matrix narrowing requires review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+      "title": "Constant-power discharge execution block",
+      "source_id": "battery_understanding_v3_constant_power_discharge_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M7]",
+        "style": "IEEE",
+        "ieee_reference": "[M7] \"Test methods for improved battery cell understanding,\" v3.0, \"Constant power discharge test,\" pp. 25-27.",
+        "title": "Constant power discharge test",
+        "url": "",
+        "linked_reference_markdown": "[M7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 25-27.",
+        "supporting_pages": "pp. 25-27"
+      },
+      "page_refs": [
+        "pp. 25-27"
+      ],
+      "key_takeaways": [
+        "The method uses standard-cycle precharge, 60 min rests, constant-power discharge, and CC-CV recharge.",
+        "Each power level is repeated three times before moving on."
+      ],
+      "limitations": [
+        "Sub-zero work depends on manufacturer charge restrictions."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not remove the standard precharge or three-repeat structure without explicit review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_constant_power_discharge_test_outputs",
+      "title": "Constant-power discharge outputs",
+      "source_id": "battery_understanding_v3_constant_power_discharge_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M7]",
+        "style": "IEEE",
+        "ieee_reference": "[M7] \"Test methods for improved battery cell understanding,\" v3.0, \"Constant power discharge test,\" pp. 25-27.",
+        "title": "Constant power discharge test",
+        "url": "",
+        "linked_reference_markdown": "[M7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 25-27.",
+        "supporting_pages": "pp. 25-27"
+      },
+      "page_refs": [
+        "pp. 25-27"
+      ],
+      "key_takeaways": [
+        "Energy, capacity, voltage trace, and heating behaviour are all part of the expected output family."
+      ],
+      "limitations": [
+        "The chapter leaves reporting granularity to the project."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If the matrix is narrowed, keep the average and replicate logic explicit."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_dynamic_stress_test_scope",
+      "title": "DST scope and role",
+      "source_id": "battery_understanding_v3_dynamic_stress_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M8]",
+        "style": "IEEE",
+        "ieee_reference": "[M8] \"Test methods for improved battery cell understanding,\" v3.0, \"Dynamic stress test,\" pp. 28-30.",
+        "title": "Dynamic stress test",
+        "url": "",
+        "linked_reference_markdown": "[M8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 28-30.",
+        "supporting_pages": "pp. 28-30"
+      },
+      "page_refs": [
+        "pp. 28-30"
+      ],
+      "key_takeaways": [
+        "The chapter frames DST as an automotive-oriented dynamic discharge regime derived from USABC practice.",
+        "Profile scaling must be tied to a declared power basis."
+      ],
+      "limitations": [
+        "The chapter does not remove the need for application-specific endpoint choice."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Scaling basis changes require review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_dynamic_stress_test_execution",
+      "title": "DST execution block",
+      "source_id": "battery_understanding_v3_dynamic_stress_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M8]",
+        "style": "IEEE",
+        "ieee_reference": "[M8] \"Test methods for improved battery cell understanding,\" v3.0, \"Dynamic stress test,\" pp. 28-30.",
+        "title": "Dynamic stress test",
+        "url": "",
+        "linked_reference_markdown": "[M8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 28-30.",
+        "supporting_pages": "pp. 28-30"
+      },
+      "page_refs": [
+        "pp. 28-30"
+      ],
+      "key_takeaways": [
+        "The DST profile is 360 seconds long, repeated continuously with no rest between profiles.",
+        "The maximum transition time between steps is 1 second."
+      ],
+      "limitations": [
+        "The power basis still depends on the selected scaling route."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not change the continuous 360 s execution logic without explicit review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_dynamic_stress_test_outputs",
+      "title": "DST outputs and endpoint logic",
+      "source_id": "battery_understanding_v3_dynamic_stress_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M8]",
+        "style": "IEEE",
+        "ieee_reference": "[M8] \"Test methods for improved battery cell understanding,\" v3.0, \"Dynamic stress test,\" pp. 28-30.",
+        "title": "Dynamic stress test",
+        "url": "",
+        "linked_reference_markdown": "[M8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 28-30.",
+        "supporting_pages": "pp. 28-30"
+      },
+      "page_refs": [
+        "pp. 28-30"
+      ],
+      "key_takeaways": [
+        "The chapter ties endpoints to rated-capacity removal for performance tests and 80% of rated capacity for baseline life-cycle tests.",
+        "High-speed logging on the order of 500 ms is part of the intended output quality."
+      ],
+      "limitations": [
+        "The chapter does not prescribe a universal profile-following metric."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If an endpoint is changed, preserve why it changed."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_drive_cycle_test_scope",
+      "title": "Drive-cycle test scope",
+      "source_id": "battery_understanding_v3_drive_cycle_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M9]",
+        "style": "IEEE",
+        "ieee_reference": "[M9] \"Test methods for improved battery cell understanding,\" v3.0, \"Drive cycle,\" pp. 49-50.",
+        "title": "Drive cycle",
+        "url": "",
+        "linked_reference_markdown": "[M9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 49-50.",
+        "supporting_pages": "pp. 49-50"
+      },
+      "page_refs": [
+        "pp. 49-50"
+      ],
+      "key_takeaways": [
+        "The chapter links drive-cycle testing to life expressed in kilometres rather than only cycle count.",
+        "NEDC and WLTP are the named reference profile families."
+      ],
+      "limitations": [
+        "The chapter gives only a compact procedural skeleton."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Profile-family changes require explicit review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_drive_cycle_test_execution",
+      "title": "Drive-cycle execution block",
+      "source_id": "battery_understanding_v3_drive_cycle_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M9]",
+        "style": "IEEE",
+        "ieee_reference": "[M9] \"Test methods for improved battery cell understanding,\" v3.0, \"Drive cycle,\" pp. 49-50.",
+        "title": "Drive cycle",
+        "url": "",
+        "linked_reference_markdown": "[M9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 49-50.",
+        "supporting_pages": "pp. 49-50"
+      },
+      "page_refs": [
+        "pp. 49-50"
+      ],
+      "key_takeaways": [
+        "The execution skeleton is standard charge, 30 min pause, NEDC/WLTP profile, recharge, and repeat.",
+        "The chapter clearly treats the profile as non-constant-rate cycling."
+      ],
+      "limitations": [
+        "The exact profile trace is external to the chapter."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Keep the charge-pause-profile-repeat loop visible when tailoring the actual trace."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_drive_cycle_test_outputs",
+      "title": "Drive-cycle outputs",
+      "source_id": "battery_understanding_v3_drive_cycle_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M9]",
+        "style": "IEEE",
+        "ieee_reference": "[M9] \"Test methods for improved battery cell understanding,\" v3.0, \"Drive cycle,\" pp. 49-50.",
+        "title": "Drive cycle",
+        "url": "",
+        "linked_reference_markdown": "[M9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 49-50.",
+        "supporting_pages": "pp. 49-50"
+      },
+      "page_refs": [
+        "pp. 49-50"
+      ],
+      "key_takeaways": [
+        "The output family mirrors other cycling profiles but is interpreted against realistic drive duty and lifetime translation."
+      ],
+      "limitations": [
+        "The chapter gives only minimal post-processing guidance."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If distance-mapping is added, keep the chosen mapping explicit."
+      ]
+    }
+  ]
+}

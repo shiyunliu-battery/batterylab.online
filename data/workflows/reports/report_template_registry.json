@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "status": "scaffold",
+  "templates": [
+    {
+      "id": "protocol_review_summary",
+      "status": "planned",
+      "sections": [
+        "Goal",
+        "Subject",
+        "Method",
+        "Constraints",
+        "Warnings",
+        "Approvals"
+      ]
+    },
+    {
+      "id": "cycle_life_result_summary",
+      "status": "planned",
+      "sections": [
+        "Goal",
+        "Protocol Snapshot",
+        "Dataset",
+        "KPIs",
+        "Observations",
+        "Open Questions"
+      ]
+    }
+  ],
+  "required_fields": [
+    "id",
+    "status",
+    "sections"
+  ]
+}

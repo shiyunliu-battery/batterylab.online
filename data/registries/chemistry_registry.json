@@ -1,0 +1,96 @@
+{
+  "lfp": {
+    "label": "LFP",
+    "aliases": [
+      "lifepo4",
+      "lithium iron phosphate"
+    ],
+    "nominal_voltage_v": 3.2,
+    "charge_voltage_v": 3.65,
+    "discharge_cutoff_v": 2.5,
+    "recommended_temperature_range_c": [
+      10,
+      45
+    ],
+    "max_recommended_charge_c_rate": 1.0,
+    "max_recommended_discharge_c_rate": 2.0,
+    "rest_minutes_before_pulse": 30,
+    "supported_methods": [
+      "soc_ocv",
+      "capacity_test",
+      "pulse_hppc",
+      "cycle_life"
+    ],
+    "notes": [
+      "Favors stable cycling and safer thermal behavior for an initial demo.",
+      "Use explicit low-voltage and high-voltage cutoffs instead of free-form prompt text."
+    ],
+    "objective_key": "lfp",
+    "source_title": "Unknown source",
+    "source_pages": null
+  },
+  "nmc811": {
+    "label": "NMC811",
+    "aliases": [
+      "nmc",
+      "nmc 811",
+      "nickel manganese cobalt",
+      "nmc battery",
+      "nmc chemistry",
+      "li-ni-mn-co 811"
+    ],
+    "nominal_voltage_v": 3.7,
+    "charge_voltage_v": 4.2,
+    "discharge_cutoff_v": 2.8,
+    "recommended_temperature_range_c": [
+      15,
+      40
+    ],
+    "max_recommended_charge_c_rate": 0.8,
+    "max_recommended_discharge_c_rate": 1.5,
+    "rest_minutes_before_pulse": 45,
+    "supported_methods": [
+      "soc_ocv",
+      "capacity_test",
+      "pulse_hppc",
+      "cycle_life"
+    ],
+    "notes": [
+      "Requires tighter temperature control and conservative charging assumptions.",
+      "Review high-SOC dwell conditions before protocol release."
+    ],
+    "objective_key": "nmc811",
+    "source_title": "Unknown source",
+    "source_pages": null
+  },
+  "nca": {
+    "label": "NCA",
+    "aliases": [
+      "li-ni-co-al",
+      "nca chemistry"
+    ],
+    "nominal_voltage_v": 3.65,
+    "charge_voltage_v": 4.2,
+    "discharge_cutoff_v": 2.7,
+    "recommended_temperature_range_c": [
+      15,
+      40
+    ],
+    "max_recommended_charge_c_rate": 0.7,
+    "max_recommended_discharge_c_rate": 1.5,
+    "rest_minutes_before_pulse": 45,
+    "supported_methods": [
+      "soc_ocv",
+      "capacity_test",
+      "pulse_hppc",
+      "cycle_life"
+    ],
+    "notes": [
+      "Use conservative high-voltage exposure assumptions until cell-specific data is loaded.",
+      "Add pack-level thermal guardrails before applying to assembled modules."
+    ],
+    "objective_key": "nca",
+    "source_title": "Unknown source",
+    "source_pages": null
+  }
+}

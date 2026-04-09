@@ -1,0 +1,307 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "cards": [
+    {
+      "card_id": "battery_understanding_v3_ageing_drive_cycle_scope",
+      "title": "Ageing drive-cycle scope and campaign role",
+      "source_id": "battery_understanding_v3_ageing_drive_cycle",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M14]",
+        "style": "IEEE",
+        "ieee_reference": "[M14] \"Test methods for improved battery cell understanding,\" v3.0, \"Drive cycle,\" pp. 54-57.",
+        "title": "Drive cycle",
+        "url": "",
+        "linked_reference_markdown": "[M14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 54-57.",
+        "supporting_pages": "pp. 54-57"
+      },
+      "page_refs": [
+        "pp. 54-57"
+      ],
+      "key_takeaways": [
+        "The chapter frames drive-cycle ageing as a more application-like alternative to constant-current cycle-life testing.",
+        "Capacity, resistance, and power capability are the checkpoint observables it calls out explicitly."
+      ],
+      "limitations": [
+        "The exact profile family still depends on the application and standard being targeted."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Profile-family and checkpoint-cadence changes require review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_ageing_drive_cycle_execution",
+      "title": "Ageing drive-cycle execution loop",
+      "source_id": "battery_understanding_v3_ageing_drive_cycle",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M14]",
+        "style": "IEEE",
+        "ieee_reference": "[M14] \"Test methods for improved battery cell understanding,\" v3.0, \"Drive cycle,\" pp. 54-57.",
+        "title": "Drive cycle",
+        "url": "",
+        "linked_reference_markdown": "[M14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 54-57.",
+        "supporting_pages": "pp. 54-57"
+      },
+      "page_refs": [
+        "pp. 54-57"
+      ],
+      "key_takeaways": [
+        "The chapter describes a loop of initial check-up, repeated ageing blocks, intermediate characterization, and continue-or-stop decisions.",
+        "It explicitly allows reduced intermediate characterization to save time, but not at the expense of the core observables."
+      ],
+      "limitations": [
+        "The breakpoint cadence is intentionally left application-dependent."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Reduced check-up scope must still preserve capacity, resistance, and power-capability tracking."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_ageing_drive_cycle_outputs",
+      "title": "Ageing drive-cycle outputs",
+      "source_id": "battery_understanding_v3_ageing_drive_cycle",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M14]",
+        "style": "IEEE",
+        "ieee_reference": "[M14] \"Test methods for improved battery cell understanding,\" v3.0, \"Drive cycle,\" pp. 54-57.",
+        "title": "Drive cycle",
+        "url": "",
+        "linked_reference_markdown": "[M14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 54-57.",
+        "supporting_pages": "pp. 54-57"
+      },
+      "page_refs": [
+        "pp. 54-57"
+      ],
+      "key_takeaways": [
+        "The chapter expects capacity and resistance trends over cycle life or equivalent throughput.",
+        "The end-of-life decision may be capacity-, resistance-, time-, or resource-limited."
+      ],
+      "limitations": [
+        "The chapter does not prescribe a single reporting KPI hierarchy."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If an alternative end criterion is chosen, keep it explicit in the output."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_calendar_ageing_test_scope",
+      "title": "Calendar-ageing scope and planning role",
+      "source_id": "battery_understanding_v3_calendar_ageing_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M15]",
+        "style": "IEEE",
+        "ieee_reference": "[M15] \"Test methods for improved battery cell understanding,\" v3.0, \"Calendar ageing test (battery under rest),\" pp. 58-61.",
+        "title": "Calendar ageing test (battery under rest)",
+        "url": "",
+        "linked_reference_markdown": "[M15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 58-61.",
+        "supporting_pages": "pp. 58-61"
+      },
+      "page_refs": [
+        "pp. 58-61"
+      ],
+      "key_takeaways": [
+        "The chapter frames calendar ageing as storage at controlled SOC and temperature with periodic 25 C check-ups.",
+        "Charge retention and self-discharge are explicitly named as derived outputs."
+      ],
+      "limitations": [
+        "The final experience plan still depends on the intended application and batch size."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Storage-matrix breadth and periodicity may move only after review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_calendar_ageing_test_execution",
+      "title": "Calendar-ageing execution loop",
+      "source_id": "battery_understanding_v3_calendar_ageing_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M15]",
+        "style": "IEEE",
+        "ieee_reference": "[M15] \"Test methods for improved battery cell understanding,\" v3.0, \"Calendar ageing test (battery under rest),\" pp. 58-61.",
+        "title": "Calendar ageing test (battery under rest)",
+        "url": "",
+        "linked_reference_markdown": "[M15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 58-61.",
+        "supporting_pages": "pp. 58-61"
+      },
+      "page_refs": [
+        "pp. 58-61"
+      ],
+      "key_takeaways": [
+        "The execution loop is 25 C check-up, target-SOC setting, storage block, return to 25 C, residual discharge, then repeat.",
+        "The chapter provides temperature-dependent example periodicities and suggests adapting them to keep irreversible loss between check-ups small."
+      ],
+      "limitations": [
+        "The exact reference-capacity definition can vary across projects."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not remove the 25 C check-up loop without an explicit review note."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_calendar_ageing_test_outputs",
+      "title": "Calendar-ageing outputs and stop criteria",
+      "source_id": "battery_understanding_v3_calendar_ageing_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M15]",
+        "style": "IEEE",
+        "ieee_reference": "[M15] \"Test methods for improved battery cell understanding,\" v3.0, \"Calendar ageing test (battery under rest),\" pp. 58-61.",
+        "title": "Calendar ageing test (battery under rest)",
+        "url": "",
+        "linked_reference_markdown": "[M15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 58-61.",
+        "supporting_pages": "pp. 58-61"
+      },
+      "page_refs": [
+        "pp. 58-61"
+      ],
+      "key_takeaways": [
+        "The chapter expects capacity and resistance evolution versus storage duration, plus charge retention and self-discharge when needed.",
+        "Stop criteria include duration, SOH threshold, and visible mechanical degradation."
+      ],
+      "limitations": [
+        "The chapter does not force a single SOH definition beyond recommending capacity-based default thresholds."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If a non-capacity SOH definition is used, preserve that choice explicitly."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_constant_voltage_ageing_scope",
+      "title": "Constant-voltage ageing evidence gap",
+      "source_id": "battery_understanding_v3_constant_voltage_ageing",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_evidence_gap",
+      "citation": {
+        "reference_id": "[M16]",
+        "style": "IEEE",
+        "ieee_reference": "[M16] \"Test methods for improved battery cell understanding,\" v3.0, \"Constant voltage test (battery maintained at a certain voltage),\" p. 62.",
+        "title": "Constant voltage test (battery maintained at a certain voltage)",
+        "url": "",
+        "linked_reference_markdown": "[M16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 62.",
+        "supporting_pages": "p. 62"
+      },
+      "page_refs": [
+        "p. 62"
+      ],
+      "key_takeaways": [
+        "The extracted chapter only preserves the heading and a preferable-test-schemes stub.",
+        "The current handbook extraction does not provide an executable procedure."
+      ],
+      "limitations": [
+        "Any executable plan still needs a reviewed SOP or stronger literature-backed addendum."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ],
+      "strictness": "outline_only_review_required",
+      "allowed_deviations": [
+        "No execution should be released from this card alone."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_constant_voltage_ageing_execution",
+      "title": "Constant-voltage ageing placeholder execution",
+      "source_id": "battery_understanding_v3_constant_voltage_ageing",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "planner_placeholder",
+      "citation": {
+        "reference_id": "[M16]",
+        "style": "IEEE",
+        "ieee_reference": "[M16] \"Test methods for improved battery cell understanding,\" v3.0, \"Constant voltage test (battery maintained at a certain voltage),\" p. 62.",
+        "title": "Constant voltage test (battery maintained at a certain voltage)",
+        "url": "",
+        "linked_reference_markdown": "[M16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 62.",
+        "supporting_pages": "p. 62"
+      },
+      "page_refs": [
+        "p. 62"
+      ],
+      "key_takeaways": [
+        "The current execution block in the registry is intentionally marked as a placeholder for reviewed SOP completion.",
+        "Voltage, temperature, and hold duration must therefore stay explicit review items."
+      ],
+      "limitations": [
+        "This card is not a source-backed procedure."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "outline_only_review_required",
+      "allowed_deviations": [
+        "All execution content remains provisional until a reviewed addendum is attached."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_constant_voltage_ageing_outputs",
+      "title": "Constant-voltage ageing placeholder outputs",
+      "source_id": "battery_understanding_v3_constant_voltage_ageing",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "planner_placeholder_outputs",
+      "citation": {
+        "reference_id": "[M16]",
+        "style": "IEEE",
+        "ieee_reference": "[M16] \"Test methods for improved battery cell understanding,\" v3.0, \"Constant voltage test (battery maintained at a certain voltage),\" p. 62.",
+        "title": "Constant voltage test (battery maintained at a certain voltage)",
+        "url": "",
+        "linked_reference_markdown": "[M16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 62.",
+        "supporting_pages": "p. 62"
+      },
+      "page_refs": [
+        "p. 62"
+      ],
+      "key_takeaways": [
+        "The current output family is a planning scaffold: hold-current drift plus checkpoint RPT trends.",
+        "The asset exists so the system can keep the method visible without pretending the chapter is complete."
+      ],
+      "limitations": [
+        "No report should treat these outputs as an approved handbook claim."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "outline_only_review_required",
+      "allowed_deviations": [
+        "Preserve the evidence-gap warning in any downstream output."
+      ]
+    }
+  ]
+}

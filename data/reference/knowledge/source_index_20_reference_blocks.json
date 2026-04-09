@@ -1,0 +1,50 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "sources": [
+    {
+      "source_id": "battery_understanding_v3_preconditioning_test",
+      "method_id": "preconditioning_test",
+      "title": "Preconditioning test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__preconditioning_test",
+      "chapter_file": "data/reference/knowledge/summaries/preconditioning_test.md",
+      "start_page": 15,
+      "end_page": 15,
+      "citation_ieee": "[M5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Preconditioning test,\" White Paper, 2018, p. 15.",
+      "linked_reference_markdown": "[M5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Preconditioning test,\" White Paper, 2018, p. 15.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Treat this chapter as the executable reference for start-of-test stabilization before formal characterization.",
+        "Keep the 3-cycle minimum, 2% stability gate, and 10-cycle cap visible in any plan."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/preconditioning_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_standard_cycle",
+      "method_id": "standard_cycle",
+      "title": "Standard cycle",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__standard_cycle",
+      "chapter_file": "data/reference/knowledge/summaries/standard_cycle.md",
+      "start_page": 16,
+      "end_page": 17,
+      "citation_ieee": "[M6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Standard cycle,\" White Paper, 2018, pp. 16-17.",
+      "linked_reference_markdown": "[M6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Standard cycle,\" White Paper, 2018, pp. 16-17.",
+      "complementary_literature_source_ids": [
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the core reference-cycle block used inside baseline and ageing check-up sets.",
+        "Use literature only to explain method choice or interpretation, not to silently replace the handbook sequence."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/standard_cycle.md"
+    }
+  ]
+}

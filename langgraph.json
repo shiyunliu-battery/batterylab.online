@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "battery_lab": "./agent.py:agent"
+  },
+  "env": ".env"
+}

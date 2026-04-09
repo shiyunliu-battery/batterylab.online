@@ -1,0 +1,281 @@
+[
+  {
+    "card_id": "safety_aspects__vibration_scope",
+    "source_id": "battery_understanding_v3_safety_vibration",
+    "card_type": "scope",
+    "title": "Vibration test \u2014 scope and planning constraints",
+    "content": "The vibration test assesses cell mechanical integrity and electrical stability under sinusoidal or random vibration profiles representative of transport or field deployment. The chapter is an outline reference only; an executable procedure must come from the applicable standard (UN38.3, IEC 62660-2, or project-specific requirement). The SOC, test axis, amplitude, frequency range, and post-test observation period must all be specified and reviewed before the test is released.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "soc_must_be_reviewed",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "safety_aspects__vibration"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Vibration,\" White Paper, 2018, pp. 63-65."
+    }
+  },
+  {
+    "card_id": "safety_aspects__mechanical_shock_scope",
+    "source_id": "battery_understanding_v3_safety_mechanical_shock",
+    "card_type": "scope",
+    "title": "Mechanical shock test \u2014 scope and planning constraints",
+    "content": "Half-sine or trapezoidal shock pulse applied to the cell or module to evaluate structural and electrical integrity. Pulse shape, amplitude (g), duration, and number of shocks per axis are standard-dependent. The chapter is an outline reference. A project SOP specifying the applicable standard must be produced before release.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "safety_aspects__mechanical_shock"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Mechanical shock,\" White Paper, 2018, pp. 66-67."
+    }
+  },
+  {
+    "card_id": "safety_aspects__drop_scope",
+    "source_id": "battery_understanding_v3_safety_drop",
+    "card_type": "scope",
+    "title": "Drop test \u2014 scope and planning constraints",
+    "content": "Drop test assesses impact tolerance when the cell is released onto a hard surface from a defined height. The chapter is an outline; drop height, surface specification, SOC, orientation, and post-drop observation criteria must come from the applicable standard and be reviewed before release.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "safety_aspects__drop"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drop,\" White Paper, 2018, p. 68."
+    }
+  },
+  {
+    "card_id": "safety_aspects__cell_impact_crush_scope",
+    "source_id": "battery_understanding_v3_safety_crush",
+    "card_type": "scope",
+    "title": "Cell impact / crush test \u2014 scope and planning constraints",
+    "content": "Simulates internal short circuit via external mechanical deformation. Requires hydraulic press or dedicated crush fixture. A destructive test requiring EUCAR hazard level pre-assessment, fire-safe containment, and gas measurement. The chapter is an outline reference; a reviewed SOP is mandatory before release.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "eucar_hazard_review_required",
+      "destructive_test"
+    ],
+    "applicable_methods": [
+      "safety_aspects__cell_impact_crush"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Cell impact / crush,\" White Paper, 2018, p. 69."
+    }
+  },
+  {
+    "card_id": "safety_aspects__penetration_scope",
+    "source_id": "battery_understanding_v3_safety_penetration",
+    "card_type": "scope",
+    "title": "Nail penetration test \u2014 scope",
+    "content": "The penetration test per SAE J2464:2009 simulates internal short circuit via a conductive steel nail driven through the fully charged cell at \u2265 8 cm/s. The test is applicable to all chemistries, relevant for dendrite and foreign-object fault scenarios. It is performed at cell level (3 mm nail) or module/pack level (20 mm nail). Toxic and flammable gas release must be measured.",
+    "planning_constraints": [
+      "eucar_hazard_review_required",
+      "review_required_before_release",
+      "soc_100_percent_unless_reviewed"
+    ],
+    "applicable_methods": [
+      "safety_aspects__penetration"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Penetration,\" White Paper, 2018, pp. 70-73."
+    }
+  },
+  {
+    "card_id": "safety_aspects__penetration_execution",
+    "source_id": "battery_understanding_v3_safety_penetration",
+    "card_type": "execution",
+    "title": "Nail penetration test \u2014 key execution parameters",
+    "content": "Charge cell to 100% SOC. Wait for thermal equilibrium at room temperature. Penetrate with a mild steel nail perpendicular to the electrodes at \u2265 8 cm/s. Cell: 3 mm nail, tapered point, full depth. Module: 20 mm nail, through at least 3 cells or 100 mm. Observe for 1 hour with nail in place. Log at \u2265 10 Hz. After 1 h, record voltage, temperatures, and any venting or fire events.",
+    "locked_parameters": {
+      "cell_nail_diameter_mm": 3,
+      "module_nail_diameter_mm": 20,
+      "penetration_rate_cm_s_minimum": 8,
+      "nail_tip": "tapered sharp point",
+      "depth": "through cell",
+      "observation_minutes": 60,
+      "nail_remains_in_place": true,
+      "recommended_logging_hz": 10
+    },
+    "applicable_methods": [
+      "safety_aspects__penetration"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Penetration,\" White Paper, 2018, pp. 70-73."
+    }
+  },
+  {
+    "card_id": "safety_aspects__roll_over_scope",
+    "source_id": "battery_understanding_v3_safety_rollover",
+    "card_type": "scope",
+    "title": "Roll-over test \u2014 scope and planning constraints",
+    "content": "Assesses cell or module safety after an inversion or roll-over event, relevant to vehicle crash scenarios. The chapter is an outline; SOC, inversion angle, and observation period must be specified by the applicable standard and reviewed before release.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "safety_aspects__roll_over"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[S6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Roll-over,\" White Paper, 2018, p. 74."
+    }
+  },
+  {
+    "card_id": "thermal__temperature_cycling_scope",
+    "source_id": "battery_understanding_v3_thermal_temperature_cycling",
+    "card_type": "scope",
+    "title": "Temperature cycling test \u2014 scope and planning constraints",
+    "content": "Repeated thermal excursions between defined temperature extremes to assess cell or module integrity. The chapter is an outline reference. A reviewed SOP specifying temperature range, ramp rate, soak time, number of cycles, and pass/fail criteria (per IEC 62133, UN38.3, or alternate standard) is required before release.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "thermal__temperature_cycling"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Temperature cycling,\" White Paper, 2018, pp. 75-77."
+    }
+  },
+  {
+    "card_id": "thermal__high_temperature_endurance_scope",
+    "source_id": "battery_understanding_v3_thermal_high_temp_endurance",
+    "card_type": "scope",
+    "title": "High temperature endurance \u2014 scope and planning constraints",
+    "content": "Prolonged exposure at elevated temperature to assess safety and capacity retention. Different from calendar ageing in intent: this is an abuse/endurance test targeting a specific standard pass/fail threshold, not a degradation characterisation campaign. Reviewed SOP required.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "not_calendar_ageing",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "thermal__high_temperature_endurance"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: High temperature endurance,\" White Paper, 2018, p. 78."
+    }
+  },
+  {
+    "card_id": "thermal__external_short_circuit_scope",
+    "source_id": "battery_understanding_v3_thermal_external_short",
+    "card_type": "scope",
+    "title": "External short circuit test \u2014 scope",
+    "content": "Determines cell/module safety under an external short circuit \u2014 an abusive out-of-operation scenario simulating vehicle crash or maintenance fault. The test is performed at SOC 100% with a short-circuit resistance \u2264 5 m\u03a9. Goal is to trigger or bypass internal overcurrent protection and characterise the resulting thermal stress. Applicable to all levels from cell to system.",
+    "planning_constraints": [
+      "eucar_hazard_review_required",
+      "review_required_before_release"
+    ],
+    "applicable_methods": [
+      "thermal__external_short_circuit"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: External short circuit,\" White Paper, 2018, pp. 82-85."
+    }
+  },
+  {
+    "card_id": "thermal__external_short_circuit_execution",
+    "source_id": "battery_understanding_v3_thermal_external_short",
+    "card_type": "execution",
+    "title": "External short circuit test \u2014 key execution parameters",
+    "content": "Bring cell to 100% SOC. Store at room temperature. Apply short circuit by connecting positive and negative terminals with external resistance \u2264 5 m\u03a9 for 10 min (or per standard: UN38.3 = 1 h at 55 \u00b0C; IEC 62660-2 = 10 min + 1 h observation). Measure current at \u2265 20 kHz. Log temperature at \u2265 10 Hz. Observe for 1 h after removing the short. Record removed charge and voltage recovery.",
+    "locked_parameters": {
+      "short_resistance_mohm_max": 5,
+      "short_duration_minutes": 10,
+      "observation_after_minutes": 60,
+      "soc_percent": 100,
+      "current_sampling_hz_minimum": 20000,
+      "temperature_sampling_hz_minimum": 10
+    },
+    "standard_variants": {
+      "UN38.3": "55 \u00b0C, 1 h short",
+      "IEC62660-2": "10 min + 1 h observation",
+      "IEC62133": "similar to UN38.3, different sample count",
+      "ISO12405-3": "pack level, \u2264 100 m\u03a9"
+    },
+    "applicable_methods": [
+      "thermal__external_short_circuit"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: External short circuit,\" White Paper, 2018, pp. 82-85."
+    }
+  },
+  {
+    "card_id": "thermal__overcharge_scope",
+    "source_id": "battery_understanding_v3_thermal_overcharge",
+    "card_type": "scope",
+    "title": "Overcharge test \u2014 scope and planning constraints",
+    "content": "Charges the cell beyond the maximum rated voltage to assess safety response. A destructive abuse test requiring fire-safe chamber, gas measurement, and full EUCAR hazard pre-assessment. Reviewed SOP with target overcharge voltage, charge rate, and termination condition required before release.",
+    "planning_constraints": [
+      "eucar_hazard_review_required",
+      "destructive_test",
+      "fire_safe_chamber_required"
+    ],
+    "applicable_methods": [
+      "thermal__overcharge"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge,\" White Paper, 2018, pp. 86-88."
+    }
+  },
+  {
+    "card_id": "thermal__forced_discharge_scope",
+    "source_id": "battery_understanding_v3_thermal_forced_discharge",
+    "card_type": "scope",
+    "title": "Forced discharge test \u2014 scope and planning constraints",
+    "content": "Discharges the cell below its rated minimum voltage into reversal. Assesses safety response (gas generation, thermal event). Reversal current, depth, and abort criteria are standard-dependent. Reviewed SOP required.",
+    "planning_constraints": [
+      "outline_only_sop_required",
+      "standard_must_be_specified"
+    ],
+    "applicable_methods": [
+      "thermal__forced_discharge"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Forced discharge,\" White Paper, 2018, p. 89."
+    }
+  },
+  {
+    "card_id": "thermal__internal_short_circuit_scope",
+    "source_id": "battery_understanding_v3_thermal_internal_short",
+    "card_type": "scope",
+    "title": "Internal short circuit test \u2014 scope and planning constraints",
+    "content": "Induces a controlled internal short circuit to study initiation and safety response. Trigger methods include nail, separator defect film, or shape-memory alloy pins. The trigger method and severity must be specified in a reviewed SOP. Requires containment, gas measurement, and EUCAR hazard pre-assessment.",
+    "planning_constraints": [
+      "eucar_hazard_review_required",
+      "destructive_test",
+      "isc_trigger_must_be_specified"
+    ],
+    "applicable_methods": [
+      "thermal__internal_short_circuit"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Internal short circuit,\" White Paper, 2018, pp. 92-93."
+    }
+  },
+  {
+    "card_id": "thermal__propagation_of_thermal_runaway_scope",
+    "source_id": "battery_understanding_v3_thermal_tr_propagation",
+    "card_type": "scope",
+    "title": "Thermal runaway propagation test \u2014 scope and planning constraints",
+    "content": "Module or pack level test assessing whether thermal runaway initiated in one cell propagates to adjacent cells. Requires multiple temperature sensors per cell, gas measurement, certified fire-safe chamber, and a reviewed SOP specifying the trigger method, propagation decision criteria, and gas venting analysis approach.",
+    "planning_constraints": [
+      "eucar_hazard_review_required",
+      "module_pack_level_only",
+      "fire_safe_chamber_required",
+      "trigger_method_must_be_specified"
+    ],
+    "applicable_methods": [
+      "thermal__propagation_of_thermal_runaway"
+    ],
+    "citation": {
+      "linked_reference_markdown": "[T7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Propagation of thermal runaway,\" White Paper, 2018, pp. 90-91."
+    }
+  }
+]

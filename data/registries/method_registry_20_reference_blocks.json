@@ -1,0 +1,255 @@
+{
+  "preconditioning_test": {
+    "label": "Preconditioning test",
+    "default_for_objective": false,
+    "objective_key": "preconditioning",
+    "aliases": [
+      "preconditioning",
+      "formation stability check",
+      "stability start check"
+    ],
+    "chapter_id": "battery_cell_performance__preconditioning_test",
+    "source_title": "Preconditioning test",
+    "source_pages": [
+      15,
+      15
+    ],
+    "handbook_source_id": "battery_understanding_v3_preconditioning_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_preconditioning_test_scope",
+      "battery_understanding_v3_preconditioning_test_execution",
+      "battery_understanding_v3_preconditioning_test_outputs"
+    ],
+    "complementary_literature_source_ids": [],
+    "intent": "Verify that a fresh cell reaches a stable start-of-test capacity before it enters the rest of the programme.",
+    "applications": [
+      "Start-of-life stabilization before formal characterization",
+      "Incoming cell batch screening before ageing or power tests"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor"
+    ],
+    "required_equipment": [
+      "Battery cell tester with adequate current headroom",
+      "Temperature sensor coverage"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 30,
+      "minimum_cycle_count": 3
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 30,
+        "minimum_cycle_count": 3
+      },
+      "steps": [
+        {
+          "id": "ambient_equilibration",
+          "name": "Ambient equilibration",
+          "details": "Let the cell sit in the laboratory until its temperature is stable at ambient conditions within approximately +/-2 C.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_preconditioning_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "manufacturer_charge",
+          "name": "Manufacturer charge",
+          "details": "Charge at the manufacturer-recommended rate, then complete the CV taper using the standard-cycle cut-off current.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_preconditioning_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "reference_discharge_block",
+          "name": "Reference discharge block",
+          "details": "Rest for {rest_minutes} minutes, discharge at the standard-cycle rate to {discharge_cutoff_v} V, then rest for {rest_minutes} minutes before recharging.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_preconditioning_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "repeat_until_stable",
+          "name": "Repeat until stable",
+          "details": "Repeat the charge-rest-discharge-rest block for at least 3 cycles and extend up to 10 discharges if successive discharge capacities still differ by more than 2%.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_preconditioning_test_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Record discharge capacity for every preconditioning cycle.",
+      "Track cell temperature and confirm it remains within manufacturer limits."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Discharge capacity vs preconditioning cycle",
+        "Cell temperature vs time during the final stabilization cycle"
+      ],
+      "tables": [
+        "Cycle-by-cycle capacity stability summary",
+        "2% stabilization pass/fail decision"
+      ]
+    },
+    "planner_notes": [
+      "Do not shorten the minimum three-cycle requirement just because the first cycle looks stable."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the 3-cycle minimum, 2% stability gate, and 10-cycle cap fixed. Review is only for manufacturer-specific rate details and lab-specific ambient setup.",
+      "locked_planning_fields": [
+        "minimum of 3 preconditioning cycles",
+        "30 min rest framing",
+        "2% discharge-capacity stability criterion",
+        "maximum of 10 discharges"
+      ],
+      "tailorable_fields": [
+        "exact manufacturer charge rate",
+        "final lab ambient setpoint within the stable ambient envelope"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "standard_cycle": {
+    "label": "Standard cycle",
+    "default_for_objective": false,
+    "objective_key": "standard_cycle",
+    "aliases": [
+      "standard cycle",
+      "reference cycle",
+      "c1 c25 cycle"
+    ],
+    "chapter_id": "battery_cell_performance__standard_cycle",
+    "source_title": "Standard cycle",
+    "source_pages": [
+      16,
+      17
+    ],
+    "handbook_source_id": "battery_understanding_v3_standard_cycle",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_standard_cycle_scope",
+      "battery_understanding_v3_standard_cycle_execution",
+      "battery_understanding_v3_standard_cycle_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Run the white-paper reference cycle used to derive and follow capacity with a defined discharge, CC-CV charge, and CV discharge completion.",
+    "applications": [
+      "Reference performance testing during ageing",
+      "Declared-capacity verification against datasheet intent"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor"
+    ],
+    "required_equipment": [
+      "Battery cell tester",
+      "Cell temperature sensor"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 30,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 30,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "room_temperature_acclimation",
+          "name": "Room-temperature acclimation",
+          "details": "Acclimate the cell at 25 +/- 2 C before starting the standard cycle.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_standard_cycle_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "initial_discharge",
+          "name": "Initial discharge",
+          "details": "Discharge to {discharge_cutoff_v} V at the reference 1C-equivalent current or the datasheet It rate when declared capacity tracking is required.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_standard_cycle_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "cc_cv_charge",
+          "name": "CC-CV recharge",
+          "details": "Recharge at the manufacturer-recommended current and complete the CV taper at {charge_voltage_v} V down to C/25.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_standard_cycle_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "rest_after_charge",
+          "name": "Post-charge rest",
+          "details": "Rest for {rest_minutes} minutes before the reference discharge.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_standard_cycle_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "reference_discharge",
+          "name": "Reference discharge with CV completion",
+          "details": "Discharge to {discharge_cutoff_v} V at the same reference current, continue in CV mode until the current reaches C/25, then rest for {rest_minutes} minutes.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_standard_cycle_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "final_recharge",
+          "name": "Final recharge",
+          "details": "Recharge again with the manufacturer-recommended CC-CV charge and rest for {rest_minutes} minutes so the cell exits in a controlled state.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_standard_cycle_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Record current, voltage, capacity, and temperature through both CC and CV segments.",
+      "Keep the discharge and recharge rates traceable to whether the plan follows C1 or datasheet It logic."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Reference charge and discharge voltage curves",
+        "Cell temperature vs time during the standard cycle"
+      ],
+      "tables": [
+        "C1 / It discharge capacity summary",
+        "C/25 completion status and final cut-off table"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the room-temperature envelope, CC-CV charge, reference discharge, and CV completion locked. Only the choice between C1 and datasheet It logic should move after review.",
+      "locked_planning_fields": [
+        "25 +/- 2 C room-temperature framing",
+        "CC-CV charge to C/25",
+        "reference discharge followed by CV discharge to C/25",
+        "30 min rest framing"
+      ],
+      "tailorable_fields": [
+        "C1 versus datasheet It rate choice",
+        "final reporting label for declared-capacity tracking"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  }
+}

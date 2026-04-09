@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "status": "scaffold",
+  "rules": [
+    {
+      "id": "required_columns_present",
+      "severity": "fail",
+      "status": "planned",
+      "description": "Ensure the canonical required columns exist after adapter normalization."
+    },
+    {
+      "id": "time_monotonic",
+      "severity": "fail",
+      "status": "planned",
+      "description": "Detect time reversal or duplicate timestamp segments after sorting and normalization."
+    },
+    {
+      "id": "unit_consistency",
+      "severity": "fail",
+      "status": "planned",
+      "description": "Flag inconsistent unit conversion outcomes across current, voltage, time, temperature, and capacity."
+    },
+    {
+      "id": "cycle_boundary_integrity",
+      "severity": "warning",
+      "status": "planned",
+      "description": "Detect broken or ambiguous cycle boundaries before KPI extraction."
+    },
+    {
+      "id": "pulse_segment_detectable",
+      "severity": "warning",
+      "status": "planned",
+      "description": "Check whether pulse edges, rests, and recovery windows are detectable for HPPC-style analysis."
+    }
+  ],
+  "required_fields": [
+    "id",
+    "severity",
+    "status",
+    "description"
+  ]
+}

@@ -1,0 +1,562 @@
+[
+  {
+    "id": "introduction",
+    "title": "Introduction",
+    "section": "Introduction",
+    "level": 1,
+    "start_page": 5,
+    "end_page": 6
+  },
+  {
+    "id": "glossary",
+    "title": "Glossary",
+    "section": "Glossary",
+    "level": 1,
+    "start_page": 7,
+    "end_page": 7
+  },
+  {
+    "id": "introductory_topics_about_battery_cell_testing",
+    "title": "Introductory topics about battery cell testing",
+    "section": "Introductory topics about battery cell testing",
+    "level": 1,
+    "start_page": 8,
+    "end_page": 14
+  },
+  {
+    "id": "battery_cell_performance",
+    "title": "Battery cell performance",
+    "section": "Battery cell performance",
+    "level": 1,
+    "start_page": 15,
+    "end_page": 52
+  },
+  {
+    "id": "ageing_effects",
+    "title": "Ageing effects",
+    "section": "Ageing effects",
+    "level": 1,
+    "start_page": 53,
+    "end_page": 62
+  },
+  {
+    "id": "safety_aspects",
+    "title": "Safety aspects",
+    "section": "Safety aspects",
+    "level": 1,
+    "start_page": 63,
+    "end_page": 74
+  },
+  {
+    "id": "thermal",
+    "title": "Thermal",
+    "section": "Thermal",
+    "level": 1,
+    "start_page": 75,
+    "end_page": 94
+  },
+  {
+    "id": "discussion",
+    "title": "Discussion",
+    "section": "Discussion",
+    "level": 1,
+    "start_page": 95,
+    "end_page": 95
+  },
+  {
+    "id": "recommendations_to_specific_test_standards",
+    "title": "Recommendations to specific test standards",
+    "section": "Recommendations to specific test standards",
+    "level": 1,
+    "start_page": 96,
+    "end_page": 96
+  },
+  {
+    "id": "conclusion",
+    "title": "Conclusion",
+    "section": "Conclusion",
+    "level": 1,
+    "start_page": 97,
+    "end_page": 97
+  },
+  {
+    "id": "appendix_a_battery_test_methods_in_international_standards",
+    "title": "Appendix A Battery test methods in international standards",
+    "section": "Appendix A Battery test methods in international standards",
+    "level": 1,
+    "start_page": 98,
+    "end_page": 98
+  },
+  {
+    "id": "appendix_b_summary_of_the_contributing_projects",
+    "title": "Appendix B Summary of the contributing projects",
+    "section": "Appendix B Summary of the contributing projects",
+    "level": 1,
+    "start_page": 99,
+    "end_page": 99
+  },
+  {
+    "id": "introduction__background",
+    "title": "Background",
+    "section": "Introduction",
+    "level": 2,
+    "start_page": 5,
+    "end_page": 5
+  },
+  {
+    "id": "introduction__goal",
+    "title": "Goal",
+    "section": "Introduction",
+    "level": 2,
+    "start_page": 5,
+    "end_page": 5
+  },
+  {
+    "id": "introduction__approach",
+    "title": "Approach",
+    "section": "Introduction",
+    "level": 2,
+    "start_page": 5,
+    "end_page": 5
+  },
+  {
+    "id": "introduction__set_up",
+    "title": "Set-up",
+    "section": "Introduction",
+    "level": 2,
+    "start_page": 6,
+    "end_page": 6
+  },
+  {
+    "id": "glossary__definitions",
+    "title": "Definitions",
+    "section": "Glossary",
+    "level": 2,
+    "start_page": 7,
+    "end_page": 7
+  },
+  {
+    "id": "glossary__abbrevations",
+    "title": "Abbrevations",
+    "section": "Glossary",
+    "level": 2,
+    "start_page": 7,
+    "end_page": 7
+  },
+  {
+    "id": "introductory_topics_about_battery_cell_testing__freedom_in_reference_capacity_c_rate_and_i_rate",
+    "title": "Freedom in reference capacity: C-rate and I-rate",
+    "section": "Introductory topics about battery cell testing",
+    "level": 2,
+    "start_page": 8,
+    "end_page": 8
+  },
+  {
+    "id": "introductory_topics_about_battery_cell_testing__data_acquisition",
+    "title": "Data acquisition",
+    "section": "Introductory topics about battery cell testing",
+    "level": 2,
+    "start_page": 9,
+    "end_page": 10
+  },
+  {
+    "id": "introductory_topics_about_battery_cell_testing__cell_pressure_equipment",
+    "title": "Cell pressure equipment",
+    "section": "Introductory topics about battery cell testing",
+    "level": 2,
+    "start_page": 11,
+    "end_page": 11
+  },
+  {
+    "id": "introductory_topics_about_battery_cell_testing__explaining_and_interpreting_typical_data_sheets",
+    "title": "Explaining and interpreting typical data sheets",
+    "section": "Introductory topics about battery cell testing",
+    "level": 2,
+    "start_page": 12,
+    "end_page": 14
+  },
+  {
+    "id": "battery_cell_performance__preconditioning_test",
+    "title": "Preconditioning test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 15,
+    "end_page": 15
+  },
+  {
+    "id": "battery_cell_performance__standard_cycle",
+    "title": "Standard cycle",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 16,
+    "end_page": 17
+  },
+  {
+    "id": "battery_cell_performance__capacity_test",
+    "title": "Capacity test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 18,
+    "end_page": 23
+  },
+  {
+    "id": "battery_cell_performance__low_c_rate_cycle_slow_dis_charge_curve",
+    "title": "Low C-rate cycle / Slow (dis)charge curve",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 24,
+    "end_page": 24
+  },
+  {
+    "id": "battery_cell_performance__constant_power_discharge_test",
+    "title": "Constant power discharge test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 25,
+    "end_page": 27
+  },
+  {
+    "id": "battery_cell_performance__dynamic_stress_test",
+    "title": "Dynamic stress test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 28,
+    "end_page": 30
+  },
+  {
+    "id": "battery_cell_performance__pulse_test",
+    "title": "Pulse test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 31,
+    "end_page": 37
+  },
+  {
+    "id": "battery_cell_performance__thermal_characterisation",
+    "title": "Thermal characterisation",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 38,
+    "end_page": 39
+  },
+  {
+    "id": "battery_cell_performance__electrochemical_impedance_test",
+    "title": "Electrochemical impedance test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 40,
+    "end_page": 43
+  },
+  {
+    "id": "battery_cell_performance__thermal_impedance_test",
+    "title": "Thermal impedance test",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 44,
+    "end_page": 46
+  },
+  {
+    "id": "battery_cell_performance__quasi_static_thermal_tests",
+    "title": "Quasi-static thermal tests",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 47,
+    "end_page": 48
+  },
+  {
+    "id": "battery_cell_performance__drive_cycle",
+    "title": "Drive cycle",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 49,
+    "end_page": 50
+  },
+  {
+    "id": "battery_cell_performance__preferable_test_schemes",
+    "title": "Preferable test schemes",
+    "section": "Battery cell performance",
+    "level": 2,
+    "start_page": 51,
+    "end_page": 52
+  },
+  {
+    "id": "ageing_effects__cycle_life_test",
+    "title": "Cycle life test",
+    "section": "Ageing effects",
+    "level": 2,
+    "start_page": 53,
+    "end_page": 53
+  },
+  {
+    "id": "ageing_effects__drive_cycle",
+    "title": "Drive cycle",
+    "section": "Ageing effects",
+    "level": 2,
+    "start_page": 54,
+    "end_page": 57
+  },
+  {
+    "id": "ageing_effects__calendar_ageing_test_battery_under_rest",
+    "title": "Calendar ageing test (battery under rest)",
+    "section": "Ageing effects",
+    "level": 2,
+    "start_page": 58,
+    "end_page": 61
+  },
+  {
+    "id": "ageing_effects__constant_voltage_test_battery_maintained_at_a_certain_voltage",
+    "title": "Constant voltage test (battery maintained at a certain voltage)",
+    "section": "Ageing effects",
+    "level": 2,
+    "start_page": 62,
+    "end_page": 62
+  },
+  {
+    "id": "ageing_effects__preferable_test_schemes",
+    "title": "Preferable test schemes",
+    "section": "Ageing effects",
+    "level": 2,
+    "start_page": 62,
+    "end_page": 62
+  },
+  {
+    "id": "safety_aspects__vibration",
+    "title": "Vibration",
+    "section": "Safety aspects",
+    "level": 2,
+    "start_page": 63,
+    "end_page": 64
+  },
+  {
+    "id": "safety_aspects__mechanical_shock",
+    "title": "Mechanical Shock",
+    "section": "Safety aspects",
+    "level": 2,
+    "start_page": 65,
+    "end_page": 67
+  },
+  {
+    "id": "safety_aspects__drop",
+    "title": "Drop",
+    "section": "Safety aspects",
+    "level": 2,
+    "start_page": 68,
+    "end_page": 68
+  },
+  {
+    "id": "safety_aspects__cell_impact_crush",
+    "title": "Cell impact / Crush",
+    "section": "Safety aspects",
+    "level": 2,
+    "start_page": 69,
+    "end_page": 69
+  },
+  {
+    "id": "safety_aspects__penetration",
+    "title": "Penetration",
+    "section": "Safety aspects",
+    "level": 2,
+    "start_page": 70,
+    "end_page": 73
+  },
+  {
+    "id": "safety_aspects__roll_over",
+    "title": "Roll-over",
+    "section": "Safety aspects",
+    "level": 2,
+    "start_page": 74,
+    "end_page": 74
+  },
+  {
+    "id": "thermal__temperature_cycling",
+    "title": "Temperature cycling",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 75,
+    "end_page": 75
+  },
+  {
+    "id": "thermal__high_temperature_endurance",
+    "title": "High temperature endurance",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 76,
+    "end_page": 76
+  },
+  {
+    "id": "thermal__thermal_control_check",
+    "title": "Thermal control check",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 77,
+    "end_page": 77
+  },
+  {
+    "id": "thermal__fire_test",
+    "title": "Fire test",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 77,
+    "end_page": 78
+  },
+  {
+    "id": "thermal__propagation_of_thermal_runaway",
+    "title": "Propagation of thermal runaway",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 79,
+    "end_page": 79
+  },
+  {
+    "id": "thermal__rapid_charging_and_discharging",
+    "title": "Rapid charging and discharging",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 79,
+    "end_page": 79
+  },
+  {
+    "id": "thermal__thermal_stability_arc",
+    "title": "Thermal stability (ARC)",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 79,
+    "end_page": 81
+  },
+  {
+    "id": "thermal__external_short_circuit",
+    "title": "External short circuit",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 82,
+    "end_page": 85
+  },
+  {
+    "id": "thermal__internal_short_circuit",
+    "title": "Internal short circuit",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 86,
+    "end_page": 86
+  },
+  {
+    "id": "thermal__overcharge",
+    "title": "Overcharge",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 86,
+    "end_page": 87
+  },
+  {
+    "id": "thermal__forced_discharge",
+    "title": "Forced discharge",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 88,
+    "end_page": 88
+  },
+  {
+    "id": "thermal__imbalanced_charge",
+    "title": "Imbalanced Charge",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 89,
+    "end_page": 89
+  },
+  {
+    "id": "thermal__overcharge_voltage_control_check",
+    "title": "Overcharge voltage control check",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 90,
+    "end_page": 90
+  },
+  {
+    "id": "thermal__overcharge_current_control_check",
+    "title": "Overcharge current control check",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 90,
+    "end_page": 90
+  },
+  {
+    "id": "thermal__over_discharge_current_control_check",
+    "title": "Over-discharge current control check",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 90,
+    "end_page": 90
+  },
+  {
+    "id": "thermal__altitude_simulation",
+    "title": "Altitude simulation",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 90,
+    "end_page": 90
+  },
+  {
+    "id": "thermal__humidity",
+    "title": "Humidity",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 91,
+    "end_page": 91
+  },
+  {
+    "id": "thermal__dewing",
+    "title": "Dewing",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 91,
+    "end_page": 91
+  },
+  {
+    "id": "thermal__immersion",
+    "title": "Immersion",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 91,
+    "end_page": 91
+  },
+  {
+    "id": "thermal__salt_spray_salt_water_immersion",
+    "title": "Salt spray / salt water immersion",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 91,
+    "end_page": 92
+  },
+  {
+    "id": "thermal__rain_test",
+    "title": "Rain test",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 93,
+    "end_page": 93
+  },
+  {
+    "id": "thermal__electromagnetic_susceptibility",
+    "title": "Electromagnetic susceptibility",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 93,
+    "end_page": 93
+  },
+  {
+    "id": "thermal__separator_shutdown_integrity_test",
+    "title": "Separator shutdown integrity test",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 93,
+    "end_page": 93
+  },
+  {
+    "id": "thermal__tests_at_module_level",
+    "title": "Tests at module level",
+    "section": "Thermal",
+    "level": 2,
+    "start_page": 94,
+    "end_page": 99
+  }
+]

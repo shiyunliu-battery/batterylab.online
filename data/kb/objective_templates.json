@@ -1,0 +1,359 @@
+{
+  "cycle_life": {
+    "id": "objective_template_cycle_life",
+    "label": "Cycle life baseline",
+    "description": "Baseline durability screening with periodic reference checks.",
+    "default_rest_minutes": 15,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Capacity retention",
+      "Coulombic efficiency",
+      "DCIR drift"
+    ]
+  },
+  "hppc": {
+    "id": "objective_template_hppc",
+    "label": "HPPC screening",
+    "description": "Pulse power characterization across a SOC staircase.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 1,
+    "report_focus": [
+      "Pulse resistance",
+      "Voltage recovery",
+      "SOC-dependent power capability"
+    ]
+  },
+  "performance": {
+    "id": "objective_template_performance",
+    "label": "Performance characterization",
+    "description": "Minimum recommended package for a performance-focused pretest campaign.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Reference capacity test at 25 C",
+      "Rate capability comparison",
+      "DCR / pulse power assessment"
+    ],
+    "minimum_modules": [
+      "visual / metadata check",
+      "OCV",
+      "reference capacity test at 25 C",
+      "rate capability test",
+      "DCR / pulse power assessment"
+    ],
+    "optional_modules": []
+  },
+  "rate_capability": {
+    "id": "objective_template_rate_capability",
+    "label": "Rate capability",
+    "description": "Rate ladder to compare utilization across discharge C-rates.",
+    "default_rest_minutes": 20,
+    "default_log_interval_seconds": 5,
+    "report_focus": [
+      "Capacity versus C-rate",
+      "Temperature rise",
+      "Recovery after high-rate steps"
+    ]
+  },
+  "rpt": {
+    "id": "objective_template_rpt",
+    "label": "Reference performance test",
+    "description": "Minimum recommended package for an RPT check-up bundle.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Reference capacity snapshot",
+      "Pulse / DCIR snapshot",
+      "OCV readiness check"
+    ],
+    "minimum_modules": [
+      "reference capacity test",
+      "DCR / HPPC",
+      "OCV check"
+    ],
+    "optional_modules": [
+      "EIS",
+      "SOC-OCV",
+      "ICA"
+    ]
+  },
+  "soc_ocv": {
+    "id": "objective_template_soc_ocv",
+    "label": "SOC-OCV / slow curve",
+    "description": "Slow-rate curve test for OCV/EMF estimation and modelling-ready voltage traces.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 60,
+    "report_focus": [
+      "Slow charge and discharge curves",
+      "Derived OCV / EMF estimate",
+      "ICA / DVA-ready export"
+    ]
+  },
+  "soh_modeling": {
+    "id": "objective_template_soh_modeling",
+    "label": "SOH modeling",
+    "description": "Minimum recommended package for model-training or model-validation data collection.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Baseline and checkpoint RPT bundle",
+      "Pulse-derived degradation features",
+      "Temperature-linked metadata and labels"
+    ],
+    "minimum_modules": [
+      "baseline RPT",
+      "periodic reference capacity",
+      "periodic DCR / pulse features",
+      "temperature-linked metadata",
+      "degradation label definition"
+    ],
+    "optional_modules": []
+  },
+  "calendar_ageing": {
+    "id": "objective_template_calendar_ageing",
+    "label": "Calendar ageing",
+    "description": "Minimum recommended package for a calendar-ageing campaign.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Storage-condition tracking",
+      "Checkpoint RPT drift",
+      "End-point ageing comparison"
+    ],
+    "minimum_modules": [
+      "storage at defined SOC and temperature",
+      "periodic checkpoint RPT",
+      "end-point comparison"
+    ],
+    "optional_modules": []
+  },
+  "eis": {
+    "id": "objective_template_eis",
+    "label": "Electrochemical impedance spectroscopy",
+    "description": "SOC-resolved impedance spectra for ECM parameterisation, ageing tracking, and mechanism attribution.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 1,
+    "report_focus": [
+      "Nyquist spectra at each SOC",
+      "Ohmic, charge-transfer, and diffusion resistance breakdown",
+      "Impedance drift vs life fraction"
+    ],
+    "minimum_modules": [
+      "thermal acclimation at 25 C",
+      "SOC staircase to target levels",
+      "EIS acquisition at each SOC point in open-circuit condition",
+      "Qualitative Nyquist analysis"
+    ],
+    "optional_modules": [
+      "full ECM equivalent-circuit fit",
+      "BOL-MOL-EOL comparison set",
+      "multi-temperature EIS"
+    ]
+  },
+  "preconditioning": {
+    "id": "objective_template_preconditioning",
+    "label": "Preconditioning / formation",
+    "description": "Stabilise early-cycle capacity before formal characterisation begins.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Capacity vs cycle number (first 3-10 cycles)",
+      "Capacity stability gate (< 2% difference)",
+      "Go / no-go for main test programme"
+    ],
+    "minimum_modules": [
+      "3 charge-discharge cycles at standard rate",
+      "capacity stability check (< 2% variation)",
+      "up to 10 cycles if stability not reached"
+    ],
+    "optional_modules": []
+  },
+  "standard_cycle": {
+    "id": "objective_template_standard_cycle",
+    "label": "Standard reference cycle",
+    "description": "1C discharge and CC-CV recharge reference cycle used as the comparison anchor and as the entry state for other methods.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "1C and C/25 discharge capacity",
+      "Capacity vs cycle trend",
+      "Coulombic efficiency"
+    ],
+    "minimum_modules": [
+      "discharge at 1C (or It-rate) to Vmin",
+      "CV discharge tail to C/25",
+      "CC-CV recharge to Vmax"
+    ],
+    "optional_modules": [
+      "temperature monitoring",
+      "multiple repeat to confirm stability"
+    ]
+  },
+  "constant_power_discharge": {
+    "id": "objective_template_constant_power_discharge",
+    "label": "Constant power discharge",
+    "description": "Energy characterisation under a constant power load across a power matrix.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 5,
+    "report_focus": [
+      "Energy vs power level (Ragone-style)",
+      "Voltage vs time at each power step",
+      "Temperature rise vs power"
+    ],
+    "minimum_modules": [
+      "standard-cycle precharge",
+      "constant-power discharge at each target power level",
+      "three-repeat for reproducibility"
+    ],
+    "optional_modules": [
+      "multi-temperature constant-power matrix"
+    ]
+  },
+  "dynamic_stress_test": {
+    "id": "objective_template_dynamic_stress_test",
+    "label": "Dynamic stress test",
+    "description": "Standardised 360 s dynamic DST profile used to characterise transient response and energy recovery.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 5,
+    "report_focus": [
+      "Energy throughput per DST profile repetition",
+      "Voltage response during transient pulses",
+      "Temperature profile during the DST run"
+    ],
+    "minimum_modules": [
+      "standard-cycle precharge",
+      "DST profile replay (360 s continuous)",
+      "repeat until Vmin or selected SOC range exhausted"
+    ],
+    "optional_modules": [
+      "scaled DST variant for different pack sizes",
+      "back-to-back DST for ageing context"
+    ]
+  },
+  "drive_cycle": {
+    "id": "objective_template_drive_cycle",
+    "label": "Drive cycle performance",
+    "description": "Application-representative profile test (WLTP, NEDC, or custom BEV/PHEV duty cycle) for real-world energy and power characterisation.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 1,
+    "report_focus": [
+      "Range or energy throughput per profile replay",
+      "Regenerative efficiency",
+      "Temperature profile during the profile"
+    ],
+    "minimum_modules": [
+      "standard-cycle precharge",
+      "drive-cycle profile replay to Vmin",
+      "CC-CV recharge after each cycle"
+    ],
+    "optional_modules": [
+      "multi-temperature drive-cycle matrix",
+      "auxiliary load overlay"
+    ]
+  },
+  "thermal_characterisation": {
+    "id": "objective_template_thermal_characterisation",
+    "label": "Thermal characterisation",
+    "description": "Pseudo-adiabatic and thermostated-plate thermal mapping to measure heat generation and dissipation.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 5,
+    "report_focus": [
+      "Heat generation vs SOC and C-rate",
+      "Thermal resistance to heat sink",
+      "Temperature uniformity across cell surface"
+    ],
+    "minimum_modules": [
+      "pseudo-adiabatic discharge fixture setup",
+      "discharge at selected C-rate sequence",
+      "temperature map extraction versus SOC"
+    ],
+    "optional_modules": [
+      "thermostated-plate thermal resistance measurement",
+      "multi-rate thermal matrix"
+    ]
+  },
+  "thermal_impedance": {
+    "id": "objective_template_thermal_impedance",
+    "label": "Thermal impedance test",
+    "description": "Sinusoidal thermal-impedance measurement to parameterise the thermal equivalent circuit of the cell.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 5,
+    "report_focus": [
+      "Thermal impedance magnitude vs frequency",
+      "Phase angle vs frequency",
+      "Fitted thermal RC parameters"
+    ],
+    "minimum_modules": [
+      "25 C cell stabilisation with thermostated plate",
+      "sinusoidal heat excitation sweep (0.1 to 10 mHz)",
+      "thermal impedance spectra acquisition"
+    ],
+    "optional_modules": [
+      "multi-SOC thermal impedance",
+      "multi-temperature sweep"
+    ]
+  },
+  "quasi_static_thermal": {
+    "id": "objective_template_quasi_static_thermal",
+    "label": "Quasi-static thermal tests",
+    "description": "Synchronised swelling / dilatometry measurement paired with an electrical capacity-style cycle.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 5,
+    "report_focus": [
+      "Cell thickness or strain vs SOC",
+      "Correlation between swelling and voltage curve",
+      "Swelling onset and peak identification"
+    ],
+    "minimum_modules": [
+      "dilatometer or pressure-plate fixture setup",
+      "slow or 1C charge-discharge cycle",
+      "thickness or pressure trace acquisition"
+    ],
+    "optional_modules": [
+      "multi-cycle swelling evolution",
+      "temperature-linked swelling"
+    ]
+  },
+  "ageing_drive_cycle": {
+    "id": "objective_template_ageing_drive_cycle",
+    "label": "Ageing drive cycle",
+    "description": "Drive-cycle ageing campaign with periodic reference characterisation checkpoints.",
+    "default_rest_minutes": 30,
+    "default_log_interval_seconds": 10,
+    "report_focus": [
+      "Capacity retention vs drive-cycle equivalent cycles",
+      "DCIR / power capability drift vs checkpoint",
+      "Temperature trend during ageing blocks"
+    ],
+    "minimum_modules": [
+      "baseline RPT before first ageing block",
+      "drive-cycle ageing blocks",
+      "periodic checkpoint RPT",
+      "end-of-life RPT and decision"
+    ],
+    "optional_modules": [
+      "profile-following extension at selected checkpoints",
+      "EIS extension at selected checkpoints"
+    ]
+  },
+  "constant_voltage_ageing": {
+    "id": "objective_template_constant_voltage_ageing",
+    "label": "Constant voltage ageing",
+    "description": "Outline-only method for studying ageing under prolonged constant-voltage hold conditions. Requires a reviewed SOP before execution.",
+    "default_rest_minutes": 60,
+    "default_log_interval_seconds": 60,
+    "report_focus": [
+      "Current decay profile during CV hold",
+      "Capacity check after CV storage period",
+      "Drift vs hold duration"
+    ],
+    "minimum_modules": [
+      "charge to target voltage at approved C-rate",
+      "CV hold at target voltage for approved duration",
+      "periodic capacity check-up"
+    ],
+    "optional_modules": [
+      "EIS before and after CV hold"
+    ]
+  }
+}

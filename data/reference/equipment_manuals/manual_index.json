@@ -1,0 +1,507 @@
+{
+  "version": "0.8.0",
+  "status": "seeded",
+  "manuals": [
+    {
+      "asset_id": "neware_btsclient8_user_manual",
+      "equipment_type": "battery_tester_software",
+      "manufacturer": "Neware",
+      "model": "BTSClient 8.0",
+      "source_file": "BTSClient8.0-UserManual.pdf",
+      "coverage": [
+        "client and server software requirements",
+        "step vocabulary and process-type support",
+        "advanced protection and foolproof settings",
+        "step-edit defaults and required conditions",
+        "data export and BTSDA analysis entry points",
+        "channel information and range inspection",
+        "barcode, grading, and historical-data workflow",
+        "general operating precautions"
+      ],
+      "extraction_status": "structured_summary_created__core_capabilities_only",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/neware_btsclient8_user_manual.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "data_adapter_registry"
+      ],
+      "notes": [
+        "This manual is primarily a BTSClient software-operation manual, not a tester hardware datasheet.",
+        "Use it to answer what the Neware software can configure, export, inspect, or protect.",
+        "Do not use it alone to claim a specific channel current range, voltage range, or thermal-control capability for one tester model."
+      ],
+      "page_spans_used": [
+        "pp. 5-6",
+        "pp. 16-27",
+        "pp. 75-79",
+        "pp. 84-89"
+      ]
+    },
+    {
+      "asset_id": "ivium_connecting_electrodes_quick_guide",
+      "equipment_type": "potentiostat_connection_guide",
+      "manufacturer": "Ivium Technologies",
+      "model": "Ivium potentiostat / battery tester cell-cable quick guide",
+      "source_file": "Connecting-the-electrodes-November-2022.pdf",
+      "coverage": [
+        "electrode-lead color mapping",
+        "2-electrode, 3-electrode, and 4-electrode connection logic",
+        "first-measurement startup flow in IviumSoft",
+        "result graph and result-data views",
+        "automatic data saving paths and file types"
+      ],
+      "extraction_status": "structured_summary_created__wiring_and_dataflow_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_connecting_electrodes_quick_guide.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist"
+      ],
+      "notes": [
+        "This quick guide is valuable because the electrode wiring diagrams carry operational meaning.",
+        "Use it for generic Ivium cable-to-electrode mapping, first-measurement startup, and saved-file workflow.",
+        "Do not use it alone to infer hardware current range, voltage limits, or FRA performance of one exact Ivium model."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "ivium_quick_reference_guide",
+      "equipment_type": "potentiostat_software_quick_guide",
+      "manufacturer": "Ivium Technologies",
+      "model": "IviumSoft quick reference guide",
+      "source_file": "EIS_Quick-reference-guide-January2021.pdf",
+      "coverage": [
+        "IviumSoft installation and software package location",
+        "instrument connection and channel selection by serial number",
+        "user-interface sections and menu roles",
+        "self-diagnostic performance test workflow",
+        "software and firmware upgrade coupling"
+      ],
+      "extraction_status": "structured_summary_created__readiness_and_maintenance_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_quick_reference_guide.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist"
+      ],
+      "notes": [
+        "This guide is best used for software readiness, basic connection, and instrument self-check workflow.",
+        "It is useful for maintenance and preflight support, but not as a substitute for a model-specific Ivium hardware specification."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "ivium_eis_theory_application_note",
+      "equipment_type": "eis_application_note",
+      "manufacturer": "Ivium Technologies",
+      "model": "Ivium EIS theory application note",
+      "source_file": "A4.1-EIS-Theory.pdf",
+      "coverage": [
+        "current-versus-voltage perturbation choice for low-impedance systems",
+        "high-to-low frequency sweep direction",
+        "small-signal pseudo-linearity requirement",
+        "basic phase-shift and impedance-ratio concepts"
+      ],
+      "extraction_status": "structured_summary_created__practical_theory_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_eis_theory_application_note.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist"
+      ],
+      "notes": [
+        "Use this note to explain practical EIS setup theory and why galvanostatic perturbation is often preferred for low-impedance battery systems.",
+        "Do not use it alone as a hardware-limit specification or as a full battery-EIS theory source."
+      ],
+      "page_spans_used": [
+        "p. 1"
+      ]
+    },
+    {
+      "asset_id": "ivium_eis_setting_up_measurement_note",
+      "equipment_type": "eis_application_note",
+      "manufacturer": "Ivium Technologies",
+      "model": "Ivium EIS measurement setup application note",
+      "source_file": "A4.2-EIS-Setting-up-a-measurement.pdf",
+      "coverage": [
+        "available EIS method families in IviumSoft",
+        "frequency-grid definition and frequencies-per-decade settings",
+        "single-sine, multi-sine, and dual-sine choices",
+        "AutoCR, Pre ranging, and DualCR behavior",
+        "advanced-mode fields including Connect to and Apply wrt OCP",
+        "default FRA-setting guidance"
+      ],
+      "extraction_status": "structured_summary_created__measurement_workflow_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_eis_setting_up_measurement_note.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist"
+      ],
+      "notes": [
+        "This note is the best current Ivium source for how to configure an EIS measurement in software.",
+        "Use it for software workflow and parameter-field interpretation, not as proof of model-specific hardware capability."
+      ],
+      "page_spans_used": [
+        "pp. 1-3"
+      ]
+    },
+    {
+      "asset_id": "ivium_eis_equivalent_circuit_fitting_note",
+      "equipment_type": "eis_application_note",
+      "manufacturer": "Ivium Technologies",
+      "model": "Ivium EIS equivalent circuit fitting application note",
+      "source_file": "A4.3-EIS-Equivalent-circuit-fitting.pdf",
+      "coverage": [
+        "equivalent-circuit entry workflows",
+        "element dictionary for R, C, W, Q, L, T, O, and G",
+        "series and parallel syntax",
+        "parameter-list exposure for fitting"
+      ],
+      "extraction_status": "structured_summary_created__fitting_workflow_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_eis_equivalent_circuit_fitting_note.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "analysis_specialist",
+        "modeling_roadmap"
+      ],
+      "notes": [
+        "Use this note as the Ivium-specific syntax and workflow reference for ECM fitting.",
+        "Do not treat the availability of an element in the software as proof that it is physically justified for a given battery dataset."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "ivium_eis_worked_example_note",
+      "equipment_type": "eis_application_note",
+      "manufacturer": "Ivium Technologies",
+      "model": "Ivium EIS worked example application note",
+      "source_file": "A4.4-EIS-Worked-example.pdf",
+      "coverage": [
+        "starter EIS settings in a worked example",
+        "SigView and Nyquist display flow",
+        "AutoCR recommendation in example context",
+        "basic Randles fitting workflow"
+      ],
+      "extraction_status": "structured_summary_created__example_workflow_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_eis_worked_example_note.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist"
+      ],
+      "notes": [
+        "Use this note as a starter worked example for first-use Ivium EIS questions.",
+        "Do not generalize the example settings to every battery without checking cell context and hardware capability."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "ivium_compactstat2h_standard_datasheet",
+      "equipment_type": "potentiostat_hardware_datasheet",
+      "manufacturer": "Ivium Technologies",
+      "model": "CompactStat2.h standard",
+      "source_file": "user_supplied_spec_extract__CompactStat2.h_standard",
+      "coverage": [
+        "current and voltage compliance for the standard configuration",
+        "potentiostat, galvanostat, and impedance-analyser operating envelopes",
+        "frequency range and signal-acquisition rate",
+        "4-electrode connection capability",
+        "analog and digital peripheral I/O",
+        "boundaries between low-current characterization and high-current battery testing"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/ivium_compactstat2h_standard_datasheet.md",
+      "source_storage": "user_supplied_spec_text_and_screenshot_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "This is the first Ivium asset in the repository that can directly support model-specific capability questions such as whether the hardware is suitable for low-current battery EIS.",
+        "Interpret the 30 mA, 1 A, and mode-specific limits carefully: the datasheet mixes potentiostat, galvanostat, and impedance-analyser specifications.",
+        "Do not assume optional expanded-current configurations or booster modules are part of the standard unit unless separately documented."
+      ],
+      "page_spans_used": [
+        "user-supplied specification text and screenshot"
+      ]
+    },
+    {
+      "asset_id": "iviumstat2h_datasheet",
+      "equipment_type": "potentiostat_hardware_datasheet",
+      "manufacturer": "Ivium Technologies",
+      "model": "IviumStat2.h",
+      "source_file": "user_supplied_spec_extract__IviumStat2.h",
+      "coverage": [
+        "model-specific current and voltage compliance",
+        "potentiostat, galvanostat, and impedance-analyser operating envelopes",
+        "frequency range up to 8 MHz and 2 MHz acquisition rate",
+        "4-electrode connection capability",
+        "safety limit settings for current and potential",
+        "optional modules and expandability boundaries",
+        "moderate-current battery-testing suitability"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/iviumstat2h_datasheet.md",
+      "source_storage": "user_supplied_spec_text_screenshots_and_product_url_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "This asset captures a more battery-capable Ivium model than CompactStat2.h standard and is useful for moderate-current single-cell testing decisions.",
+        "Interpret the 5 A compliance and 10 A range statements carefully: for the standard instrument, the safest planning ceiling is the top-level 5 A compliance unless additional validated hardware documentation says otherwise.",
+        "Do not assume optional modules such as the Bipotentiostat or True Linear Scan generator are installed unless separately confirmed."
+      ],
+      "page_spans_used": [
+        "user-supplied specification text, screenshots, and product URL"
+      ]
+    },
+    {
+      "asset_id": "neware_bts4000_100v60a_1ch_datasheet",
+      "equipment_type": "battery_tester_hardware_datasheet",
+      "manufacturer": "Neware",
+      "model": "BTS4000-100V60A-1CH",
+      "source_file": "BTS4000-100V60A-1CH.pdf",
+      "coverage": [
+        "single-channel high-voltage and high-current battery-testing capability",
+        "100V and 60A operating envelope",
+        "6000W per-channel power limit",
+        "pulse and DCIR support with 500ms minimum pulse width",
+        "pack-oriented CCCV and CR workflows",
+        "parallel-channel note and pulse disable boundary"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/neware_bts4000_100v60a_1ch_datasheet.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "This is the high-power Neware option in the repository and is suited to single-channel pack or module work rather than high-throughput screening.",
+        "Treat the 500 ms minimum pulse width and the pulse-disabled parallel mode as hard constraints when answering method-suitability questions."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "neware_bts4000_5v6a_8ch_datasheet",
+      "equipment_type": "battery_tester_hardware_datasheet",
+      "manufacturer": "Neware",
+      "model": "BTS4000-5V6A-8CH",
+      "source_file": "BTS4000-5V6A-8CH.pdf",
+      "coverage": [
+        "eight-channel low-voltage cell-testing capability",
+        "5V and 6A per-channel operating envelope",
+        "30W per-channel power limit",
+        "pulse and DCIR support with 500ms minimum pulse width",
+        "small-cell and throughput-oriented ageing suitability"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/neware_bts4000_5v6a_8ch_datasheet.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "This is the low-voltage, multi-channel Neware option and is better for throughput and small-cell workflows than for high-power tests.",
+        "Treat the 5V ceiling, 6A ceiling, and 30W per-channel limit together when judging suitability."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "neware_ct4008_5v30a_na_datasheet",
+      "equipment_type": "battery_tester_hardware_datasheet",
+      "manufacturer": "Neware",
+      "model": "CT-4008-5V30A-NA",
+      "source_file": "CT-4008-5V30A-NA-Spec.pdf",
+      "coverage": [
+        "eight-channel medium-to-high-current single-cell testing capability",
+        "5V and 30A per-channel operating envelope",
+        "150W per-channel power limit",
+        "pulse workflows with 500ms minimum pulse width",
+        "higher-current single-cell suitability compared with 5V6A systems"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/neware_ct4008_5v30a_na_datasheet.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "This unit fills the middle ground between the low-current 5V6A rack and the high-voltage 100V60A single-channel tester.",
+        "Treat the 5V ceiling, 30A current range, and 150W per-channel rating as the primary planning limits."
+      ],
+      "page_spans_used": [
+        "pp. 1-2"
+      ]
+    },
+    {
+      "asset_id": "binder_lit_mk_battery_test_chamber_manual",
+      "equipment_type": "battery_test_chamber_manual",
+      "manufacturer": "BINDER",
+      "model": "LIT MK 240 / LIT MK 720 battery test chambers",
+      "source_file": "Thermal chamber manual.pdf",
+      "coverage": [
+        "model scope and variants for LIT MK 240 and LIT MK 720",
+        "temperature envelope, ramp rates, and unloaded-chamber technical data",
+        "EUCAR hazard-level boundaries for cells, modules, and systems",
+        "defined-load limits for EUCAR 4 to 6 operation",
+        "gas detection, CO2 fire suppression, pressure relief, and inertization interfaces",
+        "MB2 controller workflow and safety-controller behavior",
+        "operator responsibilities, SOP expectations, and logbook requirements",
+        "installation-site and ambient-condition limits"
+      ],
+      "extraction_status": "structured_summary_created__safety_and_operating_boundary_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/binder_lit_mk_battery_test_chamber_manual.md",
+      "source_storage": "user_supplied_pdf_not_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "preflight_qa",
+        "research_assistant"
+      ],
+      "notes": [
+        "This is not just a generic thermal-chamber manual; it is a battery-test-chamber safety and operating manual.",
+        "Use it to answer whether the chamber is suitable for battery ageing or thermal testing under specific EUCAR and sample-load assumptions.",
+        "Do not treat the chamber as explosion-protected; the manual explicitly excludes EUCAR hazard level 7."
+      ],
+      "page_spans_used": [
+        "pp. 16-22",
+        "pp. 27-32",
+        "pp. 41-45",
+        "pp. 49-50",
+        "pp. 55-83",
+        "pp. 155-156"
+      ]
+    },
+    {
+      "asset_id": "arbin_hps_series_brochure",
+      "equipment_type": "battery_tester_hardware_datasheet",
+      "manufacturer": "Arbin",
+      "model": "HPS Series",
+      "source_file": "Arbin-HPS_Brochure_-NL_US.pdf",
+      "coverage": [
+        "ultra-high precision up to 10ppm",
+        "sub-milliamp current ranges down to 100µA",
+        "early degradation signature capability",
+        "real-time IR and Coulombic Efficiency metrics mapping",
+        "-6 to 6V operation boundary"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/arbin_hps_series_brochure.md",
+      "source_storage": "user_supplied_pdf_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "This is an Ultra-High Precision Coulometry (HPC) unit.",
+        "Use this for checking precision claims against long-term, low-current degradation tests."
+      ],
+      "page_spans_used": ["pp. 1-4"]
+    },
+    {
+      "asset_id": "arbin_lbts_series_brochure",
+      "equipment_type": "battery_tester_hardware_datasheet",
+      "manufacturer": "Arbin",
+      "model": "LBTS Series",
+      "source_file": "Arbin-LBTS_Brochure_rev12.pdf",
+      "coverage": [
+        "100ppm measurement precision across four current ranges",
+        "0 to 5V working envelope natively scalable to 6V",
+        "high-current modules handling 50A to 300A with massive parallelization up to 1200A",
+        "true bipolar circuitry for cross-zero linearity in dynamic pulses",
+        "scalable lab cell-testing operations"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/arbin_lbts_series_brochure.md",
+      "source_storage": "user_supplied_pdf_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "Use this for general purpose, high-power cycling constraints.",
+        "Zero-switch delay makes this ideal for confirming execution viability of rapid rest/pulse HPPC waveforms."
+      ],
+      "page_spans_used": ["pp. 1-4"]
+    },
+    {
+      "asset_id": "arbin_rbt_cell_brochure",
+      "equipment_type": "battery_tester_hardware_datasheet",
+      "manufacturer": "Arbin",
+      "model": "RBT-Cell Series",
+      "source_file": "Arbin_RBT-Cell_Brochure_rev05.pdf",
+      "coverage": [
+        "high-current module/pack regenerative design limits",
+        "base boundaries up to 2-20V limits",
+        "85% regenerative energy recapture to the facility grid",
+        "up to 64 channels per rack spanning up to 1600A fully parallelized"
+      ],
+      "extraction_status": "structured_summary_created__hardware_capability_focus",
+      "structured_summary_path": "data/reference/equipment_manuals/summaries/arbin_rbt_cell_brochure.md",
+      "source_storage": "user_supplied_pdf_stored_in_repo",
+      "system_targets": [
+        "equipment_manual_index",
+        "protocol_agent",
+        "analysis_specialist",
+        "research_assistant"
+      ],
+      "notes": [
+        "Highly optimized for extreme current draw validation and life-cycling large packs securely and sustainably."
+      ],
+      "page_spans_used": ["pp. 1-4"]
+    }
+  ],
+  "required_fields": [
+    "asset_id",
+    "equipment_type",
+    "manufacturer",
+    "model",
+    "source_file",
+    "coverage",
+    "extraction_status",
+    "structured_summary_path"
+  ],
+  "notes": [
+    "Store the raw PDF in this folder or a child folder and reference it from source_file.",
+    "Coverage should capture what the manual can support, for example current limits, sampling constraints, triggers, or safety interlocks."
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "version": "0.1",
+  "positioning": {
+    "system_shape": "asset_first_workflow_engine_with_graph_shaped_decision_layers",
+    "not_yet": "full_knowledge_graph_platform",
+    "target": "explicit_typed_battery_decision_graph"
+  },
+  "relation_classes": {
+    "structural": {
+      "summary": "Composition or membership relations used to assemble methods, checkpoints, and workflow blocks.",
+      "example_relations": [
+        "method -> includes -> step",
+        "cycle_life -> includes -> core_rpt_set",
+        "checkpoint_template -> includes -> extension_test",
+        "workflow -> depends_on -> asset_family"
+      ]
+    },
+    "normative_constraint": {
+      "summary": "Requirements, limits, approvals, defaults, and planning bounds used to decide whether a plan is valid or blocked.",
+      "example_relations": [
+        "objective -> requires -> minimum_module_set",
+        "cell -> constrained_by -> datasheet_or_formal_catalog_record",
+        "equipment -> approved_for -> test_family",
+        "lab_sop -> overrides -> source_example_default"
+      ]
+    },
+    "evidentiary": {
+      "summary": "Traceability and support relations connecting claims, steps, and interpretations to documentary evidence.",
+      "example_relations": [
+        "method -> sourced_by -> handbook_source",
+        "method_step -> supported_by -> evidence_card",
+        "claim -> supported_by -> literature_evidence_card"
+      ]
+    },
+    "governance_lifecycle": {
+      "summary": "Approval, promotion, review, and eligibility relations used to decide draft versus governed planning scope.",
+      "example_relations": [
+        "uploaded_datasheet -> promoted_to -> provisional_asset",
+        "manual_asset -> approved_by -> reviewer",
+        "asset -> has_approval_state -> formal"
+      ]
+    }
+  },
+  "authority_and_precedence": {
+    "summary": "Recommended source-of-truth precedence when multiple constraint layers overlap.",
+    "principles": [
+      "Formal reviewed cell constraints take priority over chemistry defaults.",
+      "Approved datasheet constraints take priority over generic method examples.",
+      "Lab SOP and approved guidance take priority over handbook example defaults.",
+      "Approved project-specific deviation takes priority over default planning templates.",
+      "Handbook chapters and research literature are treated as equal-level domain authorities. They are merged to form unified test protocols.",
+      "Provisional assets may support draft planning, but should not automatically enable execution-ready planning."
+    ]
+  },
+  "shared_relation_schema": {
+    "required_fields": [
+      "node_type",
+      "relation_type",
+      "relation_class",
+      "applicability_scope",
+      "requirement_strength",
+      "evidence_source",
+      "confidence",
+      "approval_state",
+      "conflict_state"
+    ],
+    "authority_and_precedence_hooks": [
+      "source_priority",
+      "superseded_by",
+      "overridden_by",
+      "review_required"
+    ]
+  },
+  "applicability_semantics": {
+    "summary": "Relations should be treated as condition-bound by default rather than universally true.",
+    "recommended_fields": [
+      "applicable_when",
+      "not_applicable_when",
+      "stage_specific_applicability",
+      "chemistry_specific_applicability",
+      "execution_mode_applicability",
+      "review_triggering_applicability"
+    ]
+  },
+  "requirement_strength_levels": [
+    "mandatory",
+    "default",
+    "recommended",
+    "optional",
+    "prohibited"
+  ],
+  "conflict_representation": {
+    "minimum_fields": [
+      "conflict_with",
+      "superseded_by",
+      "overridden_by",
+      "review_required",
+      "source_priority",
+      "confidence"
+    ]
+  },
+  "diagnostic_interpretation_semantics": {
+    "preferred_chain": [
+      "diagnostic -> measures -> observable",
+      "observable -> supports_interpretation_of -> interpretation",
+      "interpretation -> may_be_consistent_with -> mechanism",
+      "mechanism_or_risk -> motivates -> mitigation_or_follow_up_diagnostic"
+    ],
+    "avoid_shortcut": "observable -> indicates -> mechanism"
+  },
+  "target_entity_families": [
+    "cell",
+    "chemistry",
+    "objective",
+    "method",
+    "method_block",
+    "checkpoint_bundle",
+    "diagnostic_extension",
+    "equipment",
+    "safety_constraint",
+    "observable",
+    "interpretation",
+    "degradation_mechanism",
+    "evidence_source",
+    "decision_policy",
+    "review_gate",
+    "approval_role",
+    "release_state",
+    "deviation_record"
+  ],
+  "target_relation_families": [
+    "valid_for",
+    "requires",
+    "includes",
+    "extends",
+    "constrained_by",
+    "approved_for",
+    "measures",
+    "supports_interpretation_of",
+    "may_be_consistent_with",
+    "mitigates",
+    "supported_by",
+    "overridden_by_lab_sop",
+    "review_required_by",
+    "permits",
+    "blocks",
+    "superseded_by"
+  ],
+  "decision_objects": [
+    "draft_plan",
+    "execution_ready_plan",
+    "blocked_plan",
+    "review_gate",
+    "approval_role",
+    "deviation_record",
+    "release_state"
+  ]
+}

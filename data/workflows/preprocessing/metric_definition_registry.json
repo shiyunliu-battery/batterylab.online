@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "status": "scaffold",
+  "canonical_schema_version": "battery_timeseries_v1",
+  "metrics": [
+    {
+      "id": "capacity_retention_pct",
+      "status": "planned",
+      "applicable_workflows": [
+        "cycle_life"
+      ],
+      "required_fields": [
+        "cycle_index",
+        "discharge_capacity_ah"
+      ],
+      "description": "Capacity retention relative to the chosen reference cycle."
+    },
+    {
+      "id": "average_coulombic_efficiency_pct",
+      "status": "planned",
+      "applicable_workflows": [
+        "cycle_life",
+        "rate_capability"
+      ],
+      "required_fields": [
+        "cycle_index",
+        "charge_capacity_ah",
+        "discharge_capacity_ah"
+      ],
+      "description": "Average coulombic efficiency over the valid analysis window."
+    },
+    {
+      "id": "dcir_delta_mohm",
+      "status": "planned",
+      "applicable_workflows": [
+        "hppc",
+        "pulse_test"
+      ],
+      "required_fields": [
+        "cycle_index",
+        "dcir_mohm"
+      ],
+      "description": "Change in DCIR across the selected analysis window."
+    },
+    {
+      "id": "peak_temperature_c",
+      "status": "planned",
+      "applicable_workflows": [
+        "cycle_life",
+        "hppc",
+        "rate_capability"
+      ],
+      "required_fields": [
+        "temperature_c"
+      ],
+      "description": "Maximum observed temperature over the analysis window."
+    }
+  ],
+  "required_fields": [
+    "id",
+    "status",
+    "applicable_workflows",
+    "required_fields",
+    "description"
+  ]
+}

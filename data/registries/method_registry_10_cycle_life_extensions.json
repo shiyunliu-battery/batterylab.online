@@ -1,0 +1,354 @@
+{
+  "cycle_life": {
+    "label": "Cycle Life Test",
+    "currently_supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells_with_reviewed_voltage_temperature_and_profile_limits"
+    ],
+    "method_status": "structured_method",
+    "execution_readiness": "planner_ready_review_required",
+    "human_review_required": true,
+    "optional_inputs": [
+      "thermal_chamber",
+      "target_end_of_life_soh_percent",
+      "throughput_block_size",
+      "breakpoint_basis",
+      "breakpoint_interval",
+      "checkpoint_extension_selection",
+      "replicate_count"
+    ],
+    "source_example_defaults": {
+      "cycle_block_example_cycles": [
+        50,
+        125
+      ],
+      "elapsed_time_example_days": [
+        14,
+        28
+      ],
+      "reference_temperature_example_c": "30 +/- 3",
+      "selected_breakpoint_extension_examples": [
+        "electrochemical_impedance_test",
+        "soc_ocv"
+      ]
+    },
+    "complementary_literature_source_ids": [
+      "roman_ramirez_2022_doe_review",
+      "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "data_acquisition": [
+      "Use a logging cadence that preserves the ageing profile, reference checks, and temperature excursions.",
+      "Store reference performance test outputs against equivalent cycle count or Ah throughput.",
+      "Keep breakpoint metadata explicit so each RPT can be linked back to the preceding ageing block."
+    ],
+    "planner_notes": [
+      "The white paper defines a DOE-style framework rather than one single executable protocol. The plan must be finalized per project.",
+      "Keep the RPT stack short enough that the check-up itself does not dominate degradation."
+    ],
+    "campaign_framework": {
+      "campaign_type": "ageing_cycle_life",
+      "summary": "Keep the handbook cycle-life flow as the execution spine, then use DOE literature to narrow hard-to-change factors and use breakpoint diagnostics only where they add real value.",
+      "design_guidance_card_ids": [
+        "roman_ramirez_2022_doe_overview",
+        "roman_ramirez_2022_screening_designs",
+        "roman_ramirez_2022_future_opportunities",
+        "naylor_marlow_2024_experimental_sequence"
+      ],
+      "hard_to_change_factors": [
+        "temperature set",
+        "voltage window",
+        "ageing profile family",
+        "fixture and measurement discipline"
+      ],
+      "tailorable_factors": [
+        "throughput block size",
+        "RPT cadence",
+        "selected intermediate diagnostics",
+        "end-of-life threshold"
+      ],
+      "recommended_sequence": [
+        "Lock the application-relevant stressor family before varying fast knobs.",
+        "Run baseline reference tests before the first ageing block.",
+        "Age in repeated blocks and stop only at explicit checkpoints for RPTs.",
+        "Escalate to impedance or slow-curve diagnostics only at selected breakpoints or end of life."
+      ],
+      "replicate_guidance": "Use at least two cells per condition when the campaign is comparative, and tighten start-of-life matching if pack or parallel-string effects matter.",
+      "default_breakpoint_examples": [
+        "Every 50-125 cycles or equivalent throughput block",
+        "Every 14-28 days when time-based interruption is more practical",
+        "EIS or slow-curve diagnostics at beginning, selected middle checkpoints, and end of life"
+      ],
+      "stop_criteria_options": [
+        "Capacity or energy SOH at or below 80%",
+        "Resistance or power threshold reached",
+        "Maximum cycle count or elapsed duration reached",
+        "Mechanical or safety-related degradation observed"
+      ]
+    },
+    "reference_check_policy": {
+      "summary": "Baseline and periodic RPTs remain mandatory. Keep the core reference set stable, and add heavier diagnostics only at selected breakpoints where mechanism attribution justifies the interruption cost.",
+      "baseline_required": true,
+      "intermediate_checkups_required": true,
+      "rpt_cadence_mode": {
+        "default_mode": "fixed_cycle_block",
+        "supported_modes": [
+          "fixed_cycle_block",
+          "ah_throughput_block",
+          "fixed_elapsed_time",
+          "condition_based_capacity_loss"
+        ],
+        "selection_note": "Use a stable core RPT bundle at every checkpoint. Reserve impedance and slow-curve extensions for selected breakpoints or end of life."
+      },
+      "reference_temperature_c": {
+        "nominal": 30.0,
+        "tolerance_c": 3.0,
+        "value_role": "source_example_default",
+        "restart_requirement": "Return to the reference temperature before each RPT and wait for thermal equilibrium before the first check-up measurement."
+      },
+      "timing_basis_options": [
+        "cycle_block",
+        "equivalent_full_cycles",
+        "Ah_throughput",
+        "elapsed_time"
+      ],
+      "default_breakpoint_examples": [
+        "Baseline before the first ageing block",
+        "Repeat the core RPT every 50-125 cycles or equivalent throughput block",
+        "Reserve impedance and slow-curve extensions for selected checkpoints and end of life"
+      ],
+      "core_rpt_set": {
+        "bundle_id": "cycle_life_core_rpt",
+        "label": "Cycle-life core RPT set",
+        "summary": "Track the minimum ageing observables that stay stable over the full campaign by using the same reference stack at baseline, intermediate checkpoints, and end of life.",
+        "source_method_ids": [
+          "standard_cycle",
+          "capacity_test",
+          "pulse_hppc"
+        ],
+        "mandatory_at": [
+          "baseline",
+          "intermediate",
+          "end_of_life"
+        ],
+        "target_observables": [
+          "reference capacity",
+          "reference resistance / power capability",
+          "temperature context during the check-up"
+        ],
+        "derived_observables": [
+          "capacity-fade trajectory",
+          "resistance-growth trajectory",
+          "power-capability loss"
+        ],
+        "default_strictness": "core_handbook_locked",
+        "complementary_literature_card_ids": [
+          "barai_2019_method_selection_framework",
+          "barai_2019_capacity_test_theory",
+          "barai_2019_pulse_hppc_theory",
+          "naylor_marlow_2024_experimental_sequence",
+          "naylor_marlow_2024_pack_protocol_breakpoints",
+          "naylor_marlow_2024_current_split_soc_deficit"
+        ],
+        "step_bundle": [
+          {
+            "order": 1,
+            "action": "return_to_reference_temperature",
+            "details": "Return the cell to the declared RPT reference temperature and wait for thermal equilibrium before the first measurement step.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 2,
+            "action": "run_standard_cycle",
+            "method_id": "standard_cycle",
+            "details": "Run the standard cycle reference block to reset the comparison state before the capacity and pulse checks.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 3,
+            "action": "run_capacity_test",
+            "method_id": "capacity_test",
+            "details": "Run the reference capacity test at the declared check-up condition.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 4,
+            "action": "run_pulse_hppc",
+            "method_id": "pulse_hppc",
+            "details": "Run the pulse / HPPC block to capture resistance and power-capability drift.",
+            "strictness": "core_handbook_locked"
+          }
+        ]
+      },
+      "checkpoint_extension_tests": [
+        {
+          "extension_id": "impedance_extension",
+          "label": "Impedance extension",
+          "summary": "Add frequency-resolved resistance information at selected checkpoints when mechanism attribution matters.",
+          "method_ids": [
+            "electrochemical_impedance_test"
+          ],
+          "trigger_at": [
+            "selected_breakpoints",
+            "end_of_life"
+          ],
+          "default_strictness": "tailorable_after_review",
+          "complementary_literature_card_ids": [
+            "naylor_marlow_2024_multimodal_diagnostics_stack",
+            "barai_2019_eis_ecm_theory"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_impedance_extension",
+              "method_id": "electrochemical_impedance_test",
+              "details": "Run the impedance block only at selected checkpoints or end of life after the core RPT bundle is complete.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        },
+        {
+          "extension_id": "slow_curve_extension",
+          "label": "Slow-curve extension",
+          "summary": "Capture OCV- and ICA-ready traces only when additional degradation-mode evidence is needed.",
+          "method_ids": [
+            "soc_ocv"
+          ],
+          "trigger_at": [
+            "selected_breakpoints"
+          ],
+          "default_strictness": "tailorable_after_review",
+          "complementary_literature_card_ids": [
+            "barai_2019_ocv_gitt_pseudoocv_foundations",
+            "naylor_marlow_2024_multimodal_diagnostics_stack"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_slow_curve_extension",
+              "method_id": "soc_ocv",
+              "details": "Run the slow-curve extension only at selected checkpoints when OCV or ICA evidence is needed for attribution.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        }
+      ],
+      "checkpoint_templates": [
+        {
+          "template_id": "baseline_checkpoint",
+          "label": "Baseline cycle-life checkpoint",
+          "trigger": "Before the first ageing block",
+          "step_bundle": [
+            {
+              "order": 1,
+              "bundle_id": "cycle_life_core_rpt",
+              "details": "Run the full core RPT bundle before any ageing block begins.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        },
+        {
+          "template_id": "intermediate_checkpoint",
+          "label": "Intermediate cycle-life checkpoint",
+          "trigger": "At the declared cycle, throughput, or elapsed-time breakpoint",
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "pause_ageing_after_declared_block",
+              "details": "Pause the ageing loop only at the declared breakpoint and capture the preceding block metadata.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "bundle_id": "cycle_life_core_rpt",
+              "details": "Run the locked core RPT bundle first at every intermediate checkpoint.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 3,
+              "extension_id": "impedance_extension",
+              "details": "Add the impedance extension only at selected breakpoints or when the review plan explicitly calls for it.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 4,
+              "extension_id": "slow_curve_extension",
+              "details": "Add the slow-curve extension only when extra degradation-mode evidence is needed.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 5,
+              "action": "resume_ageing_if_release_criteria_hold",
+              "details": "Resume the ageing loop only after the checkpoint results are reviewed against the continue or stop criteria.",
+              "strictness": "framework_after_review"
+            }
+          ]
+        },
+        {
+          "template_id": "end_of_life_checkpoint",
+          "label": "End-of-life cycle-life checkpoint",
+          "trigger": "When the stop criterion is reached",
+          "step_bundle": [
+            {
+              "order": 1,
+              "bundle_id": "cycle_life_core_rpt",
+              "details": "Run the core RPT bundle one final time at the declared end-of-life threshold.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "extension_id": "impedance_extension",
+              "details": "Add the impedance extension to strengthen end-of-life attribution.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 3,
+              "extension_id": "slow_curve_extension",
+              "details": "Add the slow-curve extension if OCV or ICA evidence is part of the reviewed end-of-life package.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 4,
+              "action": "finalize_end_of_life_release",
+              "details": "Close the campaign with the reviewed end-of-life report, stop reason, and diagnostic bundle summary.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        }
+      ],
+      "rpt_blocks": [
+        {
+          "rpt_source": "core_rpt_set",
+          "bundle_ref": "cycle_life_core_rpt",
+          "mandatory_at": [
+            "baseline",
+            "intermediate",
+            "end_of_life"
+          ]
+        },
+        {
+          "rpt_source": "checkpoint_extension_tests",
+          "extension_ref": "impedance_extension",
+          "mandatory_at": [
+            "selected_breakpoints",
+            "end_of_life"
+          ]
+        },
+        {
+          "rpt_source": "checkpoint_extension_tests",
+          "extension_ref": "slow_curve_extension",
+          "mandatory_at": [
+            "selected_breakpoints"
+          ]
+        }
+      ]
+    },
+    "objective_key": "cycle_life",
+    "source_title": "Unknown source",
+    "source_pages": null
+  }
+}

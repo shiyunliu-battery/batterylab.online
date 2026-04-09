@@ -1,0 +1,100 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "sources": [
+    {
+      "source_id": "battery_understanding_v3_ageing_drive_cycle",
+      "method_id": "ageing_drive_cycle",
+      "title": "Drive cycle",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "ageing_effects__drive_cycle",
+      "chapter_file": "data/reference/knowledge/summaries/ageing_drive_cycle.md",
+      "start_page": 54,
+      "end_page": 57,
+      "citation_ieee": "[M14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drive cycle,\" White Paper, 2018, pp. 54-57.",
+      "linked_reference_markdown": "[M14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drive cycle,\" White Paper, 2018, pp. 54-57.",
+      "complementary_literature_source_ids": [
+        "roman_ramirez_2022_doe_review",
+        "naylor_marlow_2024_parallel_pack_thermal_gradients",
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the core execution frame for drive-cycle ageing campaigns.",
+        "Use literature to shape breakpoint cadence and diagnostic stack, not to remove the initial-check-up and checkpoint loop."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/ageing_drive_cycle.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_calendar_ageing_test",
+      "method_id": "calendar_ageing_test",
+      "title": "Calendar ageing test (battery under rest)",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "ageing_effects__calendar_ageing_test_battery_under_rest",
+      "chapter_file": "data/reference/knowledge/summaries/calendar_ageing_test.md",
+      "start_page": 58,
+      "end_page": 61,
+      "citation_ieee": "[M15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Calendar ageing test (battery under rest),\" White Paper, 2018, pp. 58-61.",
+      "linked_reference_markdown": "[M15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Calendar ageing test (battery under rest),\" White Paper, 2018, pp. 58-61.",
+      "complementary_literature_source_ids": [
+        "roman_ramirez_2022_doe_review",
+        "naylor_marlow_2024_parallel_pack_thermal_gradients",
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the primary execution reference for SOC-temperature storage loops with periodic 25 C check-ups.",
+        "Use literature to rationalize matrix breadth and selected extra diagnostics, not to remove the fixed storage-check-up loop."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/calendar_ageing_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_constant_voltage_ageing",
+      "method_id": "constant_voltage_ageing",
+      "title": "Constant voltage test (battery maintained at a certain voltage)",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "ageing_effects__constant_voltage_test_battery_maintained_at_a_certain_voltage",
+      "chapter_file": "data/reference/knowledge/summaries/constant_voltage_ageing.md",
+      "start_page": 62,
+      "end_page": 62,
+      "citation_ieee": "[M16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Constant voltage test (battery maintained at a certain voltage),\" White Paper, 2018, p. 62.",
+      "linked_reference_markdown": "[M16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Constant voltage test (battery maintained at a certain voltage),\" White Paper, 2018, p. 62.",
+      "complementary_literature_source_ids": [
+        "roman_ramirez_2022_doe_review",
+        "naylor_marlow_2024_parallel_pack_thermal_gradients",
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "The extracted chapter is outline-only and does not provide an executable procedure.",
+        "Use this source only as a placeholder until a reviewed SOP or stronger literature-backed procedure is attached."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/constant_voltage_ageing.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_parallel_pack_thermal_gradient_ageing",
+      "method_id": "parallel_pack_thermal_gradient_ageing",
+      "chapter_id": "parallel_pack_thermal_gradient_ageing",
+      "title": "Parallel-Pack Thermal Gradient Ageing",
+      "source_type": "literature_synthesis",
+      "source_role": "primary_protocol_reference",
+      "label": "Parallel-Pack Thermal Gradient Ageing",
+      "primary_reference": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "chapter_file": "data/reference/knowledge/summaries/parallel_pack_thermal_gradient_ageing.md",
+      "summary_path": "data/reference/knowledge/summaries/parallel_pack_thermal_gradient_ageing.md",
+      "ieee_citation": "M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+      "citation_ieee": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+      "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+      "ingestion_notes": [
+        "Synthesized planning note grounded in the Naylor Marlow et al. (2024) article and supplementary information.",
+        "Use this source as the planning-ready method summary while keeping the cited article as the primary evidence basis."
+      ]
+    }
+  ]
+}

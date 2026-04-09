@@ -1,0 +1,106 @@
+{
+  "general": [
+    "Confirm chamber interlock, exhaust path, and emergency stop status.",
+    "Verify cell identifiers, mass, and thermocouple mapping before energizing channels.",
+    "Check current and voltage setpoints against hardware limits before release.",
+    "Confirm raw data naming pattern, operator, and timestamp metadata.",
+    "Default lab SOP: abort any energized test if the measured cell surface temperature reaches 60 C unless a reviewed deviation explicitly overrides this limit."
+  ],
+  "cycle_life": [
+    "Make sure end-of-charge cutoff current is defined for every charge step.",
+    "Insert reference checks or DCIR checks at a documented cadence.",
+    "Confirm stop conditions for temperature excursion and over-voltage."
+  ],
+  "hppc": [
+    "Confirm rest time is long enough to approximate pseudo-OCV before each pulse block.",
+    "Confirm pulse amplitude and duration are within channel headroom.",
+    "Verify the SOC staircase definition before starting the test."
+  ],
+  "rate_capability": [
+    "Confirm the high-rate step does not exceed chemistry guidance or cable limits.",
+    "Add a recovery step after the most aggressive rate block.",
+    "Confirm temperature logging remains active through the full ladder."
+  ],
+  "soc_ocv": [
+    "Keep the slow-rate profile at C/25 unless a reviewed deviation is approved.",
+    "Confirm long rest segments if OCV relaxation or EMF reconstruction is required.",
+    "Verify the low-rate logging settings before release so ICA and DVA remain usable."
+  ],
+  "performance": [
+    "Confirm all measurement channels are active before beginning the multi-method performance campaign.",
+    "Verify the capacity, pulse, and rate-capability instrument setpoints before the first step.",
+    "Confirm the rest and logging cadence supports both current and subsequent analysis steps."
+  ],
+  "calendar_ageing": [
+    "Confirm the target SOC and storage temperature are within the approved safety envelope.",
+    "Verify the chamber set-point stability and logging is active during the full storage block.",
+    "Confirm the residual-discharge rule and return-to-25-C hold are documented before the first storage block.",
+    "Define the irreversible-capacity-loss trigger and maximum storage interval before release."
+  ],
+  "soh_modeling": [
+    "Confirm the baseline RPT bundle is complete before any SOH-training cycling begins.",
+    "Verify that degradation-label definitions and checkpoint cadence are locked in the test plan.",
+    "Confirm temperature-linked metadata logging is active throughout the campaign."
+  ],
+  "eis": [
+    "Confirm the EIS instrument (FRA) is connected in four-wire Kelvin configuration and leads are minimised.",
+    "Verify the AC amplitude is set to 5 mV rms or below for battery measurement to stay in the linear regime.",
+    "Confirm the cell is at open-circuit condition and thermally stabilised before each spectrum acquisition.",
+    "Do not disconnect the cell between the rest step and the EIS scan to avoid contact-resistance artefacts.",
+    "Confirm the frequency range and points-per-decade setting are logged for each spectrum."
+  ],
+  "thermal_characterisation": [
+    "Confirm the thermal fixture (pseudo-adiabatic enclosure or thermostated plate) is calibrated before the test.",
+    "Verify thermocouple placement covers both the hottest region and the reference cell-surface point.",
+    "Confirm infrared or contact sensors are active before energising the cell.",
+    "Track any ambient temperature fluctuation during the pseudo-adiabatic measurement as it directly affects results."
+  ],
+  "ageing_drive_cycle": [
+    "Confirm the drive-cycle profile file is validated and loaded correctly before the first ageing block.",
+    "Verify the total current and power envelope is within equipment rating for the entire profile range.",
+    "Confirm the checkpoint RPT cadence and continue-or-stop decision rules are documented before release.",
+    "Confirm the EUCAR hazard level and chamber load envelope are acceptable for the aged cell state at each checkpoint."
+  ],
+  "constant_power_discharge": [
+    "Confirm the selected constant-power level is within the instrument's per-channel power rating.",
+    "Verify temperature logging is active; constant-power discharge can produce higher heating than constant-current.",
+    "Confirm cut-off voltage is set so the power load does not force the cell below Vmin."
+  ],
+  "preconditioning": [
+    "Confirm the preconditioning cycling rate matches the manufacturer standard-cycle definition.",
+    "Verify the 2% capacity stability gate is logged against each cycle before the main test programme proceeds.",
+    "Do not exceed 10 cycles; flag cells that do not stabilise within 10 cycles for review before proceeding."
+  ],
+  "by_thermal_chamber": {
+    "binder_lit_mk": {
+      "aliases": [
+        "binder lit mk",
+        "lit mk 240",
+        "lit mk 720",
+        "binder_lit_mk_240",
+        "binder_lit_mk_720"
+      ],
+      "general": [
+        "If a BINDER LIT MK chamber is used, record the planned EUCAR hazard level before release.",
+        "If the planned work could reach EUCAR 4 to 6, confirm the test remains limited to individual cells rather than modules or systems.",
+        "Confirm the chamber defined-load rule unless an approved operator inertization or flushing setup is documented: LIT MK 240 = max one 18650 cell, LIT MK 720 = max three 18650 cells.",
+        "Confirm gas detection is active and fully initialized before the test starts.",
+        "Confirm CO2 suppression readiness, exhaust path, and any operator-provided inertization connection.",
+        "Confirm the safety-controller mode and offset/limit setting relative to the chamber setpoint."
+      ],
+      "cycle_life": [
+        "Confirm the chamber soak and controller setpoint are logged for the full ageing run.",
+        "Verify the planned cell count does not exceed the chamber's defined-load envelope for the selected hazard assumption."
+      ],
+      "hppc": [
+        "Confirm chamber stabilization before pulse blocks and check that the planned pulse severity is consistent with the chamber hazard envelope."
+      ],
+      "rate_capability": [
+        "Confirm the combined tester current and chamber thermal load remain acceptable through the most aggressive rate block."
+      ],
+      "soc_ocv": [
+        "Confirm long OCV rests are compatible with chamber stability and that gas-detection monitoring remains active during long holds."
+      ]
+    }
+  }
+}

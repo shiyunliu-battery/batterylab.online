@@ -1,0 +1,247 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "cards": [
+    {
+      "card_id": "battery_understanding_v3_preconditioning_test_scope",
+      "title": "Preconditioning scope and stabilization gate",
+      "source_id": "battery_understanding_v3_preconditioning_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M5]",
+        "style": "IEEE",
+        "ieee_reference": "[M5] \"Test methods for improved battery cell understanding,\" v3.0, \"Preconditioning test,\" p. 15.",
+        "title": "Preconditioning test",
+        "url": "",
+        "linked_reference_markdown": "[M5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 15.",
+        "supporting_pages": "p. 15"
+      },
+      "page_refs": [
+        "p. 15"
+      ],
+      "objective": [
+        "stabilization",
+        "incoming_screening"
+      ],
+      "methods": [
+        "preconditioning_test"
+      ],
+      "key_takeaways": [
+        "The chapter frames preconditioning as the start-of-programme stability gate for new cells.",
+        "Capacity stability is judged on repeated discharges rather than a single initial cycle."
+      ],
+      "limitations": [
+        "The chapter is short and assumes the standard-cycle block is already known."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Only manufacturer-specific rate details may be tailored after review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_preconditioning_test_execution",
+      "title": "Preconditioning execution block",
+      "source_id": "battery_understanding_v3_preconditioning_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M5]",
+        "style": "IEEE",
+        "ieee_reference": "[M5] \"Test methods for improved battery cell understanding,\" v3.0, \"Preconditioning test,\" p. 15.",
+        "title": "Preconditioning test",
+        "url": "",
+        "linked_reference_markdown": "[M5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 15.",
+        "supporting_pages": "p. 15"
+      },
+      "page_refs": [
+        "p. 15"
+      ],
+      "factors": [
+        "ambient stabilization",
+        "30 min rests",
+        "standard-cycle charge and discharge"
+      ],
+      "responses": [
+        "cycle-by-cycle discharge capacity",
+        "temperature trace"
+      ],
+      "key_takeaways": [
+        "The execution logic is charge-rest-discharge-rest repeated at least three times.",
+        "The cell temperature must remain within manufacturer limits during the repeated cycles."
+      ],
+      "limitations": [
+        "The chapter does not add extra chemistry-specific safety rules."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not remove the 30 min rest framing without an explicit review note."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_preconditioning_test_outputs",
+      "title": "Preconditioning stability decision",
+      "source_id": "battery_understanding_v3_preconditioning_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M5]",
+        "style": "IEEE",
+        "ieee_reference": "[M5] \"Test methods for improved battery cell understanding,\" v3.0, \"Preconditioning test,\" p. 15.",
+        "title": "Preconditioning test",
+        "url": "",
+        "linked_reference_markdown": "[M5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 15.",
+        "supporting_pages": "p. 15"
+      },
+      "page_refs": [
+        "p. 15"
+      ],
+      "responses": [
+        "capacity stability decision"
+      ],
+      "key_takeaways": [
+        "The stability gate is 2% change in subsequent discharge capacities.",
+        "The chapter allows extension to a maximum of 10 discharges if the cell is not yet stable."
+      ],
+      "limitations": [
+        "The chapter does not prescribe a richer reporting format beyond the stability decision."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Changing the 2% gate or 10-cycle cap requires an explicit deviation note."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_standard_cycle_scope",
+      "title": "Standard-cycle scope and planning role",
+      "source_id": "battery_understanding_v3_standard_cycle",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M6]",
+        "style": "IEEE",
+        "ieee_reference": "[M6] \"Test methods for improved battery cell understanding,\" v3.0, \"Standard cycle,\" pp. 16-17.",
+        "title": "Standard cycle",
+        "url": "",
+        "linked_reference_markdown": "[M6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 16-17.",
+        "supporting_pages": "pp. 16-17"
+      },
+      "page_refs": [
+        "pp. 16-17"
+      ],
+      "objective": [
+        "reference_capacity",
+        "ageing_checkup"
+      ],
+      "methods": [
+        "standard_cycle"
+      ],
+      "key_takeaways": [
+        "The chapter defines the reference cycle used to follow capacity over time.",
+        "It also explains when C1 logic should give way to datasheet It logic for declared-capacity tracking."
+      ],
+      "limitations": [
+        "The chapter assumes the user already understands the C1 versus It distinction."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Only the C1 versus It choice should move after review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_standard_cycle_execution",
+      "title": "Standard-cycle execution block",
+      "source_id": "battery_understanding_v3_standard_cycle",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M6]",
+        "style": "IEEE",
+        "ieee_reference": "[M6] \"Test methods for improved battery cell understanding,\" v3.0, \"Standard cycle,\" pp. 16-17.",
+        "title": "Standard cycle",
+        "url": "",
+        "linked_reference_markdown": "[M6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 16-17.",
+        "supporting_pages": "pp. 16-17"
+      },
+      "page_refs": [
+        "pp. 16-17"
+      ],
+      "factors": [
+        "25 +/- 2 C room temperature",
+        "CC-CV charge to C/25",
+        "reference discharge with CV completion"
+      ],
+      "responses": [
+        "reference capacity",
+        "charge / discharge voltage trace"
+      ],
+      "key_takeaways": [
+        "The execution flow is discharge, CC-CV charge, rest, discharge with CV completion, rest, then final recharge.",
+        "The chapter keeps the C/25 taper explicit in both charge and discharge logic."
+      ],
+      "limitations": [
+        "The chapter does not provide a universal rule for when It should replace C1; that still depends on the declared-capacity question."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not remove the CV completion or rest blocks without an explicit review note."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_standard_cycle_outputs",
+      "title": "Standard-cycle outputs",
+      "source_id": "battery_understanding_v3_standard_cycle",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M6]",
+        "style": "IEEE",
+        "ieee_reference": "[M6] \"Test methods for improved battery cell understanding,\" v3.0, \"Standard cycle,\" pp. 16-17.",
+        "title": "Standard cycle",
+        "url": "",
+        "linked_reference_markdown": "[M6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 16-17.",
+        "supporting_pages": "pp. 16-17"
+      },
+      "page_refs": [
+        "pp. 16-17"
+      ],
+      "responses": [
+        "reference capacity",
+        "follow-up capacity over life"
+      ],
+      "key_takeaways": [
+        "The chapter treats the standard cycle as a reference block for follow-up over the cell lifetime.",
+        "The output must preserve whether the reported result follows C1 capacity or datasheet-rated-capacity logic."
+      ],
+      "limitations": [
+        "The chapter does not itself define a full report template."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If the reporting label changes, preserve the actual execution logic that was used."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1541 @@
+{
+  "ageing_drive_cycle": {
+    "label": "Ageing drive cycle",
+    "default_for_objective": false,
+    "objective_key": "ageing_drive_cycle",
+    "aliases": [
+      "ageing drive cycle",
+      "drive cycle ageing",
+      "bev phev ageing profile"
+    ],
+    "chapter_id": "ageing_effects__drive_cycle",
+    "source_title": "Drive cycle",
+    "source_pages": [
+      54,
+      57
+    ],
+    "handbook_source_id": "battery_understanding_v3_ageing_drive_cycle",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_ageing_drive_cycle_scope",
+      "battery_understanding_v3_ageing_drive_cycle_execution",
+      "battery_understanding_v3_ageing_drive_cycle_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "roman_ramirez_2022_doe_review",
+      "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Age the cell under an application-like drive-cycle profile and interrupt the campaign at controlled checkpoints for reference characterization.",
+    "applications": [
+      "Accelerated ageing under BEV or PHEV-like duty cycles",
+      "Lifetime estimation and BMS-oriented degradation tracking"
+    ],
+    "currently_supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells_with_reviewed_voltage_temperature_and_profile_limits"
+    ],
+    "method_status": "structured_method",
+    "execution_readiness": "planner_ready_review_required",
+    "human_review_required": true,
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c",
+      "profile_family",
+      "soc_window",
+      "charge_regime",
+      "stop_criterion",
+      "block_basis"
+    ],
+    "conditional_required_inputs": [
+      {
+        "when": "block_basis = cycle_block",
+        "required": [
+          "cycle_count"
+        ],
+        "note": "Use cycle_count to declare how many drive-cycle repetitions belong in each ageing block before the next checkpoint."
+      },
+      {
+        "when": "block_basis = elapsed_time",
+        "required": [
+          "elapsed_time_block"
+        ],
+        "note": "Declare the reviewed elapsed-time block in hours or days when the campaign is interrupted on a time basis instead of a cycle basis."
+      }
+    ],
+    "optional_inputs": [
+      "thermal_chamber",
+      "target_end_of_life_soh_percent",
+      "capacity_fade_trigger_percent",
+      "checkpoint_extension_selection",
+      "replicate_count"
+    ],
+    "required_equipment": [
+      "Programmable battery cell tester or cycler capable of dynamic current or power profile replay",
+      "Temperature sensors",
+      "Temperature chamber"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 30,
+      "minimum_cycle_count": 100,
+      "default_block_basis": "cycle_block",
+      "run_length_field": "cycle_count"
+    },
+    "source_example_defaults": {
+      "cycle_block_example_cycles": 100,
+      "elapsed_time_block_example_days": [
+        14,
+        28
+      ],
+      "reference_temperature_example_c": "30 +/- 3",
+      "condition_based_capacity_loss_trigger_example_percent": 1.0
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 30,
+        "minimum_cycle_count": 100,
+        "default_block_basis": "cycle_block",
+        "run_length_field": "cycle_count"
+      },
+      "steps": [
+        {
+          "id": "select_profile_family",
+          "name": "Select profile family and window",
+          "details": "Choose the BEV or PHEV / HEV profile family, SOC window, charge regime, block basis, and target temperature before the first block starts.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_ageing_drive_cycle_execution",
+          "step_strictness": "framework_after_review"
+        },
+        {
+          "id": "initial_check_up",
+          "name": "Initial check-up",
+          "details": "Run the locked baseline reference checkpoint with the declared core RPT bundle before any drive-cycle ageing block begins.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_ageing_drive_cycle_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "ageing_block",
+          "name": "Drive-cycle ageing block",
+          "details": "Run the approved drive-cycle profile for {cycle_count} cycles when block_basis is cycle_block, or for the reviewed elapsed-time block when block_basis is elapsed_time, at the selected temperature and SOC window.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_ageing_drive_cycle_execution",
+          "step_strictness": "framework_after_review"
+        },
+        {
+          "id": "intermediate_characterization",
+          "name": "Intermediate characterization",
+          "details": "Interrupt the campaign only at declared checkpoints and run the core RPT bundle first, then add only the selected extension bundles needed for profile-following or impedance evidence.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_ageing_drive_cycle_execution",
+          "step_strictness": "tailorable_after_review"
+        },
+        {
+          "id": "continue_or_stop",
+          "name": "Continue or stop",
+          "details": "Continue ageing only if the checkpoint template confirms capacity, resistance, and any selected extension outputs remain inside the agreed stop envelope.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_ageing_drive_cycle_outputs",
+          "step_strictness": "framework_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Record the full drive-cycle current or power trace with temperature for every ageing block.",
+      "Version each breakpoint decision so the RPT results can be tied back to cycles, throughput, or elapsed days."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Capacity retention vs equivalent cycles or throughput",
+        "Resistance / power-capability drift vs checkpoint",
+        "Temperature trend during the drive-cycle blocks"
+      ],
+      "tables": [
+        "Drive-cycle ageing matrix",
+        "Checkpoint schedule",
+        "End-of-life decision summary"
+      ]
+    },
+    "planner_notes": [
+      "The chapter explicitly allows reduced intermediate characterization versus the initial check-up, but the reduced set still has to protect capacity, resistance, and power-capability tracking."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the initial check-up, repeated drive-cycle block, and checkpoint decision loop locked. The exact profile family, breakpoint cadence, and reduced-check-up scope remain review-controlled.",
+      "locked_planning_fields": [
+        "initial check-up before ageing",
+        "repeated drive-cycle ageing blocks",
+        "breakpoint characterization loop",
+        "explicit continue-or-stop decision"
+      ],
+      "tailorable_fields": [
+        "BEV versus PHEV / HEV profile choice",
+        "cycle-count versus time-based breakpoint cadence",
+        "reduced intermediate characterization scope",
+        "end-of-life threshold"
+      ],
+      "deviation_review_required": true
+    },
+    "campaign_framework": {
+      "campaign_type": "ageing_drive_cycle",
+      "summary": "Use the handbook drive-cycle ageing loop as the campaign spine, and use the DOE and periodic-breakpoint literature only to choose a manageable matrix and checkpoint cadence.",
+      "design_guidance_card_ids": [
+        "roman_ramirez_2022_doe_overview",
+        "roman_ramirez_2022_screening_designs",
+        "naylor_marlow_2024_experimental_sequence",
+        "naylor_marlow_2024_pack_protocol_breakpoints",
+        "tugraz_doe_notes_blocking_rcbd",
+        "tugraz_doe_notes_factorial_basics"
+      ],
+      "hard_to_change_factors": [
+        "profile family",
+        "temperature",
+        "SOC window",
+        "charging regime",
+        "fixture and sensor discipline"
+      ],
+      "tailorable_factors": [
+        "breakpoint cadence",
+        "reduced versus full intermediate check-up",
+        "final end-of-life threshold"
+      ],
+      "recommended_sequence": [
+        "Screen and pair cells if start-of-life mismatch could mask thermal or profile effects.",
+        "Freeze the drive-cycle family and temperature before fine-tuning soft factors.",
+        "Run a baseline RPT set before the first ageing block.",
+        "Age in repeated blocks and stop only at declared characterization checkpoints.",
+        "Escalate to heavier diagnostics at selected breakpoints or end of life."
+      ],
+      "replicate_guidance": "Use at least two cells per condition when the goal is comparative ageing, and tighten pairing if the campaign is later reused for pack or parallel-string inference.",
+      "default_breakpoint_examples": [
+        "Every 100 cycles when cycle-based control is practical",
+        "Every 14 or 28 days when time-based interruption is easier to manage",
+        "Final end-of-life diagnostic block after the main ageing threshold is crossed"
+      ],
+      "stop_criteria_options": [
+        "Capacity at or below 80% of the initial value",
+        "Resistance or power-capability threshold reached",
+        "Maximum cycle count or elapsed time reached",
+        "Bench availability or safety limit reached"
+      ]
+    },
+    "reference_check_policy": {
+      "summary": "Keep the initial check-up fixed, then use a reduced but still traceable intermediate RPT set so capacity, resistance, and power capability can be followed through the campaign.",
+      "baseline_required": true,
+      "intermediate_checkups_required": true,
+      "timing_basis_options": [
+        "cycle_block",
+        "elapsed_time",
+        "equivalent_full_cycles",
+        "capacity_fade"
+      ],
+      "rpt_cadence_mode": {
+        "default_mode": "fixed_cycle_block",
+        "supported_modes": [
+          "fixed_cycle_block",
+          "fixed_elapsed_time",
+          "condition_based_capacity_loss"
+        ],
+        "selection_rule": "Use fixed cycle blocks when the drive-cycle profile and bench schedule allow regular interruptions. Switch to fixed elapsed-time checkpoints when operational scheduling dominates. Bring the next checkpoint forward if the projected fade before the next planned interruption would hide the degradation trend the campaign needs to resolve.",
+        "condition_based_trigger": {
+          "metric": "capacity_fade_percent",
+          "example_threshold_percent": 1.0,
+          "review_required": true,
+          "action": "advance_next_checkpoint",
+          "note": "Treat the 1% loss trigger as a literature-backed high-resolution example rather than a universal default."
+        }
+      },
+      "reference_temperature_c": {
+        "nominal": 30.0,
+        "tolerance_c": 3.0,
+        "source_basis": "doe_usabc_life_test_style_reference",
+        "value_role": "source_backed_reference_example_not_universal_default",
+        "review_note": "If the lab standard is 25 C instead, declare that alternate reference explicitly and keep it unchanged across the full checkpoint series."
+      },
+      "default_breakpoint_examples": [
+        "Baseline before the first drive-cycle block",
+        "Every 100 cycles or every 14-28 days during ageing",
+        "Extended diagnostics at end of life"
+      ],
+      "core_rpt_set": {
+        "bundle_id": "drive_cycle_core_rpt",
+        "label": "Core drive-cycle RPT bundle",
+        "summary": "Run the same capacity-plus-pulse reference bundle at every baseline, intermediate, and end-of-life checkpoint so the ageing observables stay comparable across the campaign.",
+        "source_method_ids": [
+          "standard_cycle",
+          "capacity_test",
+          "pulse_hppc"
+        ],
+        "mandatory_at": [
+          "baseline",
+          "intermediate",
+          "end_of_life"
+        ],
+        "target_observables": [
+          "reference capacity",
+          "pulse resistance",
+          "power capability"
+        ],
+        "complementary_literature_card_ids": [
+          "barai_2019_method_selection_framework",
+          "barai_2019_capacity_test_theory",
+          "barai_2019_pulse_hppc_theory"
+        ],
+        "step_bundle": [
+          {
+            "order": 1,
+            "action": "stabilize_at_reference_temperature",
+            "details": "Return the cell to the declared reference temperature and allow thermal and electrochemical relaxation before the checkpoint data run.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 2,
+            "action": "run_method",
+            "method_id": "standard_cycle",
+            "details": "Run the standard reference cycle to anchor the checkpoint entry state before the core electrical tests.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 3,
+            "action": "run_method",
+            "method_id": "capacity_test",
+            "details": "Measure reference capacity and energy at the same checkpoint temperature.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 4,
+            "action": "run_method",
+            "method_id": "pulse_hppc",
+            "details": "Measure resistance and power capability without changing the composition of the core bundle.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 5,
+            "action": "checkpoint_decision",
+            "details": "Compare capacity and resistance drift against the stop rule before releasing the next ageing block.",
+            "strictness": "core_handbook_locked"
+          }
+        ]
+      },
+      "checkpoint_extension_tests": [
+        {
+          "extension_id": "profile_following_extension",
+          "label": "Profile-following extension",
+          "summary": "Check whether the aged cell still reproduces the chosen dynamic profile family at selected checkpoints.",
+          "method_ids": [
+            "dynamic_stress_test",
+            "drive_cycle_test"
+          ],
+          "trigger_at": [
+            "selected_breakpoints"
+          ],
+          "selection_rule": "Use this extension only at checkpoints tagged for application-fidelity evidence, not at every interruption.",
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_method",
+              "method_id": "dynamic_stress_test",
+              "details": "Run the reduced dynamic stress test first to verify transient-response drift at the checkpoint.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "run_method",
+              "method_id": "drive_cycle_test",
+              "details": "Replay the representative drive-cycle profile only when the checkpoint is designated for profile-following review.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        },
+        {
+          "extension_id": "impedance_extension",
+          "label": "Impedance extension",
+          "summary": "Add EIS only at selected checkpoints where the campaign needs mechanism attribution beyond the core RPT set.",
+          "method_ids": [
+            "electrochemical_impedance_test"
+          ],
+          "trigger_at": [
+            "selected_breakpoints",
+            "end_of_life"
+          ],
+          "selection_rule": "Reserve this extension for checkpoints where degradation-mode attribution or model handoff is worth the extra interruption time.",
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_method",
+              "method_id": "electrochemical_impedance_test",
+              "details": "Run EIS after the core RPT bundle so impedance drift can be interpreted against the same capacity and pulse baseline.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "extension_review",
+              "details": "Log whether the impedance result is only diagnostic context or a release criterion for the next ageing block.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        }
+      ],
+      "checkpoint_templates": [
+        {
+          "template_id": "drive_cycle_baseline_checkpoint",
+          "label": "Baseline reference checkpoint",
+          "applies_at": "baseline",
+          "trigger_rule": "Before the first ageing block starts.",
+          "bundle_ids": [
+            "drive_cycle_core_rpt"
+          ],
+          "extension_ids": [],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_bundle",
+              "bundle_id": "drive_cycle_core_rpt",
+              "details": "Execute the locked baseline bundle before any ageing exposure.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "action": "baseline_release_review",
+              "details": "Release the first drive-cycle block only after baseline QA and pairing checks are accepted.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        },
+        {
+          "template_id": "drive_cycle_intermediate_checkpoint",
+          "label": "Intermediate drive-cycle checkpoint",
+          "applies_at": "intermediate",
+          "trigger_rule": "Stop after the declared cycle or time block, or earlier if the reviewed capacity-loss trigger is hit.",
+          "bundle_ids": [
+            "drive_cycle_core_rpt"
+          ],
+          "extension_ids": [
+            "profile_following_extension",
+            "impedance_extension"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "pause_after_declared_ageing_block",
+              "details": "Pause only at declared checkpoints so the ageing block and follow-on RPT remain traceable.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "action": "run_bundle",
+              "bundle_id": "drive_cycle_core_rpt",
+              "details": "Run the unchanged core checkpoint bundle first.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 3,
+              "action": "conditionally_run_extension",
+              "extension_id": "profile_following_extension",
+              "details": "Run the dynamic-profile extension only at checkpoints tagged for profile-following evidence.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 4,
+              "action": "conditionally_run_extension",
+              "extension_id": "impedance_extension",
+              "details": "Add EIS only at selected checkpoints where mechanism attribution is worth the extra interruption.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 5,
+              "action": "continue_or_stop_decision",
+              "details": "Compare the checkpoint outputs against the stop rule and either restart the next ageing block or terminate the campaign.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        },
+        {
+          "template_id": "drive_cycle_end_of_life_checkpoint",
+          "label": "End-of-life checkpoint",
+          "applies_at": "end_of_life",
+          "trigger_rule": "Run when the stop criterion is crossed or the final campaign duration is reached.",
+          "bundle_ids": [
+            "drive_cycle_core_rpt"
+          ],
+          "extension_ids": [
+            "impedance_extension"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_bundle",
+              "bundle_id": "drive_cycle_core_rpt",
+              "details": "Run the final core checkpoint bundle at the locked reference temperature.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "action": "conditionally_run_extension",
+              "extension_id": "impedance_extension",
+              "details": "Run the final impedance extension if the campaign needs mechanism attribution or model handoff.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 3,
+              "action": "archive_end_of_life_state",
+              "details": "Freeze the final state with a released end-of-life decision summary and no further ageing restart.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        }
+      ],
+      "rpt_blocks": [
+        {
+          "rpt_id": "core_drive_cycle_checkup",
+          "label": "Core drive-cycle check-up",
+          "rpt_source": "core_rpt_set",
+          "bundle_ref": "drive_cycle_core_rpt",
+          "purpose": "Maintain the minimum observables the chapter explicitly calls out: capacity, resistance, and power capability."
+        },
+        {
+          "rpt_id": "profile_following_extension",
+          "rpt_source": "checkpoint_extension_tests",
+          "extension_ref": "profile_following_extension"
+        },
+        {
+          "rpt_id": "impedance_extension",
+          "rpt_source": "checkpoint_extension_tests",
+          "extension_ref": "impedance_extension"
+        }
+      ]
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "calendar_ageing_test": {
+    "label": "Calendar ageing test",
+    "default_for_objective": false,
+    "objective_key": "calendar_ageing",
+    "aliases": [
+      "calendar ageing",
+      "calendar ageing test",
+      "storage ageing"
+    ],
+    "chapter_id": "ageing_effects__calendar_ageing_test_battery_under_rest",
+    "source_title": "Calendar ageing test (battery under rest)",
+    "source_pages": [
+      58,
+      61
+    ],
+    "handbook_source_id": "battery_understanding_v3_calendar_ageing_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_calendar_ageing_test_scope",
+      "battery_understanding_v3_calendar_ageing_test_execution",
+      "battery_understanding_v3_calendar_ageing_test_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "roman_ramirez_2022_doe_review",
+      "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Store cells at controlled SOC and temperature for long periods, then periodically interrupt storage for a 25 C check-up protocol.",
+    "applications": [
+      "Calendar-life benchmarking across storage conditions",
+      "Model parameterization for storage degradation"
+    ],
+    "currently_supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_storage_ageing_with_reviewed_voltage_temperature_and_soc_limits"
+    ],
+    "method_status": "structured_method",
+    "execution_readiness": "planner_ready_review_required",
+    "human_review_required": true,
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c",
+      "target_soc",
+      "stop_criterion"
+    ],
+    "conditional_required_inputs": [
+      {
+        "when": "rpt_cadence_mode = fixed_elapsed_time",
+        "required": [
+          "checkpoint_interval"
+        ],
+        "note": "Declare the storage interruption interval in elapsed time when the campaign uses periodic storage blocks."
+      },
+      {
+        "when": "rpt_cadence_mode = condition_based_capacity_loss",
+        "required": [
+          "irreversible_capacity_loss_trigger_percent",
+          "maximum_checkpoint_interval"
+        ],
+        "note": "Declare both the degradation trigger and the longest allowed interval between check-ups when storage cadence is condition-based."
+      }
+    ],
+    "optional_inputs": [
+      "storage_duration",
+      "thermal_chamber",
+      "replicate_count",
+      "reference_capacity_definition",
+      "checkpoint_extension_selection"
+    ],
+    "required_equipment": [
+      "Battery cell tester for periodic check-ups",
+      "Temperature chamber",
+      "Compression plate if cell format requires it"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 300,
+      "minimum_block_count": 1,
+      "default_block_basis": "fixed_elapsed_time",
+      "run_length_field": "storage_block_count"
+    },
+    "source_example_defaults": {
+      "storage_breakpoint_examples": [
+        "45 C every 6 weeks",
+        "60 C every 4 weeks",
+        "25 C every 8 weeks"
+      ],
+      "reference_temperature_c": 25.0,
+      "pre_checkpoint_hold_typical_hours": 5.0,
+      "irreversible_capacity_loss_trigger_example_percent": 5.0
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 300,
+        "minimum_block_count": 1,
+        "default_block_basis": "fixed_elapsed_time",
+        "run_length_field": "storage_block_count"
+      },
+      "steps": [
+        {
+          "id": "initial_checkup",
+          "name": "Initial check-up at 25 C",
+          "details": "Run the locked baseline 25 C checkpoint with the declared core RPT bundle before the first storage block starts.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_calendar_ageing_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "set_target_soc",
+          "name": "Set target SOC",
+          "details": "Bring the cell to the target SOC at 25 C using the approved reference-capacity logic.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_calendar_ageing_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "storage_block",
+          "name": "Storage block",
+          "details": "Store the cell at the selected temperature for the declared elapsed-time block, shortening the next interruption if the projected irreversible loss between check-ups would exceed the allowed threshold.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_calendar_ageing_test_execution",
+          "step_strictness": "framework_after_review"
+        },
+        {
+          "id": "return_to_25c",
+          "name": "Return to 25 C",
+          "details": "Bring the cell back to 25 C until thermal equilibrium is reached, typically about 5 h, before the residual discharge and next check-up.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_calendar_ageing_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "residual_discharge",
+          "name": "Residual discharge",
+          "details": "Discharge to the minimum voltage before the next 25 C check-up sequence.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_calendar_ageing_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "repeat_until_stop",
+          "name": "Repeat until stop criteria",
+          "details": "Repeat the declared storage checkpoint template, including the core 25 C bundle and any selected extension tests, until the duration, SOH, or safety stop criterion is reached.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_calendar_ageing_test_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Track storage duration, target SOC, storage temperature, and the exact breakpoint at which each check-up was triggered.",
+      "Keep charge retention and self-discharge derivations separate from irreversible capacity fade."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Capacity or SOH vs storage duration",
+        "Resistance drift vs storage duration",
+        "Charge-retention or self-discharge trend"
+      ],
+      "tables": [
+        "SOC-temperature storage matrix",
+        "Check-up periodicity table",
+        "Stop-criterion summary"
+      ]
+    },
+    "planner_notes": [
+      "The chapter recommends adapting the storage duration so the irreversible loss between two check-ups stays at or below about 5% capacity.",
+      "The chapter also explicitly recommends 2-3 cells per calendar condition for reproducibility."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the 25 C check-up, target-SOC setting, storage block, return-to-25 C equilibrium hold, residual discharge, and explicit stop criteria locked. The matrix breadth and exact periodicity still need review.",
+      "locked_planning_fields": [
+        "25 C check-up framing",
+        "target-SOC setting before storage",
+        "return to 25 C until thermal equilibrium, typically about 5 h",
+        "residual discharge before the next check-up"
+      ],
+      "tailorable_fields": [
+        "SOC-temperature matrix breadth",
+        "check-up periodicity",
+        "reference-capacity definition",
+        "final stop criteria threshold"
+      ],
+      "deviation_review_required": true
+    },
+    "campaign_framework": {
+      "campaign_type": "calendar_ageing",
+      "summary": "Use the handbook storage-loop as the execution frame, then use DOE logic to keep the SOC-temperature matrix manageable and use periodic check-ups only often enough to protect measurement fidelity.",
+      "design_guidance_card_ids": [
+        "roman_ramirez_2022_doe_overview",
+        "roman_ramirez_2022_screening_designs",
+        "roman_ramirez_2022_future_opportunities",
+        "tugraz_doe_notes_blocking_rcbd",
+        "tugraz_doe_notes_factorial_basics",
+        "tugraz_doe_notes_anova_randomization"
+      ],
+      "hard_to_change_factors": [
+        "storage temperature",
+        "target SOC",
+        "storage duration / periodicity",
+        "replicate allocation"
+      ],
+      "tailorable_factors": [
+        "condition-matrix breadth",
+        "reference-capacity definition",
+        "check-up periodicity tuned to irreversible-loss rate"
+      ],
+      "recommended_sequence": [
+        "Start with the 25 C check-up and target-SOC setting.",
+        "Lock the primary storage matrix before expanding optional conditions.",
+        "Adjust storage duration so irreversible loss between check-ups stays small enough to interpret.",
+        "Use the same core check-up stack at every storage breakpoint."
+      ],
+      "replicate_guidance": "Use two or three cells per calendar condition when the goal is comparative or model-building rather than a single demonstration.",
+      "default_breakpoint_examples": [
+        "45 C every 6 weeks",
+        "60 C every 4 weeks",
+        "25 C every 8 weeks"
+      ],
+      "stop_criteria_options": [
+        "At least 6 months of testing",
+        "SOH at or below 80%",
+        "Duration at or above 12 months",
+        "Visible swelling, leakage, or other mechanical degradation"
+      ]
+    },
+    "reference_check_policy": {
+      "summary": "The core calendar-ageing check-up stays at 25 C and repeats before each new storage block. Extend to heavier diagnostics only when the campaign budget supports it.",
+      "baseline_required": true,
+      "intermediate_checkups_required": true,
+      "timing_basis_options": [
+        "elapsed_time",
+        "storage_temperature",
+        "irreversible_capacity_loss"
+      ],
+      "rpt_cadence_mode": {
+        "default_mode": "fixed_elapsed_time",
+        "supported_modes": [
+          "fixed_elapsed_time",
+          "condition_based_capacity_loss"
+        ],
+        "selection_rule": "Use elapsed-time storage blocks as the default campaign clock, then shorten the next block whenever the projected irreversible loss before the next planned check-up would exceed the allowed information loss.",
+        "condition_based_trigger": {
+          "metric": "irreversible_capacity_loss_percent",
+          "max_loss_between_checkups_percent": 5.0,
+          "action": "shorten_next_storage_block",
+          "note": "Keep the irreversible loss between two check-ups at or below about 5% so the checkpoint data stay interpretable."
+        }
+      },
+      "reference_temperature_c": {
+        "nominal": 25.0,
+        "source_basis": "handbook_locked_reference",
+        "value_role": "source_backed_reference_for_this_method",
+        "pre_checkpoint_hold": {
+          "mode": "until_thermal_equilibrium",
+          "typical_hours": 5.0,
+          "note": "Use the typical 5 h hold as a source-backed example, and extend it if the cell has not reached thermal equilibrium."
+        },
+        "review_note": "Keep the same 25 C checkpoint reference across all storage conditions and breakpoints."
+      },
+      "default_breakpoint_examples": [
+        "45 C storage: every 6 weeks",
+        "60 C storage: every 4 weeks",
+        "25 C storage: every 8 weeks",
+        "Shorten the interval if irreversible loss would exceed about 5% between check-ups"
+      ],
+      "core_rpt_set": {
+        "bundle_id": "calendar_core_rpt_25c",
+        "label": "Core calendar-ageing 25 C RPT bundle",
+        "summary": "Use the same 25 C core bundle at baseline and every storage interruption so capacity, resistance, and power capability remain comparable across conditions.",
+        "source_method_ids": [
+          "standard_cycle",
+          "capacity_test",
+          "pulse_hppc"
+        ],
+        "mandatory_at": [
+          "baseline",
+          "intermediate",
+          "end_of_life"
+        ],
+        "target_observables": [
+          "reference capacity",
+          "pulse resistance",
+          "power capability"
+        ],
+        "derived_observables": [
+          "charge-retention context",
+          "self-discharge trend"
+        ],
+        "complementary_literature_card_ids": [
+          "barai_2019_method_selection_framework",
+          "barai_2019_capacity_test_theory",
+          "barai_2019_pulse_hppc_theory"
+        ],
+        "step_bundle": [
+          {
+            "order": 1,
+            "action": "return_to_reference_temperature",
+            "details": "Bring the cell back to 25 C until thermal equilibrium is reached, typically about 5 h, before the checkpoint sequence.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 2,
+            "action": "residual_discharge",
+            "details": "Discharge to the minimum voltage before the next 25 C check-up sequence.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 3,
+            "action": "run_method",
+            "method_id": "standard_cycle",
+            "details": "Run the standard reference cycle to anchor the checkpoint entry state.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 4,
+            "action": "run_method",
+            "method_id": "capacity_test",
+            "details": "Measure reference capacity and energy at the locked 25 C reference.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 5,
+            "action": "run_method",
+            "method_id": "pulse_hppc",
+            "details": "Measure pulse resistance and power capability at the same 25 C reference point.",
+            "strictness": "core_handbook_locked"
+          },
+          {
+            "order": 6,
+            "action": "set_target_soc",
+            "details": "Reset the cell to the approved target SOC before the next storage block starts.",
+            "strictness": "core_handbook_locked"
+          }
+        ]
+      },
+      "checkpoint_extension_tests": [
+        {
+          "extension_id": "impedance_extension",
+          "label": "Impedance extension",
+          "summary": "Add impedance only at selected storage breakpoints when mechanism attribution or modelling support is worth the extra time.",
+          "method_ids": [
+            "electrochemical_impedance_test"
+          ],
+          "trigger_at": [
+            "selected_breakpoints",
+            "end_of_life"
+          ],
+          "selection_rule": "Reserve EIS for selected checkpoints where degradation attribution or model fitting justifies the extra interruption time.",
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_method",
+              "method_id": "electrochemical_impedance_test",
+              "details": "Run EIS after the core 25 C bundle so impedance drift can be interpreted against the same capacity and pulse baseline.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "extension_review",
+              "details": "Record whether the impedance result is only diagnostic context or a release criterion for the next storage block.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        }
+      ],
+      "checkpoint_templates": [
+        {
+          "template_id": "calendar_baseline_checkpoint",
+          "label": "Baseline 25 C checkpoint",
+          "applies_at": "baseline",
+          "trigger_rule": "Before the first storage block starts.",
+          "bundle_ids": [
+            "calendar_core_rpt_25c"
+          ],
+          "extension_ids": [],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_bundle",
+              "bundle_id": "calendar_core_rpt_25c",
+              "details": "Execute the full 25 C baseline bundle before any storage exposure.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "action": "release_to_storage_block",
+              "details": "Start the first storage block only after the baseline results and target-SOC reset are accepted.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        },
+        {
+          "template_id": "calendar_intermediate_checkpoint",
+          "label": "Intermediate storage checkpoint",
+          "applies_at": "intermediate",
+          "trigger_rule": "Stop at the declared elapsed-time breakpoint or earlier if the projected irreversible-loss trigger would be exceeded.",
+          "bundle_ids": [
+            "calendar_core_rpt_25c"
+          ],
+          "extension_ids": [
+            "impedance_extension"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "end_storage_block",
+              "details": "Terminate the current storage block at the declared breakpoint and preserve the elapsed-time metadata.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "action": "run_bundle",
+              "bundle_id": "calendar_core_rpt_25c",
+              "details": "Run the unchanged 25 C core bundle before any matrix change.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 3,
+              "action": "conditionally_run_extension",
+              "extension_id": "impedance_extension",
+              "details": "Add EIS only at selected checkpoints where mechanism attribution or model support is needed.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 4,
+              "action": "restart_storage_block",
+              "details": "Reset the target SOC and start the next storage block at the approved condition.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        },
+        {
+          "template_id": "calendar_end_of_life_checkpoint",
+          "label": "End-of-life storage checkpoint",
+          "applies_at": "end_of_life",
+          "trigger_rule": "Run when the SOH threshold, maximum duration, or safety stop criterion is reached.",
+          "bundle_ids": [
+            "calendar_core_rpt_25c"
+          ],
+          "extension_ids": [
+            "impedance_extension"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_bundle",
+              "bundle_id": "calendar_core_rpt_25c",
+              "details": "Run the final 25 C core bundle after the last storage block completes.",
+              "strictness": "core_handbook_locked"
+            },
+            {
+              "order": 2,
+              "action": "conditionally_run_extension",
+              "extension_id": "impedance_extension",
+              "details": "Run the final EIS extension if the campaign needs end-of-life mechanism attribution.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 3,
+              "action": "archive_end_of_life_state",
+              "details": "Freeze the final storage condition, elapsed duration, and stop decision in the release record.",
+              "strictness": "core_handbook_locked"
+            }
+          ]
+        }
+      ],
+      "rpt_blocks": [
+        {
+          "rpt_id": "core_calendar_checkup",
+          "label": "Core calendar check-up",
+          "rpt_source": "core_rpt_set",
+          "bundle_ref": "calendar_core_rpt_25c",
+          "purpose": "Track capacity, resistance, and power capability at a fixed 25 C reference point."
+        },
+        {
+          "rpt_id": "impedance_extension",
+          "rpt_source": "checkpoint_extension_tests",
+          "extension_ref": "impedance_extension"
+        }
+      ]
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "constant_voltage_ageing": {
+    "label": "Constant voltage ageing",
+    "default_for_objective": false,
+    "objective_key": "constant_voltage_ageing",
+    "aliases": [
+      "constant voltage ageing",
+      "voltage hold ageing",
+      "constant voltage test"
+    ],
+    "chapter_id": "ageing_effects__constant_voltage_test_battery_maintained_at_a_certain_voltage",
+    "source_title": "Constant voltage test (battery maintained at a certain voltage)",
+    "source_pages": [
+      62,
+      62
+    ],
+    "handbook_source_id": "battery_understanding_v3_constant_voltage_ageing",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_constant_voltage_ageing_scope",
+      "battery_understanding_v3_constant_voltage_ageing_execution",
+      "battery_understanding_v3_constant_voltage_ageing_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "roman_ramirez_2022_doe_review",
+      "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Hold the cell at a constant voltage for ageing-focused exposure, but keep the current chapter flagged as an outline-only placeholder until a reviewed SOP or richer literature procedure is attached.",
+    "applications": [
+      "Placeholder for future constant-voltage ageing campaigns",
+      "Asset slot for a reviewed SOP-backed voltage-hold ageing method"
+    ],
+    "currently_supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_voltage_hold_ageing_with_reviewed_voltage_temperature_and_safety_limits"
+    ],
+    "method_status": "draft_placeholder",
+    "execution_readiness": "not_releaseable",
+    "human_review_required": true,
+    "procedure_completeness": "outline_only",
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c",
+      "target_voltage",
+      "hold_duration",
+      "stop_criterion"
+    ],
+    "conditional_required_inputs": [
+      {
+        "when": "rpt_cadence_mode = fixed_elapsed_time",
+        "required": [
+          "checkpoint_interval"
+        ],
+        "note": "Declare the elapsed-time checkpoint interval explicitly because the extracted handbook chapter does not fix it."
+      },
+      {
+        "when": "rpt_cadence_mode = condition_based_capacity_loss or condition_based_resistance_growth",
+        "required": [
+          "degradation_trigger",
+          "maximum_checkpoint_interval"
+        ],
+        "note": "Keep degradation-triggered checkpoints explicitly review-gated until a reviewed addendum defines the trigger logic."
+      }
+    ],
+    "optional_inputs": [
+      "thermal_chamber",
+      "reviewed_sop_reference",
+      "checkpoint_extension_selection",
+      "target_soc_before_hold",
+      "protection_envelope",
+      "replicate_count"
+    ],
+    "required_equipment": [
+      "Battery tester with long-duration voltage hold capability",
+      "Temperature chamber"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 60,
+      "minimum_block_count": 1,
+      "default_block_basis": "fixed_elapsed_time",
+      "run_length_field": "hold_block_count"
+    },
+    "source_example_defaults": {
+      "checkpoint_interval_examples": [
+        "weekly",
+        "biweekly"
+      ],
+      "reference_temperature_placeholder_c": 25.0,
+      "pre_checkpoint_hold_typical_hours": 5.0,
+      "cadence_status": "review_gated_placeholder"
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 60,
+        "minimum_block_count": 1,
+        "default_block_basis": "fixed_elapsed_time",
+        "run_length_field": "hold_block_count"
+      },
+      "steps": [
+        {
+          "id": "review_scope_definition",
+          "name": "Review scope definition",
+          "details": "Define the target voltage, temperature, hold duration, protection envelope, and checkpoint cadence before execution because the extracted handbook chapter does not provide a complete procedure.",
+          "source_backed": false,
+          "evidence_card_id": "battery_understanding_v3_constant_voltage_ageing_scope",
+          "step_strictness": "planner_completion",
+          "procedure_completeness": "outline_only",
+          "deviation_note": "The extracted handbook chapter contains only the heading and preferable-test-schemes stub, so the executable procedure must be supplied by a reviewed SOP or literature-backed addendum."
+        },
+        {
+          "id": "voltage_hold_block",
+          "name": "Voltage-hold block",
+          "details": "Maintain the cell at the approved voltage and temperature for the agreed hold duration while logging current drift, accumulated charge, and temperature.",
+          "source_backed": false,
+          "evidence_card_id": "battery_understanding_v3_constant_voltage_ageing_execution",
+          "step_strictness": "planner_completion",
+          "procedure_completeness": "outline_only",
+          "deviation_note": "This block is a planner placeholder until a reviewed constant-voltage ageing procedure is attached."
+        },
+        {
+          "id": "periodic_reference_checks",
+          "name": "Periodic reference checks",
+          "details": "Interrupt the hold at declared checkpoints for the approved reference-performance test set and end-of-life decision.",
+          "source_backed": false,
+          "evidence_card_id": "battery_understanding_v3_constant_voltage_ageing_outputs",
+          "step_strictness": "planner_completion",
+          "procedure_completeness": "outline_only",
+          "deviation_note": "Checkpoint cadence and RPT content are literature-guided placeholders because the handbook extraction does not provide them."
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Log hold current, cumulative ampere-hours, chamber temperature, and any safety or swelling observations throughout the hold.",
+      "Keep all breakpoint metadata explicit because the procedure is still a controlled placeholder rather than a finalized handbook execution."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Hold current vs time",
+        "Capacity or resistance drift vs hold duration"
+      ],
+      "tables": [
+        "Target-voltage and temperature matrix",
+        "Checkpoint RPT schedule",
+        "Evidence-gap review items"
+      ]
+    },
+    "planner_notes": [
+      "Do not release this as an approved execution protocol until a reviewed SOP or stronger source-backed procedure is attached.",
+      "Use the campaign and RPT structures below only as planning scaffolds."
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only_review_required",
+      "summary": "The extracted handbook chapter is not executable on its own. Treat this asset as an outline-only planning placeholder that always requires human review and a reviewed procedural addendum.",
+      "locked_planning_fields": [
+        "explicit human review",
+        "reviewed SOP or literature addendum before release"
+      ],
+      "tailorable_fields": [
+        "target voltage",
+        "temperature",
+        "hold duration",
+        "checkpoint cadence",
+        "reference-performance test stack"
+      ],
+      "deviation_review_required": true
+    },
+    "campaign_framework": {
+      "campaign_type": "constant_voltage_ageing_placeholder",
+      "summary": "Use this only as a scaffold for planning discussions: choose hard-to-change voltage and temperature factors first, then attach a reviewed procedural source before execution.",
+      "design_guidance_card_ids": [
+        "roman_ramirez_2022_doe_overview",
+        "roman_ramirez_2022_screening_designs",
+        "naylor_marlow_2024_experimental_sequence"
+      ],
+      "hard_to_change_factors": [
+        "target hold voltage",
+        "temperature",
+        "hold duration",
+        "replicate allocation"
+      ],
+      "tailorable_factors": [
+        "checkpoint cadence",
+        "RPT depth",
+        "end-of-life threshold"
+      ],
+      "recommended_sequence": [
+        "Freeze the voltage and temperature matrix first.",
+        "Attach a reviewed SOP or richer literature method before execution.",
+        "Run a baseline RPT set before the first hold block.",
+        "Use repeated hold blocks with declared checkpoints and explicit stop criteria."
+      ],
+      "replicate_guidance": "Use at least two cells per condition when the voltage-hold study is comparative; otherwise keep the asset in exploratory mode only.",
+      "default_breakpoint_examples": [
+        "Time-based checkpoints such as weekly or biweekly holds",
+        "Capacity-fade or resistance-based interruption points"
+      ],
+      "stop_criteria_options": [
+        "Capacity or energy SOH threshold reached",
+        "Resistance or current-leakage threshold reached",
+        "Maximum hold duration reached",
+        "Safety, swelling, or leakage observation"
+      ]
+    },
+    "reference_check_policy": {
+      "summary": "Use the same baseline-and-checkpoint RPT discipline as the other ageing assets, but keep the exact cadence explicitly review-gated until a richer procedure source is attached.",
+      "baseline_required": true,
+      "intermediate_checkups_required": true,
+      "timing_basis_options": [
+        "elapsed_time",
+        "capacity_fade",
+        "resistance_growth"
+      ],
+      "rpt_cadence_mode": {
+        "default_mode": "fixed_elapsed_time",
+        "supported_modes": [
+          "fixed_elapsed_time",
+          "condition_based_capacity_loss",
+          "condition_based_resistance_growth"
+        ],
+        "selection_rule": "Use elapsed-time checkpoints only as placeholders until a reviewed SOP or richer procedure source defines the cadence. If the addendum uses degradation-triggered interruptions, declare the trigger explicitly and keep the threshold under review control.",
+        "condition_based_trigger": {
+          "metric": "review_selected_degradation_trigger",
+          "example_options": [
+            "capacity_fade_percent",
+            "resistance_growth_percent"
+          ],
+          "review_required": true,
+          "action": "advance_next_checkpoint",
+          "note": "Do not treat these trigger styles as handbook-locked defaults; they stay placeholder options until a reviewed addendum is attached."
+        }
+      },
+      "reference_temperature_c": {
+        "nominal": 25.0,
+        "source_basis": "placeholder_alignment_with_other_ageing_assets",
+        "value_role": "review_selected_placeholder_reference",
+        "pre_checkpoint_hold": {
+          "mode": "until_thermal_equilibrium",
+          "typical_hours": 5.0,
+          "note": "Keep the checkpoint reference temperature and hold rule explicit in the reviewed addendum."
+        },
+        "review_note": "The checkpoint reference temperature is a planning placeholder and must be confirmed by the reviewed SOP or literature addendum."
+      },
+      "default_breakpoint_examples": [
+        "Baseline before the first hold block",
+        "Weekly or biweekly checkpoints during the hold campaign",
+        "Extended diagnostics at end of life"
+      ],
+      "core_rpt_set": {
+        "bundle_id": "constant_voltage_placeholder_core_rpt",
+        "label": "Core placeholder constant-voltage RPT bundle",
+        "summary": "Keep capacity, resistance, and power capability traceable even while the constant-voltage procedure remains a reviewed placeholder.",
+        "source_method_ids": [
+          "standard_cycle",
+          "capacity_test",
+          "pulse_hppc"
+        ],
+        "mandatory_at": [
+          "baseline",
+          "intermediate",
+          "end_of_life"
+        ],
+        "target_observables": [
+          "reference capacity",
+          "pulse resistance",
+          "power capability"
+        ],
+        "derived_observables": [
+          "hold-current drift context"
+        ],
+        "complementary_literature_card_ids": [
+          "barai_2019_method_selection_framework",
+          "barai_2019_capacity_test_theory",
+          "barai_2019_pulse_hppc_theory"
+        ],
+        "step_bundle": [
+          {
+            "order": 1,
+            "action": "stabilize_at_reference_temperature",
+            "details": "Return the cell to the reviewed checkpoint reference temperature and allow the declared equilibrium hold before the RPT sequence starts.",
+            "strictness": "tailorable_after_review"
+          },
+          {
+            "order": 2,
+            "action": "run_method",
+            "method_id": "standard_cycle",
+            "details": "Run the standard reference cycle only if the reviewed addendum keeps it in the placeholder core bundle.",
+            "strictness": "tailorable_after_review"
+          },
+          {
+            "order": 3,
+            "action": "run_method",
+            "method_id": "capacity_test",
+            "details": "Measure reference capacity and energy at the declared checkpoint reference.",
+            "strictness": "tailorable_after_review"
+          },
+          {
+            "order": 4,
+            "action": "run_method",
+            "method_id": "pulse_hppc",
+            "details": "Measure pulse resistance and power capability if the reviewed addendum keeps this in the core placeholder stack.",
+            "strictness": "tailorable_after_review"
+          },
+          {
+            "order": 5,
+            "action": "checkpoint_review",
+            "details": "Record whether the placeholder checkpoint outputs are sufficient to release the next hold block or whether the campaign must stop for review.",
+            "strictness": "tailorable_after_review"
+          }
+        ]
+      },
+      "checkpoint_extension_tests": [
+        {
+          "extension_id": "impedance_extension",
+          "label": "Impedance extension",
+          "summary": "Add EIS only if the reviewed addendum and budget justify it.",
+          "method_ids": [
+            "electrochemical_impedance_test"
+          ],
+          "trigger_at": [
+            "selected_breakpoints",
+            "end_of_life"
+          ],
+          "selection_rule": "Reserve this extension for reviewed checkpoints where mechanism attribution is important enough to justify the extra interruption time.",
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_method",
+              "method_id": "electrochemical_impedance_test",
+              "details": "Run EIS after the reviewed placeholder core bundle when the addendum explicitly asks for impedance evidence.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "extension_review",
+              "details": "Record whether impedance is diagnostic context only or a release criterion for the next hold block.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        }
+      ],
+      "checkpoint_templates": [
+        {
+          "template_id": "constant_voltage_baseline_checkpoint",
+          "label": "Baseline placeholder checkpoint",
+          "applies_at": "baseline",
+          "trigger_rule": "Before the first hold block starts and only after the reviewed addendum is attached.",
+          "bundle_ids": [
+            "constant_voltage_placeholder_core_rpt"
+          ],
+          "extension_ids": [],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_bundle",
+              "bundle_id": "constant_voltage_placeholder_core_rpt",
+              "details": "Execute the reviewed placeholder baseline bundle before any hold exposure.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "release_to_hold_block",
+              "details": "Release the first hold block only after the reviewed addendum, protection envelope, and baseline QA are accepted.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        },
+        {
+          "template_id": "constant_voltage_intermediate_checkpoint",
+          "label": "Intermediate hold checkpoint",
+          "applies_at": "intermediate",
+          "trigger_rule": "Stop at the declared elapsed-time breakpoint or other reviewed degradation trigger.",
+          "bundle_ids": [
+            "constant_voltage_placeholder_core_rpt"
+          ],
+          "extension_ids": [
+            "impedance_extension"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "pause_hold_block",
+              "details": "Pause the hold only at declared checkpoints so the interruption remains traceable.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "run_bundle",
+              "bundle_id": "constant_voltage_placeholder_core_rpt",
+              "details": "Run the reviewed placeholder core bundle before any optional diagnostics.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 3,
+              "action": "conditionally_run_extension",
+              "extension_id": "impedance_extension",
+              "details": "Add EIS only when the reviewed addendum explicitly calls for it.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 4,
+              "action": "continue_or_stop_decision",
+              "details": "Compare the checkpoint outputs against the reviewed stop rule and decide whether the next hold block can be released.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        },
+        {
+          "template_id": "constant_voltage_end_of_life_checkpoint",
+          "label": "End-of-life hold checkpoint",
+          "applies_at": "end_of_life",
+          "trigger_rule": "Run when the reviewed SOH threshold, maximum hold duration, or safety stop criterion is reached.",
+          "bundle_ids": [
+            "constant_voltage_placeholder_core_rpt"
+          ],
+          "extension_ids": [
+            "impedance_extension"
+          ],
+          "step_bundle": [
+            {
+              "order": 1,
+              "action": "run_bundle",
+              "bundle_id": "constant_voltage_placeholder_core_rpt",
+              "details": "Run the final reviewed placeholder core bundle after the last hold block.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 2,
+              "action": "conditionally_run_extension",
+              "extension_id": "impedance_extension",
+              "details": "Run the final EIS extension only if the reviewed addendum requires end-of-life mechanism attribution.",
+              "strictness": "tailorable_after_review"
+            },
+            {
+              "order": 3,
+              "action": "archive_end_of_life_state",
+              "details": "Freeze the final hold condition, current-drift state, and review disposition in the release record.",
+              "strictness": "tailorable_after_review"
+            }
+          ]
+        }
+      ],
+      "rpt_blocks": [
+        {
+          "rpt_id": "core_placeholder_checkup",
+          "label": "Core placeholder check-up",
+          "rpt_source": "core_rpt_set",
+          "bundle_ref": "constant_voltage_placeholder_core_rpt",
+          "purpose": "Keep capacity, resistance, and power capability traceable even while the constant-voltage procedure remains a reviewed placeholder."
+        },
+        {
+          "rpt_id": "impedance_extension",
+          "rpt_source": "checkpoint_extension_tests",
+          "extension_ref": "impedance_extension"
+        }
+      ]
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "parallel_pack_thermal_gradient_ageing": {
+    "label": "Parallel Pack Thermal Gradient Ageing",
+    "method_name": "Parallel-Pack Thermal Gradient Ageing",
+    "method_family": "cycle_life_or_ageing",
+    "chapter_id": "parallel_pack_thermal_gradient_ageing",
+    "aliases": [
+      "pack_thermal_ageing",
+      "parallel_gradient_ageing"
+    ],
+    "execution_readiness": "requires_specific_sop",
+    "handbook_source_id": "battery_understanding_v3_parallel_pack_thermal_gradient_ageing",
+    "reference_check_policy": {
+      "requires_primary_source": true,
+      "primary_evidence_card_ids": [
+        "naylor_marlow_2024_parallel_pack_ageing_case",
+        "naylor_marlow_2024_pack_protocol_breakpoints",
+        "naylor_marlow_2024_test_bench_measurement_guidance",
+        "naylor_marlow_2024_current_split_soc_deficit"
+      ]
+    },
+    "required_inputs": {
+      "battery_asset": [
+        "pack_topology",
+        "cell_chemistry",
+        "rated_capacity",
+        "max_voltage",
+        "min_voltage",
+        "max_charge_current"
+      ],
+      "lab_equipment": [
+        "pack_fixture_with_thermal_control",
+        "branch_current_shunts",
+        "battery_cycler",
+        "temperature_chamber"
+      ]
+    },
+    "campaign_framework": {
+      "design_families": [
+        "pack_level_ageing"
+      ],
+      "design_guidance_card_ids": [
+        "naylor_marlow_2024_experimental_sequence",
+        "naylor_marlow_2024_cathode_impedance_feedback"
+      ],
+      "hard_to_change_factors": [
+        "temperature_gradient",
+        "fixture_setup"
+      ],
+      "easily_changed_factors": [
+        "cycle_depth",
+        "c_rate"
+      ]
+    },
+    "protocol_template": {
+      "stages": [
+        {
+          "stage": "sol_characterisation",
+          "focus": "reference_capacity_and_hppc_at_20C"
+        },
+        {
+          "stage": "pack_assembly",
+          "focus": "shunt_and_contact_resistance_calibration"
+        },
+        {
+          "stage": "gradient_ageing_block",
+          "focus": "apply_gradient_and_2C_cycling_for_125_cycles"
+        },
+        {
+          "stage": "breakpoint_rpt",
+          "focus": "disassemble_and_re_characterise_single_cells"
+        }
+      ]
+    },
+    "objective_key": "parallel_pack_thermal_gradient_ageing",
+    "source_title": "Parallel-Pack Thermal Gradient Ageing",
+    "source_pages": null
+  }
+}

@@ -1,0 +1,2779 @@
+{
+  "version": "0.2.0",
+  "status": "active",
+  "asset_type": "provisional_cell_asset_store",
+  "review_statuses": [
+    "draft_extracted",
+    "user_corrected",
+    "submitted_for_review",
+    "needs_changes",
+    "rejected",
+    "approved_for_promotion",
+    "promoted_to_manual_asset"
+  ],
+  "review_decisions": [
+    "user_corrected",
+    "submit_for_review",
+    "needs_changes",
+    "reject",
+    "approve_for_promotion"
+  ],
+  "promotion_target": "manual_cell_assets",
+  "required_formal_fields": [
+    "project_chemistry_hint",
+    "form_factor",
+    "nominal_capacity_ah",
+    "nominal_voltage_v",
+    "charge_voltage_v",
+    "discharge_cutoff_v",
+    "max_continuous_charge_current_a",
+    "max_continuous_discharge_current_a",
+    "cycle_life_cycles",
+    "mass_g"
+  ],
+  "required_provisional_fields": [
+    "provisional_id",
+    "display_name",
+    "manufacturer",
+    "source_document",
+    "extraction_status",
+    "field_evidence",
+    "review_status",
+    "missing_required_fields"
+  ],
+  "notes": [
+    "Use this store for user-supplied datasheets before formal cell catalog promotion.",
+    "Provisional assets remain planning-ineligible until they are explicitly promoted into manual_cell_assets.json.",
+    "Every promoted record should carry reviewer identity, review notes, and field-level evidence."
+  ],
+  "assets": [
+    {
+      "display_name": "GWL Power ZG-LFP020AH",
+      "manufacturer": "GWL Power",
+      "model": "ZG-LFP020AH",
+      "schema_name": "ZG-LFP020AH",
+      "project_chemistry_hint": "LiFePO4",
+      "form_factor": "prismatic",
+      "case_types": [],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 20.0,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.8,
+        "discharge_cutoff_v": 2.6,
+        "internal_impedance_mohm": 2.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 20.0,
+        "max_continuous_discharge_current_a": 60.0,
+        "pulse_discharge_current_a_30s": 200.0
+      },
+      "physical": {
+        "mass_g": 650.0,
+        "height_mm": 28.0,
+        "width_mm": 71.0,
+        "length_mm": 178.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "continuous_discharge_a": 10.0,
+        "charge_current_a": 13.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.8,
+        "high_operating_temp_c": 45.0,
+        "low_operating_temp_c": -25.0
+      },
+      "maximum_operating_conditions": {
+        "continuous_discharge_a": 60.0,
+        "pulse_discharge_a_30s": 200.0,
+        "charge_current_a": 20.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.6
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "display_name": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Combined with manufacturer for display name."
+        },
+        "manufacturer": {
+          "text": "GWL Power Ltd.",
+          "source_lines": [
+            79
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "schema_name": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "project_chemistry_hint": {
+          "text": "professionally produced LiFePO4 cells",
+          "source_lines": [
+            5
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "form_factor": {
+          "text": "metal case for protecting the cell",
+          "source_lines": [
+            8
+          ],
+          "confidence": "medium",
+          "extraction_mode": "inferred",
+          "note": "Inferred as prismatic due to metal case description."
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal capacity (Ah) 20 Ah",
+          "source_lines": [
+            13
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal voltage (V) 3.2 V",
+          "source_lines": [
+            12
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "Max voltage per cell (V) 3.8 V",
+          "source_lines": [
+            14
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Minimal voltage per cell (V) 2.6 V",
+          "source_lines": [
+            15
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Internal resistance (mOhm) < 2 mOhm",
+          "source_lines": [
+            25
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Maximal charge current 20 A",
+          "source_lines": [
+            23
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Maximal discharge current 3C (Amp) 60 A",
+          "source_lines": [
+            18
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "pulse_discharge_current_a_30s": {
+          "text": "Max peak discharge current 10 C, < 15 seconds < 200 A",
+          "source_lines": [
+            19
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Weight 0.65 kg",
+          "source_lines": [
+            36
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Converted from kg to g."
+        },
+        "height_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Height is 28 mm."
+        },
+        "width_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Width is 71 mm."
+        },
+        "length_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Length is 178 mm."
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle life (80% DOD at 20*C) > 2000 cycles at 0.5C",
+          "source_lines": [
+            26
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "continuous_discharge_a": {
+          "text": "Optimal discharge current 0.5C (Amp) < 10 A",
+          "source_lines": [
+            17
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Recommended continuous discharge current."
+        },
+        "charge_current_a": {
+          "text": "Optimal charge < 13 A",
+          "source_lines": [
+            21
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Recommended charge current."
+        },
+        "high_operating_temp_c": {
+          "text": "Operating temperature 0 to 45 \u00c2\u00b0C (charging)",
+          "source_lines": [
+            30
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Operating temperature -25 to 55 \u00c2\u00b0C (discharging)",
+          "source_lines": [
+            32
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "Datasheet_ZG-LFP020AH.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 12,
+        "thread_file_path": "/uploads/14eae20a-348a-4757-96c7-f17d3b8dffa3-Datasheet_ZG-LFP020AH.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/14eae20a-348a-4757-96c7-f17d3b8dffa3-Datasheet_ZG-LFP020AH.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T21:56:07+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_gwl_power_zg_lfp020ah_20260320215607",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T21:56:07+00:00",
+      "source_file": "/uploads/14eae20a-348a-4757-96c7-f17d3b8dffa3-Datasheet_ZG-LFP020AH.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T21:56:07+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "GWL Power ZG-LFP020AH",
+        "proposed_cell_id": "GWL_Power_ZG_LFP020AH",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    },
+    {
+      "display_name": "GWL Power ZG-LFP020AH",
+      "manufacturer": "GWL Power",
+      "model": "ZG-LFP020AH",
+      "schema_name": "ZG-LFP020AH",
+      "project_chemistry_hint": "LiFePO4",
+      "form_factor": "prismatic",
+      "case_types": [],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 20.0,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.8,
+        "discharge_cutoff_v": 2.6,
+        "internal_impedance_mohm": 2.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 20.0,
+        "max_continuous_discharge_current_a": 60.0,
+        "pulse_discharge_current_a_30s": 200.0
+      },
+      "physical": {
+        "mass_g": 650.0,
+        "height_mm": 28.0,
+        "width_mm": 71.0,
+        "length_mm": 178.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "continuous_discharge_a": 10.0,
+        "charge_current_a": 13.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.8,
+        "high_operating_temp_c": 45.0,
+        "low_operating_temp_c": -25.0
+      },
+      "maximum_operating_conditions": {
+        "continuous_discharge_a": 60.0,
+        "pulse_discharge_a_30s": 200.0,
+        "charge_current_a": 20.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.6
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "display_name": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "manufacturer": {
+          "text": "GWL Power Ltd.",
+          "source_lines": [
+            79
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "schema_name": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "project_chemistry_hint": {
+          "text": "professionally produced LiFePO4 cells",
+          "source_lines": [
+            5
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "form_factor": {
+          "text": "metal case for protecting the cell",
+          "source_lines": [
+            8
+          ],
+          "confidence": "medium",
+          "extraction_mode": "inferred",
+          "note": "Inferred as prismatic due to metal case description."
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal capacity (Ah) 20 Ah",
+          "source_lines": [
+            13
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal voltage (V) 3.2 V",
+          "source_lines": [
+            12
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "Max voltage per cell (V) 3.8 V",
+          "source_lines": [
+            14
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Minimal voltage per cell (V) 2.6 V",
+          "source_lines": [
+            15
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Internal resistance (mOhm) < 2 mOhm",
+          "source_lines": [
+            25
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Maximal charge current 20 A",
+          "source_lines": [
+            23
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Maximal discharge current 3C (Amp) 60 A",
+          "source_lines": [
+            18
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "pulse_discharge_current_a_30s": {
+          "text": "Max peak discharge current 10 C, < 15 seconds < 200 A",
+          "source_lines": [
+            19
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Weight 0.65 kg",
+          "source_lines": [
+            36
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "height_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "width_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "length_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle life (80% DOD at 20*C) > 2000 cycles at 0.5C",
+          "source_lines": [
+            26
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "continuous_discharge_a": {
+          "text": "Optimal discharge current 0.5C (Amp) < 10 A",
+          "source_lines": [
+            17
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_current_a": {
+          "text": "Optimal charge < 13 A",
+          "source_lines": [
+            21
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "Operating temperature 0 to 45 \u00c2\u00b0C (charging)",
+          "source_lines": [
+            30
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Operating temperature -25 to 55 \u00c2\u00b0C (discharging)",
+          "source_lines": [
+            32
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "Datasheet_ZG-LFP020AH.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 12,
+        "thread_file_path": "/uploads/14eae20a-348a-4757-96c7-f17d3b8dffa3-Datasheet_ZG-LFP020AH.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/14eae20a-348a-4757-96c7-f17d3b8dffa3-Datasheet_ZG-LFP020AH.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T21:56:08+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "source_file": "/uploads/14eae20a-348a-4757-96c7-f17d3b8dffa3-Datasheet_ZG-LFP020AH.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "human_edits": [],
+      "provisional_id": "prov_gwl_power_zg_lfp020ah_20260320215608",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T21:56:08+00:00",
+      "review_status": "approved_for_promotion",
+      "reviewed_by": "admin_reviewer",
+      "reviewed_at": "2026-03-20T21:59:00+00:00",
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T21:56:08+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        },
+        {
+          "at": "2026-03-20T21:59:00+00:00",
+          "actor": "admin_reviewer",
+          "decision": "approve_for_promotion",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "reviewed_pending_promotion",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "approved_for_promotion",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "ready_for_promotion",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "GWL Power ZG-LFP020AH",
+        "proposed_cell_id": "GWL_Power_ZG_LFP020AH",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    },
+    {
+      "display_name": "GWL Power ZG-LFP020AH",
+      "manufacturer": "GWL Power",
+      "model": "ZG-LFP020AH",
+      "schema_name": "ZG-LFP020AH",
+      "project_chemistry_hint": "LiFePO4",
+      "form_factor": "prismatic",
+      "case_types": [],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 20.0,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.8,
+        "discharge_cutoff_v": 2.6,
+        "internal_impedance_mohm": 2.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 20.0,
+        "max_continuous_discharge_current_a": 60.0,
+        "pulse_discharge_current_a_30s": 200.0
+      },
+      "physical": {
+        "mass_g": 650.0,
+        "height_mm": 28.0,
+        "width_mm": 71.0,
+        "length_mm": 178.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "continuous_discharge_a": 10.0,
+        "charge_current_a": 13.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.8,
+        "high_operating_temp_c": 45.0,
+        "low_operating_temp_c": -25.0
+      },
+      "maximum_operating_conditions": {
+        "continuous_discharge_a": 60.0,
+        "pulse_discharge_a_30s": 200.0,
+        "charge_current_a": 20.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.6
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "display_name": {
+          "text": "GWL Power Ltd.",
+          "source_lines": [
+            79
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "project_chemistry_hint": {
+          "text": "professionally produced LiFePO4 cells",
+          "source_lines": [
+            5
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "form_factor": {
+          "text": "metal case for protecting the cell",
+          "source_lines": [
+            8
+          ],
+          "confidence": "medium",
+          "extraction_mode": "inferred",
+          "note": "Inferred as prismatic due to metal case description."
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal capacity (Ah) 20 Ah",
+          "source_lines": [
+            13
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal voltage (V) 3.2 V",
+          "source_lines": [
+            12
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "Max voltage per cell (V) 3.8 V",
+          "source_lines": [
+            14
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Minimal voltage per cell (V) 2.6 V",
+          "source_lines": [
+            15
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Internal resistance (mOhm) < 2 mOhm",
+          "source_lines": [
+            25
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Maximal charge current 20 A",
+          "source_lines": [
+            23
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Maximal discharge current 3C (Amp) 60 A",
+          "source_lines": [
+            18
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "pulse_discharge_current_a_30s": {
+          "text": "Max peak discharge current 10 C, < 15 seconds < 200 A",
+          "source_lines": [
+            19
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Weight 0.65 kg",
+          "source_lines": [
+            36
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "height_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "width_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "length_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle life (80% DOD at 20*C) > 2000 cycles at 0.5C",
+          "source_lines": [
+            26
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "continuous_discharge_a": {
+          "text": "Optimal discharge current 0.5C (Amp) < 10 A",
+          "source_lines": [
+            17
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_current_a": {
+          "text": "Optimal charge < 13 A",
+          "source_lines": [
+            21
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "Operating temperature 0 to 45 \u00c2\u00b0C (charging)",
+          "source_lines": [
+            30
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Operating temperature -25 to 55 \u00c2\u00b0C (discharging)",
+          "source_lines": [
+            32
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "Datasheet_ZG-LFP020AH.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 12,
+        "thread_file_path": "/uploads/1fd0dd98-b4c2-45fa-bbbd-06a4b9146031-Datasheet_ZG-LFP020AH.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/1fd0dd98-b4c2-45fa-bbbd-06a4b9146031-Datasheet_ZG-LFP020AH.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T21:56:46+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_gwl_power_zg_lfp020ah_20260320215646",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T21:56:46+00:00",
+      "source_file": "/uploads/1fd0dd98-b4c2-45fa-bbbd-06a4b9146031-Datasheet_ZG-LFP020AH.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T21:56:46+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "GWL Power ZG-LFP020AH",
+        "proposed_cell_id": "GWL_Power_ZG_LFP020AH",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    },
+    {
+      "display_name": "GWL Power ZG-LFP020AH",
+      "manufacturer": "GWL Power",
+      "model": "ZG-LFP020AH",
+      "schema_name": "ZG-LFP020AH",
+      "project_chemistry_hint": "LiFePO4",
+      "form_factor": "prismatic",
+      "case_types": [],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 20.0,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.8,
+        "discharge_cutoff_v": 2.6,
+        "internal_impedance_mohm": 2.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 20.0,
+        "max_continuous_discharge_current_a": 60.0,
+        "pulse_discharge_current_a_30s": 200.0
+      },
+      "physical": {
+        "mass_g": 650.0,
+        "height_mm": 28.0,
+        "width_mm": 71.0,
+        "length_mm": 178.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "continuous_discharge_a": 10.0,
+        "charge_current_a": 13.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.8,
+        "high_operating_temp_c": 45.0,
+        "low_operating_temp_c": -25.0
+      },
+      "maximum_operating_conditions": {
+        "continuous_discharge_a": 60.0,
+        "pulse_discharge_a_30s": 200.0,
+        "charge_current_a": 20.0,
+        "charge_voltage_cutoff_v": 3.8,
+        "discharge_voltage_cutoff_v": 2.6
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "display_name": {
+          "text": "GWL Power Ltd.",
+          "source_lines": [
+            79
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "ZG-LFP020AH",
+          "source_lines": [
+            2
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "project_chemistry_hint": {
+          "text": "professionally produced LiFePO4 cells",
+          "source_lines": [
+            5
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "form_factor": {
+          "text": "metal case for protecting the cell",
+          "source_lines": [
+            8
+          ],
+          "confidence": "medium",
+          "extraction_mode": "inferred",
+          "note": "Inferred as prismatic due to metal case description."
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal capacity (Ah) 20 Ah",
+          "source_lines": [
+            13
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal voltage (V) 3.2 V",
+          "source_lines": [
+            12
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "Max voltage per cell (V) 3.8 V",
+          "source_lines": [
+            14
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Minimal voltage per cell (V) 2.6 V",
+          "source_lines": [
+            15
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Internal resistance (mOhm) < 2 mOhm",
+          "source_lines": [
+            25
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Maximal charge current 20 A",
+          "source_lines": [
+            23
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Maximal discharge current 3C (Amp) 60 A",
+          "source_lines": [
+            18
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "pulse_discharge_current_a_30s": {
+          "text": "Max peak discharge current 10 C, < 15 seconds < 200 A",
+          "source_lines": [
+            19
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Weight 0.65 kg",
+          "source_lines": [
+            36
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Converted from kg to g."
+        },
+        "height_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Height is 28 mm."
+        },
+        "width_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Width is 71 mm."
+        },
+        "length_mm": {
+          "text": "Dimensions 71 x 178 x 28",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Length is 178 mm."
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle life (80% DOD at 20*C) > 2000 cycles at 0.5C",
+          "source_lines": [
+            26
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "continuous_discharge_a": {
+          "text": "Optimal discharge current 0.5C (Amp) < 10 A",
+          "source_lines": [
+            17
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_current_a": {
+          "text": "Optimal charge < 13 A",
+          "source_lines": [
+            21
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "Operating temperature 0 to 45 \u00c2\u00b0C (charging)",
+          "source_lines": [
+            30
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Operating temperature -25 to 55 \u00c2\u00b0C (discharging)",
+          "source_lines": [
+            32
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "Datasheet_ZG-LFP020AH.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 12,
+        "thread_file_path": "/uploads/1fd0dd98-b4c2-45fa-bbbd-06a4b9146031-Datasheet_ZG-LFP020AH.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/1fd0dd98-b4c2-45fa-bbbd-06a4b9146031-Datasheet_ZG-LFP020AH.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T21:56:47+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_gwl_power_zg_lfp020ah_20260320215647",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T21:56:47+00:00",
+      "source_file": "/uploads/1fd0dd98-b4c2-45fa-bbbd-06a4b9146031-Datasheet_ZG-LFP020AH.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T21:56:47+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "GWL Power ZG-LFP020AH",
+        "proposed_cell_id": "GWL_Power_ZG_LFP020AH",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    },
+    {
+      "display_name": "Cooper Bussmann XB3560-2R5407-R",
+      "manufacturer": "Cooper Bussmann",
+      "model": "XB3560-2R5407-R",
+      "schema_name": "XB3560-2R5407-R",
+      "form_factor": "cylindrical",
+      "case_types": [
+        "snap-in"
+      ],
+      "aliases": [],
+      "electrical": {
+        "nominal_voltage_v": 2.5,
+        "internal_impedance_mohm": 4.5
+      },
+      "currents": {},
+      "physical": {
+        "mass_g": 80.0,
+        "diameter_mm": 35.0,
+        "height_mm": 60.0
+      },
+      "lifecycle": {},
+      "recommended_operating_conditions": {
+        "high_operating_temp_c": 70.0,
+        "low_operating_temp_c": -25.0
+      },
+      "maximum_operating_conditions": {
+        "charge_voltage_cutoff_v": 2.85
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is mentioned but not quantified in the text."
+      ],
+      "field_evidence": {
+        "manufacturer": {
+          "text": "Cooper Bussmann PowerStor supercapacitors",
+          "source_lines": [
+            7
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "XB3560-2R5407-R",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Working Voltage 2.5V",
+          "source_lines": [
+            24
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "DC Resistance 4.5",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Typical Mass (grams/piece) 80",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "diameter_mm": {
+          "text": "\u00c3\u02dc = 35",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "height_mm": {
+          "text": "L = 60",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "Operating Temperature Range -25\u00c2\u00b0C to 70\u00c2\u00b0C",
+          "source_lines": [
+            27
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Operating Temperature Range -25\u00c2\u00b0C to 70\u00c2\u00b0C",
+          "source_lines": [
+            27
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_cutoff_v": {
+          "text": "Surge Voltage 2.85V",
+          "source_lines": [
+            25
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "Eaton Bussmann 400F datasheet.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 2,
+        "thread_file_path": "/uploads/e37dde9f-60c4-4195-988f-28a14e4f3cd0-Eaton_Bussmann_400F_datasheet.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/e37dde9f-60c4-4195-988f-28a14e4f3cd0-Eaton_Bussmann_400F_datasheet.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T22:03:31+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_cooper_bussmann_xb3560_2r5407_r_20260320220331",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T22:03:31+00:00",
+      "source_file": "/uploads/e37dde9f-60c4-4195-988f-28a14e4f3cd0-Eaton_Bussmann_400F_datasheet.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T22:03:31+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [
+        "project_chemistry_hint",
+        "nominal_capacity_ah",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles"
+      ],
+      "completeness_status": "incomplete",
+      "completeness_score": 0.3,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "missing_required_fields"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": false,
+      "promotion_readiness": "missing_required_fields",
+      "formal_promotion_preview": {
+        "display_name": "Cooper Bussmann XB3560-2R5407-R",
+        "proposed_cell_id": "Cooper_Bussmann_XB3560_2R5407_R",
+        "would_be_formally_approved": false,
+        "completeness_status": "incomplete",
+        "confidence_status": "review_required",
+        "missing_required_fields": [
+          "project_chemistry_hint",
+          "nominal_capacity_ah",
+          "charge_voltage_v",
+          "discharge_cutoff_v",
+          "max_continuous_charge_current_a",
+          "max_continuous_discharge_current_a",
+          "cycle_life_cycles"
+        ],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "incomplete_record"
+      }
+    },
+    {
+      "display_name": "Shenzhen Grepow GRP6742126-35C",
+      "manufacturer": "Shenzhen Grepow Battery Co., Ltd",
+      "model": "GRP6742126-35C",
+      "schema_name": "GRP6742126-35C",
+      "project_chemistry_hint": "Lithium-Polymer",
+      "form_factor": "pouch",
+      "case_types": [],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 2.5,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.65,
+        "discharge_cutoff_v": 2.0,
+        "internal_impedance_mohm": 2.2
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 2.5,
+        "max_continuous_discharge_current_a": 87.5,
+        "pulse_discharge_current_a_30s": 100.0
+      },
+      "physical": {
+        "mass_g": 68.0,
+        "width_mm": 42.0,
+        "length_mm": 127.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "continuous_discharge_a": 0.5,
+        "charge_current_a": 0.5,
+        "charge_voltage_cutoff_v": 3.65,
+        "discharge_voltage_cutoff_v": 2.0,
+        "high_operating_temp_c": 60.0,
+        "low_operating_temp_c": -20.0
+      },
+      "maximum_operating_conditions": {
+        "continuous_discharge_a": 87.5,
+        "pulse_discharge_a_30s": 100.0,
+        "charge_current_a": 2.5,
+        "charge_voltage_cutoff_v": 3.65,
+        "discharge_voltage_cutoff_v": 2.0
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "manufacturer": {
+          "text": "SHENZHEN GREPOW BATTERY CO., LTD",
+          "source_lines": [
+            4,
+            35,
+            49
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "GRP6742126-35C-3.2V 2500mAh",
+          "source_lines": [
+            9,
+            10
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_capacity_ah": {
+          "text": "Typical Capacity 2500 mAh",
+          "source_lines": [
+            168
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal Voltage 3.2V",
+          "source_lines": [
+            170
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "charged to 3.65V",
+          "source_lines": [
+            153
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Discharge : 0.2C to 2.0V",
+          "source_lines": [
+            155
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "AC Impedance \u22642.2m\u03a9",
+          "source_lines": [
+            173
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Rapid Charge current 2500 mA",
+          "source_lines": [
+            177
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Max. Constant discharge current 87500 mA",
+          "source_lines": [
+            185
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "pulse_discharge_current_a_30s": {
+          "text": "Peak discharge current 100000 mA (\u22643S)",
+          "source_lines": [
+            187
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Weight 68.0\u00b12.0g",
+          "source_lines": [
+            117
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "width_mm": {
+          "text": "Width(W) 42.0\u00b10.5mm",
+          "source_lines": [
+            107
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "length_mm": {
+          "text": "Length(L) 127.0\u00b10.5mm",
+          "source_lines": [
+            108
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle \u22652000",
+          "source_lines": [
+            227
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "The cell shall be discharged within -20\u2103~60\u2103",
+          "source_lines": [
+            475
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "The cell shall be discharged within -20\u2103~60\u2103",
+          "source_lines": [
+            475
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "GRP6742126-35C-2500 datasheet.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 16,
+        "thread_file_path": "/uploads/bd5d92a0-f33f-4f57-b3f6-01f2980833b3-GRP6742126-35C-2500_datasheet.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/bd5d92a0-f33f-4f57-b3f6-01f2980833b3-GRP6742126-35C-2500_datasheet.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T22:17:22+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_shenzhen_grepow_grp6742126_35c_20260320221722",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T22:17:22+00:00",
+      "source_file": "/uploads/bd5d92a0-f33f-4f57-b3f6-01f2980833b3-GRP6742126-35C-2500_datasheet.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T22:17:22+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "Shenzhen Grepow GRP6742126-35C",
+        "proposed_cell_id": "Shenzhen_Grepow_Battery_Co_Ltd_GRP6742126_35C",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    },
+    {
+      "display_name": "Samsung SDI ICR18650-26F",
+      "manufacturer": "Samsung SDI",
+      "model": "ICR18650-26F",
+      "schema_name": "ICR18650-26F",
+      "form_factor": "cylindrical",
+      "case_types": [
+        "18650"
+      ],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 2.6,
+        "nominal_voltage_v": 3.7,
+        "charge_voltage_v": 4.2,
+        "discharge_cutoff_v": 2.75,
+        "internal_impedance_mohm": 100.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 2.6,
+        "max_continuous_discharge_current_a": 5.2
+      },
+      "physical": {
+        "mass_g": 47.0,
+        "diameter_mm": 18.4,
+        "height_mm": 65.0
+      },
+      "lifecycle": {},
+      "recommended_operating_conditions": {
+        "charge_current_a": 1.3,
+        "charge_voltage_cutoff_v": 4.2,
+        "discharge_voltage_cutoff_v": 2.75,
+        "high_operating_temp_c": 45.0,
+        "low_operating_temp_c": 0.0
+      },
+      "maximum_operating_conditions": {
+        "charge_current_a": 2.6,
+        "charge_voltage_cutoff_v": 4.25,
+        "discharge_voltage_cutoff_v": 2.75
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is only shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "model": {
+          "text": "Model : ICR18650-26F",
+          "source_lines": [
+            5
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal Capacity 2600mAh (0.2C, 2.75V discharge)",
+          "source_lines": [
+            32
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal Voltage 3.7V",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "derived",
+          "note": "Derived from 'Nominal Voltage 3.7V'."
+        },
+        "charge_voltage_v": {
+          "text": "Charging Voltage 4.2 \u00b10.05 V",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Discharge Cut-off Voltage 2.75V",
+          "source_lines": [
+            46
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Initial internal impedance \u2264 100m\u03a9",
+          "source_lines": [
+            97
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Max. Charge Current 2600mA",
+          "source_lines": [
+            44
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Max. Discharge Current 5200mA",
+          "source_lines": [
+            45
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Cell Weight 47.0g max",
+          "source_lines": [
+            47
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "diameter_mm": {
+          "text": "Diameter(max.) : \u03a6 18.40 mm",
+          "source_lines": [
+            48
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "height_mm": {
+          "text": "Height(max.) : 65.00 mm",
+          "source_lines": [
+            50
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_current_a": {
+          "text": "Standard charge: 1300mA",
+          "source_lines": [
+            38
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "Charge: 0 to 45\u2103",
+          "source_lines": [
+            51
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Discharge: -20 to 60\u2103",
+          "source_lines": [
+            53
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "ICR 18650 datasheet.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 18,
+        "thread_file_path": "/uploads/735e09b9-da45-4d58-8e46-f2ef005d16af-ICR_18650_datasheet.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/735e09b9-da45-4d58-8e46-f2ef005d16af-ICR_18650_datasheet.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-20T22:47:15+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_samsung_sdi_icr18650_26f_20260320224715",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-20T22:47:15+00:00",
+      "source_file": "/uploads/735e09b9-da45-4d58-8e46-f2ef005d16af-ICR_18650_datasheet.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-20T22:47:15+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [
+        "project_chemistry_hint",
+        "cycle_life_cycles"
+      ],
+      "completeness_status": "incomplete",
+      "completeness_score": 0.8,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "missing_required_fields"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": false,
+      "promotion_readiness": "missing_required_fields",
+      "formal_promotion_preview": {
+        "display_name": "Samsung SDI ICR18650-26F",
+        "proposed_cell_id": "Samsung_SDI_ICR18650_26F",
+        "would_be_formally_approved": false,
+        "completeness_status": "incomplete",
+        "confidence_status": "review_required",
+        "missing_required_fields": [
+          "project_chemistry_hint",
+          "cycle_life_cycles"
+        ],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "incomplete_record"
+      }
+    },
+    {
+      "display_name": "ENIX Energies ACL9012 -3.3Ah",
+      "manufacturer": "ENIX Energies",
+      "model": "ACL9012 -3.3Ah",
+      "schema_name": "ACL9012 -3.3Ah",
+      "project_chemistry_hint": "Lithium iron phosphate",
+      "form_factor": "cylindrical",
+      "case_types": [
+        "26650"
+      ],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 3.35,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.65,
+        "discharge_cutoff_v": 2.0,
+        "internal_impedance_mohm": 20.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 6.6,
+        "max_continuous_discharge_current_a": 10.0
+      },
+      "physical": {
+        "mass_g": 80.0,
+        "diameter_mm": 26.2,
+        "height_mm": 65.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "charge_current_a": 3.3,
+        "charge_voltage_cutoff_v": 3.65,
+        "discharge_voltage_cutoff_v": 2.0,
+        "high_operating_temp_c": 60.0,
+        "low_operating_temp_c": -20.0
+      },
+      "maximum_operating_conditions": {
+        "charge_current_a": 6.6,
+        "charge_voltage_cutoff_v": 3.7,
+        "discharge_voltage_cutoff_v": 2.0
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "project_chemistry_hint": {
+          "text": "This document describes the Product Specification of the Lithiumiron phosphate batterycellsuppliedbyENIX ENERGIES.",
+          "source_lines": [
+            49,
+            50
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal voltage 3.2V",
+          "source_lines": [
+            55
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "Nominal voltage is explicitly stated."
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal capacity 3350mAh @ 0.2C Discharge",
+          "source_lines": [
+            57
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "Charge cut-off voltage 3.65V",
+          "source_lines": [
+            54
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Discharge cut-off voltage 2.0V",
+          "source_lines": [
+            67
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Internal resistance measured at AC 1KHz after 50% charge \u2264 20mohm",
+          "source_lines": [
+            119
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Max. charge current 2C",
+          "source_lines": [
+            63
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit",
+          "note": "2C of 3.3Ah is 6.6A."
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Max. continue discharge current 10A",
+          "source_lines": [
+            64,
+            65
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Cell Weight 80.0g\u00b11.0g",
+          "source_lines": [
+            76
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "diameter_mm": {
+          "text": "Width: 26.2\u00b10.2 mm",
+          "source_lines": [
+            79
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "height_mm": {
+          "text": "Length: 65.0\u00b10.3 mm",
+          "source_lines": [
+            77
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle Life Charge: 1C CC to 3.65V, and CV to 0.05C cut off \u2265 2000 times",
+          "source_lines": [
+            109
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "ENIX Energies 26650 datasheet.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 11,
+        "thread_file_path": "/uploads/78ec5065-1b89-4984-a599-a9182a967433-ENIX_Energies_26650_datasheet.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/78ec5065-1b89-4984-a599-a9182a967433-ENIX_Energies_26650_datasheet.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-21T09:13:17+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_enix_energies_acl9012_3_3ah_20260321091317",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-21T09:13:17+00:00",
+      "source_file": "/uploads/78ec5065-1b89-4984-a599-a9182a967433-ENIX_Energies_26650_datasheet.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-21T09:13:17+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "ENIX Energies ACL9012 -3.3Ah",
+        "proposed_cell_id": "ENIX_Energies_ACL9012_3_3Ah",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    },
+    {
+      "display_name": "Samsung SDI ICR18650-26F",
+      "manufacturer": "Samsung SDI",
+      "model": "ICR18650-26F",
+      "schema_name": "ICR18650-26F",
+      "project_chemistry_hint": "Lithium-ion",
+      "form_factor": "cylindrical",
+      "case_types": [
+        "18650"
+      ],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 2.6,
+        "nominal_voltage_v": 3.7,
+        "charge_voltage_v": 4.2,
+        "discharge_cutoff_v": 2.75,
+        "internal_impedance_mohm": 100.0
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 2.6,
+        "max_continuous_discharge_current_a": 5.2
+      },
+      "physical": {
+        "mass_g": 47.0,
+        "diameter_mm": 18.4,
+        "height_mm": 65.0
+      },
+      "lifecycle": {},
+      "recommended_operating_conditions": {
+        "charge_current_a": 1.3,
+        "charge_voltage_cutoff_v": 4.2,
+        "discharge_voltage_cutoff_v": 2.75,
+        "high_operating_temp_c": 45.0,
+        "low_operating_temp_c": 0.0
+      },
+      "maximum_operating_conditions": {
+        "charge_current_a": 2.6,
+        "charge_voltage_cutoff_v": 4.25,
+        "discharge_voltage_cutoff_v": 2.75
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is only shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "model": {
+          "text": "Model : ICR18650-26F",
+          "source_lines": [
+            5
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_capacity_ah": {
+          "text": "Nominal Capacity 2600mAh (0.2C, 2.75V discharge)",
+          "source_lines": [
+            32
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal Voltage 3.7V",
+          "source_lines": [
+            34
+          ],
+          "confidence": "high",
+          "extraction_mode": "derived",
+          "note": "Derived from 'Nominal Voltage 3.7V'."
+        },
+        "charge_voltage_v": {
+          "text": "Charging Voltage 4.2 \u00b10.05 V",
+          "source_lines": [
+            33
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Discharge Cut-off Voltage 2.75V",
+          "source_lines": [
+            46
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "Initial internal impedance \u2264 100m\u03a9",
+          "source_lines": [
+            97
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Max. Charge Current 2600mA",
+          "source_lines": [
+            44
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Max. Discharge Current 5200mA",
+          "source_lines": [
+            45
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Cell Weight 47.0g max",
+          "source_lines": [
+            47
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "diameter_mm": {
+          "text": "Diameter(max.) : \u03a6 18.40 mm",
+          "source_lines": [
+            48
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "height_mm": {
+          "text": "Height(max.) : 65.00 mm",
+          "source_lines": [
+            50
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_current_a": {
+          "text": "Standard charge: 1300mA",
+          "source_lines": [
+            38
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "Charge: 0 to 45\u2103",
+          "source_lines": [
+            51
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "Discharge: -20 to 60\u2103",
+          "source_lines": [
+            53
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "ICR 18650 datasheet.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 18,
+        "thread_file_path": "/uploads/7bda316d-b29c-4912-8711-0dc3fb405370-ICR_18650_datasheet.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/7bda316d-b29c-4912-8711-0dc3fb405370-ICR_18650_datasheet.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-21T10:26:08+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_samsung_sdi_icr18650_26f_20260321102608",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-21T10:26:08+00:00",
+      "source_file": "/uploads/7bda316d-b29c-4912-8711-0dc3fb405370-ICR_18650_datasheet.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-21T10:26:08+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [
+        "cycle_life_cycles"
+      ],
+      "completeness_status": "incomplete",
+      "completeness_score": 0.9,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "missing_required_fields"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": false,
+      "promotion_readiness": "missing_required_fields",
+      "formal_promotion_preview": {
+        "display_name": "Samsung SDI ICR18650-26F",
+        "proposed_cell_id": "Samsung_SDI_ICR18650_26F",
+        "would_be_formally_approved": false,
+        "completeness_status": "incomplete",
+        "confidence_status": "review_required",
+        "missing_required_fields": [
+          "cycle_life_cycles"
+        ],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "incomplete_record"
+      }
+    },
+    {
+      "display_name": "SHENZHEN GREPOW BATTERY CO., LTD GRP6742126-35C",
+      "manufacturer": "SHENZHEN GREPOW BATTERY CO., LTD",
+      "model": "GRP6742126-35C",
+      "schema_name": "GRP6742126-35C",
+      "project_chemistry_hint": "Lithium-Polymer",
+      "form_factor": "pouch",
+      "case_types": [],
+      "aliases": [],
+      "electrical": {
+        "nominal_capacity_ah": 2.5,
+        "nominal_voltage_v": 3.2,
+        "charge_voltage_v": 3.65,
+        "discharge_cutoff_v": 2.0,
+        "internal_impedance_mohm": 2.2
+      },
+      "currents": {
+        "max_continuous_charge_current_a": 2.5,
+        "max_continuous_discharge_current_a": 87.5
+      },
+      "physical": {
+        "mass_g": 68.0,
+        "width_mm": 42.0,
+        "length_mm": 127.0
+      },
+      "lifecycle": {
+        "cycle_life_cycles": 2000
+      },
+      "recommended_operating_conditions": {
+        "continuous_discharge_a": 0.5,
+        "charge_current_a": 0.5,
+        "charge_voltage_cutoff_v": 3.65,
+        "discharge_voltage_cutoff_v": 2.0,
+        "high_operating_temp_c": 60.0,
+        "low_operating_temp_c": -20.0
+      },
+      "maximum_operating_conditions": {
+        "continuous_discharge_a": 87.5,
+        "pulse_discharge_a_30s": 100.0,
+        "charge_current_a": 2.5,
+        "charge_voltage_cutoff_v": 3.65,
+        "discharge_voltage_cutoff_v": 2.0
+      },
+      "normalization_notes": [],
+      "suggested_review_notes": [
+        "Cycle life is shown as a plot without a crisp numeric value."
+      ],
+      "field_evidence": {
+        "manufacturer": {
+          "text": "SHENZHEN GREPOW BATTERY CO., LTD",
+          "source_lines": [
+            4,
+            35,
+            49,
+            67,
+            97,
+            124,
+            162,
+            206,
+            259,
+            289,
+            328,
+            368,
+            401,
+            452,
+            502
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "model": {
+          "text": "GRP6742126-35C-3.2V 2500mAh",
+          "source_lines": [
+            9,
+            10
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_capacity_ah": {
+          "text": "Typical Capacity 2500 mAh",
+          "source_lines": [
+            168
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "nominal_voltage_v": {
+          "text": "Nominal Voltage 3.2V",
+          "source_lines": [
+            170
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "charge_voltage_v": {
+          "text": "The battery will be charged to 3.65V",
+          "source_lines": [
+            153
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "discharge_cutoff_v": {
+          "text": "Discharge : 0.2C to 2.0V",
+          "source_lines": [
+            155
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "internal_impedance_mohm": {
+          "text": "AC Impedance \u22642.2m\u03a9",
+          "source_lines": [
+            173
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_charge_current_a": {
+          "text": "Rapid Charge current 2500 mA",
+          "source_lines": [
+            177
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "max_continuous_discharge_current_a": {
+          "text": "Max. Constant discharge current 87500 mA",
+          "source_lines": [
+            185
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "pulse_discharge_current_a_30s": {
+          "text": "Peak discharge current 100000 mA (\u22643S)",
+          "source_lines": [
+            187
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "mass_g": {
+          "text": "Weight 68.0\u00b12.0g",
+          "source_lines": [
+            117
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "width_mm": {
+          "text": "Width(W) 42.0\u00b10.5mm",
+          "source_lines": [
+            107
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "length_mm": {
+          "text": "Length(L) 127.0\u00b10.5mm",
+          "source_lines": [
+            108
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "cycle_life_cycles": {
+          "text": "Cycle \u22652000",
+          "source_lines": [
+            227
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "high_operating_temp_c": {
+          "text": "The cell shall be discharged within -20\u2103~60\u2103 range",
+          "source_lines": [
+            475
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        },
+        "low_operating_temp_c": {
+          "text": "The cell shall be discharged within -20\u2103~60\u2103 range",
+          "source_lines": [
+            475
+          ],
+          "confidence": "high",
+          "extraction_mode": "explicit"
+        }
+      },
+      "source_document": {
+        "original_filename": "GRP6742126-35C-2500 datasheet.pdf",
+        "mime_type": "application/pdf",
+        "extraction_mode": "pdf text extraction (pdfplumber)",
+        "detected_pages": 16,
+        "thread_file_path": "/uploads/4ddb0192-eab9-4c29-a5ab-fe40f28b608f-GRP6742126-35C-2500_datasheet.pdf.txt",
+        "extraction_provider": "openai_responses_api",
+        "model_name": "gpt-4o",
+        "document_type": "cell_datasheet",
+        "path": "/uploads/4ddb0192-eab9-4c29-a5ab-fe40f28b608f-GRP6742126-35C-2500_datasheet.pdf.txt",
+        "uploaded_by": "chat_user",
+        "uploaded_at": "2026-03-21T13:51:16+00:00",
+        "extraction_status": "machine_extracted",
+        "parser_version": "openai_gpt4o_cell_datasheet_v1"
+      },
+      "citations": [],
+      "approval_notes": [],
+      "required_field_waivers": [],
+      "provisional_id": "prov_shenzhen_grepow_battery_co_ltd_grp6742126_35c_20260321135116",
+      "submitted_by": "chat_user",
+      "submitted_at": "2026-03-21T13:51:16+00:00",
+      "source_file": "/uploads/4ddb0192-eab9-4c29-a5ab-fe40f28b608f-GRP6742126-35C-2500_datasheet.pdf.txt",
+      "extraction_status": "machine_extracted",
+      "parser_version": "openai_gpt4o_cell_datasheet_v1",
+      "review_status": "submitted_for_review",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_notes": [],
+      "review_events": [
+        {
+          "at": "2026-03-21T13:51:16+00:00",
+          "actor": "chat_user",
+          "decision": "submit_for_review",
+          "notes": [],
+          "corrected_fields": []
+        }
+      ],
+      "human_edits": [],
+      "required_record_fields": [
+        "project_chemistry_hint",
+        "form_factor",
+        "nominal_capacity_ah",
+        "nominal_voltage_v",
+        "charge_voltage_v",
+        "discharge_cutoff_v",
+        "max_continuous_charge_current_a",
+        "max_continuous_discharge_current_a",
+        "cycle_life_cycles",
+        "mass_g"
+      ],
+      "waived_missing_required_fields": [],
+      "missing_required_fields": [],
+      "completeness_status": "complete",
+      "completeness_score": 1.0,
+      "confidence_status": "machine_extracted_review_required",
+      "approval_status": "unapproved",
+      "approval_basis": "provisional_extraction",
+      "eligible_for_planning": false,
+      "eligibility_tags": [
+        "provisional_asset",
+        "planning_ineligible",
+        "submitted_for_review",
+        "candidate_complete"
+      ],
+      "promotion_target": "manual_cell_assets",
+      "promotion_status": "awaiting_review",
+      "promoted_cell_id": null,
+      "promoted_at": null,
+      "promoted_by": null,
+      "promotable_if_reviewed": true,
+      "promotion_readiness": "ready_for_review",
+      "formal_promotion_preview": {
+        "display_name": "SHENZHEN GREPOW BATTERY CO., LTD GRP6742126-35C",
+        "proposed_cell_id": "SHENZHEN_GREPOW_BATTERY_CO_LTD_GRP6742126_35C",
+        "would_be_formally_approved": true,
+        "completeness_status": "complete",
+        "confidence_status": "high",
+        "missing_required_fields": [],
+        "waived_missing_required_fields": [],
+        "approval_basis_if_promoted": "complete_record"
+      }
+    }
+  ]
+}

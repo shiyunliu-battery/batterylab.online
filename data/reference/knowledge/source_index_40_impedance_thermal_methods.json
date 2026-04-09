@@ -1,0 +1,103 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "sources": [
+    {
+      "source_id": "battery_understanding_v3_electrochemical_impedance_test",
+      "method_id": "electrochemical_impedance_test",
+      "title": "Electrochemical impedance test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__electrochemical_impedance_test",
+      "chapter_file": "data/reference/knowledge/summaries/electrochemical_impedance_test.md",
+      "start_page": 40,
+      "end_page": 43,
+      "citation_ieee": "[M10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Electrochemical impedance test,\" White Paper, 2018, pp. 40-43.",
+      "linked_reference_markdown": "[M10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Electrochemical impedance test,\" White Paper, 2018, pp. 40-43.",
+      "complementary_literature_source_ids": [
+        "barai_2019_noninvasive_characterisation_review",
+        "study_of_the_insertion_reaction_by_impedance_notes"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the primary reference for SOC-resolved EIS execution.",
+        "Use literature for setup discipline and interpretation, not to replace the SOC staircase or frequency range."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/electrochemical_impedance_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_characterisation",
+      "method_id": "thermal_characterisation",
+      "title": "Thermal characterisation",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__thermal_characterisation",
+      "chapter_file": "data/reference/knowledge/summaries/thermal_characterisation.md",
+      "start_page": 38,
+      "end_page": 39,
+      "citation_ieee": "[M11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal characterisation,\" White Paper, 2018, pp. 38-39.",
+      "linked_reference_markdown": "[M11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal characterisation,\" White Paper, 2018, pp. 38-39.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Treat this chapter as the reference for pseudo-adiabatic and thermostated-plate thermal mapping.",
+        "Keep the two-stage thermal fixture logic explicit even when the exact current profile is tailored."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal_characterisation.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_impedance_test",
+      "method_id": "thermal_impedance_test",
+      "title": "Thermal impedance test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__thermal_impedance_test",
+      "chapter_file": "data/reference/knowledge/summaries/thermal_impedance_test.md",
+      "start_page": 44,
+      "end_page": 46,
+      "citation_ieee": "[M12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal impedance test,\" White Paper, 2018, pp. 44-46.",
+      "linked_reference_markdown": "[M12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal impedance test,\" White Paper, 2018, pp. 44-46.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Treat this chapter as the primary reference for sinusoidal thermal-impedance measurement and parameter fitting.",
+        "Keep the 25 C stabilization and 0.1 to 10 mHz frequency window explicit in any plan."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal_impedance_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_quasi_static_thermal_tests",
+      "method_id": "quasi_static_thermal_tests",
+      "title": "Quasi-static thermal tests",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__quasi_static_thermal_tests",
+      "chapter_file": "data/reference/knowledge/summaries/quasi_static_thermal_tests.md",
+      "start_page": 47,
+      "end_page": 48,
+      "citation_ieee": "[M13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Quasi-static thermal tests,\" White Paper, 2018, pp. 47-48.",
+      "linked_reference_markdown": "[M13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Quasi-static thermal tests,\" White Paper, 2018, pp. 47-48.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Treat this chapter as a synchronized swelling / dilatometer reference, not as a generic thermal transient method.",
+        "Keep the link to the paired capacity-style electrical cycle explicit in any plan."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/quasi_static_thermal_tests.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_electrochemical_voltage_spectroscopy",
+      "source_type": "literature_synthesis",
+      "label": "Electrochemical Voltage Spectroscopy (EVS/ICA)",
+      "primary_reference": "barai_2019_noninvasive_characterisation_review",
+      "summary_path": "data/reference/knowledge/summaries/electrochemical_voltage_spectroscopy.md",
+      "ieee_citation": "A. Barai, K. Uddin, M. Dubarry, et al., \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+      "citation_ieee": "[battery_understanding_v3_electrochemical_voltage_spectroscopy] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_electrochemical_voltage_spectroscopy] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018."
+    }
+  ]
+}

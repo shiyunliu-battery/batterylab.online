@@ -1,0 +1,449 @@
+{
+  "version": "2.0",
+  "status": "unified_knowledge_base",
+  "description": "Merged handbook and literature sources \u2014 equal-level domain authorities",
+  "sources": [
+    {
+      "source_id": "battery_understanding_v3_soc_ocv",
+      "method_id": "soc_ocv",
+      "title": "Low C-rate cycle / Slow (dis)charge curve",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__low_c_rate_cycle_slow_dis_charge_curve",
+      "chapter_file": "data/reference/knowledge/summaries/soc_ocv.md",
+      "start_page": 24,
+      "end_page": 24,
+      "citation_ieee": "[M1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Low C-rate cycle / Slow (dis)charge curve,\" White Paper, 2018, p. 24.",
+      "linked_reference_markdown": "[M1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Low C-rate cycle / Slow (dis)charge curve,\" White Paper, 2018, p. 24.",
+      "summary_path": "data/reference/knowledge/summaries/soc_ocv.md",
+      "complementary_literature_source_ids": [
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "complementary_literature_card_ids": [
+        "barai_2019_ocv_gitt_pseudoocv_foundations",
+        "barai_2019_evs_foundations",
+        "barai_2019_evs_degradation_modes",
+        "barai_2019_capacity_test_theory"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the core planning reference for slow-curve and SOC-OCV style tests.",
+        "Use literature only to complement theory or interpretation; do not silently override the handbook procedure."
+      ]
+    },
+    {
+      "source_id": "battery_understanding_v3_capacity_test",
+      "method_id": "capacity_test",
+      "title": "Capacity test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__capacity_test",
+      "chapter_file": "data/reference/knowledge/summaries/capacity_test.md",
+      "start_page": 18,
+      "end_page": 23,
+      "citation_ieee": "[M2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Capacity test,\" White Paper, 2018, pp. 18-23.",
+      "linked_reference_markdown": "[M2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Capacity test,\" White Paper, 2018, pp. 18-23.",
+      "summary_path": "data/reference/knowledge/summaries/capacity_test.md",
+      "complementary_literature_source_ids": [
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the core planning reference for capacity and rate-capability test drafting.",
+        "Literature can explain why one matrix is useful, but the chapter remains the default executable reference."
+      ]
+    },
+    {
+      "source_id": "battery_understanding_v3_pulse_test",
+      "method_id": "pulse_hppc",
+      "title": "Pulse test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__pulse_test",
+      "chapter_file": "data/reference/knowledge/summaries/pulse_hppc.md",
+      "start_page": 31,
+      "end_page": 37,
+      "citation_ieee": "[M3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Pulse test,\" White Paper, 2018, pp. 31-37.",
+      "linked_reference_markdown": "[M3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Pulse test,\" White Paper, 2018, pp. 31-37.",
+      "summary_path": "data/reference/knowledge/summaries/pulse_hppc.md",
+      "complementary_literature_source_ids": [
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the core planning reference for HPPC and pulse-power style test design.",
+        "Use complementary literature for theory or interpretation, not to silently change the pulse sequence."
+      ]
+    },
+    {
+      "source_id": "battery_understanding_v3_cycle_life",
+      "method_id": "cycle_life",
+      "title": "Cycle life test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "ageing_effects__cycle_life_test",
+      "chapter_file": "data/reference/knowledge/summaries/cycle_life.md",
+      "start_page": 53,
+      "end_page": 54,
+      "citation_ieee": "[M4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Cycle life test,\" White Paper, 2018, pp. 53-54.",
+      "linked_reference_markdown": "[M4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Cycle life test,\" White Paper, 2018, pp. 53-54.",
+      "summary_path": "data/reference/knowledge/summaries/cycle_life.md",
+      "complementary_literature_source_ids": [
+        "roman_ramirez_2022_doe_review",
+        "naylor_marlow_2024_parallel_pack_thermal_gradients"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the core planning reference for cycle-life test framing and review gates.",
+        "Complementary literature is especially useful for DOE choice and pack-specific ageing rationale, but it does not replace the handbook as the core reference."
+      ]
+    },
+    {
+      "source_id": "roman_ramirez_2022_doe_review",
+      "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+      "source_type": "journal_article",
+      "authors": [
+        "Luis A. Roman-Ramirez",
+        "James Marco"
+      ],
+      "year": 2022,
+      "publication": "Applied Energy",
+      "volume": "320",
+      "article_number": "119305",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+      "citation_ieee": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+      "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+      "topics": [
+        "doe_foundation",
+        "screening_designs",
+        "response_surface_methodology",
+        "taguchi_and_robust_design",
+        "mixture_design",
+        "charging_optimization",
+        "thermal_design",
+        "model_parameter_identification",
+        "pack_level_ageing"
+      ],
+      "summary_path": "data/reference/knowledge/summaries/roman_ramirez_2022_doe_review.md",
+      "evidence_card_ids": [
+        "roman_ramirez_2022_doe_overview",
+        "roman_ramirez_2022_screening_designs",
+        "roman_ramirez_2022_rsm_optimization",
+        "roman_ramirez_2022_taguchi_robust_design",
+        "roman_ramirez_2022_mixture_formulation",
+        "roman_ramirez_2022_thermal_design",
+        "roman_ramirez_2022_charging_design",
+        "roman_ramirez_2022_parameter_identification",
+        "roman_ramirez_2022_future_opportunities"
+      ],
+      "ingestion_notes": [
+        "Summarized from a user-supplied PDF; the repository stores rephrased notes plus page-level citations instead of the raw PDF.",
+        "Use this review as a decision aid for DOE choice, not as a replacement for lab-specific safety limits, sample budgets, or equipment constraints."
+      ]
+    },
+    {
+      "source_id": "tugraz_doe_notes",
+      "title": "Design of Experiments",
+      "source_type": "course_notes",
+      "authors": [
+        "Institute of Statistics, Graz University of Technology"
+      ],
+      "year": null,
+      "publication": "Graz University of Technology",
+      "url": "https://www.stat.tugraz.at/courses/files/DoE.pdf",
+      "citation_ieee": "[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf",
+      "linked_reference_markdown": "[[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf](https://www.stat.tugraz.at/courses/files/DoE.pdf)",
+      "topics": [
+        "doe_foundation",
+        "anova_basics",
+        "randomization_and_blocking",
+        "latin_square_design",
+        "factorial_designs",
+        "two_level_factorial_and_confounding"
+      ],
+      "summary_path": "data/reference/knowledge/summaries/tugraz_doe_notes.md",
+      "evidence_card_ids": [
+        "tugraz_doe_notes_anova_randomization",
+        "tugraz_doe_notes_blocking_rcbd",
+        "tugraz_doe_notes_latin_square",
+        "tugraz_doe_notes_factorial_basics",
+        "tugraz_doe_notes_2k_blocking_confounding"
+      ],
+      "ingestion_notes": [
+        "Summarized from a user-supplied PDF; the repository stores rephrased notes plus page-level citations instead of the raw PDF.",
+        "Use this source as a DOE theory foundation for ANOVA, randomization, blocking, factorial effects, and confounding.",
+        "For battery-specific design-family choice or charging, thermal, and parameter-identification guidance, pair it with a battery-domain source such as Roman-Ramirez and Marco (2022) instead of using it alone."
+      ]
+    },
+    {
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+      "source_type": "journal_article",
+      "authors": [
+        "Max Naylor Marlow",
+        "Jingyi Chen",
+        "Billy Wu"
+      ],
+      "year": 2024,
+      "publication": "Communications Engineering",
+      "volume": "3",
+      "issue": "1",
+      "pages": "2",
+      "url": "https://www.nature.com/articles/s44172-023-00153-5",
+      "citation_ieee": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+      "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+      "topics": [
+        "parallel_connected_packs",
+        "thermal_gradient_ageing",
+        "current_distribution_evolution",
+        "cathode_impedance_growth",
+        "multimodal_diagnostics",
+        "ocv_degradation_mode_analysis",
+        "pack_test_bench_design",
+        "open_pack_aging_dataset"
+      ],
+      "summary_path": "data/reference/knowledge/summaries/naylor_marlow_2024_parallel_pack_thermal_gradients.md",
+      "evidence_card_ids": [
+        "naylor_marlow_2024_parallel_pack_ageing_case",
+        "naylor_marlow_2024_experimental_sequence",
+        "naylor_marlow_2024_pack_protocol_breakpoints",
+        "naylor_marlow_2024_test_bench_measurement_guidance",
+        "naylor_marlow_2024_current_split_soc_deficit",
+        "naylor_marlow_2024_cathode_impedance_feedback",
+        "naylor_marlow_2024_ocv_model_workflow",
+        "naylor_marlow_2024_multimodal_diagnostics_stack"
+      ],
+      "ingestion_notes": [
+        "Summarized from a user-supplied main article PDF plus supplementary-information PDF; the repository stores rephrased notes plus page-level citations instead of the raw PDFs.",
+        "Use this source for battery-domain guidance on parallel-pack ageing, thermal-gradient effects, current sharing, and multimodal diagnostics rather than for generic DOE-family choice.",
+        "Pair it with Roman-Ramirez and Marco (2022) when the user needs both pack-level battery evidence and a more formal DOE design rationale."
+      ]
+    },
+    {
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+      "source_type": "journal_article",
+      "authors": [
+        "Anup Barai",
+        "Kotub Uddin",
+        "Matthieu Dubarry",
+        "Limhi Somerville",
+        "Andrew McGordon",
+        "Paul Jennings",
+        "Ira Bloom"
+      ],
+      "year": 2019,
+      "publication": "Progress in Energy and Combustion Science",
+      "volume": "72",
+      "pages": "1-31",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+      "citation_ieee": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+      "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+      "topics": [
+        "noninvasive_characterisation",
+        "capacity_testing",
+        "ocv_gitt_pseudo_ocv",
+        "electrochemical_voltage_spectroscopy",
+        "hppc_pulse_testing",
+        "electrochemical_impedance_spectroscopy",
+        "ecm_parameterisation",
+        "method_selection_framework"
+      ],
+      "summary_path": "data/reference/knowledge/summaries/barai_2019_noninvasive_characterisation_review.md",
+      "evidence_card_ids": [
+        "barai_2019_method_selection_framework",
+        "barai_2019_capacity_test_theory",
+        "barai_2019_ocv_gitt_pseudoocv_foundations",
+        "barai_2019_evs_foundations",
+        "barai_2019_evs_degradation_modes",
+        "barai_2019_pulse_hppc_theory",
+        "barai_2019_eis_ecm_theory"
+      ],
+      "ingestion_notes": [
+        "Summarized from a user-supplied PDF; the repository stores rephrased notes plus page-level citations instead of the raw PDF.",
+        "Use this review as the primary theory source for non-invasive electrical characterisation methods and method-selection guidance.",
+        "Pair it with more specific chemistry- or workflow-oriented sources when the user asks about one exact cell type, pack topology, or case-study experiment."
+      ]
+    },
+    {
+      "source_id": "study_of_the_insertion_reaction_by_impedance_notes",
+      "title": "Study of the insertion reaction by impedance - Application to the characterization of batteries",
+      "source_type": "technical_slides",
+      "authors": [
+        "B. L."
+      ],
+      "year": 2012,
+      "publication": "Technical slides",
+      "url": "",
+      "citation_ieee": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+      "linked_reference_markdown": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+      "topics": [
+        "battery_eis_theory",
+        "insertion_reaction_impedance",
+        "warburg_and_randles",
+        "bounded_diffusion",
+        "adsorption_and_insertion"
+      ],
+      "summary_path": "data/reference/knowledge/summaries/study_of_the_insertion_reaction_by_impedance_notes.md",
+      "evidence_card_ids": [
+        "insertion_impedance_restricted_diffusion",
+        "insertion_impedance_adsorption_coupling",
+        "insertion_impedance_semi_infinite_warburg",
+        "insertion_impedance_bounded_diffusion"
+      ],
+      "ingestion_notes": [
+        "Summarized from a user-supplied slide deck; the repository stores rephrased notes plus page-level citations instead of the raw PDF.",
+        "Use this source as a supporting theory note for insertion-reaction impedance, Warburg behaviour, bounded diffusion, and adsorption-coupled EIS interpretation.",
+        "Because this is a technical slide deck rather than a peer-reviewed paper, pair it with a stronger review source such as Barai et al. (2019) when giving general battery-EIS guidance."
+      ]
+    },
+    {
+      "source_id": "battery_understanding_v3_ageing_effects_preferable_test_schemes",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "ageing_effects__preferable_test_schemes",
+      "title": "Ageing Effects / Preferable Test Schemes",
+      "summary_path": "data/reference/knowledge/summaries/ageing_effects__preferable_test_schemes.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_ageing_effects_preferable_test_schemes] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Ageing Effects / Preferable Test Schemes,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_ageing_effects_preferable_test_schemes] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Ageing Effects / Preferable Test Schemes,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_battery_cell_performance_preferable_test_schemes",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "battery_cell_performance__preferable_test_schemes",
+      "title": "Battery Cell Performance / Preferable Test Schemes",
+      "summary_path": "data/reference/knowledge/summaries/battery_cell_performance__preferable_test_schemes.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_battery_cell_performance_preferable_test_schemes] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Battery Cell Performance / Preferable Test Schemes,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_battery_cell_performance_preferable_test_schemes] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Battery Cell Performance / Preferable Test Schemes,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_glossary_abbrevations",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "glossary__abbrevations",
+      "title": "Glossary / Abbrevations",
+      "summary_path": "data/reference/knowledge/summaries/glossary__abbrevations.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_glossary_abbrevations] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Glossary / Abbrevations,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_glossary_abbrevations] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Glossary / Abbrevations,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_glossary_definitions",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "glossary__definitions",
+      "title": "Glossary / Definitions",
+      "summary_path": "data/reference/knowledge/summaries/glossary__definitions.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_glossary_definitions] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Glossary / Definitions,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_glossary_definitions] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Glossary / Definitions,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introduction_approach",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introduction__approach",
+      "title": "Introduction / Approach",
+      "summary_path": "data/reference/knowledge/summaries/introduction__approach.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introduction_approach] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Approach,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introduction_approach] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Approach,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introduction_background",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introduction__background",
+      "title": "Introduction / Background",
+      "summary_path": "data/reference/knowledge/summaries/introduction__background.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introduction_background] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Background,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introduction_background] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Background,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introduction_goal",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introduction__goal",
+      "title": "Introduction / Goal",
+      "summary_path": "data/reference/knowledge/summaries/introduction__goal.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introduction_goal] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Goal,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introduction_goal] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Goal,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introduction_set_up",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introduction__set_up",
+      "title": "Introduction / Set Up",
+      "summary_path": "data/reference/knowledge/summaries/introduction__set_up.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introduction_set_up] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Set Up,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introduction_set_up] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introduction / Set Up,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introductory_topics_about_battery_cell_testing_cell_pressure_equipment",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introductory_topics_about_battery_cell_testing__cell_pressure_equipment",
+      "title": "Introductory Topics About Battery Cell Testing / Cell Pressure Equipment",
+      "summary_path": "data/reference/knowledge/summaries/introductory_topics_about_battery_cell_testing__cell_pressure_equipment.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_cell_pressure_equipment] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Cell Pressure Equipment,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_cell_pressure_equipment] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Cell Pressure Equipment,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introductory_topics_about_battery_cell_testing_data_acquisition",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introductory_topics_about_battery_cell_testing__data_acquisition",
+      "title": "Introductory Topics About Battery Cell Testing / Data Acquisition",
+      "summary_path": "data/reference/knowledge/summaries/introductory_topics_about_battery_cell_testing__data_acquisition.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_data_acquisition] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Data Acquisition,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_data_acquisition] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Data Acquisition,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introductory_topics_about_battery_cell_testing_explaining_and_interpreting_typical_data_sheets",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introductory_topics_about_battery_cell_testing__explaining_and_interpreting_typical_data_sheets",
+      "title": "Introductory Topics About Battery Cell Testing / Explaining And Interpreting Typical Data Sheets",
+      "summary_path": "data/reference/knowledge/summaries/introductory_topics_about_battery_cell_testing__explaining_and_interpreting_typical_data_sheets.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_explaining_and_interpreting_typical_data_sheets] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Explaining And Interpreting Typical Data Sheets,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_explaining_and_interpreting_typical_data_sheets] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Explaining And Interpreting Typical Data Sheets,\" White Paper, 2018."
+    },
+    {
+      "source_id": "battery_understanding_v3_introductory_topics_about_battery_cell_testing_freedom_in_reference_capacity_c_rate_and_i_rate",
+      "source_type": "core_handbook_chapter",
+      "chapter_id": "introductory_topics_about_battery_cell_testing__freedom_in_reference_capacity_c_rate_and_i_rate",
+      "title": "Introductory Topics About Battery Cell Testing / Freedom In Reference Capacity C Rate And I Rate",
+      "summary_path": "data/reference/knowledge/summaries/introductory_topics_about_battery_cell_testing__freedom_in_reference_capacity_c_rate_and_i_rate.md",
+      "handbook_title": "Test methods for battery understanding v3.0",
+      "handbook_version": "v3.0",
+      "source_role": "supplementary_context",
+      "citation_ieee": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_freedom_in_reference_capacity_c_rate_and_i_rate] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Freedom In Reference Capacity C Rate And I Rate,\" White Paper, 2018.",
+      "linked_reference_markdown": "[battery_understanding_v3_introductory_topics_about_battery_cell_testing_freedom_in_reference_capacity_c_rate_and_i_rate] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Introductory Topics About Battery Cell Testing / Freedom In Reference Capacity C Rate And I Rate,\" White Paper, 2018."
+    }
+  ]
+}

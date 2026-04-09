@@ -1,0 +1,113 @@
+{
+  "schema_id": "battery_timeseries_v1",
+  "version": "1.0.0",
+  "status": "draft_operational",
+  "description": "Canonical row-oriented battery cycler timeseries schema used after vendor export normalization and before QA/KPI aggregation.",
+  "fields": [
+    {
+      "name": "cycle_index",
+      "dtype": "integer",
+      "required": true,
+      "unit": null,
+      "description": "Cycle counter from the source export."
+    },
+    {
+      "name": "step_index",
+      "dtype": "integer",
+      "required": true,
+      "unit": null,
+      "description": "Vendor step counter within the test program."
+    },
+    {
+      "name": "test_time_s",
+      "dtype": "float",
+      "required": true,
+      "unit": "s",
+      "description": "Elapsed test time in seconds."
+    },
+    {
+      "name": "current_a",
+      "dtype": "float",
+      "required": true,
+      "unit": "A",
+      "description": "Measured current in amperes."
+    },
+    {
+      "name": "voltage_v",
+      "dtype": "float",
+      "required": true,
+      "unit": "V",
+      "description": "Measured cell voltage in volts."
+    },
+    {
+      "name": "data_point_index",
+      "dtype": "integer",
+      "required": false,
+      "unit": null,
+      "description": "Vendor record index when available."
+    },
+    {
+      "name": "step_time_s",
+      "dtype": "float",
+      "required": false,
+      "unit": "s",
+      "description": "Elapsed step time in seconds."
+    },
+    {
+      "name": "timestamp_iso",
+      "dtype": "string",
+      "required": false,
+      "unit": null,
+      "description": "Wall-clock timestamp or source datetime string."
+    },
+    {
+      "name": "charge_capacity_ah",
+      "dtype": "float",
+      "required": false,
+      "unit": "Ah",
+      "description": "Charge capacity in ampere-hours."
+    },
+    {
+      "name": "discharge_capacity_ah",
+      "dtype": "float",
+      "required": false,
+      "unit": "Ah",
+      "description": "Discharge capacity in ampere-hours."
+    },
+    {
+      "name": "charge_energy_wh",
+      "dtype": "float",
+      "required": false,
+      "unit": "Wh",
+      "description": "Charge energy in watt-hours."
+    },
+    {
+      "name": "discharge_energy_wh",
+      "dtype": "float",
+      "required": false,
+      "unit": "Wh",
+      "description": "Discharge energy in watt-hours."
+    },
+    {
+      "name": "temperature_c",
+      "dtype": "float",
+      "required": false,
+      "unit": "C",
+      "description": "Measured temperature in Celsius."
+    },
+    {
+      "name": "internal_resistance_ohm",
+      "dtype": "float",
+      "required": false,
+      "unit": "ohm",
+      "description": "Measured or exported internal resistance."
+    },
+    {
+      "name": "dv_dt_v_per_s",
+      "dtype": "float",
+      "required": false,
+      "unit": "V/s",
+      "description": "Optional dV/dt field when the vendor export provides it."
+    }
+  ]
+}

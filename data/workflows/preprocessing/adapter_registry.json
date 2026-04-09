@@ -1,0 +1,123 @@
+{
+  "version": "0.1.0",
+  "status": "partial",
+  "canonical_schema_version": "battery_timeseries_v1",
+  "adapters": [
+    {
+      "id": "generic_battery_tabular_v1",
+      "vendor": "Generic battery tabular",
+      "status": "implemented",
+      "implementation_path": "battery_agent.data_adapters.GenericBatteryTabularAdapter",
+      "supported_extensions": [
+        ".csv",
+        ".tsv",
+        ".txt",
+        ".xls",
+        ".xlsx"
+      ],
+      "target_schema": "battery_tabular_preview_v1",
+      "required_inputs": [
+        "battery-like tabular export or spreadsheet preview"
+      ],
+      "key_fields": [
+        "recognized_battery_columns"
+      ]
+    },
+    {
+      "id": "arbin_csv_v1",
+      "vendor": "Arbin",
+      "status": "implemented",
+      "implementation_path": "battery_agent.data_adapters.ArbinAdapter",
+      "mapper_config_path": "data/workflows/preprocessing/mapper_configs/arbin.yaml",
+      "supported_extensions": [
+        ".csv",
+        ".tsv",
+        ".xls",
+        ".xlsx"
+      ],
+      "target_schema": "battery_timeseries_v1",
+      "required_inputs": [
+        "raw export sample",
+        "column dictionary",
+        "unit conventions"
+      ],
+      "key_fields": [
+        "test_time_s",
+        "cycle_index",
+        "step_index",
+        "current_a",
+        "voltage_v"
+      ]
+    },
+    {
+      "id": "biologic_csv_v1",
+      "vendor": "BioLogic",
+      "status": "planned",
+      "target_schema": "battery_timeseries_v1",
+      "required_inputs": [
+        "raw export sample",
+        "column dictionary",
+        "unit conventions"
+      ],
+      "key_fields": [
+        "timestamp",
+        "cycle_index",
+        "step_index",
+        "current_a",
+        "voltage_v"
+      ]
+    },
+    {
+      "id": "neware_csv_v1",
+      "vendor": "Neware",
+      "status": "implemented",
+      "implementation_path": "battery_agent.data_adapters.NewareAdapter",
+      "mapper_config_path": "data/workflows/preprocessing/mapper_configs/neware.yaml",
+      "supported_extensions": [
+        ".csv",
+        ".tsv",
+        ".xls",
+        ".xlsx"
+      ],
+      "target_schema": "battery_timeseries_v1",
+      "required_inputs": [
+        "raw export sample",
+        "column dictionary",
+        "unit conventions"
+      ],
+      "key_fields": [
+        "test_time_s",
+        "cycle_index",
+        "step_index",
+        "current_a",
+        "voltage_v"
+      ]
+    },
+    {
+      "id": "maccor_csv_v1",
+      "vendor": "Maccor",
+      "status": "planned",
+      "target_schema": "battery_timeseries_v1",
+      "required_inputs": [
+        "raw export sample",
+        "column dictionary",
+        "unit conventions"
+      ],
+      "key_fields": [
+        "timestamp",
+        "cycle_index",
+        "step_index",
+        "current_a",
+        "voltage_v"
+      ]
+    }
+  ],
+  "required_fields": [
+    "id",
+    "vendor",
+    "status",
+    "target_schema",
+    "required_inputs",
+    "key_fields"
+  ]
+}

@@ -1,0 +1,612 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "section": "safety_and_abuse",
+  "sources": [
+    {
+      "source_id": "battery_understanding_v3_safety_vibration",
+      "method_id": "safety_aspects__vibration",
+      "title": "Vibration",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "safety_aspects__vibration",
+      "chapter_file": "data/reference/knowledge/summaries/safety_aspects__vibration.md",
+      "start_page": 63,
+      "end_page": 65,
+      "citation_ieee": "[S1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Vibration,\" White Paper, 2018, pp. 63-65.",
+      "linked_reference_markdown": "[S1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Vibration,\" White Paper, 2018, pp. 63-65.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "This chapter is an outline reference only. A project SOP aligned to UN38.3, IEC 62660-2, or an equivalent applicable standard is required before planning or execution.",
+        "Do not present the chapter alone as an executable procedure."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/safety_aspects__vibration.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_safety_mechanical_shock",
+      "method_id": "safety_aspects__mechanical_shock",
+      "title": "Mechanical shock",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "safety_aspects__mechanical_shock",
+      "chapter_file": "data/reference/knowledge/summaries/safety_aspects__mechanical_shock.md",
+      "start_page": 66,
+      "end_page": 67,
+      "citation_ieee": "[S2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Mechanical shock,\" White Paper, 2018, pp. 66-67.",
+      "linked_reference_markdown": "[S2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Mechanical shock,\" White Paper, 2018, pp. 66-67.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/safety_aspects__mechanical_shock.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_safety_drop",
+      "method_id": "safety_aspects__drop",
+      "title": "Drop",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "safety_aspects__drop",
+      "chapter_file": "data/reference/knowledge/summaries/safety_aspects__drop.md",
+      "start_page": 68,
+      "end_page": 68,
+      "citation_ieee": "[S3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drop,\" White Paper, 2018, p. 68.",
+      "linked_reference_markdown": "[S3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drop,\" White Paper, 2018, p. 68.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/safety_aspects__drop.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_safety_crush",
+      "method_id": "safety_aspects__cell_impact_crush",
+      "title": "Cell impact / crush",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "safety_aspects__cell_impact_crush",
+      "chapter_file": "data/reference/knowledge/summaries/safety_aspects__cell_impact_crush.md",
+      "start_page": 69,
+      "end_page": 69,
+      "citation_ieee": "[S4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Cell impact / crush,\" White Paper, 2018, p. 69.",
+      "linked_reference_markdown": "[S4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Cell impact / crush,\" White Paper, 2018, p. 69.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Destructive abuse test. EUCAR hazard review required. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/safety_aspects__cell_impact_crush.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_safety_penetration",
+      "method_id": "safety_aspects__penetration",
+      "title": "Penetration",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "safety_aspects__penetration",
+      "chapter_file": "data/reference/knowledge/summaries/safety_aspects__penetration.md",
+      "start_page": 70,
+      "end_page": 73,
+      "citation_ieee": "[S5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Penetration,\" White Paper, 2018, pp. 70-73.",
+      "linked_reference_markdown": "[S5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Penetration,\" White Paper, 2018, pp. 70-73.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Chapter references SAE J2464:2009 as the governing standard.",
+        "Chapter provides the clearest procedure out of all safety sections: nail diameter, penetration speed, observation period (1 h with nail in place).",
+        "Still requires a project SOP and EUCAR hazard review before release."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/safety_aspects__penetration.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_safety_rollover",
+      "method_id": "safety_aspects__roll_over",
+      "title": "Roll-over",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "safety_aspects__roll_over",
+      "chapter_file": "data/reference/knowledge/summaries/safety_aspects__roll_over.md",
+      "start_page": 74,
+      "end_page": 74,
+      "citation_ieee": "[S6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Roll-over,\" White Paper, 2018, p. 74.",
+      "linked_reference_markdown": "[S6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Roll-over,\" White Paper, 2018, p. 74.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/safety_aspects__roll_over.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_temperature_cycling",
+      "method_id": "thermal__temperature_cycling",
+      "title": "Temperature cycling",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__temperature_cycling",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__temperature_cycling.md",
+      "start_page": 75,
+      "end_page": 77,
+      "citation_ieee": "[T1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Temperature cycling,\" White Paper, 2018, pp. 75-77.",
+      "linked_reference_markdown": "[T1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Temperature cycling,\" White Paper, 2018, pp. 75-77.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. SOP with temperature range, ramp rate, cycle count, and pass/fail criteria required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__temperature_cycling.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_high_temp_endurance",
+      "method_id": "thermal__high_temperature_endurance",
+      "title": "High temperature endurance",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__high_temperature_endurance",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__high_temperature_endurance.md",
+      "start_page": 78,
+      "end_page": 78,
+      "citation_ieee": "[T2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: High temperature endurance,\" White Paper, 2018, p. 78.",
+      "linked_reference_markdown": "[T2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: High temperature endurance,\" White Paper, 2018, p. 78.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. Not to be confused with calendar ageing. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__high_temperature_endurance.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_external_short",
+      "method_id": "thermal__external_short_circuit",
+      "title": "External short circuit",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__external_short_circuit",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__external_short_circuit.md",
+      "start_page": 82,
+      "end_page": 85,
+      "citation_ieee": "[T3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: External short circuit,\" White Paper, 2018, pp. 82-85.",
+      "linked_reference_markdown": "[T3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: External short circuit,\" White Paper, 2018, pp. 82-85.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Chapter provides procedure with short-circuit resistance \u2264 5 m\u03a9, 10 min short plus 1 h observation.",
+        "Multiple standard variants cited: UN38.3 (55 \u00b0C, 1 h), IEC 62660-2 (10 min + 1 h), ISO 12405-3 (pack, \u2264 100 m\u03a9).",
+        "Project SOP must specify which standard applies and the exact short-circuit resistance."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__external_short_circuit.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_overcharge",
+      "method_id": "thermal__overcharge",
+      "title": "Overcharge",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__overcharge",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__overcharge.md",
+      "start_page": 86,
+      "end_page": 88,
+      "citation_ieee": "[T4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge,\" White Paper, 2018, pp. 86-88.",
+      "linked_reference_markdown": "[T4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge,\" White Paper, 2018, pp. 86-88.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Destructive abuse test. Reviewed SOP with EUCAR hazard assessment and fire-safe chamber required before planning."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__overcharge.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_forced_discharge",
+      "method_id": "thermal__forced_discharge",
+      "title": "Forced discharge",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__forced_discharge",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__forced_discharge.md",
+      "start_page": 89,
+      "end_page": 89,
+      "citation_ieee": "[T5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Forced discharge,\" White Paper, 2018, p. 89.",
+      "linked_reference_markdown": "[T5] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Forced discharge,\" White Paper, 2018, p. 89.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. Reversal current, depth, and abort rules must come from the applicable standard."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__forced_discharge.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_internal_short",
+      "method_id": "thermal__internal_short_circuit",
+      "title": "Internal short circuit",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__internal_short_circuit",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__internal_short_circuit.md",
+      "start_page": 92,
+      "end_page": 93,
+      "citation_ieee": "[T6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Internal short circuit,\" White Paper, 2018, pp. 92-93.",
+      "linked_reference_markdown": "[T6] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Internal short circuit,\" White Paper, 2018, pp. 92-93.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference only. ISC trigger method must be specified in a reviewed SOP."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__internal_short_circuit.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_tr_propagation",
+      "method_id": "thermal__propagation_of_thermal_runaway",
+      "title": "Propagation of thermal runaway",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__propagation_of_thermal_runaway",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__propagation_of_thermal_runaway.md",
+      "start_page": 90,
+      "end_page": 91,
+      "citation_ieee": "[T7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Propagation of thermal runaway,\" White Paper, 2018, pp. 90-91.",
+      "linked_reference_markdown": "[T7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Propagation of thermal runaway,\" White Paper, 2018, pp. 90-91.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Module/pack level test. Trigger method, propagation criteria, and gas venting analysis all require a reviewed SOP."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__propagation_of_thermal_runaway.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_altitude",
+      "method_id": "thermal__altitude_simulation",
+      "title": "Altitude simulation",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__altitude_simulation",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__altitude_simulation.md",
+      "start_page": 79,
+      "end_page": 79,
+      "citation_ieee": "[T8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Altitude simulation,\" White Paper, 2018, p. 79.",
+      "linked_reference_markdown": "[T8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Altitude simulation,\" White Paper, 2018, p. 79.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. SOP aligned to UN38.3 or equivalent required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__altitude_simulation.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_dewing",
+      "method_id": "thermal__dewing",
+      "title": "Dewing",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__dewing",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__dewing.md",
+      "start_page": 80,
+      "end_page": 80,
+      "citation_ieee": "[T9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Dewing,\" White Paper, 2018, p. 80.",
+      "linked_reference_markdown": "[T9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Dewing,\" White Paper, 2018, p. 80.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__dewing.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_emc",
+      "method_id": "thermal__electromagnetic_susceptibility",
+      "title": "Electromagnetic susceptibility",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__electromagnetic_susceptibility",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__electromagnetic_susceptibility.md",
+      "start_page": 81,
+      "end_page": 81,
+      "citation_ieee": "[T10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Electromagnetic susceptibility,\" White Paper, 2018, p. 81.",
+      "linked_reference_markdown": "[T10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Electromagnetic susceptibility,\" White Paper, 2018, p. 81.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. EMC testing primarily applies at BMS or system level."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__electromagnetic_susceptibility.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_fire",
+      "method_id": "thermal__fire_test",
+      "title": "Fire test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__fire_test",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__fire_test.md",
+      "start_page": 77,
+      "end_page": 78,
+      "citation_ieee": "[T11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Fire test,\" White Paper, 2018, pp. 77-78.",
+      "linked_reference_markdown": "[T11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Fire test,\" White Paper, 2018, pp. 77-78.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Module/pack level test. Specialist fire facility required. Outline reference."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__fire_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_humidity",
+      "method_id": "thermal__humidity",
+      "title": "Humidity",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__humidity",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__humidity.md",
+      "start_page": 80,
+      "end_page": 80,
+      "citation_ieee": "[T12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Humidity,\" White Paper, 2018, p. 80.",
+      "linked_reference_markdown": "[T12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Humidity,\" White Paper, 2018, p. 80.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__humidity.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_imbalanced_charge",
+      "method_id": "thermal__imbalanced_charge",
+      "title": "Imbalanced charge",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__imbalanced_charge",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__imbalanced_charge.md",
+      "start_page": 86,
+      "end_page": 86,
+      "citation_ieee": "[T13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Imbalanced charge,\" White Paper, 2018, p. 86.",
+      "linked_reference_markdown": "[T13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Imbalanced charge,\" White Paper, 2018, p. 86.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Module/pack level abuse test. Outline reference."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__imbalanced_charge.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_immersion",
+      "method_id": "thermal__immersion",
+      "title": "Immersion",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__immersion",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__immersion.md",
+      "start_page": 80,
+      "end_page": 80,
+      "citation_ieee": "[T14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Immersion,\" White Paper, 2018, p. 80.",
+      "linked_reference_markdown": "[T14] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Immersion,\" White Paper, 2018, p. 80.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__immersion.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_overdischarge_control",
+      "method_id": "thermal__over_discharge_current_control_check",
+      "title": "Over-discharge current control check",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__over_discharge_current_control_check",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__over_discharge_current_control_check.md",
+      "start_page": 87,
+      "end_page": 87,
+      "citation_ieee": "[T15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Over-discharge current control check,\" White Paper, 2018, p. 87.",
+      "linked_reference_markdown": "[T15] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Over-discharge current control check,\" White Paper, 2018, p. 87.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Protection circuit validation test. Only run with protection device active."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__over_discharge_current_control_check.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_overcharge_current_control",
+      "method_id": "thermal__overcharge_current_control_check",
+      "title": "Overcharge current control check",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__overcharge_current_control_check",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__overcharge_current_control_check.md",
+      "start_page": 87,
+      "end_page": 87,
+      "citation_ieee": "[T16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge current control check,\" White Paper, 2018, p. 87.",
+      "linked_reference_markdown": "[T16] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge current control check,\" White Paper, 2018, p. 87.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Protection-circuit validation test. Outline reference."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__overcharge_current_control_check.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_overcharge_voltage_control",
+      "method_id": "thermal__overcharge_voltage_control_check",
+      "title": "Overcharge voltage control check",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__overcharge_voltage_control_check",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__overcharge_voltage_control_check.md",
+      "start_page": 88,
+      "end_page": 88,
+      "citation_ieee": "[T17] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge voltage control check,\" White Paper, 2018, p. 88.",
+      "linked_reference_markdown": "[T17] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Overcharge voltage control check,\" White Paper, 2018, p. 88.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Protection-circuit validation test. Outline reference."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__overcharge_voltage_control_check.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_rain",
+      "method_id": "thermal__rain_test",
+      "title": "Rain test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__rain_test",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__rain_test.md",
+      "start_page": 80,
+      "end_page": 80,
+      "citation_ieee": "[T18] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Rain test,\" White Paper, 2018, p. 80.",
+      "linked_reference_markdown": "[T18] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Rain test,\" White Paper, 2018, p. 80.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. Align with IEC 60529 or equivalent."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__rain_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_rapid_charge",
+      "method_id": "thermal__rapid_charging_and_discharging",
+      "title": "Rapid charging and discharging",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__rapid_charging_and_discharging",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__rapid_charging_and_discharging.md",
+      "start_page": 79,
+      "end_page": 79,
+      "citation_ieee": "[T19] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Rapid charging and discharging,\" White Paper, 2018, p. 79.",
+      "linked_reference_markdown": "[T19] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Rapid charging and discharging,\" White Paper, 2018, p. 79.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Chapter notes: not tested at cell level in handbook. Confirm test level before planning."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__rapid_charging_and_discharging.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_salt",
+      "method_id": "thermal__salt_spray_salt_water_immersion",
+      "title": "Salt spray / salt water immersion",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__salt_spray_salt_water_immersion",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__salt_spray_salt_water_immersion.md",
+      "start_page": 80,
+      "end_page": 80,
+      "citation_ieee": "[T20] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Salt spray / salt water immersion,\" White Paper, 2018, p. 80.",
+      "linked_reference_markdown": "[T20] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Salt spray / salt water immersion,\" White Paper, 2018, p. 80.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Outline reference. Confirm applicable standard (IEC 60068-2-11, ISO 9227)."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__salt_spray_salt_water_immersion.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_separator_shutdown",
+      "method_id": "thermal__separator_shutdown_integrity_test",
+      "title": "Separator shutdown integrity test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__separator_shutdown_integrity_test",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__separator_shutdown_integrity_test.md",
+      "start_page": 93,
+      "end_page": 93,
+      "citation_ieee": "[T21] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Separator shutdown integrity test,\" White Paper, 2018, p. 93.",
+      "linked_reference_markdown": "[T21] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Separator shutdown integrity test,\" White Paper, 2018, p. 93.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Evaluates in-situ separator shutdown. Outline reference. SOP required."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__separator_shutdown_integrity_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_module_level",
+      "method_id": "thermal__tests_at_module_level",
+      "title": "Tests at module level",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__tests_at_module_level",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__tests_at_module_level.md",
+      "start_page": 94,
+      "end_page": 94,
+      "citation_ieee": "[T22] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Tests at module level,\" White Paper, 2018, p. 94.",
+      "linked_reference_markdown": "[T22] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Tests at module level,\" White Paper, 2018, p. 94.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Checklist of module-level test topics. Each individual test requires its own method entry and SOP."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__tests_at_module_level.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_control_check",
+      "method_id": "thermal__thermal_control_check",
+      "title": "Thermal control check",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__thermal_control_check",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__thermal_control_check.md",
+      "start_page": 88,
+      "end_page": 88,
+      "citation_ieee": "[T23] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal control check,\" White Paper, 2018, p. 88.",
+      "linked_reference_markdown": "[T23] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal control check,\" White Paper, 2018, p. 88.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Protection-circuit validation test. Outline reference."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__thermal_control_check.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_thermal_arc",
+      "method_id": "thermal__thermal_stability_arc",
+      "title": "Thermal stability (ARC)",
+      "source_type": "core_handbook_chapter",
+      "source_role": "outline_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "thermal__thermal_stability_arc",
+      "chapter_file": "data/reference/knowledge/summaries/thermal__thermal_stability_arc.md",
+      "start_page": 79,
+      "end_page": 79,
+      "citation_ieee": "[T24] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal stability (ARC),\" White Paper, 2018, p. 79.",
+      "linked_reference_markdown": "[T24] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Thermal stability (ARC),\" White Paper, 2018, p. 79.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "References FreedomCar:2005 and SAE J2464:2009. ARC-rated containment vessel required. Outline reference."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/thermal__thermal_stability_arc.md"
+    }
+  ]
+}

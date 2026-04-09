@@ -1,0 +1,522 @@
+{
+  "electrochemical_impedance_test": {
+    "label": "Electrochemical impedance test",
+    "default_for_objective": false,
+    "objective_key": "eis",
+    "aliases": [
+      "eis",
+      "electrochemical impedance",
+      "impedance test"
+    ],
+    "chapter_id": "battery_cell_performance__electrochemical_impedance_test",
+    "source_title": "Electrochemical impedance test",
+    "source_pages": [
+      40,
+      43
+    ],
+    "handbook_source_id": "battery_understanding_v3_electrochemical_impedance_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_electrochemical_impedance_test_scope",
+      "battery_understanding_v3_electrochemical_impedance_test_execution",
+      "battery_understanding_v3_electrochemical_impedance_test_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Measure cell impedance under open-circuit conditions across SOC and life-stage checkpoints for qualitative or equivalent-circuit analysis.",
+    "applications": [
+      "SOC-dependent impedance characterization",
+      "Ageing follow-up and ECM parameter fitting"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Battery tester or potentiostat with integrated frequency response analyser",
+      "Temperature-controlled chamber"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 60,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 60,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "prepare_full_soc",
+          "name": "Prepare full SOC start point",
+          "details": "Start from 100% SOC and rest for {rest_minutes} minutes before the first impedance spectrum.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_electrochemical_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "acquire_spectrum",
+          "name": "Acquire the impedance spectrum",
+          "details": "Measure a potentiostatic 5 mV rms spectrum from 10 kHz down to 10 mHz with 5-6 points per decade.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_electrochemical_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "post_spectrum_rest",
+          "name": "Post-spectrum rest",
+          "details": "Rest for 10 minutes after each spectrum before changing SOC.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_electrochemical_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "soc_staircase",
+          "name": "SOC staircase",
+          "details": "Discharge at 1C to the next 20% SOC decrement and repeat the rest-spectrum-rest loop until 0% SOC, respecting the voltage limit and final CV completion logic at 0% SOC.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_electrochemical_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "life_stage_checkpoints",
+          "name": "Life-stage checkpoints",
+          "details": "Repeat the SOC-resolved EIS set at beginning, selected middle, and end-of-life checkpoints when the study needs SOH tracking.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_electrochemical_impedance_test_outputs",
+          "step_strictness": "tailorable_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Keep cable, holder, and lead impedance controlled and documented because the chapter explicitly flags setup sensitivity.",
+      "Store the exact frequency vector so spectra remain comparable across checkpoints."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Nyquist spectra vs SOC",
+        "Resistance breakdown vs SOC and SOH"
+      ],
+      "tables": [
+        "Frequency acquisition settings",
+        "Ra / Rb / Rt or equivalent-circuit fit summary"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the OCV condition, 20% SOC staircase, 5 mV rms signal, and 10 kHz to 10 mHz range locked. Only the life-stage checkpoint count should move after review.",
+      "locked_planning_fields": [
+        "open-circuit measurement condition",
+        "100% to 0% SOC staircase in 20% steps",
+        "5 mV rms potentiostatic excitation",
+        "10 kHz to 10 mHz frequency range"
+      ],
+      "tailorable_fields": [
+        "which ageing checkpoints receive full EIS coverage",
+        "qualitative versus equivalent-circuit reporting depth"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "thermal_characterisation": {
+    "label": "Thermal characterisation",
+    "default_for_objective": false,
+    "objective_key": "thermal_characterisation",
+    "aliases": [
+      "thermal characterisation",
+      "surface heat distribution",
+      "thermal mapping"
+    ],
+    "chapter_id": "battery_cell_performance__thermal_characterisation",
+    "source_title": "Thermal characterisation",
+    "source_pages": [
+      38,
+      39
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_characterisation",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_thermal_characterisation_scope",
+      "battery_understanding_v3_thermal_characterisation_execution",
+      "battery_understanding_v3_thermal_characterisation_outputs"
+    ],
+    "complementary_literature_source_ids": [],
+    "intent": "Determine the surface heat distribution that a cell develops during operation for later thermal-model and cooling-design work.",
+    "applications": [
+      "Thermal-model boundary-condition generation",
+      "Cooling-concept comparison at cell and module level"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Temperature sensors or logger",
+      "Insulation material",
+      "Potentiostat or cycling system"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 0,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 0,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "instrument_surface",
+          "name": "Instrument the cell surface",
+          "details": "Place temperature sensors so the cell surface is covered without blind spots and keep lead losses observable where possible.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_characterisation_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "pseudo_adiabatic_stage",
+          "name": "Pseudo-adiabatic stage",
+          "details": "Insulate the cell as well as practical, then charge or discharge at defined currents while logging the surface heat distribution.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_characterisation_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "thermostated_plate_stage",
+          "name": "Thermostated-plate repeat",
+          "details": "Remove the bottom insulation, attach the cell to a thermostated metal plate, and repeat the current profile at different cooling temperatures.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_characterisation_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "extended_fixture_variants",
+          "name": "Extended fixture variants",
+          "details": "If needed, extend the setup to multi-cell arrangements or busbar-cooling analogues once the single-cell stages are stable.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_characterisation_outputs",
+          "step_strictness": "tailorable_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Log all surface temperature channels and the exact current profile used in each stage.",
+      "Keep the insulation and cooling-fixture configuration versioned because it changes the heat-flow interpretation."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Surface temperature distribution vs time",
+        "Temperature-gradient comparison between insulated and cooled stages"
+      ],
+      "tables": [
+        "Sensor placement map",
+        "Estimated heat-source and sink contributions"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the full-surface sensor coverage, pseudo-adiabatic first stage, and thermostated-plate repeat locked. Fixture extensions can be added only after review.",
+      "locked_planning_fields": [
+        "full-surface temperature sensing",
+        "pseudo-adiabatic first stage",
+        "thermostated metal-plate repeat"
+      ],
+      "tailorable_fields": [
+        "exact current profile",
+        "module-style or busbar-cooling extensions"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "thermal_impedance_test": {
+    "label": "Thermal impedance test",
+    "default_for_objective": false,
+    "objective_key": "thermal_impedance_test",
+    "aliases": [
+      "thermal impedance",
+      "tis",
+      "thermal impedance spectrum"
+    ],
+    "chapter_id": "battery_cell_performance__thermal_impedance_test",
+    "source_title": "Thermal impedance test",
+    "source_pages": [
+      44,
+      46
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_impedance_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_thermal_impedance_test_scope",
+      "battery_understanding_v3_thermal_impedance_test_execution",
+      "battery_understanding_v3_thermal_impedance_test_outputs"
+    ],
+    "complementary_literature_source_ids": [],
+    "intent": "Identify thermal parameters from sinusoidal self-heating and surface-temperature response without destructive calorimetry.",
+    "applications": [
+      "Thermal-model parameter identification",
+      "Cell-level thermal-design input generation"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Battery cell tester with sinusoidal-current capability",
+      "IR thermopile sensor",
+      "Temperature chamber"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 0,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 0,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "thermal_stabilization",
+          "name": "Thermal stabilization",
+          "details": "Mount the cell in the minimal-contact fixture, place it in a 25 C chamber, and wait at least 3 h until cell and ambient temperatures match.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "sinusoidal_excitation",
+          "name": "Sinusoidal excitation",
+          "details": "Apply a sinusoidal current with alternating charge and discharge half-cycles every 3 s so SOC remains effectively constant while internal heat is modulated.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "surface_temperature_recording",
+          "name": "Surface temperature recording",
+          "details": "Record the surface-temperature response with the IR thermopile and repeat the measurement over several frequencies between 0.1 mHz and 10 mHz.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_impedance_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "parameter_fit",
+          "name": "Thermal-parameter fit",
+          "details": "Fit a finite-difference thermal model by least squares until heat capacity, thermal conductivity, and convective exchange reproduce the measured spectrum.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_thermal_impedance_test_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Store the excitation frequency, current amplitude, raw temperature trace, and filtered harmonic response for each run.",
+      "Keep the fixture contact area and optional thermal-camera homogeneity check documented."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Thermal impedance spectrum",
+        "Current, voltage, computed heat, and surface-temperature traces"
+      ],
+      "tables": [
+        "Per-frequency thermal impedance summary",
+        "Fitted heat-capacity, conductivity, and convection coefficients"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the 25 C stabilization, sinusoidal self-heating, 0.1 to 10 mHz frequency range, and finite-difference parameter fit locked.",
+      "locked_planning_fields": [
+        "25 C chamber stabilization for at least 3 h",
+        "sinusoidal current excitation with 3 s half-cycles",
+        "0.1 mHz to 10 mHz frequency range",
+        "finite-difference model fit"
+      ],
+      "tailorable_fields": [
+        "excitation current amplitude",
+        "optional thermal-camera cross-check"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "quasi_static_thermal_tests": {
+    "label": "Quasi-static thermal tests",
+    "default_for_objective": false,
+    "objective_key": "swelling_tracking",
+    "aliases": [
+      "quasi-static thermal tests",
+      "swelling test",
+      "dilatometer test"
+    ],
+    "chapter_id": "battery_cell_performance__quasi_static_thermal_tests",
+    "source_title": "Quasi-static thermal tests",
+    "source_pages": [
+      47,
+      48
+    ],
+    "handbook_source_id": "battery_understanding_v3_quasi_static_thermal_tests",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_quasi_static_thermal_tests_scope",
+      "battery_understanding_v3_quasi_static_thermal_tests_execution",
+      "battery_understanding_v3_quasi_static_thermal_tests_outputs"
+    ],
+    "complementary_literature_source_ids": [],
+    "intent": "Quantify perpendicular swelling throughout SOC by synchronizing a dilatometer with a capacity-style test.",
+    "applications": [
+      "Mechanical design support for cell or module fixtures",
+      "Supplementary SoC / SoH indicator development from swelling behaviour"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor"
+    ],
+    "required_equipment": [
+      "Capacity-test capable battery cell tester",
+      "Synchronized digital dilatometer"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 60,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 60,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "mount_dilatometer",
+          "name": "Mount synchronized dilatometer",
+          "details": "Mount a digital dilatometer and synchronize it with the battery tester before the electrical cycle begins.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_quasi_static_thermal_tests_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "run_capacity_style_cycle",
+          "name": "Run the capacity-style cycle",
+          "details": "Use the same electrical sequence as the capacity test while recording perpendicular swelling throughout the SOC range.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_quasi_static_thermal_tests_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "separate_swelling_components",
+          "name": "Separate reversible and irreversible swelling",
+          "details": "Use the synchronized swelling trace to separate reversible SOC-linked behaviour from irreversible ageing-linked growth.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_quasi_static_thermal_tests_outputs",
+          "step_strictness": "tailorable_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Synchronize swelling, voltage, current, capacity, and temperature streams to the same timeline.",
+      "Retain the same electrical metadata as the paired capacity test so swelling results remain interpretable."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Swelling vs SOC during the reference cycle",
+        "Reversible versus irreversible swelling trend"
+      ],
+      "tables": [
+        "Dilatometer setup summary",
+        "Peak swelling and residual swelling summary"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the synchronized dilatometer requirement and the capacity-test style electrical block locked. Interpretation depth can still move after review.",
+      "locked_planning_fields": [
+        "synchronized dilatometer",
+        "capacity-test style electrical sequence"
+      ],
+      "tailorable_fields": [
+        "how deeply reversible and irreversible swelling are decomposed in reporting"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "electrochemical_voltage_spectroscopy": {
+    "label": "Electrochemical Voltage Spectroscopy (EVS)",
+    "method_name": "Electrochemical Voltage Spectroscopy (EVS/ICA)",
+    "method_family": "electrical_characterisation",
+    "aliases": [
+      "evs",
+      "ica",
+      "dva",
+      "incremental_capacity_analysis",
+      "differential_voltage_analysis"
+    ],
+    "execution_readiness": "direct_planning",
+    "handbook_source_id": "barai_2019_noninvasive_characterisation_review",
+    "reference_check_policy": {
+      "requires_primary_source": true,
+      "primary_evidence_card_ids": [
+        "barai_2019_evs_foundations",
+        "barai_2019_evs_degradation_modes"
+      ]
+    },
+    "required_inputs": {
+      "battery_asset": [
+        "cell_chemistry",
+        "rated_capacity",
+        "max_voltage",
+        "min_voltage"
+      ],
+      "lab_equipment": [
+        "high_precision_battery_tester",
+        "temperature_chamber"
+      ]
+    },
+    "protocol_template": {
+      "stages": [
+        {
+          "stage": "pseudo_ocv_cycling",
+          "focus": "C_over_25_or_slower_charge_discharge"
+        },
+        {
+          "stage": "data_smoothing",
+          "focus": "filter_voltage_noise"
+        },
+        {
+          "stage": "derivative_calculation",
+          "focus": "compute_dQ_dV_and_dV_dQ"
+        },
+        {
+          "stage": "peak_tracking",
+          "focus": "track_peak_area_for_LLI_or_LAM"
+        }
+      ]
+    },
+    "objective_key": "electrochemical_voltage_spectroscopy",
+    "source_title": "Unknown source",
+    "source_pages": null
+  }
+}

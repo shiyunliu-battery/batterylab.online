@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "status": "parked_scaffold",
+  "models": [
+    {
+      "id": "r0_only",
+      "status": "parked_scaffold",
+      "fit_inputs": [
+        "pulse current",
+        "voltage response"
+      ],
+      "outputs": [
+        "ohmic resistance"
+      ],
+      "notes": [
+        "This model family is parked until the governed ECM fitting workflow is rebuilt."
+      ]
+    },
+    {
+      "id": "thevenin_1rc",
+      "status": "parked_scaffold",
+      "fit_inputs": [
+        "HPPC pulse segments",
+        "OCV-SOC reference"
+      ],
+      "outputs": [
+        "R0",
+        "R1",
+        "C1"
+      ],
+      "notes": [
+        "This model family is parked until the governed ECM fitting workflow is rebuilt.",
+        "A full OCV-SOC reference is still recommended before any future production-grade identification work."
+      ]
+    },
+    {
+      "id": "thevenin_2rc",
+      "status": "planned",
+      "fit_inputs": [
+        "HPPC pulse segments",
+        "OCV-SOC reference",
+        "temperature context"
+      ],
+      "outputs": [
+        "R0",
+        "R1",
+        "C1",
+        "R2",
+        "C2"
+      ]
+    }
+  ],
+  "required_fields": [
+    "id",
+    "status",
+    "fit_inputs",
+    "outputs"
+  ]
+}

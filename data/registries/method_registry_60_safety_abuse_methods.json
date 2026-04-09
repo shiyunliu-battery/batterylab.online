@@ -1,0 +1,1256 @@
+{
+  "safety_aspects__vibration": {
+    "label": "Vibration test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "vibration",
+      "vibration test",
+      "mechanical vibration"
+    ],
+    "chapter_id": "safety_aspects__vibration",
+    "source_title": "Vibration",
+    "source_pages": [
+      63,
+      65
+    ],
+    "handbook_source_id": "battery_understanding_v3_safety_vibration",
+    "primary_evidence_card_ids": [
+      "safety_aspects__vibration_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell mechanical integrity and electrical stability under sinusoidal or random vibration profiles representative of transport and field conditions.",
+    "applications": [
+      "Transport / shipping qualification",
+      "Field-deployment vibration endurance"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "soc_at_test",
+      "vibration_profile_standard"
+    ],
+    "required_equipment": [
+      "Vibration table with programmable profile",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Chapter is reference material only. A reviewed SOP aligned to the applicable standard (UN38.3, IEC 62660-2, or equivalent) must be produced before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Do not plan this test from the handbook chapter alone. Require a project SOP aligned to the applicable standard (UN38.3, IEC 62660-2, or equivalent).",
+      "SOC, axis, amplitude, and observation period must all be reviewed before release."
+    ]
+  },
+  "safety_aspects__mechanical_shock": {
+    "label": "Mechanical shock test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "mechanical shock",
+      "shock test",
+      "half-sine shock"
+    ],
+    "chapter_id": "safety_aspects__mechanical_shock",
+    "source_title": "Mechanical shock",
+    "source_pages": [
+      66,
+      67
+    ],
+    "handbook_source_id": "battery_understanding_v3_safety_mechanical_shock",
+    "primary_evidence_card_ids": [
+      "safety_aspects__mechanical_shock_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Evaluate cell structural and electrical integrity after application of a defined mechanical shock pulse.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Shock test machine",
+      "Voltage logger",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Shock axis, pulse shape, amplitude, and duration must come from the applicable standard and be reviewed before release."
+    ]
+  },
+  "safety_aspects__drop": {
+    "label": "Drop test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "drop test",
+      "drop",
+      "impact drop"
+    ],
+    "chapter_id": "safety_aspects__drop",
+    "source_title": "Drop",
+    "source_pages": [
+      68,
+      68
+    ],
+    "handbook_source_id": "battery_understanding_v3_safety_drop",
+    "primary_evidence_card_ids": [
+      "safety_aspects__drop_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess impact tolerance of cell when dropped from a defined height onto a hard surface.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Drop fixture",
+      "Hard surface platform",
+      "Post-drop voltage and visual inspection equipment"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP required. Drop height and orientation are standard-dependent.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Drop height, surface hardness, SOC, and observation period must be specified by the applicable standard and reviewed before release."
+    ]
+  },
+  "safety_aspects__cell_impact_crush": {
+    "label": "Cell impact / crush test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "crush test",
+      "impact crush",
+      "cell crush",
+      "cell impact"
+    ],
+    "chapter_id": "safety_aspects__cell_impact_crush",
+    "source_title": "Cell impact / crush",
+    "source_pages": [
+      69,
+      69
+    ],
+    "handbook_source_id": "battery_understanding_v3_safety_crush",
+    "primary_evidence_card_ids": [
+      "safety_aspects__cell_impact_crush_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Simulate internal short circuit via external mechanical deformation (crush) to evaluate safety response.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Crush fixture or hydraulic press",
+      "Force sensor",
+      "Voltage monitor",
+      "Temperature sensors",
+      "Gas measurement"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP required. This is a destructive abuse test.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Requires full EUCAR hazard level assessment and reviewed SOC. Do not plan from handbook outline alone."
+    ]
+  },
+  "safety_aspects__penetration": {
+    "label": "Nail penetration test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "penetration",
+      "nail penetration",
+      "nail test",
+      "internal short circuit penetration"
+    ],
+    "chapter_id": "safety_aspects__penetration",
+    "source_title": "Penetration",
+    "source_pages": [
+      70,
+      73
+    ],
+    "handbook_source_id": "battery_understanding_v3_safety_penetration",
+    "primary_evidence_card_ids": [
+      "safety_aspects__penetration_scope",
+      "safety_aspects__penetration_execution"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Simulate an internal short circuit by forcing a conductive steel nail through the charged cell, per SAE J2464:2009.",
+    "applications": [
+      "Internal short-circuit safety characterisation",
+      "Dendrite and foreign-object fault simulation"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "soc_at_test"
+    ],
+    "required_equipment": [
+      "Hydraulic press or dedicated nail penetration unit",
+      "Conductive mild-steel nail (3 mm diameter for cells, 20 mm for modules)",
+      "Temperature sensors",
+      "Voltage and temperature data logger (≥ 10 Hz)",
+      "Gas measurement system (toxic and flammable gases)"
+    ],
+    "source_procedure_notes": {
+      "cell_nail_diameter_mm": 3,
+      "module_nail_diameter_mm": 20,
+      "nail_tip": "Tapered to a sharp point",
+      "penetration_rate_cm_s": 8,
+      "minimum_depth": "Through cell",
+      "observation_after_penetration_minutes": 60,
+      "soc_at_test": 100
+    },
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Chapter provides executable procedure outline (SAE J2464:2009). A project-level SOP with EUCAR hazard review is still required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "This is a destructive abuse test. Requires dedicated fume extraction, containment, and fire suppression prepared before energising.",
+      "Log at minimum 10 Hz for voltage and temperature to capture the thermal event precisely.",
+      "The nail remains in place for the full 1-hour observation period."
+    ]
+  },
+  "safety_aspects__roll_over": {
+    "label": "Roll-over test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "roll over",
+      "rollover",
+      "roll-over test"
+    ],
+    "chapter_id": "safety_aspects__roll_over",
+    "source_title": "Roll-over",
+    "source_pages": [
+      74,
+      74
+    ],
+    "handbook_source_id": "battery_understanding_v3_safety_rollover",
+    "primary_evidence_card_ids": [
+      "safety_aspects__roll_over_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module safety after inversion or roll-over event, relevant to vehicle crash simulation.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Orientation fixture",
+      "Voltage monitor",
+      "Observation chamber"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "SOC, inversion angle, and observation duration must be specified by the applicable standard and reviewed before release."
+    ]
+  },
+  "thermal__external_short_circuit": {
+    "label": "External short circuit test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "external short circuit",
+      "short circuit test",
+      "short circuit",
+      "external short"
+    ],
+    "chapter_id": "thermal__external_short_circuit",
+    "source_title": "External short circuit",
+    "source_pages": [
+      82,
+      85
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_external_short",
+    "primary_evidence_card_ids": [
+      "thermal__external_short_circuit_scope",
+      "thermal__external_short_circuit_execution"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Determine cell/module safety behaviour under external short circuit. A standard abuse test validating overcurrent protection or characterising thermal stress response.",
+    "applications": [
+      "Safety certification",
+      "Fuse and protection-circuit validation"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "soc_at_test"
+    ],
+    "required_equipment": [
+      "Short-circuit device rated for ≥ 100× nominal current",
+      "Short-circuit resistance ≤ 5 mΩ (or per standard, customer requirement may be < 250 µΩ)",
+      "High-bandwidth current measurement (≥ 20 kHz sampling rate)",
+      "Temperature sensors (≥ 10 Hz)",
+      "Gas measurement system"
+    ],
+    "source_procedure_notes": {
+      "target_soc": 100,
+      "short_circuit_resistance_mohm": 5,
+      "short_duration_minutes": 10,
+      "observation_after_minutes": 60,
+      "test_temperature": "room temperature"
+    },
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Chapter outline is executable in conjunction with a specific standard (IEC 62660-2, UN38.3, SAE J2929, etc.). A reviewed SOP specifying the exact short-circuit resistance, duration, and standard is required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Do not run without fume extraction, fire containment, and reviewed current-handling capacity.",
+      "The removed charge and post-short-circuit voltage recovery are the primary observables."
+    ]
+  },
+  "thermal__overcharge": {
+    "label": "Overcharge test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "overcharge",
+      "overcharge test",
+      "overcharge abuse"
+    ],
+    "chapter_id": "thermal__overcharge",
+    "source_title": "Overcharge",
+    "source_pages": [
+      86,
+      88
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_overcharge",
+    "primary_evidence_card_ids": [
+      "thermal__overcharge_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell response and safety outcome when charged beyond the maximum rated voltage.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Programmable power supply or cycler with overrange capability",
+      "Temperature sensors",
+      "Gas measurement",
+      "Containment chamber"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP with EUCAR hazard pre-assessment required. Overcharge rate, target voltage excess, and termination rule must be explicitly specified.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "This is a destructive test and must be run in a certified fire-safe chamber. Do not exceed the voltage or rate beyond the reviewed specification."
+    ]
+  },
+  "thermal__forced_discharge": {
+    "label": "Forced discharge test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "forced discharge",
+      "over-discharge",
+      "forced over-discharge"
+    ],
+    "chapter_id": "thermal__forced_discharge",
+    "source_title": "Forced discharge",
+    "source_pages": [
+      89,
+      89
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_forced_discharge",
+    "primary_evidence_card_ids": [
+      "thermal__forced_discharge_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess safety response when cell is discharged below its rated minimum voltage (reversal condition).",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Programmable load or power supply capable of driving cell into reversal",
+      "Temperature sensors",
+      "Gas measurement"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP with reversal depth, current, and termination criteria required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Reversal current and depth are standard-dependent. Define and review before execution."
+    ]
+  },
+  "thermal__propagation_of_thermal_runaway": {
+    "label": "Thermal runaway propagation test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "thermal runaway",
+      "thermal runaway propagation",
+      "TR propagation"
+    ],
+    "chapter_id": "thermal__propagation_of_thermal_runaway",
+    "source_title": "Propagation of thermal runaway",
+    "source_pages": [
+      90,
+      91
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_tr_propagation",
+    "primary_evidence_card_ids": [
+      "thermal__propagation_of_thermal_runaway_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess whether thermal runaway initiated in one cell propagates to adjacent cells in a module or pack.",
+    "applications": [
+      "Module and pack safety qualification",
+      "Battery system design validation"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_modules_and_packs"
+    ],
+    "required_equipment": [
+      "External heat source or trigger element",
+      "Multiple temperature sensors on each cell",
+      "Gas measurement and venting analysis",
+      "Certified fire-safe chamber"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP with trigger method, propagation decision criteria, and safety abort rules required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "This test requires module or pack level. Do not attempt at single-cell level without explicit review. Trigger method (heater, nail, overcharge) must be specified in the SOP."
+    ]
+  },
+  "thermal__temperature_cycling": {
+    "label": "Temperature cycling test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "temperature cycling",
+      "thermal cycling",
+      "temp cycling"
+    ],
+    "chapter_id": "thermal__temperature_cycling",
+    "source_title": "Temperature cycling",
+    "source_pages": [
+      75,
+      77
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_temperature_cycling",
+    "primary_evidence_card_ids": [
+      "thermal__temperature_cycling_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module integrity after repeated thermal excursions between defined temperature extremes.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Temperature chamber with programmable cycle profile",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP specifying temperature range, ramp rate, number of cycles, soak time, and pass/fail criteria required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Temperature extremes and ramp rates must be taken from the applicable standard (IEC 62133, UN38.3, etc.) and reviewed."
+    ]
+  },
+  "thermal__high_temperature_endurance": {
+    "label": "High temperature endurance test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "high temperature endurance",
+      "high temp endurance",
+      "storage at high temperature"
+    ],
+    "chapter_id": "thermal__high_temperature_endurance",
+    "source_title": "High temperature endurance",
+    "source_pages": [
+      78,
+      78
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_high_temp_endurance",
+    "primary_evidence_card_ids": [
+      "thermal__high_temperature_endurance_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module safety and capacity after prolonged storage or exposure at elevated temperature.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Temperature chamber",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP with temperature, duration, and pass/fail criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Do not confuse with calendar ageing at elevated temperature; this is an abuse / endurance test targeting a specific standard pass/fail threshold."
+    ]
+  },
+  "thermal__internal_short_circuit": {
+    "label": "Internal short circuit test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "internal short circuit",
+      "ISC",
+      "internal short"
+    ],
+    "chapter_id": "thermal__internal_short_circuit",
+    "source_title": "Internal short circuit",
+    "source_pages": [
+      92,
+      93
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_internal_short",
+    "primary_evidence_card_ids": [
+      "thermal__internal_short_circuit_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Induce a controlled internal short circuit and assess cell safety response.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Specialised ISC trigger mechanism (EUCAR-type or equivalent)",
+      "Temperature sensors",
+      "Gas measurement",
+      "Containment"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Reviewed SOP required. ISC trigger method and severity must be specified.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "ISC trigger methods vary widely; nail, separator defect film, and shape-memory alloy pins are all options. The choice must be reviewed."
+    ]
+  },
+  "thermal__altitude_simulation": {
+    "label": "Altitude simulation test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "altitude simulation",
+      "low pressure test",
+      "altitude test"
+    ],
+    "chapter_id": "thermal__altitude_simulation",
+    "source_title": "Altitude simulation",
+    "source_pages": [
+      79,
+      79
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_altitude",
+    "primary_evidence_card_ids": [
+      "thermal__altitude_simulation_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module safety under reduced-pressure conditions simulating high-altitude transport or operation.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Vacuum/altitude simulation chamber",
+      "Pressure monitor",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP specifying pressure level, duration, temperature, and pass/fail criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "UN38.3 specifies 11.6 kPa (approx 15 km altitude) for 6 h. Any deviation must be reviewed."
+    ]
+  },
+  "thermal__dewing": {
+    "label": "Dewing test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "dewing",
+      "condensation test",
+      "moisture condensation"
+    ],
+    "chapter_id": "thermal__dewing",
+    "source_title": "Dewing",
+    "source_pages": [
+      80,
+      80
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_dewing",
+    "primary_evidence_card_ids": [
+      "thermal__dewing_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module integrity after condensation conditions, typically by transitioning from cold to warm humid environment.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Climate chamber with humidity control",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with humidity profile, temperature step, and observation period required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "SOC and sealing state must be reviewed. Cold-soak to warm humid transition must be defined."
+    ]
+  },
+  "thermal__electromagnetic_susceptibility": {
+    "label": "Electromagnetic susceptibility test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "electromagnetic susceptibility",
+      "EMC",
+      "EMI test"
+    ],
+    "chapter_id": "thermal__electromagnetic_susceptibility",
+    "source_title": "Electromagnetic susceptibility",
+    "source_pages": [
+      81,
+      81
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_emc",
+    "primary_evidence_card_ids": [
+      "thermal__electromagnetic_susceptibility_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Evaluate cell or BMS response to electromagnetic fields and interference. Primarily relevant at system level.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells_and_modules"
+    ],
+    "required_equipment": [
+      "EMC test chamber or anechoic facility",
+      "Signal generator",
+      "Monitoring equipment"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP aligned to applicable EMC standard required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Coordinate with electronics engineering team. EMC is primarily a BMS or system-level test."
+    ]
+  },
+  "thermal__fire_test": {
+    "label": "Fire test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "fire test",
+      "external fire",
+      "fire exposure",
+      "propane fire test"
+    ],
+    "chapter_id": "thermal__fire_test",
+    "source_title": "Fire test",
+    "source_pages": [
+      77,
+      78
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_fire",
+    "primary_evidence_card_ids": [
+      "thermal__fire_test_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Characterise battery safety and fire resistance when exposed to an external propane fire at module or pack level.",
+    "applications": [
+      "Module and pack fire safety qualification",
+      "Fire propagation assessment"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_modules_and_packs"
+    ],
+    "required_equipment": [
+      "Propane or gas burner with defined heat flux",
+      "Thermocouple arrays",
+      "Gas measurement",
+      "Outdoor or explosion-proof test area"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Specialist fire facility and reviewed SOP required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Applies at module or pack level, not individual cells. Specialist fire test facility and full EUCAR pre-assessment required."
+    ]
+  },
+  "thermal__humidity": {
+    "label": "Humidity test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "humidity test",
+      "humidity exposure",
+      "high humidity"
+    ],
+    "chapter_id": "thermal__humidity",
+    "source_title": "Humidity",
+    "source_pages": [
+      80,
+      80
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_humidity",
+    "primary_evidence_card_ids": [
+      "thermal__humidity_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module integrity after prolonged exposure to high relative humidity.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Climate chamber with humidity control",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with humidity level, temperature, duration, and pass/fail criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Levels and exposure times are standard-dependent (IEC 62133, UN38.3, etc.)."
+    ]
+  },
+  "thermal__imbalanced_charge": {
+    "label": "Imbalanced charge test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "imbalanced charge",
+      "unbalanced charge",
+      "cell imbalance abuse"
+    ],
+    "chapter_id": "thermal__imbalanced_charge",
+    "source_title": "Imbalanced charge",
+    "source_pages": [
+      86,
+      86
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_imbalanced_charge",
+    "primary_evidence_card_ids": [
+      "thermal__imbalanced_charge_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess module or pack safety when cells within the string are deliberately charged to imbalanced states, simulating BMS failure.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_modules_and_packs"
+    ],
+    "required_equipment": [
+      "Multi-channel cell tester",
+      "Temperature sensors",
+      "Gas measurement"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP defining imbalance levels, charging rate, and safety abort criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Module or pack level test. Degree of imbalance must come from the applicable standard or reviewed SOP."
+    ]
+  },
+  "thermal__immersion": {
+    "label": "Immersion test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "immersion",
+      "water immersion",
+      "submerge test"
+    ],
+    "chapter_id": "thermal__immersion",
+    "source_title": "Immersion",
+    "source_pages": [
+      80,
+      80
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_immersion",
+    "primary_evidence_card_ids": [
+      "thermal__immersion_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module integrity after immersion in water to a defined depth and duration.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Water tank with defined depth",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with depth, duration, SOC, and post-immersion observation criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "SOC and IP-rating requirements must be aligned with the applicable standard. Post-immersion inspection schedule must be defined."
+    ]
+  },
+  "thermal__over_discharge_current_control_check": {
+    "label": "Over-discharge current control check",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "over-discharge control check",
+      "overdischarge protection check"
+    ],
+    "chapter_id": "thermal__over_discharge_current_control_check",
+    "source_title": "Over-discharge current control check",
+    "source_pages": [
+      87,
+      87
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_overdischarge_control",
+    "primary_evidence_card_ids": [
+      "thermal__over_discharge_current_control_check_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Verify over-discharge protection circuitry interrupts discharge before the cell reaches a damaging voltage.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Programmable load",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP defining trip voltage, rate, and acceptance criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Protection-circuit validation test. Confirm the protection device is active before running."
+    ]
+  },
+  "thermal__overcharge_current_control_check": {
+    "label": "Overcharge current control check",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "overcharge current control",
+      "overcharge protection check"
+    ],
+    "chapter_id": "thermal__overcharge_current_control_check",
+    "source_title": "Overcharge current control check",
+    "source_pages": [
+      87,
+      87
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_overcharge_current_control",
+    "primary_evidence_card_ids": [
+      "thermal__overcharge_current_control_check_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Verify overcharge current protection interrupts charging before the cell exceeds the rated voltage.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Programmable charger",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP required. Protection circuit must be active.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Confirm trip threshold and acceptance criteria from the applicable standard before release."
+    ]
+  },
+  "thermal__overcharge_voltage_control_check": {
+    "label": "Overcharge voltage control check",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "overcharge voltage control",
+      "OVP check",
+      "voltage control check"
+    ],
+    "chapter_id": "thermal__overcharge_voltage_control_check",
+    "source_title": "Overcharge voltage control check",
+    "source_pages": [
+      88,
+      88
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_overcharge_voltage_control",
+    "primary_evidence_card_ids": [
+      "thermal__overcharge_voltage_control_check_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Verify voltage-based overcharge protection limits charging voltage at the rated cutoff.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Programmable charger",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with trip voltage and acceptance criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Pair with the overcharge current control check. Both should be documented together when qualifying a protection circuit."
+    ]
+  },
+  "thermal__rain_test": {
+    "label": "Rain test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "rain test",
+      "water spray test",
+      "IPX spray"
+    ],
+    "chapter_id": "thermal__rain_test",
+    "source_title": "Rain test",
+    "source_pages": [
+      80,
+      80
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_rain",
+    "primary_evidence_card_ids": [
+      "thermal__rain_test_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell or module integrity after controlled water spray simulating rain or wash-down.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Water spray apparatus (IPX-rating compatible)",
+      "Voltage monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with spray angle, intensity, duration, and pass/fail criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Align IP-rating class and spray parameters with IEC 60529 or equivalent."
+    ]
+  },
+  "thermal__rapid_charging_and_discharging": {
+    "label": "Rapid charging and discharging test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "rapid charge",
+      "fast charge abuse",
+      "rapid discharge"
+    ],
+    "chapter_id": "thermal__rapid_charging_and_discharging",
+    "source_title": "Rapid charging and discharging",
+    "source_pages": [
+      79,
+      79
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_rapid_charge",
+    "primary_evidence_card_ids": [
+      "thermal__rapid_charging_and_discharging_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess cell safety and integrity under high-rate charge and discharge currents beyond the rated specification.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "High-rate battery tester",
+      "Temperature sensors",
+      "Gas measurement"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with rate, SOC window, and abort criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Handbook notes this is not tested at cell level. Confirm test level (module, pack) and applicable rate before planning."
+    ]
+  },
+  "thermal__salt_spray_salt_water_immersion": {
+    "label": "Salt spray / salt water immersion test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "salt spray",
+      "salt water immersion",
+      "salt fog",
+      "brine immersion"
+    ],
+    "chapter_id": "thermal__salt_spray_salt_water_immersion",
+    "source_title": "Salt spray / salt water immersion",
+    "source_pages": [
+      80,
+      80
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_salt",
+    "primary_evidence_card_ids": [
+      "thermal__salt_spray_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Assess corrosion resistance and integrity after salt spray or salt-water immersion.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Salt spray chamber (IEC 60068-2-11 or equivalent)",
+      "Voltage monitor"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with salt concentration, duration, and post-test inspection criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Confirm applicable standard (IEC 60068-2-11, ISO 9227, or similar) and cell housing specification."
+    ]
+  },
+  "thermal__separator_shutdown_integrity_test": {
+    "label": "Separator shutdown integrity test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "separator shutdown",
+      "separator integrity",
+      "shutdown separator test"
+    ],
+    "chapter_id": "thermal__separator_shutdown_integrity_test",
+    "source_title": "Separator shutdown integrity test",
+    "source_pages": [
+      93,
+      93
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_separator_shutdown",
+    "primary_evidence_card_ids": [
+      "thermal__separator_shutdown_integrity_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Evaluate shutdown efficiency of the separator at elevated temperatures and its ability to halt ionic conduction before thermal runaway.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Oven or thermal chamber with fine temperature ramp control",
+      "Impedance or resistance monitor",
+      "Temperature sensors"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with ramp rate, shutdown trigger threshold, and pass/fail criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Results inform failure-propagation resistance and single-cell failure containment design."
+    ]
+  },
+  "thermal__tests_at_module_level": {
+    "label": "Tests at module level",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "module level tests",
+      "module safety tests",
+      "pack level tests"
+    ],
+    "chapter_id": "thermal__tests_at_module_level",
+    "source_title": "Tests at module level",
+    "source_pages": [
+      94,
+      94
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_module_level",
+    "primary_evidence_card_ids": [
+      "thermal__tests_at_module_level_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Outline of additional safety and abuse test considerations specific to module and pack level assemblies.",
+    "applications": [
+      "Module and pack safety qualification"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_modules_and_packs"
+    ],
+    "required_equipment": [
+      "Varies by specific module-level test selected"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Chapter is an outline. Individual module-level tests require their own reviewed SOPs.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Use as a checklist of module-level test topics. Each specific test requires its own method entry and SOP."
+    ]
+  },
+  "thermal__thermal_control_check": {
+    "label": "Thermal control check",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "thermal control check",
+      "thermal management check",
+      "BMS thermal check"
+    ],
+    "chapter_id": "thermal__thermal_control_check",
+    "source_title": "Thermal control check",
+    "source_pages": [
+      88,
+      88
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_control_check",
+    "primary_evidence_card_ids": [
+      "thermal__thermal_control_check_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Verify the thermal management and protection system responds correctly to over-temperature conditions.",
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Programmable cycler",
+      "Temperature chamber or external heater",
+      "Temperature sensors",
+      "Voltage monitor"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "SOP with temperature trigger threshold and protection verification criteria required.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Complements overcharge and over-discharge control checks. Document all three protection checks together when qualifying a BMS."
+    ]
+  },
+  "thermal__thermal_stability_arc": {
+    "label": "Thermal stability (ARC) test",
+    "objective_key": "safety_abuse",
+    "aliases": [
+      "ARC test",
+      "accelerating rate calorimetry",
+      "thermal stability",
+      "ARC",
+      "adiabatic calorimetry"
+    ],
+    "chapter_id": "thermal__thermal_stability_arc",
+    "source_title": "Thermal stability (ARC)",
+    "source_pages": [
+      79,
+      79
+    ],
+    "handbook_source_id": "battery_understanding_v3_thermal_arc",
+    "primary_evidence_card_ids": [
+      "thermal__thermal_stability_arc_scope"
+    ],
+    "method_status": "outline_only_review_required",
+    "execution_readiness": "not_releaseable_outline_only",
+    "human_review_required": true,
+    "intent": "Determine thermal stability limit and onset temperature of exothermic self-heating using accelerating rate calorimetry (ARC).",
+    "applications": [
+      "Safety temperature limit definition",
+      "Chemistry thermal stability benchmarking"
+    ],
+    "applicable_chemistry_scope": [
+      "general_lithium_ion_cells"
+    ],
+    "required_equipment": [
+      "Accelerating Rate Calorimeter (ARC)",
+      "Gas measurement",
+      "ARC-rated containment vessel"
+    ],
+    "source_references": [
+      "FreedomCar:2005",
+      "SAE J2464:2009"
+    ],
+    "strict_reference_policy": {
+      "mode": "outline_only",
+      "summary": "Chapter references FreedomCar:2005 and SAE J2464:2009. Reviewed SOP aligned to one of these is required before release.",
+      "deviation_review_required": true
+    },
+    "planner_notes": [
+      "Fully charged cells are slowly heated in the ARC until self-heating onset (T-onset) is detected.",
+      "Results define the onset temperature used for safety temperature limit specification.",
+      "Requires ARC-rated containment vessel. Do not use a standard temperature chamber."
+    ]
+  }
+}

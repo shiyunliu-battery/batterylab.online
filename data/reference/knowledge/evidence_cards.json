@@ -1,0 +1,3005 @@
+{
+  "version": "2.0",
+  "status": "unified_knowledge_base",
+  "description": "Merged handbook and literature evidence cards",
+  "cards": [
+    {
+      "card_id": "battery_understanding_v3_soc_ocv_scope",
+      "title": "SOC-OCV chapter scope and planning role",
+      "source_id": "battery_understanding_v3_soc_ocv",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M1]",
+        "style": "IEEE",
+        "ieee_reference": "[M1] \"Test methods for improved battery cell understanding,\" v3.0, \"Low C-rate cycle / Slow (dis)charge curve,\" p. 24.",
+        "title": "Low C-rate cycle / Slow (dis)charge curve",
+        "url": "",
+        "linked_reference_markdown": "[M1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 24.",
+        "supporting_pages": "p. 24"
+      },
+      "page_refs": [
+        "p. 24"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "soc_ocv",
+        "emf_curve",
+        "incremental_capacity_ready_data"
+      ],
+      "methods": [
+        "soc_ocv",
+        "slow_curve"
+      ],
+      "factors": [
+        "temperature control",
+        "low current rate",
+        "rest duration"
+      ],
+      "responses": [
+        "slow charge curve",
+        "slow discharge curve",
+        "averaged ocv emf estimate"
+      ],
+      "key_takeaways": [
+        "The handbook presents the slow low-C-rate cycle as the primary source for OCV and EMF-oriented curve generation.",
+        "This chapter should be treated as the core protocol reference before literature is used for interpretation."
+      ],
+      "limitations": [
+        "The extracted chapter is brief and does not by itself settle every implementation detail.",
+        "Any planner-added completion must be surfaced as a review item."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Only clarify missing operational details after surfacing the deviation."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_soc_ocv_execution",
+      "title": "SOC-OCV execution sequence and acquisition expectations",
+      "source_id": "battery_understanding_v3_soc_ocv",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_rule",
+      "citation": {
+        "reference_id": "[M1]",
+        "style": "IEEE",
+        "ieee_reference": "[M1] \"Test methods for improved battery cell understanding,\" v3.0, \"Low C-rate cycle / Slow (dis)charge curve,\" p. 24.",
+        "title": "Low C-rate cycle / Slow (dis)charge curve",
+        "url": "",
+        "linked_reference_markdown": "[M1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 24.",
+        "supporting_pages": "p. 24"
+      },
+      "page_refs": [
+        "p. 24"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "soc_ocv",
+        "low_rate_curve_measurement"
+      ],
+      "methods": [
+        "soc_ocv",
+        "slow_curve"
+      ],
+      "factors": [
+        "precharge timing",
+        "rest period",
+        "logging cadence"
+      ],
+      "responses": [
+        "usable slow-curve dataset"
+      ],
+      "key_takeaways": [
+        "The chapter anchors the workflow around a standard-cycle precharge, thermal acclimation, and a slow discharge curve with fine logging.",
+        "The extracted text truncates before a symmetric recharge instruction is fully explicit, so any recharge completion must remain review-gated."
+      ],
+      "limitations": [
+        "Recharge completion is a planner completion rather than a fully explicit handbook sentence in the extracted text."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "analysis_agent"
+      ],
+      "strictness": "review_gated_completion",
+      "allowed_deviations": [
+        "Expose the recharge-step completion and keep human review mandatory."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_soc_ocv_outputs",
+      "title": "SOC-OCV outputs should stay tied to slow-curve and derived OCV evidence",
+      "source_id": "battery_understanding_v3_soc_ocv",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_output_rule",
+      "citation": {
+        "reference_id": "[M1]",
+        "style": "IEEE",
+        "ieee_reference": "[M1] \"Test methods for improved battery cell understanding,\" v3.0, \"Low C-rate cycle / Slow (dis)charge curve,\" p. 24.",
+        "title": "Low C-rate cycle / Slow (dis)charge curve",
+        "url": "",
+        "linked_reference_markdown": "[M1] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, p. 24.",
+        "supporting_pages": "p. 24"
+      },
+      "page_refs": [
+        "p. 24"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "soc_ocv",
+        "ocv_curve_export"
+      ],
+      "methods": [
+        "soc_ocv"
+      ],
+      "factors": [
+        "curve averaging",
+        "low-rate fidelity"
+      ],
+      "responses": [
+        "averaged ocv curve",
+        "ica dva ready export"
+      ],
+      "key_takeaways": [
+        "The primary deliverables are the slow curves themselves plus a derived OCV or EMF-oriented representation.",
+        "Interpretive literature should complement these outputs rather than replace the handbook-defined deliverables."
+      ],
+      "limitations": [
+        "The chapter is a core execution reference, not a full theory review."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_capacity_scope",
+      "title": "Capacity test chapter defines the default planning frame for rate-capability work",
+      "source_id": "battery_understanding_v3_capacity_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M2]",
+        "style": "IEEE",
+        "ieee_reference": "[M2] \"Test methods for improved battery cell understanding,\" v3.0, \"Capacity test,\" pp. 18-23.",
+        "title": "Capacity test",
+        "url": "",
+        "linked_reference_markdown": "[M2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 18-23.",
+        "supporting_pages": "pp. 18-23"
+      },
+      "page_refs": [
+        "p. 18",
+        "p. 19",
+        "p. 20",
+        "p. 21",
+        "p. 22",
+        "p. 23"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "capacity_test",
+        "rate_capability"
+      ],
+      "methods": [
+        "capacity_test",
+        "rate_matrix"
+      ],
+      "factors": [
+        "temperature",
+        "charge rate",
+        "discharge rate"
+      ],
+      "responses": [
+        "capacity",
+        "energy",
+        "temperature rise"
+      ],
+      "key_takeaways": [
+        "The handbook chapter should be treated as the primary planning reference for capacity and rate-capability testing.",
+        "The method is intended to compare capacity and energy across a controlled matrix of rates and temperatures."
+      ],
+      "limitations": [
+        "The exact matrix can still be narrowed after review, but the chapter remains the core reference."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_capacity_execution",
+      "title": "Capacity test execution keeps the rest-discharge-rest-charge structure intact",
+      "source_id": "battery_understanding_v3_capacity_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_rule",
+      "citation": {
+        "reference_id": "[M2]",
+        "style": "IEEE",
+        "ieee_reference": "[M2] \"Test methods for improved battery cell understanding,\" v3.0, \"Capacity test,\" pp. 18-23.",
+        "title": "Capacity test",
+        "url": "",
+        "linked_reference_markdown": "[M2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 20-23.",
+        "supporting_pages": "pp. 20-23"
+      },
+      "page_refs": [
+        "p. 20",
+        "p. 21",
+        "p. 22",
+        "p. 23"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "capacity_test",
+        "rate_capability"
+      ],
+      "methods": [
+        "capacity_test"
+      ],
+      "factors": [
+        "rest time",
+        "cc discharge",
+        "cc cv recharge",
+        "matrix repetition"
+      ],
+      "responses": [
+        "comparable capacity blocks"
+      ],
+      "key_takeaways": [
+        "The core execution sequence keeps a pre-discharge rest, main discharge, optional CV tail, pre-charge rest, and CC-CV recharge.",
+        "Matrix narrowing is permitted only after review; it should not silently remove the chapter's core structure."
+      ],
+      "limitations": [
+        "Planner narrowing of the matrix must be surfaced as a deliberate choice."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Reduce the number of rate-temperature combinations after review without changing the block structure."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_capacity_outputs",
+      "title": "Capacity test outputs should preserve the chapter-defined rate and temperature comparisons",
+      "source_id": "battery_understanding_v3_capacity_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_output_rule",
+      "citation": {
+        "reference_id": "[M2]",
+        "style": "IEEE",
+        "ieee_reference": "[M2] \"Test methods for improved battery cell understanding,\" v3.0, \"Capacity test,\" pp. 18-23.",
+        "title": "Capacity test",
+        "url": "",
+        "linked_reference_markdown": "[M2] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 22-23.",
+        "supporting_pages": "pp. 22-23"
+      },
+      "page_refs": [
+        "p. 22",
+        "p. 23"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "capacity_test",
+        "rate_capability"
+      ],
+      "methods": [
+        "capacity_test"
+      ],
+      "factors": [
+        "temperature matrix",
+        "rate matrix"
+      ],
+      "responses": [
+        "capacity summary",
+        "energy summary",
+        "temperature trend"
+      ],
+      "key_takeaways": [
+        "The required outputs should stay anchored to the chapter's rate- and temperature-comparison goals.",
+        "Complementary literature can explain why the matrix matters, but not replace the core deliverables."
+      ],
+      "limitations": [
+        "The chapter is not itself a theory review."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_pulse_scope",
+      "title": "Pulse test chapter is the primary executable reference for HPPC-style planning",
+      "source_id": "battery_understanding_v3_pulse_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M3]",
+        "style": "IEEE",
+        "ieee_reference": "[M3] \"Test methods for improved battery cell understanding,\" v3.0, \"Pulse test,\" pp. 31-37.",
+        "title": "Pulse test",
+        "url": "",
+        "linked_reference_markdown": "[M3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 31-32.",
+        "supporting_pages": "pp. 31-32"
+      },
+      "page_refs": [
+        "p. 31",
+        "p. 32"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "hppc",
+        "power_characterisation",
+        "ecm_parameterisation"
+      ],
+      "methods": [
+        "pulse_test",
+        "hppc"
+      ],
+      "factors": [
+        "soc",
+        "temperature",
+        "pulse direction",
+        "current rate"
+      ],
+      "responses": [
+        "power capability",
+        "pulse resistance",
+        "ecm fitting inputs"
+      ],
+      "key_takeaways": [
+        "The handbook chapter should be treated as the core planning reference for HPPC and pulse test execution.",
+        "Literature should complement theory and interpretation, not replace the chapter sequence."
+      ],
+      "limitations": [
+        "Any shortened variant still requires explicit review."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_pulse_execution",
+      "title": "Pulse test execution keeps acclimation, SOC staircase, and paired pulses explicit",
+      "source_id": "battery_understanding_v3_pulse_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_rule",
+      "citation": {
+        "reference_id": "[M3]",
+        "style": "IEEE",
+        "ieee_reference": "[M3] \"Test methods for improved battery cell understanding,\" v3.0, \"Pulse test,\" pp. 31-37.",
+        "title": "Pulse test",
+        "url": "",
+        "linked_reference_markdown": "[M3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 31-37.",
+        "supporting_pages": "pp. 31-37"
+      },
+      "page_refs": [
+        "p. 31",
+        "p. 32",
+        "p. 33",
+        "p. 34",
+        "p. 35",
+        "p. 36",
+        "p. 37"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "hppc",
+        "power_characterisation"
+      ],
+      "methods": [
+        "pulse_test",
+        "hppc"
+      ],
+      "factors": [
+        "acclimation temperature",
+        "rest durations",
+        "pulse duration",
+        "soc staircase"
+      ],
+      "responses": [
+        "repeatable pulse matrix"
+      ],
+      "key_takeaways": [
+        "The core sequence is acclimation, reference charge, reference discharge, recharge, SOC staircase, discharge pulse, charge pulse, and repetition across SOC and temperature.",
+        "If the plan uses a shortened variant, that deviation must be made explicit and reviewed."
+      ],
+      "limitations": [
+        "Rate-count or SOC-grid reductions should not be silent."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Reduce rate count or widen SOC spacing after review without changing the paired-pulse logic."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_pulse_outputs",
+      "title": "Pulse test outputs should preserve pulse-trace and resistance reporting",
+      "source_id": "battery_understanding_v3_pulse_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_output_rule",
+      "citation": {
+        "reference_id": "[M3]",
+        "style": "IEEE",
+        "ieee_reference": "[M3] \"Test methods for improved battery cell understanding,\" v3.0, \"Pulse test,\" pp. 31-37.",
+        "title": "Pulse test",
+        "url": "",
+        "linked_reference_markdown": "[M3] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 32-37.",
+        "supporting_pages": "pp. 32-37"
+      },
+      "page_refs": [
+        "p. 32",
+        "p. 33",
+        "p. 34",
+        "p. 35",
+        "p. 36",
+        "p. 37"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells"
+      ],
+      "objective": [
+        "hppc",
+        "ecm_parameterisation"
+      ],
+      "methods": [
+        "pulse_test",
+        "hppc"
+      ],
+      "factors": [
+        "pulse sampling rate",
+        "soc and temperature indexing"
+      ],
+      "responses": [
+        "pulse trace set",
+        "resistance summary",
+        "power map"
+      ],
+      "key_takeaways": [
+        "The chapter-defined outputs emphasize pulse traces, resistance values at selected times, and power-capability style summaries.",
+        "These outputs should remain visible even when the test matrix is narrowed."
+      ],
+      "limitations": [
+        "Interpretive theory still benefits from complementary literature."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "analysis_agent",
+        "report_agent"
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_cycle_life_scope",
+      "title": "Cycle life chapter is the core planning frame for life-test drafting",
+      "source_id": "battery_understanding_v3_cycle_life",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M4]",
+        "style": "IEEE",
+        "ieee_reference": "[M4] \"Test methods for improved battery cell understanding,\" v3.0, \"Cycle life test,\" pp. 53-54.",
+        "title": "Cycle life test",
+        "url": "",
+        "linked_reference_markdown": "[M4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 53-54.",
+        "supporting_pages": "pp. 53-54"
+      },
+      "page_refs": [
+        "p. 53",
+        "p. 54"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells",
+        "pack_ageing_workflows"
+      ],
+      "objective": [
+        "cycle_life",
+        "ageing_design"
+      ],
+      "methods": [
+        "cycle_life_test"
+      ],
+      "factors": [
+        "temperature",
+        "current profile",
+        "voltage window",
+        "throughput block"
+      ],
+      "responses": [
+        "soh trend",
+        "dcir trend",
+        "ageing breakpoints"
+      ],
+      "key_takeaways": [
+        "The chapter should be treated as the primary planning frame for cycle-life tests.",
+        "Because it is a framework chapter, project-specific completion is expected, but the handbook remains the core reference."
+      ],
+      "limitations": [
+        "The chapter is framework-oriented rather than one fixed executable matrix."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "method_lookup"
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_cycle_life_execution",
+      "title": "Cycle life execution should preserve baseline, ageing block, and periodic check-ups",
+      "source_id": "battery_understanding_v3_cycle_life",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_rule",
+      "citation": {
+        "reference_id": "[M4]",
+        "style": "IEEE",
+        "ieee_reference": "[M4] \"Test methods for improved battery cell understanding,\" v3.0, \"Cycle life test,\" pp. 53-54.",
+        "title": "Cycle life test",
+        "url": "",
+        "linked_reference_markdown": "[M4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 53-54.",
+        "supporting_pages": "pp. 53-54"
+      },
+      "page_refs": [
+        "p. 53",
+        "p. 54"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells",
+        "pack_ageing_workflows"
+      ],
+      "objective": [
+        "cycle_life",
+        "ageing_design"
+      ],
+      "methods": [
+        "cycle_life_test"
+      ],
+      "factors": [
+        "baseline reference test",
+        "thermal stabilization",
+        "periodic check-up cadence"
+      ],
+      "responses": [
+        "reviewable ageing protocol"
+      ],
+      "key_takeaways": [
+        "The core execution frame is design matrix, preconditioning and baseline, thermal stabilization, ageing block, periodic check-up, and end-of-life decision.",
+        "Project-specific narrowing must still preserve those checkpoints."
+      ],
+      "limitations": [
+        "The exact ageing matrix is not fully locked by the chapter and must be finalized per project."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "framework_with_review_gates",
+      "allowed_deviations": [
+        "Select project-specific matrix factors after review while preserving baseline and periodic-check structure."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_cycle_life_outputs",
+      "title": "Cycle life outputs should preserve SOH trend and check-up traceability",
+      "source_id": "battery_understanding_v3_cycle_life",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_output_rule",
+      "citation": {
+        "reference_id": "[M4]",
+        "style": "IEEE",
+        "ieee_reference": "[M4] \"Test methods for improved battery cell understanding,\" v3.0, \"Cycle life test,\" pp. 53-54.",
+        "title": "Cycle life test",
+        "url": "",
+        "linked_reference_markdown": "[M4] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 53-54.",
+        "supporting_pages": "pp. 53-54"
+      },
+      "page_refs": [
+        "p. 53",
+        "p. 54"
+      ],
+      "cell_scope": [
+        "lithium_ion_cells",
+        "pack_ageing_workflows"
+      ],
+      "objective": [
+        "cycle_life",
+        "soh_tracking"
+      ],
+      "methods": [
+        "cycle_life_test"
+      ],
+      "factors": [
+        "equivalent cycle count",
+        "ah throughput",
+        "reference check cadence"
+      ],
+      "responses": [
+        "capacity or soh trend",
+        "resistance trend",
+        "ageing checkpoint record"
+      ],
+      "key_takeaways": [
+        "The chapter expects outputs that preserve life trend and reference-check traceability rather than one final endpoint number only.",
+        "Complementary literature can justify matrix design or interpret degradation, but it should not replace the handbook deliverables."
+      ],
+      "limitations": [
+        "The chapter is not a complete degradation-theory review."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "analysis_agent",
+        "report_agent"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_doe_overview",
+      "title": "Why DOE is useful for lithium-ion battery experimentation",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 1-3"
+      },
+      "page_refs": [
+        "p. 1",
+        "p. 2",
+        "p. 3"
+      ],
+      "cell_scope": [
+        "lithium_ion_general"
+      ],
+      "objective": [
+        "doe_foundation",
+        "experiment_planning",
+        "factor_response_mapping"
+      ],
+      "methods": [
+        "general_doe",
+        "factorial_designs",
+        "response_surface_methodology"
+      ],
+      "factors": [
+        "material proportions",
+        "electrode thickness",
+        "porosity",
+        "charge and discharge temperature",
+        "equipment settings"
+      ],
+      "responses": [
+        "energy density",
+        "discharge capacity",
+        "temperature rise"
+      ],
+      "key_takeaways": [
+        "The review frames DOE as a structured alternative to one-factor-at-a-time battery testing when multiple variables or interactions matter.",
+        "DOE is presented as a way to reduce experimental time and effort while still generating data useful for modelling, validation, and parameterization.",
+        "The battery-focused application space covered by the review spans ageing, capacity, formulation, thermal design, charging, and model parameterization."
+      ],
+      "limitations": [
+        "This is review-level guidance rather than a lab-ready execution protocol.",
+        "The paper helps with design choice, but the final experiment still depends on sample availability, equipment limits, and safety constraints."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "protocol_agent",
+        "research_assistant"
+      ],
+      "keywords": [
+        "doe",
+        "design of experiments",
+        "battery planning",
+        "factor response"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_screening_designs",
+      "title": "Screening DOE choices for battery factor reduction",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "p. 3; pp. 20-21"
+      },
+      "page_refs": [
+        "p. 3",
+        "pp. 20-21"
+      ],
+      "cell_scope": [
+        "lithium_ion_general",
+        "manufacturing_processes"
+      ],
+      "objective": [
+        "factor_screening",
+        "design_space_reduction"
+      ],
+      "methods": [
+        "two_level_factorial",
+        "fractional_factorial",
+        "plackett_burman",
+        "definitive_screening_design"
+      ],
+      "factors": [
+        "broad factor pools",
+        "hard-to-rank operating variables",
+        "manufacturing settings"
+      ],
+      "responses": [
+        "screened main effects",
+        "curvature flags",
+        "reduced factor list"
+      ],
+      "key_takeaways": [
+        "The review treats 2-level factorial families as the main screening tools and warns that 3-level full designs become expensive quickly.",
+        "Screening is recommended before targeted optimization so later experiments focus only on the dominant factors.",
+        "Plackett-Burman is described as effective for main-effect screening, but the review notes it was not yet reported in the lithium-ion literature surveyed.",
+        "The future-outlook section highlights Definitive Screening Designs as promising for battery manufacturing because they can expose main effects and curvature with very few runs."
+      ],
+      "limitations": [
+        "The Plackett-Burman and DSD recommendations are partly forward-looking for battery work rather than heavily validated by battery case studies in the review.",
+        "Screening designs are best when higher-order interactions can be ignored or deferred to a later study."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "research_assistant"
+      ],
+      "keywords": [
+        "screening",
+        "plackett burman",
+        "definitive screening design",
+        "factor reduction"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_rsm_optimization",
+      "title": "Use RSM or optimal designs when the battery study is truly optimization",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 3-4; p. 15; p. 21"
+      },
+      "page_refs": [
+        "pp. 3-4",
+        "p. 15",
+        "p. 21"
+      ],
+      "cell_scope": [
+        "lithium_ion_general"
+      ],
+      "objective": [
+        "optimization",
+        "response_surface_modeling",
+        "design_efficiency"
+      ],
+      "methods": [
+        "response_surface_methodology",
+        "central_composite_design",
+        "box_behnken_design",
+        "optimal_design"
+      ],
+      "factors": [
+        "continuous operating factors",
+        "process settings",
+        "design variables after screening"
+      ],
+      "responses": [
+        "stationary points",
+        "response surfaces",
+        "optimized operating regions"
+      ],
+      "key_takeaways": [
+        "The review recommends RSM after screening when quadratic behavior or interactions are expected.",
+        "CCD and BBD are identified as the most common industrial RSM designs for this purpose.",
+        "The authors argue that many battery papers labeled as optimization studies were actually main-effect studies because no stationary point was demonstrated.",
+        "When the number of affordable experiments is fixed, optimal designs can be more efficient than classical full designs while still supporting optimization."
+      ],
+      "limitations": [
+        "RSM only works well when the chosen model form represents the response surface adequately.",
+        "If the optimum sits outside the explored region, the factor bounds must be revised rather than over-interpreting the first model."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "research_assistant",
+        "protocol_agent"
+      ],
+      "keywords": [
+        "rsm",
+        "ccd",
+        "box behnken",
+        "optimization"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_taguchi_robust_design",
+      "title": "Taguchi is useful for robust design, but not a universal battery-optimization default",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "p. 4; pp. 13-15; p. 21"
+      },
+      "page_refs": [
+        "p. 4",
+        "pp. 13-15",
+        "p. 21"
+      ],
+      "cell_scope": [
+        "lithium_ion_general"
+      ],
+      "objective": [
+        "robust_design",
+        "charging_design_critique",
+        "main_effect_ranking"
+      ],
+      "methods": [
+        "taguchi",
+        "orthogonal_arrays",
+        "signal_to_noise_ratio"
+      ],
+      "factors": [
+        "controllable factors",
+        "noise factors",
+        "charging-stage settings"
+      ],
+      "responses": [
+        "signal to noise ratio",
+        "robust settings",
+        "main-effect ranking"
+      ],
+      "key_takeaways": [
+        "The review presents Taguchi as a robust-parameter-design method intended to make the process less sensitive to noise factors.",
+        "Taguchi and orthogonal arrays are very common in the surveyed battery literature, including charging studies.",
+        "The review also warns that Taguchi designs often miss interactions and cannot separate factors that shift the mean from those that change the variance.",
+        "For charging or other studies advertised as optimization, the review argues that OA-based results should not automatically be treated as true optima."
+      ],
+      "limitations": [
+        "Taguchi is strong for robustness work and main-effect ranking, but it is not the best default when curvature or interactions are central to the question.",
+        "Many battery papers in the review appear to use Taguchi outside its strongest use case, so downstream interpretation needs caution."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "research_assistant"
+      ],
+      "keywords": [
+        "taguchi",
+        "orthogonal array",
+        "robust parameter design",
+        "signal to noise"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_mixture_formulation",
+      "title": "Mixture designs fit electrode-formulation questions better than ordinary factor designs",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 4-5; p. 9"
+      },
+      "page_refs": [
+        "pp. 4-5",
+        "p. 9"
+      ],
+      "cell_scope": [
+        "electrode_formulation"
+      ],
+      "objective": [
+        "formulation_design",
+        "mixture_optimization"
+      ],
+      "methods": [
+        "mixture_design",
+        "simplex_lattice",
+        "simplex_centroid",
+        "simplex_axial",
+        "extreme_vertices"
+      ],
+      "factors": [
+        "active material fraction",
+        "conductive additive fraction",
+        "binder fraction"
+      ],
+      "responses": [
+        "discharge capacity",
+        "charge capacity",
+        "formulation trade-offs"
+      ],
+      "key_takeaways": [
+        "Mixture designs are appropriate when the variables are proportions that must sum to one, which is a direct match to electrode formulation work.",
+        "The review highlights simplex-family designs and constrained mixture designs as the main tools in this space.",
+        "The cited formulation example indicates that active material should be pushed high while conductive additive stays small and binder is kept near its minimum feasible content."
+      ],
+      "limitations": [
+        "Mixture designs are not the right template when the main drivers are absolute process settings rather than composition fractions.",
+        "They require explicit composition constraints or bounds to stay physically meaningful."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "research_assistant"
+      ],
+      "keywords": [
+        "mixture design",
+        "electrode formulation",
+        "active material",
+        "binder"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_thermal_design",
+      "title": "DOE can structure thermal-design studies at cell and pack level",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 12 and 14"
+      },
+      "page_refs": [
+        "p. 12",
+        "p. 14"
+      ],
+      "cell_scope": [
+        "cell_level_thermal",
+        "battery_pack_thermal"
+      ],
+      "objective": [
+        "thermal_design",
+        "temperature_rise_reduction",
+        "thermal_runaway_severity"
+      ],
+      "methods": [
+        "fractional_factorial",
+        "full_factorial",
+        "response_surface_methodology",
+        "box_behnken_design",
+        "orthogonal_arrays"
+      ],
+      "factors": [
+        "materials",
+        "dimensions",
+        "coolant flow rate",
+        "safety features",
+        "manufacturer and separator material"
+      ],
+      "responses": [
+        "temperature rise",
+        "temperature distribution",
+        "released energy",
+        "mass distribution"
+      ],
+      "key_takeaways": [
+        "The review presents DOE as a practical way to test thermal-management factors that affect temperature rise, temperature uniformity, and runaway severity.",
+        "Published thermal-design studies span cell and pack questions and use a range of designs from fractional factorial to BBD and full factorial plans.",
+        "Thermal-response studies can combine design features, manufacturer differences, and cooling parameters inside one structured experiment set."
+      ],
+      "limitations": [
+        "The thermal studies summarized in the review are methodologically diverse, so this evidence supports design choice more than one standard template.",
+        "Thermal DOE still needs lab-specific chamber, sensor, and safety constraints before execution."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "protocol_agent",
+        "equipment_manual_index"
+      ],
+      "keywords": [
+        "thermal design",
+        "thermal management",
+        "battery pack",
+        "temperature rise"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_charging_design",
+      "title": "DOE can narrow charging settings, but OA is not the strongest default for pulse-charge optimization",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 12-14; p. 21"
+      },
+      "page_refs": [
+        "p. 12",
+        "p. 13",
+        "p. 14",
+        "p. 21"
+      ],
+      "cell_scope": [
+        "lithium_ion_charging"
+      ],
+      "objective": [
+        "charging_optimization",
+        "pulse_charging",
+        "multi_stage_cc"
+      ],
+      "methods": [
+        "orthogonal_arrays",
+        "taguchi",
+        "d_optimal",
+        "response_surface_methodology"
+      ],
+      "factors": [
+        "pulse frequency",
+        "peak charge current amplitude",
+        "duty cycle",
+        "stage-by-stage charging current"
+      ],
+      "responses": [
+        "charging time",
+        "charging capacity",
+        "energy efficiency",
+        "cycle life"
+      ],
+      "key_takeaways": [
+        "The review describes DOE as a practical alternative to exhaustive search or model-heavy optimization when choosing pulse-charging or multi-stage CC settings.",
+        "For pulse charging, the main adjustable factors highlighted are frequency, peak current amplitude, and duty cycle.",
+        "Orthogonal arrays were common in the reviewed charging papers, but the review argues that D-optimal or RSM approaches are stronger when interactions or second-order effects matter."
+      ],
+      "limitations": [
+        "The best charging design still depends on the objective function, chemistry, and cut-off rules of the specific cell under test.",
+        "This review does not provide one universal charging pattern; it provides design-choice guidance."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "protocol_agent",
+        "research_assistant"
+      ],
+      "keywords": [
+        "charging",
+        "pulse charging",
+        "multi-stage cc",
+        "charging optimization"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_parameter_identification",
+      "title": "DOE can reduce experiment count for model parameter identification and identifiability studies",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 15-16"
+      },
+      "page_refs": [
+        "p. 15",
+        "p. 16"
+      ],
+      "cell_scope": [
+        "lithium_ion_modeling"
+      ],
+      "objective": [
+        "model_parameter_identification",
+        "identifiability",
+        "ecm_and_electrothermal_modeling"
+      ],
+      "methods": [
+        "central_composite_design",
+        "d_optimal",
+        "fisher_optimal_design"
+      ],
+      "factors": [
+        "experiment settings selected for parameter estimation",
+        "model structure",
+        "information-rich test conditions"
+      ],
+      "responses": [
+        "fitted model parameters",
+        "parameter covariance",
+        "identifiability findings"
+      ],
+      "key_takeaways": [
+        "The review explicitly places equivalent circuit models alongside electrochemical and empirical models in the battery-modeling landscape.",
+        "Two DOE uses are highlighted for parameter work: reducing experiments needed to build a response surface, and designing experiments that improve parameter estimation or identifiability.",
+        "A cited electro-thermal example achieved similar accuracy to non-DOE approaches while cutting experimental time by about 75 percent.",
+        "Fisher-based optimal design is presented as a way to expose unidentifiable parameters rather than just fitting values blindly."
+      ],
+      "limitations": [
+        "The review does not provide a ready-to-run ECM or electro-thermal fitting workflow by itself.",
+        "Parameter-identification value still depends on the chosen model family, measurement quality, and observability of the variables."
+      ],
+      "system_targets": [
+        "ecm_model_registry",
+        "research_assistant"
+      ],
+      "keywords": [
+        "parameter identification",
+        "ecm",
+        "electro-thermal model",
+        "identifiability"
+      ]
+    },
+    {
+      "card_id": "roman_ramirez_2022_future_opportunities",
+      "title": "Future DOE opportunities include manufacturing, blocking, multi-response optimization, and pack-level ageing",
+      "source_id": "roman_ramirez_2022_doe_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[1]",
+        "style": "IEEE",
+        "ieee_reference": "[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.",
+        "title": "Design of experiments applied to lithium-ion batteries: A literature review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005",
+        "linked_reference_markdown": "[[1] L. A. Roman-Ramirez and J. Marco, \"Design of experiments applied to lithium-ion batteries: A literature review,\" Applied Energy, vol. 320, art. no. 119305, 2022.](https://www.sciencedirect.com/science/article/pii/S0306261922006596#s0005)",
+        "supporting_pages": "pp. 20-21"
+      },
+      "page_refs": [
+        "p. 20",
+        "p. 21"
+      ],
+      "cell_scope": [
+        "manufacturing_processes",
+        "battery_pack_ageing"
+      ],
+      "objective": [
+        "roadmap_planning",
+        "manufacturing_doe",
+        "pack_level_ageing",
+        "multi_response_optimization"
+      ],
+      "methods": [
+        "plackett_burman",
+        "definitive_screening_design",
+        "split_plot",
+        "blocking",
+        "desirability_function",
+        "doehlert",
+        "optimal_design"
+      ],
+      "factors": [
+        "manufacturing settings",
+        "hard-to-change factors",
+        "chemistry",
+        "temperature",
+        "c-rate",
+        "cooling system",
+        "soc",
+        "soh"
+      ],
+      "responses": [
+        "quality metrics",
+        "pack-level ageing outcomes",
+        "multi-response desirability",
+        "empirical model quality"
+      ],
+      "key_takeaways": [
+        "The review highlights manufacturing DOE as underdeveloped and recommends efficient screening designs plus split-plot thinking for hard-to-change factors.",
+        "Desirability functions are recommended when battery design must satisfy several competing responses at once.",
+        "Pack-level ageing DOE is called out as especially important because practical battery systems involve many interacting factors that are not captured by cell-only studies.",
+        "The authors explicitly recommend more use of optimal designs and better design selection instead of defaulting to Taguchi arrays."
+      ],
+      "limitations": [
+        "This card is roadmap-oriented rather than a record of one settled best practice.",
+        "Many of the highlighted opportunities still need lab-specific factor libraries, constraints, and data structures before they can be operationalized."
+      ],
+      "system_targets": [
+        "doe_template_registry",
+        "todo_roadmap",
+        "research_assistant"
+      ],
+      "keywords": [
+        "manufacturing doe",
+        "pack ageing",
+        "split plot",
+        "desirability"
+      ]
+    },
+    {
+      "card_id": "tugraz_doe_notes_anova_randomization",
+      "title": "Single-factor DOE needs replication, random order, and ANOVA before interpretation",
+      "source_id": "tugraz_doe_notes",
+      "source_type": "course_notes",
+      "evidence_kind": "teaching_note_synthesis",
+      "citation": {
+        "reference_id": "[2]",
+        "style": "IEEE",
+        "ieee_reference": "[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "title": "Design of Experiments",
+        "url": "https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "linked_reference_markdown": "[[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf](https://www.stat.tugraz.at/courses/files/DoE.pdf)",
+        "supporting_pages": "pp. 2-5"
+      },
+      "page_refs": [
+        "p. 2",
+        "p. 3",
+        "p. 4",
+        "p. 5"
+      ],
+      "cell_scope": [
+        "doe_theory_general",
+        "battery_testing_general"
+      ],
+      "objective": [
+        "doe_foundation",
+        "single_factor_experiments",
+        "anova_basics",
+        "randomization"
+      ],
+      "methods": [
+        "single_factor_anova",
+        "completely_randomized_design"
+      ],
+      "factors": [
+        "one controllable factor",
+        "factor levels",
+        "replicates"
+      ],
+      "responses": [
+        "mean differences across levels",
+        "treatment effects",
+        "residual variance"
+      ],
+      "key_takeaways": [
+        "The note presents single-factor DOE as a replicated experiment in which run order should be randomized before ANOVA is used to test mean differences.",
+        "Treatment effects are modeled explicitly, and the random error term is assumed to capture unexplained variation under the usual ANOVA assumptions.",
+        "This source is useful when the system needs to explain why replication and random order matter before any battery DOE becomes more complex."
+      ],
+      "limitations": [
+        "This card only covers the single-factor and ANOVA foundation, not multivariable DOE choice.",
+        "It is a theory note rather than a battery-specific study or a protocol."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "doe_template_registry"
+      ],
+      "keywords": [
+        "anova",
+        "single factor",
+        "replication",
+        "randomization"
+      ]
+    },
+    {
+      "card_id": "tugraz_doe_notes_blocking_rcbd",
+      "title": "Blocking and randomized complete blocks remove known nuisance variation from treatment comparisons",
+      "source_id": "tugraz_doe_notes",
+      "source_type": "course_notes",
+      "evidence_kind": "teaching_note_synthesis",
+      "citation": {
+        "reference_id": "[2]",
+        "style": "IEEE",
+        "ieee_reference": "[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "title": "Design of Experiments",
+        "url": "https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "linked_reference_markdown": "[[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf](https://www.stat.tugraz.at/courses/files/DoE.pdf)",
+        "supporting_pages": "pp. 46-52"
+      },
+      "page_refs": [
+        "p. 46",
+        "p. 49",
+        "p. 52"
+      ],
+      "cell_scope": [
+        "doe_theory_general",
+        "battery_lab_execution"
+      ],
+      "objective": [
+        "blocking",
+        "nuisance_factor_control",
+        "restricted_randomization"
+      ],
+      "methods": [
+        "randomized_complete_block_design",
+        "randomization",
+        "ancova"
+      ],
+      "factors": [
+        "treatments of interest",
+        "known nuisance factors",
+        "block assignments"
+      ],
+      "responses": [
+        "treatment comparisons adjusted for blocks",
+        "reduced residual error",
+        "evidence for whether blocking is necessary"
+      ],
+      "key_takeaways": [
+        "The note distinguishes randomization, ANCOVA, and blocking as different ways to cope with nuisance factors depending on whether they are unknown, observed but uncontrolled, or known and controllable.",
+        "In a randomized complete block design, treatments are randomized within each block, and the block structure represents a restriction on randomization rather than an afterthought.",
+        "This is directly useful for battery labs when channel, day, batch, operator, or fixture differences are known and should not be confused with treatment effects."
+      ],
+      "limitations": [
+        "This card explains the statistical reason for blocking, but it does not say which battery variables should be blocked in a given study.",
+        "It does not replace lab-specific sample logistics, safety limits, or equipment rules."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "protocol_agent",
+        "doe_template_registry"
+      ],
+      "keywords": [
+        "blocking",
+        "randomized complete block",
+        "nuisance factor",
+        "restricted randomization"
+      ]
+    },
+    {
+      "card_id": "tugraz_doe_notes_latin_square",
+      "title": "Latin squares balance two nuisance directions when both are known and controllable",
+      "source_id": "tugraz_doe_notes",
+      "source_type": "course_notes",
+      "evidence_kind": "teaching_note_synthesis",
+      "citation": {
+        "reference_id": "[2]",
+        "style": "IEEE",
+        "ieee_reference": "[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "title": "Design of Experiments",
+        "url": "https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "linked_reference_markdown": "[[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf](https://www.stat.tugraz.at/courses/files/DoE.pdf)",
+        "supporting_pages": "pp. 56-59"
+      },
+      "page_refs": [
+        "p. 56",
+        "p. 57",
+        "p. 58",
+        "p. 59"
+      ],
+      "cell_scope": [
+        "doe_theory_general",
+        "battery_lab_execution"
+      ],
+      "objective": [
+        "two_way_blocking",
+        "nuisance_factor_balancing",
+        "latin_square_design"
+      ],
+      "methods": [
+        "latin_square_design"
+      ],
+      "factors": [
+        "treatments",
+        "row nuisance factor",
+        "column nuisance factor"
+      ],
+      "responses": [
+        "treatment comparisons with two nuisance directions averaged out"
+      ],
+      "key_takeaways": [
+        "The note uses Latin squares when two nuisance factors must both be balanced, with rows and columns acting as two restrictions on randomization.",
+        "Each treatment appears exactly once in each row and column, and the standard model is additive with no interaction terms between rows, columns, and treatments.",
+        "This is a niche but useful foundation for battery labs when two known nuisance directions such as day and operator, or channel bank and batch, need to be neutralized simultaneously."
+      ],
+      "limitations": [
+        "Latin squares are more restrictive than ordinary blocked designs and assume an additive structure with no interactions involving the nuisance directions.",
+        "They are not a default recommendation for most battery DOE problems."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "doe_template_registry"
+      ],
+      "keywords": [
+        "latin square",
+        "two nuisance factors",
+        "rows and columns",
+        "blocking"
+      ]
+    },
+    {
+      "card_id": "tugraz_doe_notes_factorial_basics",
+      "title": "Factorial designs outperform one-factor-at-a-time studies when interactions may matter",
+      "source_id": "tugraz_doe_notes",
+      "source_type": "course_notes",
+      "evidence_kind": "teaching_note_synthesis",
+      "citation": {
+        "reference_id": "[2]",
+        "style": "IEEE",
+        "ieee_reference": "[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "title": "Design of Experiments",
+        "url": "https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "linked_reference_markdown": "[[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf](https://www.stat.tugraz.at/courses/files/DoE.pdf)",
+        "supporting_pages": "pp. 72-79"
+      },
+      "page_refs": [
+        "p. 72",
+        "p. 75",
+        "p. 76",
+        "p. 77",
+        "p. 78",
+        "p. 79"
+      ],
+      "cell_scope": [
+        "doe_theory_general",
+        "battery_testing_general"
+      ],
+      "objective": [
+        "factorial_design",
+        "interaction_detection",
+        "battery_life_factorial_example"
+      ],
+      "methods": [
+        "two_factor_factorial_design",
+        "completely_randomized_design"
+      ],
+      "factors": [
+        "material type",
+        "temperature",
+        "replicates per treatment combination"
+      ],
+      "responses": [
+        "main effects",
+        "interactions",
+        "battery life"
+      ],
+      "key_takeaways": [
+        "The note states that factorial experiments are more efficient than one-factor-at-a-time studies because all observations contribute to multiple effect estimates and interactions can be assessed directly.",
+        "A battery-themed example is used to ask whether material type and operating temperature affect battery life and whether one material performs uniformly across temperatures.",
+        "This source is especially useful when the system needs to explain why a battery DOE should vary two factors together instead of optimizing them one at a time."
+      ],
+      "limitations": [
+        "The battery example is pedagogical rather than a modern battery research study.",
+        "This card explains factorial logic, not which battery DOE family is best for charging, ageing, or parameter identification."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "protocol_agent",
+        "doe_template_registry"
+      ],
+      "keywords": [
+        "factorial design",
+        "interaction",
+        "battery life",
+        "one factor at a time"
+      ]
+    },
+    {
+      "card_id": "tugraz_doe_notes_2k_blocking_confounding",
+      "title": "Blocked 2^k designs handle batch limits by treating replicates as blocks and confounding higher-order effects when needed",
+      "source_id": "tugraz_doe_notes",
+      "source_type": "course_notes",
+      "evidence_kind": "teaching_note_synthesis",
+      "citation": {
+        "reference_id": "[2]",
+        "style": "IEEE",
+        "ieee_reference": "[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "title": "Design of Experiments",
+        "url": "https://www.stat.tugraz.at/courses/files/DoE.pdf",
+        "linked_reference_markdown": "[[2] Institute of Statistics, Graz University of Technology, \"Design of Experiments,\" course notes. [Online]. Available: https://www.stat.tugraz.at/courses/files/DoE.pdf](https://www.stat.tugraz.at/courses/files/DoE.pdf)",
+        "supporting_pages": "p. 100; pp. 131-139"
+      },
+      "page_refs": [
+        "p. 100",
+        "p. 131",
+        "p. 132",
+        "p. 133",
+        "p. 134",
+        "p. 139"
+      ],
+      "cell_scope": [
+        "doe_theory_general",
+        "battery_lab_execution"
+      ],
+      "objective": [
+        "two_level_factorial",
+        "blocking",
+        "confounding",
+        "batch_limited_execution"
+      ],
+      "methods": [
+        "2k_factorial_design",
+        "blocked_factorial_design",
+        "confounded_factorial_design"
+      ],
+      "factors": [
+        "k two-level factors",
+        "replicates",
+        "block or batch assignments"
+      ],
+      "responses": [
+        "main effects",
+        "interactions",
+        "blocked treatment comparisons"
+      ],
+      "key_takeaways": [
+        "The note presents `2^k` factorial designs as a standard industrial experiment family and then explains how replicated runs can be organized into blocks when complete randomization is not practical.",
+        "When the block size is smaller than one full replicate, confounding is introduced deliberately, and the note recommends confounding higher-order interactions with blocks first.",
+        "This is directly relevant to battery labs that cannot run one whole factorial replicate under one batch, one day, one fixture, or one chamber condition."
+      ],
+      "limitations": [
+        "The confounding advice is classical DOE guidance and still needs domain judgment about which battery interactions are safe to sacrifice.",
+        "This card does not determine which factors should enter the design in the first place."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "protocol_agent",
+        "doe_template_registry"
+      ],
+      "keywords": [
+        "2k factorial",
+        "confounding",
+        "blocked factorial",
+        "batch limitation"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_parallel_pack_ageing_case",
+      "title": "Thermal gradients turn parallel-pack ageing into a divergent branch-resistance problem, not only a mean-temperature problem",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "journal_case_study",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "pp. 1-2; pp. 5-8; p. 14"
+      },
+      "page_refs": [
+        "p. 1",
+        "p. 2",
+        "p. 5",
+        "p. 6",
+        "p. 7",
+        "p. 8",
+        "p. 14"
+      ],
+      "cell_scope": [
+        "parallel_connected_lithium_ion_packs",
+        "surface_cooled_pouch_cells",
+        "nmc_lco_pouch_cells"
+      ],
+      "objective": [
+        "pack_level_ageing",
+        "thermal_gradient_effects",
+        "parallel_string_design"
+      ],
+      "methods": [
+        "1s2p_pack_ageing",
+        "controlled_thermal_boundary_conditions",
+        "current_split_tracking"
+      ],
+      "factors": [
+        "mean pack temperature",
+        "thermal gradient magnitude",
+        "thermal gradient direction"
+      ],
+      "responses": [
+        "accessible pack capacity",
+        "static reference capacity",
+        "branch current divergence",
+        "soc deficit",
+        "resistance growth"
+      ],
+      "key_takeaways": [
+        "The paper shows that homogeneous-temperature packs can evolve toward more balanced branch currents, while packs under thermal gradients can evolve toward increasingly divergent current sharing over life.",
+        "The harmful effect is not explained by average temperature alone; gradient-driven branch-resistance mismatch and resulting SOC imbalance are central to the pack-level degradation story.",
+        "Larger thermal gradients caused stronger heterogeneity and faster loss of accessible pack capacity, while the sign of the gradient mattered less than the fact that one branch remained colder and accumulated resistance faster."
+      ],
+      "limitations": [
+        "This is a detailed but specific 1S2P pouch-cell case study rather than a universal result for all pack topologies or chemistries.",
+        "The ageing duty was a constant-current 2 C regime under surface cooling, so transfer to drive-cycle or different cooling architectures still needs care."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "protocol_agent",
+        "report_agent"
+      ],
+      "keywords": [
+        "parallel pack",
+        "thermal gradient",
+        "divergent degradation",
+        "current split",
+        "accessible capacity"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_experimental_sequence",
+      "title": "The paper lays out a clear experimental sequence from cell pairing to breakpoint re-characterization and end-of-life diagnostics",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "experimental_workflow_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "article p. 3; article p. 11; supp. pp. 1-9"
+      },
+      "page_refs": [
+        "article p. 3",
+        "article p. 11",
+        "supp. p. 1",
+        "supp. p. 2",
+        "supp. p. 3",
+        "supp. p. 4",
+        "supp. p. 5",
+        "supp. p. 6",
+        "supp. p. 8",
+        "supp. p. 9"
+      ],
+      "cell_scope": [
+        "parallel_connected_lithium_ion_packs",
+        "battery_lab_execution"
+      ],
+      "objective": [
+        "experimental_workflow",
+        "pack_ageing_protocol_design",
+        "breakpoint_characterization"
+      ],
+      "methods": [
+        "cell_pairing",
+        "start_of_life_characterization",
+        "pack_ageing_blocks",
+        "periodic_disassembly_and_retest",
+        "end_of_life_diagnostics"
+      ],
+      "factors": [
+        "cell screening thresholds",
+        "thermal case assignment",
+        "breakpoint interval",
+        "diagnostic cadence"
+      ],
+      "responses": [
+        "capacity at several rates",
+        "pulse resistance",
+        "eis spectra",
+        "ocv reference curves",
+        "branch current"
+      ],
+      "key_takeaways": [
+        "The paper is experimentally clear: first screen and pair cells, then validate the thermal-control rig, then run start-of-life cell and pack characterization, then age packs in repeated 125-cycle blocks with re-characterization, and finally close the study with end-of-life impedance and degradation diagnostics.",
+        "This sequence is useful as guidance because it connects every major pack-level ageing conclusion to a repeated measurement checkpoint rather than relying on only start-of-life and end-of-life endpoints.",
+        "For system use, this source is valuable not just for conclusions but as a reusable pattern for how to structure a pack-level ageing campaign with periodic diagnostic interruption."
+      ],
+      "limitations": [
+        "The workflow is detailed and credible, but it is still tied to a specific pouch-cell platform, custom rig, and test budget.",
+        "It should be adapted into lab-specific protocol templates rather than copied as a universal standard."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "research_assistant",
+        "report_agent"
+      ],
+      "keywords": [
+        "experimental process",
+        "workflow",
+        "breakpoint protocol",
+        "pack ageing sequence",
+        "re-characterization"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_pack_protocol_breakpoints",
+      "title": "A reusable pack-ageing workflow combines aggressive cycling with periodic single-cell teardown diagnostics",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "supplementary_methods_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "article p. 3; supp. pp. 1-6, 8"
+      },
+      "page_refs": [
+        "article p. 3",
+        "supp. p. 1",
+        "supp. p. 2",
+        "supp. p. 3",
+        "supp. p. 4",
+        "supp. p. 5",
+        "supp. p. 6",
+        "supp. p. 8"
+      ],
+      "cell_scope": [
+        "parallel_connected_lithium_ion_packs",
+        "cell_to_pack_diagnostics"
+      ],
+      "objective": [
+        "pack_ageing_protocol_design",
+        "breakpoint_characterization",
+        "thermal_gradient_test_planning"
+      ],
+      "methods": [
+        "cell_screening_and_pairing",
+        "modified_hppc",
+        "repeated_breakpoint_characterization",
+        "sol_eol_eis"
+      ],
+      "factors": [
+        "temperature case",
+        "pack topology",
+        "cycling breakpoint interval",
+        "pulse amplitudes and soc breakpoints"
+      ],
+      "responses": [
+        "capacity at multiple rates",
+        "hpcc resistance trends",
+        "pack accessible capacity",
+        "eis spectra"
+      ],
+      "key_takeaways": [
+        "The experimental workflow starts by tightly pairing cells on both capacity and R0 before any pack ageing begins, which reduces the risk of confounding thermal-gradient effects with large start-of-life mismatch.",
+        "The paper uses a practical breakpoint structure: cell start-of-life characterization, pack start-of-life characterization, then repeated 125-cycle ageing blocks with disassembly and repeated single-cell characterization before reassembly.",
+        "The characterization stack is concrete enough to reuse: capacity at 0.1, 1, and 2 C; modified HPPC over 10% SOC breakpoints with 18 s pulses at 0.2, 1, and 3 C; then EIS at start and end of life."
+      ],
+      "limitations": [
+        "The exact rates, rest times, and breakpoint cadence are appropriate for the Kokam 5 Ah study, but should still be adapted to the target cell, rig, and budget.",
+        "This workflow assumes the lab can safely disassemble packs repeatedly and preserve consistent contact resistances after reassembly."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "research_assistant",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "breakpoint testing",
+        "pack ageing protocol",
+        "hppc",
+        "eis",
+        "periodic characterization"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_test_bench_measurement_guidance",
+      "title": "Parallel-pack thermal-gradient studies need calibrated branch-current sensing and validated temperature control",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "supplementary_methods_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "article p. 3; supp. pp. 2-6"
+      },
+      "page_refs": [
+        "article p. 3",
+        "supp. p. 2",
+        "supp. p. 3",
+        "supp. p. 4",
+        "supp. p. 5",
+        "supp. p. 6"
+      ],
+      "cell_scope": [
+        "battery_lab_rig_design",
+        "parallel_pack_thermal_testing"
+      ],
+      "objective": [
+        "test_rig_guidance",
+        "branch_current_measurement",
+        "temperature_control_validation"
+      ],
+      "methods": [
+        "peltier_surface_control",
+        "shunt_resistor_calibration",
+        "contact_resistance_verification",
+        "temperature_uniformity_calibration"
+      ],
+      "factors": [
+        "plate setpoint",
+        "cooling hardware geometry",
+        "current-sense resistor values",
+        "contact resistance"
+      ],
+      "responses": [
+        "branch current accuracy",
+        "temperature tracking accuracy",
+        "contact resistance consistency",
+        "fixture repeatability"
+      ],
+      "key_takeaways": [
+        "The supplement makes branch-current sensing a first-class measurement task by calibrating busbars and shunts rather than assuming nominal resistor values are sufficient.",
+        "Temperature-control quality is validated explicitly under load and no-load conditions, which is important because the claimed thermal-gradient effects would be weak evidence if the thermal boundary conditions were not verified.",
+        "Repeated pack disassembly only works because contact resistance is checked and controlled as part of the workflow, not treated as a one-time setup detail."
+      ],
+      "limitations": [
+        "The exact hardware stack is custom and should not be copied mechanically into a different lab without adaptation.",
+        "The guidance is strongest for fixture and measurement discipline, not for choosing one universal cooling architecture."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "protocol_agent"
+      ],
+      "keywords": [
+        "peltier control",
+        "current shunt calibration",
+        "contact resistance",
+        "temperature validation",
+        "pack test bench"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_current_split_soc_deficit",
+      "title": "Current-split divergence and end-of-discharge SOC deficit explain why pack accessible capacity can fall faster than cell capacity",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "journal_result_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "pp. 6-11; supp. pp. 8-9"
+      },
+      "page_refs": [
+        "p. 6",
+        "p. 7",
+        "p. 8",
+        "p. 9",
+        "p. 10",
+        "p. 11",
+        "supp. p. 8",
+        "supp. p. 9"
+      ],
+      "cell_scope": [
+        "parallel_connected_lithium_ion_packs"
+      ],
+      "objective": [
+        "current_distribution_analysis",
+        "soc_deficit_estimation",
+        "pack_performance_interpretation"
+      ],
+      "methods": [
+        "current_heatmaps",
+        "per_cycle_soc_deficit_estimation",
+        "dynamic_vs_static_capacity_comparison"
+      ],
+      "factors": [
+        "branch temperature",
+        "branch resistance",
+        "cycle count",
+        "depth of discharge"
+      ],
+      "responses": [
+        "branch current difference",
+        "mean current split",
+        "soc deficit at end of discharge",
+        "dynamic accessible capacity"
+      ],
+      "key_takeaways": [
+        "The paper shows that static reference capacity alone can hide pack-level performance loss because the pack may hit voltage cutoffs while significant capacity remains stranded in one branch.",
+        "Current-distribution heatmaps and SOC-deficit estimates provide a practical way to explain why dynamic accessible capacity can decay much faster than the underlying cell capacity.",
+        "High-temperature branches tend to discharge preferentially at start-of-life, while resistance divergence over life can further widen branch SOC differences and worsen accessible-capacity loss."
+      ],
+      "limitations": [
+        "SOC-deficit estimation depends on reference-capacity tracking and interpolation choices, so the exact quantitative deficit should be interpreted together with the underlying measurement method.",
+        "The heatmap-style interpretation is especially suited to repeated constant-current cycling and may look different under realistic drive cycles."
+      ],
+      "system_targets": [
+        "analysis_agent",
+        "report_agent",
+        "research_assistant"
+      ],
+      "keywords": [
+        "soc deficit",
+        "current distribution",
+        "dynamic capacity",
+        "parallel strings",
+        "heatmap"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_cathode_impedance_feedback",
+      "title": "Low-temperature cathode charge-transfer resistance growth can create positive feedback in parallel packs",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "mechanistic_result_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "pp. 5-7; pp. 11-14; supp. pp. 19-21"
+      },
+      "page_refs": [
+        "p. 5",
+        "p. 6",
+        "p. 7",
+        "p. 11",
+        "p. 12",
+        "p. 13",
+        "p. 14",
+        "supp. p. 19",
+        "supp. p. 20",
+        "supp. p. 21"
+      ],
+      "cell_scope": [
+        "parallel_connected_lithium_ion_packs",
+        "cathode_dominated_impedance_growth"
+      ],
+      "objective": [
+        "mechanistic_interpretation",
+        "impedance_growth_analysis",
+        "thermal_gradient_risk_assessment"
+      ],
+      "methods": [
+        "hppc_resistance_tracking",
+        "eis_fitting",
+        "temperature_correlation_analysis"
+      ],
+      "factors": [
+        "cell cycling temperature",
+        "thermal gradient",
+        "charge-transfer resistance growth"
+      ],
+      "responses": [
+        "rdc_0p05s",
+        "rdc_5s",
+        "r0",
+        "rsei",
+        "rct"
+      ],
+      "key_takeaways": [
+        "The authors argue that the longer-time-constant resistance growth, rather than only the short-time ohmic term, is what diverges strongly between branches and drives worsening current mismatch.",
+        "The fitted and pulse-based results both support a counterintuitive but important trend: cathode-associated resistance growth is stronger at lower cycling temperature, while SEI-related growth rises at higher temperature.",
+        "That temperature dependence creates a positive-feedback mechanism under thermal gradients, because the colder branch accumulates impedance faster and therefore sheds current in a way that increases heterogeneity over life."
+      ],
+      "limitations": [
+        "The specific attribution of the longer-time resistance growth to cathode-related kinetics is evidence-based but still interpretive and depends on the chosen equivalent-circuit separation.",
+        "The paper is strongest as a mechanistic warning against SEI-only thinking, not as a universal quantitative law for every cell chemistry."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "report_agent",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "cathode impedance",
+        "rct growth",
+        "thermal gradient feedback",
+        "parallel ageing",
+        "low temperature degradation"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_ocv_model_workflow",
+      "title": "Half-cell referenced OCV fitting can turn low-rate reference curves into degradation-mode estimates",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "diagnostic_method_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "article p. 11; supp. pp. 9-18"
+      },
+      "page_refs": [
+        "article p. 11",
+        "supp. p. 9",
+        "supp. p. 10",
+        "supp. p. 11",
+        "supp. p. 12",
+        "supp. p. 13",
+        "supp. p. 14",
+        "supp. p. 15",
+        "supp. p. 16",
+        "supp. p. 17",
+        "supp. p. 18"
+      ],
+      "cell_scope": [
+        "lithium_ion_ocv_diagnostics",
+        "offline_degradation_analysis"
+      ],
+      "objective": [
+        "ocv_model_fitting",
+        "degradation_mode_estimation",
+        "reference_curve_diagnostics"
+      ],
+      "methods": [
+        "half_cell_fabrication",
+        "p_ocv_measurement",
+        "full_cell_reference_discharge",
+        "ocv_alignment_fitting"
+      ],
+      "factors": [
+        "half-cell voltage curves",
+        "full-cell low-rate reference curve",
+        "lithiation bounds",
+        "cell capacity at each state of health"
+      ],
+      "responses": [
+        "fitted anode capacity",
+        "fitted cathode capacity",
+        "stoichiometric offset",
+        "lli estimate",
+        "lamca estimate",
+        "laman estimate"
+      ],
+      "key_takeaways": [
+        "The supplement provides a practical offline OCV-diagnostic workflow: harvest fresh electrodes into half cells, measure their p-OCV responses, then fit lithiation bounds and offsets so the simulated full-cell curve matches a low-rate full-cell reference discharge.",
+        "Once start-of-life and end-of-life fits are available, the fitted anode capacity, cathode capacity, and offset can be converted into LLI, LAMCa, and LAMAn estimates using simple algebraic relationships.",
+        "The authors validate the fitting logic on synthetic single-mode and mixed-mode degradation cases and report that the dominant degradation mode can be recovered reliably enough for offline diagnostic use."
+      ],
+      "limitations": [
+        "The method cannot uniquely distinguish loss of lithiated versus delithiated active material from full-cell OCV data alone.",
+        "The anode OCV curve is relatively flat, so LAMAn estimation is less certain than cathode-related changes."
+      ],
+      "system_targets": [
+        "analysis_agent",
+        "research_assistant",
+        "modeling_roadmap"
+      ],
+      "keywords": [
+        "ocv fitting",
+        "half cell",
+        "lamca",
+        "lli",
+        "degradation mode"
+      ]
+    },
+    {
+      "card_id": "naylor_marlow_2024_multimodal_diagnostics_stack",
+      "title": "HPPC, EIS, OCV fitting, and post-mortem evidence should be fused instead of over-trusting any single diagnostic",
+      "source_id": "naylor_marlow_2024_parallel_pack_thermal_gradients",
+      "source_type": "journal_article",
+      "evidence_kind": "multimodal_diagnostics_synthesis",
+      "citation": {
+        "reference_id": "[3]",
+        "style": "IEEE",
+        "ieee_reference": "[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.",
+        "title": "Degradation in parallel-connected lithium-ion battery packs under thermal gradients",
+        "url": "https://www.nature.com/articles/s44172-023-00153-5",
+        "linked_reference_markdown": "[[3] M. Naylor Marlow, J. Chen, and B. Wu, \"Degradation in parallel-connected lithium-ion battery packs under thermal gradients,\" Communications Engineering, vol. 3, no. 1, p. 2, 2024.](https://www.nature.com/articles/s44172-023-00153-5)",
+        "supporting_pages": "pp. 11-14; supp. pp. 9-22"
+      },
+      "page_refs": [
+        "p. 11",
+        "p. 12",
+        "p. 13",
+        "p. 14",
+        "supp. p. 9",
+        "supp. p. 10",
+        "supp. p. 11",
+        "supp. p. 12",
+        "supp. p. 13",
+        "supp. p. 14",
+        "supp. p. 15",
+        "supp. p. 16",
+        "supp. p. 17",
+        "supp. p. 18",
+        "supp. p. 19",
+        "supp. p. 20",
+        "supp. p. 22"
+      ],
+      "cell_scope": [
+        "battery_degradation_diagnostics",
+        "parallel_pack_investigations"
+      ],
+      "objective": [
+        "diagnostic_workflow_design",
+        "mechanism_triage",
+        "evidence_fusion"
+      ],
+      "methods": [
+        "hppc",
+        "eis",
+        "ocv_model_fitting",
+        "incremental_capacity_analysis",
+        "post_mortem_sem"
+      ],
+      "factors": [
+        "state of health",
+        "temperature history",
+        "impedance decomposition",
+        "ocv curve evolution"
+      ],
+      "responses": [
+        "pulse resistance",
+        "fitted impedance terms",
+        "degradation mode fractions",
+        "electrode morphology"
+      ],
+      "key_takeaways": [
+        "A major strength of the paper is that the final mechanism claim is not based on one observable alone; branch-current data, HPPC, EIS, OCV fitting, and SEM are used as a cross-checking stack.",
+        "This creates a practical guidance pattern for the system: use pulse and impedance data to localize the timescale of resistance growth, use OCV fitting to estimate degradation-mode balance, and use post-mortem evidence to support but not overstate structural damage claims.",
+        "The paper explicitly acknowledges the limits of each diagnostic, which is useful for keeping future system guidance conservative and evidence-linked."
+      ],
+      "limitations": [
+        "The multimodal stack is experimentally heavy and may be too expensive for routine testing without adaptation.",
+        "The paper still relies on qualitative post-mortem interpretation and model assumptions, so the fused conclusion is stronger than any single diagnostic but not identical to a ground-truth proof."
+      ],
+      "system_targets": [
+        "analysis_agent",
+        "report_agent",
+        "research_assistant"
+      ],
+      "keywords": [
+        "multimodal diagnostics",
+        "hppc",
+        "eis",
+        "ocv model",
+        "post mortem"
+      ]
+    },
+    {
+      "card_id": "barai_2019_method_selection_framework",
+      "title": "There is no one-size-fits-all non-invasive test plan; method choice should be driven by objective, equipment, and time budget",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 1-2; pp. 22-24"
+      },
+      "page_refs": [
+        "p. 1",
+        "p. 2",
+        "p. 22",
+        "p. 23",
+        "p. 24"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells",
+        "noninvasive_characterisation"
+      ],
+      "objective": [
+        "method_selection",
+        "test_plan_design",
+        "equipment_time_tradeoff"
+      ],
+      "methods": [
+        "capacity_test",
+        "gitt",
+        "pseudo_ocv",
+        "electrochemical_voltage_spectroscopy",
+        "hppc",
+        "eis",
+        "pulsed_multisine"
+      ],
+      "factors": [
+        "time budget",
+        "equipment availability",
+        "required information content",
+        "acceptable test complexity"
+      ],
+      "responses": [
+        "method suitability",
+        "data type generated",
+        "modelling and diagnosis relevance"
+      ],
+      "key_takeaways": [
+        "The review explicitly rejects a universal test plan and argues that practitioners should first define the information needed, then choose the method whose strengths and drawbacks best fit that objective.",
+        "The summary table is especially valuable because it compares required equipment, generated data, test duration, factors affecting results, application areas, and cautions for each method family.",
+        "This makes the paper directly useful for an agent that must recommend methods under realistic lab constraints rather than describing one idealised measurement flow."
+      ],
+      "theory_notes": [
+        "The review is organised around the principle that every non-invasive test observes a different slice of the same cell physics: capacity, equilibrium voltage, derivative voltage features, time-domain resistance, or frequency-domain impedance.",
+        "Method selection should therefore be objective-led rather than tradition-led."
+      ],
+      "limitations": [
+        "The review focuses on Li-ion cells and non-invasive electrical characterisation, so destructive methods and chemistry-specific caveats are discussed only indirectly.",
+        "The summary framework still needs local adaptation for the user\u2019s cell format, cycler accuracy, and safety rules."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "protocol_agent",
+        "lab_workflow_registry"
+      ],
+      "keywords": [
+        "method selection",
+        "non-invasive characterization",
+        "test matrix",
+        "summary table",
+        "trade-off"
+      ]
+    },
+    {
+      "card_id": "barai_2019_capacity_test_theory",
+      "title": "Capacity tests are simple and repeatable, but the measured capacity is strongly shaped by rate, temperature, and cell kinetics",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 3-5; p. 24"
+      },
+      "page_refs": [
+        "p. 3",
+        "p. 4",
+        "p. 5",
+        "p. 24"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells"
+      ],
+      "objective": [
+        "capacity_characterisation",
+        "performance_validation",
+        "model_parameter_estimation"
+      ],
+      "methods": [
+        "high_rate_capacity_test",
+        "low_rate_capacity_test"
+      ],
+      "factors": [
+        "current rate",
+        "temperature",
+        "self-heating",
+        "cycler accuracy"
+      ],
+      "responses": [
+        "accessible capacity",
+        "energy",
+        "temperature rise"
+      ],
+      "key_takeaways": [
+        "The review treats capacity testing as the simplest and most repeatable method, but warns that the value measured at high rate is a mixture of thermodynamic capacity and kinetic limitation.",
+        "It recommends choosing current rates using application-relevant metrics such as RMS current rather than arbitrary standard rates that may mislabel end-of-life for a given duty cycle.",
+        "For low-rate tests, the paper argues that high-precision cyclers become important because measurement noise and instrument accuracy can dominate the result."
+      ],
+      "theory_notes": [
+        "Higher current density increases overpotential and causes the voltage limit to be reached before all stored lithium is accessed, so capacity becomes rate-dependent.",
+        "Higher temperature generally improves transport and reaction kinetics, but capacity tests at aggressive current and low ambient temperature can be distorted by self-heating."
+      ],
+      "equation_notes": [
+        "Butler-Volmer form used for rate dependence: i = i0 (exp(alpha_a F eta / RT) - exp(-alpha_c F eta / RT)).",
+        "Arrhenius-style temperature dependence: A(T) = A_ref exp((E_A^act / R) (1/T_ref - 1/T))."
+      ],
+      "limitations": [
+        "Capacity tests alone do not diagnose why capacity changed.",
+        "High-rate or poorly temperature-controlled capacity tests can produce values that are not representative of the intended application."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "analysis_agent",
+        "research_assistant"
+      ],
+      "keywords": [
+        "capacity test",
+        "butler-volmer",
+        "arrhenius",
+        "rms current",
+        "self-heating"
+      ]
+    },
+    {
+      "card_id": "barai_2019_ocv_gitt_pseudoocv_foundations",
+      "title": "OCV, GITT, and pseudo-OCV methods trade thermodynamic fidelity against test duration and practical modelling needs",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 6-11"
+      },
+      "page_refs": [
+        "p. 6",
+        "p. 7",
+        "p. 8",
+        "p. 9",
+        "p. 10",
+        "p. 11"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells",
+        "thermodynamic_characterisation"
+      ],
+      "objective": [
+        "ocv_measurement",
+        "soc_definition",
+        "gitt_design",
+        "pseudo_ocv_modelling"
+      ],
+      "methods": [
+        "ocv_test",
+        "gitt",
+        "pseudo_ocv",
+        "low_rate_cycling"
+      ],
+      "factors": [
+        "rest duration",
+        "soc increment size",
+        "temperature",
+        "charge-discharge hysteresis"
+      ],
+      "responses": [
+        "ocv versus soc",
+        "ocv hysteresis",
+        "thermodynamic capacity",
+        "temperature-dependent ocv"
+      ],
+      "key_takeaways": [
+        "The review distinguishes between true equilibrium OCV, practical GITT-style approximations, and pseudo-OCV derived from low-rate charge/discharge data, and frames these as a time-versus-accuracy trade-off.",
+        "It cautions strongly that SoC is often poorly defined in the literature and should not be confused between rated-capacity, nominal-capacity, and thermodynamic meanings.",
+        "For many ECM and BMS applications, the review argues that coarse FreedomCAR-style OCV measurements may be adequate, whereas more fundamental studies need smaller SoC increments and longer rests."
+      ],
+      "theory_notes": [
+        "OCV is linked to equilibrium thermodynamics and electrode phase behaviour, not merely to a convenient lookup table.",
+        "The paper explains that averaging low-rate charge and discharge curves to create a pseudo-OCV is often an acceptable practical compromise for modelling even though it is not the same as full equilibrium measurement."
+      ],
+      "equation_notes": [
+        "Nernst-style equilibrium relation: E = E0 - (RT / z e) log(a_i^+ / a_i^-).",
+        "Heat-generation split used to explain temperature-dependent OCV behaviour: Qdot = I (V - OCV) - I T (dOCV/dT)."
+      ],
+      "limitations": [
+        "True GITT is very time-consuming and can become impractical for routine testing.",
+        "Pseudo-OCV can be good enough for modelling, but the approximation must be discussed explicitly when hysteresis or ageing effects matter."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "research_assistant",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "ocv",
+        "gitt",
+        "pseudo-ocv",
+        "soc definition",
+        "nernst"
+      ]
+    },
+    {
+      "card_id": "barai_2019_evs_foundations",
+      "title": "IC and DV are derivative views of low-rate voltage curves that reveal information hidden in ordinary V-Q plots",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 12-13"
+      },
+      "page_refs": [
+        "p. 12",
+        "p. 13"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells",
+        "electrochemical_voltage_spectroscopy"
+      ],
+      "objective": [
+        "evs_theory",
+        "ic_interpretation",
+        "dv_interpretation"
+      ],
+      "methods": [
+        "incremental_capacity_analysis",
+        "differential_voltage_analysis"
+      ],
+      "factors": [
+        "voltage signature shape",
+        "equilibrium closeness",
+        "measurement rate"
+      ],
+      "responses": [
+        "ic curve",
+        "dv curve",
+        "full-cell electrode-balance features"
+      ],
+      "key_takeaways": [
+        "The review presents EVS as a way to amplify mV-scale changes that would be hard to see on ordinary voltage-capacity curves.",
+        "IC emphasizes phase-transition regions, while DV more transparently reflects the additive relationship between positive- and negative-electrode signatures in a full cell.",
+        "The method is especially valuable because it uses low-rate voltage data that many labs can already generate without additional hardware."
+      ],
+      "theory_notes": [
+        "The paper highlights that IC and DV are not interchangeable visualisations; they emphasize different parts of the electrode response and therefore support different interpretations.",
+        "For data far from equilibrium, IC is often better than DV for visualising resistance-related voltage shifts."
+      ],
+      "equation_notes": [
+        "Incremental capacity is defined as IC = dQ/dV.",
+        "Differential voltage is defined as DV = dV/dQ."
+      ],
+      "limitations": [
+        "Derivative methods require careful, high-quality low-rate data; poor data quality can create misleading peaks.",
+        "IC and DV curves must be interpreted with chemistry awareness rather than as universal templates."
+      ],
+      "system_targets": [
+        "analysis_agent",
+        "research_assistant"
+      ],
+      "keywords": [
+        "evs",
+        "incremental capacity",
+        "differential voltage",
+        "dQ/dV",
+        "dV/dQ"
+      ]
+    },
+    {
+      "card_id": "barai_2019_evs_degradation_modes",
+      "title": "EVS can classify ageing into LLI, LAM, and resistance-related changes, but interpretation remains chemistry-specific",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 13-15"
+      },
+      "page_refs": [
+        "p. 13",
+        "p. 14",
+        "p. 15"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells",
+        "degradation_diagnosis"
+      ],
+      "objective": [
+        "degradation_mode_classification",
+        "lli_lam_interpretation",
+        "resistance_change_interpretation"
+      ],
+      "methods": [
+        "incremental_capacity_analysis",
+        "differential_voltage_analysis",
+        "half_cell_curve_fitting"
+      ],
+      "factors": [
+        "electrode balance",
+        "electrode signature contraction",
+        "resistance growth",
+        "phase-change evolution"
+      ],
+      "responses": [
+        "lli signature",
+        "lam signature",
+        "ohmic resistance signature",
+        "faradaic resistance signature"
+      ],
+      "key_takeaways": [
+        "The review argues that EVS is powerful because it groups many underlying degradation mechanisms into a few electrochemically observable modes, especially LLI, LAM, and resistance-related changes.",
+        "The clepsydra analogy is used to explain how peak shifting, contraction, and stretching can map back to missing lithium, lost active material, and kinetic changes.",
+        "At the same time, the paper warns that degradation tables are chemistry-specific and should not be transferred blindly between electrode systems."
+      ],
+      "theory_notes": [
+        "In DV space, LLI mainly reduces usable electrode range without changing electrode signatures, while LAM contracts the affected electrode signature.",
+        "In IC space, resistance changes are represented differently from capacity-loss modes, which is why EVS interpretation must be tied to the chosen derivative representation."
+      ],
+      "limitations": [
+        "EVS cannot replace all post-mortem work and does not identify every microscopic mechanism uniquely.",
+        "Automated or peak-tracking EVS workflows need sensitivity analysis across multiple degradation paths before being trusted broadly."
+      ],
+      "system_targets": [
+        "analysis_agent",
+        "research_assistant",
+        "report_agent"
+      ],
+      "keywords": [
+        "LLI",
+        "LAM",
+        "clepsydra",
+        "degradation mode",
+        "peak tracking"
+      ]
+    },
+    {
+      "card_id": "barai_2019_pulse_hppc_theory",
+      "title": "HPPC-style pulse tests are practical for power and ECM work, but the reported resistance is a duration- and condition-dependent bulk quantity",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 16-18; p. 21; pp. 23-24"
+      },
+      "page_refs": [
+        "p. 16",
+        "p. 17",
+        "p. 18",
+        "p. 21",
+        "p. 23",
+        "p. 24"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells",
+        "time_domain_impedance_testing"
+      ],
+      "objective": [
+        "hppc_theory",
+        "power_characterisation",
+        "ecm_parameterisation"
+      ],
+      "methods": [
+        "hppc",
+        "pulse_power_test"
+      ],
+      "factors": [
+        "pulse duration",
+        "pulse amplitude",
+        "soc",
+        "temperature",
+        "ageing state"
+      ],
+      "responses": [
+        "pulse resistance",
+        "power capability",
+        "ecm parameters"
+      ],
+      "key_takeaways": [
+        "The review presents HPPC as the most practically accessible non-invasive impedance method because it uses standard battery cyclers and short test times.",
+        "At the same time, it stresses that pulse resistance is a bulk parameter containing several overlapping timescale contributions and should not be over-interpreted as one pure physical resistance.",
+        "The paper also points out that standards using fixed pulse magnitudes can exceed the safe or relevant operating region at some SoC and temperature combinations."
+      ],
+      "theory_notes": [
+        "The measured pulse response combines contributions that are often labelled ohmic, charge-transfer, and polarisation resistance, but the review warns these components are not cleanly separable in simple time-domain analysis.",
+        "Longer or stronger pulses can push the cell deeper into diffusion-limited behaviour, which changes the apparent resistance."
+      ],
+      "equation_notes": [
+        "Bulk pulse resistance is typically reported as R_pulse = DeltaV / DeltaI."
+      ],
+      "limitations": [
+        "Pulse tests do not provide the same frequency resolution as EIS.",
+        "The reported resistance depends on pulse length, SoC, temperature, and current magnitude, so cross-study comparison requires careful alignment of protocol details."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "analysis_agent",
+        "modeling_roadmap"
+      ],
+      "keywords": [
+        "HPPC",
+        "pulse resistance",
+        "ECM",
+        "power capability",
+        "DeltaV over DeltaI"
+      ]
+    },
+    {
+      "card_id": "barai_2019_eis_ecm_theory",
+      "title": "EIS gives frequency-resolved impedance for ECM fitting and degradation analysis, but setup quality and interpretation discipline are critical",
+      "source_id": "barai_2019_noninvasive_characterisation_review",
+      "source_type": "journal_article",
+      "evidence_kind": "review_synthesis",
+      "citation": {
+        "reference_id": "[4]",
+        "style": "IEEE",
+        "ieee_reference": "[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.",
+        "title": "A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0360128518300996",
+        "linked_reference_markdown": "[[4] A. Barai, K. Uddin, M. Dubarry, L. Somerville, A. McGordon, P. Jennings, and I. Bloom, \"A comparison of methodologies for the non-invasive characterisation of commercial Li-ion cells,\" Progress in Energy and Combustion Science, vol. 72, pp. 1-31, 2019.](https://www.sciencedirect.com/science/article/pii/S0360128518300996)",
+        "supporting_pages": "pp. 18-24"
+      },
+      "page_refs": [
+        "p. 18",
+        "p. 19",
+        "p. 20",
+        "p. 21",
+        "p. 22",
+        "p. 23",
+        "p. 24"
+      ],
+      "cell_scope": [
+        "commercial_li_ion_cells",
+        "frequency_domain_characterisation"
+      ],
+      "objective": [
+        "eis_theory",
+        "ecm_parameterisation",
+        "degradation_analysis",
+        "temperature_estimation"
+      ],
+      "methods": [
+        "electrochemical_impedance_spectroscopy",
+        "nyquist_analysis",
+        "ecm_fitting",
+        "pulsed_multisine"
+      ],
+      "factors": [
+        "frequency window",
+        "soc",
+        "temperature",
+        "relaxation state",
+        "interconnection quality"
+      ],
+      "responses": [
+        "complex impedance spectrum",
+        "ecm parameters",
+        "characteristic frequencies",
+        "soh indicators"
+      ],
+      "key_takeaways": [
+        "The review treats EIS as the richest non-invasive impedance method because it resolves cell behaviour across frequency and supports both dynamic interpretation and ECM fitting.",
+        "It also emphasises that EIS quality depends heavily on setup discipline, including cable arrangement, relaxation state, and whether the measurement is actually representative of the whole cell rather than a local region.",
+        "Compared with pulse methods, EIS is more informative but more specialised; compared with pulsed multisine, it is more accurate but less accessible."
+      ],
+      "theory_notes": [
+        "The Nyquist plot is used to interpret characteristic points, time constants, and approximate resistance contributions, but the review warns that fitting choices still shape the physical meaning attributed to the extracted parameters.",
+        "Second-order ECMs fitted to EIS can be a practical compromise between fidelity and complexity for many cells."
+      ],
+      "equation_notes": [
+        "Complex impedance is defined from sinusoidal voltage and current as Z(omega) = V(omega) / I(omega).",
+        "The review writes the impedance in polar-to-Cartesian form as Z(omega) = Z0 (cos(phi) + i sin(phi))."
+      ],
+      "limitations": [
+        "EIS needs specialised hardware and careful measurement practice, especially at very high and very low frequencies.",
+        "Even when EIS is powerful, parameter identifiability and physical attribution remain non-trivial, especially in more complex ECMs."
+      ],
+      "system_targets": [
+        "analysis_agent",
+        "research_assistant",
+        "modeling_roadmap"
+      ],
+      "keywords": [
+        "EIS",
+        "Nyquist",
+        "ECM",
+        "complex impedance",
+        "pulsed multisine"
+      ]
+    },
+    {
+      "card_id": "insertion_impedance_restricted_diffusion",
+      "title": "Restricted-diffusion insertion impedance links faradaic reaction and mass transport in one coupled response",
+      "source_id": "study_of_the_insertion_reaction_by_impedance_notes",
+      "source_type": "technical_slides",
+      "evidence_kind": "theory_note",
+      "citation": {
+        "reference_id": "[5]",
+        "style": "IEEE",
+        "ieee_reference": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "title": "Study of the insertion reaction by impedance - Application to the characterization of batteries",
+        "url": "",
+        "linked_reference_markdown": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "supporting_pages": "pp. 9-19"
+      },
+      "page_refs": [
+        "p. 9",
+        "p. 10",
+        "p. 11",
+        "p. 12",
+        "p. 13",
+        "p. 14",
+        "p. 15",
+        "p. 16",
+        "p. 17",
+        "p. 18",
+        "p. 19"
+      ],
+      "cell_scope": [
+        "battery_eis_theory",
+        "insertion_reaction_systems"
+      ],
+      "objective": [
+        "eis_theory",
+        "insertion_reaction_impedance",
+        "diffusion_interpretation"
+      ],
+      "methods": [
+        "electrochemical_impedance_spectroscopy",
+        "equivalent_circuit_reasoning"
+      ],
+      "factors": [
+        "faradaic reaction rate",
+        "diffusion regime",
+        "frequency range"
+      ],
+      "responses": [
+        "restricted diffusion impedance",
+        "coupled interfacial and transport response"
+      ],
+      "key_takeaways": [
+        "The slides treat insertion-reaction impedance as a coupled response that includes both charge-transfer behaviour and diffusion limitations rather than as one isolated resistor-like term.",
+        "Restricted-diffusion interpretations help explain why a simple low-frequency tail can reflect both interfacial kinetics and transport effects.",
+        "Equivalent-circuit representations can summarize the behaviour, but they should be treated as model abstractions rather than unique physical truth."
+      ],
+      "theory_notes": [
+        "The note develops the impedance picture from the insertion reaction itself rather than starting from an already simplified circuit.",
+        "This is useful when the user needs to explain why diffusion-related behaviour cannot always be separated cleanly from the interfacial process."
+      ],
+      "equation_notes": [
+        "Use this card for conceptual insertion-impedance theory rather than for one canonical equation from the slide deck."
+      ],
+      "limitations": [
+        "This is a technical slide deck rather than a peer-reviewed review paper.",
+        "Use it to support deeper theory explanation, not as the only source for broad battery-lab recommendations."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "insertion reaction",
+        "restricted diffusion",
+        "faradaic impedance",
+        "battery EIS theory"
+      ]
+    },
+    {
+      "card_id": "insertion_impedance_adsorption_coupling",
+      "title": "Adsorption or electrosorption can complicate insertion-impedance interpretation beyond a simple diffusion model",
+      "source_id": "study_of_the_insertion_reaction_by_impedance_notes",
+      "source_type": "technical_slides",
+      "evidence_kind": "theory_note",
+      "citation": {
+        "reference_id": "[5]",
+        "style": "IEEE",
+        "ieee_reference": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "title": "Study of the insertion reaction by impedance - Application to the characterization of batteries",
+        "url": "",
+        "linked_reference_markdown": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "supporting_pages": "pp. 27-32"
+      },
+      "page_refs": [
+        "p. 27",
+        "p. 28",
+        "p. 29",
+        "p. 30",
+        "p. 31",
+        "p. 32"
+      ],
+      "cell_scope": [
+        "battery_eis_theory",
+        "interfacial_storage_effects"
+      ],
+      "objective": [
+        "eis_theory",
+        "adsorption_effects",
+        "equivalent_circuit_reasoning"
+      ],
+      "methods": [
+        "electrochemical_impedance_spectroscopy",
+        "equivalent_circuit_reasoning"
+      ],
+      "factors": [
+        "adsorption or electrosorption contribution",
+        "interfacial process coupling",
+        "frequency dependence"
+      ],
+      "responses": [
+        "modified low-frequency impedance shape",
+        "additional interfacial contribution"
+      ],
+      "key_takeaways": [
+        "The slides show that adsorption-related processes can modify the apparent insertion impedance and therefore change how a circuit should be interpreted.",
+        "A circuit that looks acceptable under a pure insertion-diffusion assumption may become incomplete once adsorption-like behaviour is considered.",
+        "This is a useful warning against over-reading one fitted element as if it captured all interfacial storage effects."
+      ],
+      "theory_notes": [
+        "Adsorption coupling is a reminder that low-frequency impedance structure can reflect more than one storage or transfer mechanism.",
+        "This is especially useful when the user asks why a simple Randles-style circuit seems too limited."
+      ],
+      "limitations": [
+        "This card is explanatory theory, not a standard battery test procedure.",
+        "Use it carefully and pair it with battery-specific sources when the user needs workflow guidance."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "adsorption",
+        "electrosorption",
+        "insertion impedance",
+        "interfacial coupling"
+      ]
+    },
+    {
+      "card_id": "insertion_impedance_semi_infinite_warburg",
+      "title": "Semi-infinite diffusion leads to the classical Warburg response and supports Randles-style interpretation",
+      "source_id": "study_of_the_insertion_reaction_by_impedance_notes",
+      "source_type": "technical_slides",
+      "evidence_kind": "theory_note",
+      "citation": {
+        "reference_id": "[5]",
+        "style": "IEEE",
+        "ieee_reference": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "title": "Study of the insertion reaction by impedance - Application to the characterization of batteries",
+        "url": "",
+        "linked_reference_markdown": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "supporting_pages": "pp. 34-37"
+      },
+      "page_refs": [
+        "p. 34",
+        "p. 35",
+        "p. 36",
+        "p. 37"
+      ],
+      "cell_scope": [
+        "battery_eis_theory",
+        "diffusion_limited_regimes"
+      ],
+      "objective": [
+        "eis_theory",
+        "warburg_interpretation",
+        "randles_reasoning"
+      ],
+      "methods": [
+        "electrochemical_impedance_spectroscopy",
+        "nyquist_analysis",
+        "equivalent_circuit_reasoning"
+      ],
+      "factors": [
+        "semi-infinite diffusion assumption",
+        "frequency region",
+        "transport limitation"
+      ],
+      "responses": [
+        "warburg response",
+        "classical low-frequency diffusion tail"
+      ],
+      "key_takeaways": [
+        "The slide deck links semi-infinite diffusion to the classic Warburg response and uses that relationship to motivate Randles-style interpretation.",
+        "This is useful when the user needs to understand why a roughly 45-degree low-frequency feature is often linked to diffusion.",
+        "The note still implies that the Warburg interpretation rests on a specific transport assumption rather than being a universal description of every low-frequency feature."
+      ],
+      "theory_notes": [
+        "The usefulness of the Warburg concept comes from the semi-infinite diffusion assumption, so interpretation should weaken once that assumption fails.",
+        "This card works well as a deeper follow-on explanation after a general EIS method explanation from a broader review."
+      ],
+      "equation_notes": [
+        "Use this card to explain Warburg-style interpretation conceptually rather than to enforce one exact formula from the slide deck."
+      ],
+      "limitations": [
+        "The card does not prove that a measured tail is uniquely semi-infinite diffusion.",
+        "Use it as supporting theory, not as a standalone fitting rule."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "Warburg",
+        "semi-infinite diffusion",
+        "Randles",
+        "Nyquist tail"
+      ]
+    },
+    {
+      "card_id": "insertion_impedance_bounded_diffusion",
+      "title": "Bounded diffusion changes the Nyquist response once the finite diffusion length becomes important",
+      "source_id": "study_of_the_insertion_reaction_by_impedance_notes",
+      "source_type": "technical_slides",
+      "evidence_kind": "theory_note",
+      "citation": {
+        "reference_id": "[5]",
+        "style": "IEEE",
+        "ieee_reference": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "title": "Study of the insertion reaction by impedance - Application to the characterization of batteries",
+        "url": "",
+        "linked_reference_markdown": "[5] B. L., \"Study of the insertion reaction by impedance - Application to the characterization of batteries,\" technical slides, 2012.",
+        "supporting_pages": "pp. 38-40"
+      },
+      "page_refs": [
+        "p. 38",
+        "p. 39",
+        "p. 40"
+      ],
+      "cell_scope": [
+        "battery_eis_theory",
+        "diffusion_limited_regimes"
+      ],
+      "objective": [
+        "eis_theory",
+        "bounded_diffusion_interpretation",
+        "nyquist_shape_change"
+      ],
+      "methods": [
+        "electrochemical_impedance_spectroscopy",
+        "nyquist_analysis",
+        "equivalent_circuit_reasoning"
+      ],
+      "factors": [
+        "finite diffusion length",
+        "frequency region",
+        "transport boundary condition"
+      ],
+      "responses": [
+        "bounded-diffusion impedance response",
+        "departure from classical semi-infinite Warburg behaviour"
+      ],
+      "key_takeaways": [
+        "The slide deck shows that when the finite diffusion length becomes important, the low-frequency impedance deviates from the semi-infinite Warburg picture.",
+        "This matters whenever a user is trying to explain why the tail bends or terminates instead of extending as a simple 45-degree feature.",
+        "Bounded diffusion is therefore one of the first theory checks when a fitted or observed low-frequency response departs from the classical Randles expectation."
+      ],
+      "theory_notes": [
+        "Bounded diffusion is often more realistic than semi-infinite diffusion once the probing timescale becomes comparable to the diffusion length scale.",
+        "This card is especially useful for cautioning against over-generalized Warburg interpretations."
+      ],
+      "limitations": [
+        "This theory note does not by itself identify which finite-length element should be used in a fit.",
+        "Use it alongside battery-specific interpretation and fit-quality checks."
+      ],
+      "system_targets": [
+        "research_assistant",
+        "analysis_agent"
+      ],
+      "keywords": [
+        "bounded diffusion",
+        "finite diffusion length",
+        "Warburg deviation",
+        "low-frequency EIS"
+      ]
+    }
+  ]
+}

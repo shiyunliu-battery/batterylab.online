@@ -1,0 +1,215 @@
+{
+  "version": "0.3.0",
+  "status": "seeded_from_literature",
+  "templates": [
+    {
+      "id": "screening_factorial_v1",
+      "status": "seeded",
+      "design_type": "screening",
+      "common_objectives": [
+        "identify dominant factors",
+        "reduce broad test space"
+      ],
+      "required_inputs": [
+        "candidate factors",
+        "factor levels",
+        "sample count",
+        "safety limits"
+      ],
+      "recommended_design_families": [
+        "two-level factorial",
+        "fractional factorial",
+        "definitive screening design",
+        "plackett-burman"
+      ],
+      "decision_notes": [
+        "Use this family when the main task is to narrow many candidate factors before running an optimization study.",
+        "Prefer it before RSM when the team does not yet know which factors deserve the expensive follow-on runs."
+      ],
+      "evidence_card_ids": [
+        "roman_ramirez_2022_screening_designs"
+      ]
+    },
+    {
+      "id": "robustness_matrix_v1",
+      "status": "seeded",
+      "design_type": "robustness",
+      "common_objectives": [
+        "stress check operating envelope",
+        "find sensitive corners"
+      ],
+      "required_inputs": [
+        "corner conditions",
+        "hold times",
+        "replicate strategy",
+        "stop conditions"
+      ],
+      "recommended_design_families": [
+        "taguchi orthogonal arrays",
+        "split-plot follow-on designs"
+      ],
+      "decision_notes": [
+        "Use this family when noise factors and robustness are central, not when the goal is to locate a precise optimum.",
+        "Escalate to split-plot or blocking logic when some factors are hard to change in the lab."
+      ],
+      "evidence_card_ids": [
+        "roman_ramirez_2022_taguchi_robust_design",
+        "roman_ramirez_2022_future_opportunities"
+      ]
+    },
+    {
+      "id": "response_surface_v1",
+      "status": "seeded",
+      "design_type": "optimization",
+      "common_objectives": [
+        "optimize settings",
+        "fit response trends"
+      ],
+      "required_inputs": [
+        "continuous factors",
+        "factor bounds",
+        "response variables",
+        "sample budget"
+      ],
+      "recommended_design_families": [
+        "central composite design",
+        "box-behnken design",
+        "optimal design"
+      ],
+      "decision_notes": [
+        "Use this family after screening when quadratic behavior or interactions are expected.",
+        "Do not label a study as optimization unless the design and analysis can actually support an optimum region or stationary point."
+      ],
+      "evidence_card_ids": [
+        "roman_ramirez_2022_rsm_optimization"
+      ]
+    },
+    {
+      "id": "mixture_formulation_v1",
+      "status": "seeded",
+      "design_type": "formulation",
+      "common_objectives": [
+        "optimize electrode composition",
+        "study composition trade-offs under sum-to-one constraints"
+      ],
+      "required_inputs": [
+        "component list",
+        "component bounds",
+        "response variables",
+        "feasible composition rules"
+      ],
+      "recommended_design_families": [
+        "simplex lattice",
+        "simplex centroid",
+        "simplex axial",
+        "extreme vertices"
+      ],
+      "decision_notes": [
+        "Use this family when the factors are composition proportions instead of ordinary independent process settings.",
+        "Constrained variants are especially useful when binder or additive fractions have lower and upper bounds."
+      ],
+      "evidence_card_ids": [
+        "roman_ramirez_2022_mixture_formulation"
+      ]
+    },
+    {
+      "id": "charging_optimization_v1",
+      "status": "seeded",
+      "design_type": "charging",
+      "common_objectives": [
+        "optimize pulse charging settings",
+        "narrow multi-stage constant-current patterns"
+      ],
+      "required_inputs": [
+        "charging objective function",
+        "candidate current or pulse settings",
+        "voltage and temperature limits",
+        "termination criteria"
+      ],
+      "recommended_design_families": [
+        "d-optimal",
+        "response surface methodology",
+        "orthogonal arrays for initial ranking only"
+      ],
+      "decision_notes": [
+        "Use DOE to reduce the candidate charging matrix before committing to exhaustive testing.",
+        "Treat orthogonal arrays as an initial ranking tool; prefer D-optimal or RSM when interactions or second-order terms matter."
+      ],
+      "evidence_card_ids": [
+        "roman_ramirez_2022_charging_design",
+        "roman_ramirez_2022_taguchi_robust_design"
+      ]
+    },
+    {
+      "id": "parameter_identification_design_v1",
+      "status": "seeded",
+      "design_type": "parameter_identification",
+      "common_objectives": [
+        "reduce experiment count for model fitting",
+        "improve identifiability of model parameters"
+      ],
+      "required_inputs": [
+        "target model family",
+        "candidate experiment set",
+        "measured outputs",
+        "estimation objective"
+      ],
+      "recommended_design_families": [
+        "central composite design",
+        "d-optimal",
+        "fisher optimal design"
+      ],
+      "decision_notes": [
+        "Use this family when the modeling question is driven by information gain and parameter identifiability rather than by direct cell-performance optimization.",
+        "This template is a better fit for ECM or electro-thermal fitting plans than for high-level protocol drafting."
+      ],
+      "evidence_card_ids": [
+        "roman_ramirez_2022_parameter_identification"
+      ]
+    },
+    {
+      "id": "blocked_factorial_v1",
+      "status": "seeded",
+      "design_type": "classical_factorial",
+      "common_objectives": [
+        "estimate main effects and interactions while controlling nuisance variability",
+        "run a factorial study under day, batch, channel, or operator constraints"
+      ],
+      "required_inputs": [
+        "controllable factors and levels",
+        "known nuisance factors to block",
+        "replicate or batch structure",
+        "randomization restrictions"
+      ],
+      "recommended_design_families": [
+        "randomized complete block design",
+        "two-factor factorial design",
+        "2k factorial with blocking or confounding"
+      ],
+      "decision_notes": [
+        "Use this family when the study is still a classical factorial experiment, but the lab has known nuisance sources such as batches, channels, days, fixtures, or operators.",
+        "Prefer ordinary blocking first; only introduce confounding when one block cannot hold a full factorial replicate and higher-order interactions can be sacrificed deliberately."
+      ],
+      "evidence_card_ids": [
+        "tugraz_doe_notes_blocking_rcbd",
+        "tugraz_doe_notes_factorial_basics",
+        "tugraz_doe_notes_2k_blocking_confounding",
+        "roman_ramirez_2022_doe_overview"
+      ]
+    }
+  ],
+  "required_fields": [
+    "id",
+    "status",
+    "design_type",
+    "common_objectives",
+    "required_inputs",
+    "recommended_design_families",
+    "decision_notes",
+    "evidence_card_ids"
+  ],
+  "notes": [
+    "These DOE templates are still starter assets, but they now include literature-backed decision notes and evidence-card links.",
+    "Use the linked evidence cards to explain why one design family is more suitable than another."
+  ]
+}

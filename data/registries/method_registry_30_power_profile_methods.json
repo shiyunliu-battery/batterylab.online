@@ -1,0 +1,393 @@
+{
+  "constant_power_discharge": {
+    "label": "Constant power discharge test",
+    "default_for_objective": false,
+    "objective_key": "constant_power_discharge",
+    "aliases": [
+      "constant power discharge",
+      "constant power test",
+      "power discharge"
+    ],
+    "chapter_id": "battery_cell_performance__constant_power_discharge_test",
+    "source_title": "Constant power discharge test",
+    "source_pages": [
+      25,
+      27
+    ],
+    "handbook_source_id": "battery_understanding_v3_constant_power_discharge_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_constant_power_discharge_test_scope",
+      "battery_understanding_v3_constant_power_discharge_test_execution",
+      "battery_understanding_v3_constant_power_discharge_test_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Characterize capacity and energy under constant-power discharge across a temperature and power matrix.",
+    "applications": [
+      "Power-energy characterization for model validation",
+      "Temperature dependence of usable energy content"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Battery cell tester",
+      "Temperature or climate chamber",
+      "Temperature sensors"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 60,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 60,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "define_power_matrix",
+          "name": "Define the power matrix",
+          "details": "Set constant-power discharge levels that remove approximately 75%, 50%, and 25% of rated energy in one hour, while respecting manufacturer current and voltage limits.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+          "step_strictness": "tailorable_after_review"
+        },
+        {
+          "id": "define_temperature_matrix",
+          "name": "Define the temperature matrix",
+          "details": "Use the recommended 5, 25, and 45 C set, and add sub-zero discharge points only when the application requires them and charge safety remains controlled.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+          "step_strictness": "tailorable_after_review"
+        },
+        {
+          "id": "standard_cycle_precharge",
+          "name": "Standard-cycle precharge",
+          "details": "Charge the cell as described in the standard cycle no more than 48 h before the constant-power run.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "rest_and_log_setup",
+          "name": "Rest and logging setup",
+          "details": "Rest for {rest_minutes} minutes and keep at least minute-level logging plus threshold-based capture for voltage, capacity, and temperature changes.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "constant_power_discharge",
+          "name": "Constant-power discharge",
+          "details": "Discharge at the selected power level until {discharge_cutoff_v} V, then rest for {rest_minutes} minutes.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "cc_cv_recharge",
+          "name": "CC-CV recharge",
+          "details": "Recharge at the manufacturer nominal current to {charge_voltage_v} V, complete the CV taper to the slow-discharge cut-off current, and rest for {rest_minutes} minutes.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "repeat_replicates",
+          "name": "Repeat replicates",
+          "details": "Repeat the discharge-rest-charge block three times for each power level, then repeat for each selected temperature after at least 2 h of thermal equilibration.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_constant_power_discharge_test_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Use minute-level logging plus event-based triggers for voltage, capacity, and temperature changes where the cycler supports them.",
+      "Track surface temperature closely at high power because the chapter explicitly warns about thermal limits."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Delivered energy vs constant-power level",
+        "Voltage trace vs time for each power rate",
+        "Temperature rise vs power level and temperature"
+      ],
+      "tables": [
+        "Power-rate matrix",
+        "Temperature matrix",
+        "Per-condition average capacity and energy"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the standard-cycle precharge, 60 min rest framing, constant-power discharge, and three-repeat structure locked. Narrow the power or temperature matrix only after review.",
+      "locked_planning_fields": [
+        "standard-cycle precharge within 48 h",
+        "60 min rests",
+        "constant-power discharge to cut-off",
+        "three repeats per power level"
+      ],
+      "tailorable_fields": [
+        "exact power values within the chapter logic",
+        "temperature matrix breadth",
+        "extended relaxation criterion when EMF-style recovery matters"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "dynamic_stress_test": {
+    "label": "Dynamic stress test",
+    "default_for_objective": false,
+    "objective_key": "dynamic_stress_test",
+    "aliases": [
+      "dynamic stress test",
+      "dst",
+      "usabc dst"
+    ],
+    "chapter_id": "battery_cell_performance__dynamic_stress_test",
+    "source_title": "Dynamic stress test",
+    "source_pages": [
+      28,
+      30
+    ],
+    "handbook_source_id": "battery_understanding_v3_dynamic_stress_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_dynamic_stress_test_scope",
+      "battery_understanding_v3_dynamic_stress_test_execution",
+      "battery_understanding_v3_dynamic_stress_test_outputs"
+    ],
+    "complementary_literature_source_ids": [],
+    "intent": "Evaluate automotive dynamic power-following capability with a scaled USABC-style DST profile.",
+    "applications": [
+      "Automotive reference performance testing",
+      "Dynamic discharge capability screening before life testing"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Battery cell tester",
+      "Temperature or climate chamber",
+      "Temperature sensors"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 0,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 0,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "define_dst_power_basis",
+          "name": "Define the DST power basis",
+          "details": "Choose the 100% DST scaling basis from the USABC goal, manufacturer ratings, or a prior peak-power test, then freeze that basis before execution.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_dynamic_stress_test_execution",
+          "step_strictness": "tailorable_after_review"
+        },
+        {
+          "id": "charge_and_stabilize",
+          "name": "Charge and stabilize",
+          "details": "Bring the cell to full charge and stabilize temperature according to the approved test plan before the dynamic profile starts.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_dynamic_stress_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "run_continuous_dst_profile",
+          "name": "Run the continuous DST profile",
+          "details": "Apply the 360 s DST profile continuously end-to-end with no rest between profiles and with at most 1 s transition time between power steps.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_dynamic_stress_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "enforce_endpoint_logic",
+          "name": "Enforce endpoint logic",
+          "details": "Stop at rated capacity for performance or reference tests, or at 80% of rated capacity for baseline life-cycle use, or sooner if the cell can no longer follow the profile within limits.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_dynamic_stress_test_outputs",
+          "step_strictness": "framework_after_review"
+        },
+        {
+          "id": "high_speed_logging",
+          "name": "High-speed logging",
+          "details": "Use roughly 500 ms sampling so the automotive transients and profile-following quality remain visible.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_dynamic_stress_test_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Use approximately 500 ms constant sample time for voltage, current, and power.",
+      "Track net capacity removed because the endpoint logic is based on Ah removed after any regenerative contribution."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Voltage and power trace over the DST profile",
+        "Delivered Ah until end-of-discharge",
+        "Profile-following error or clipping events"
+      ],
+      "tables": [
+        "DST scaling basis",
+        "Endpoint criterion used",
+        "Per-run pass/fail summary"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the continuous 360 s DST execution, no-rest profile chaining, and endpoint logic locked. Only the scaling basis and application-specific endpoint choice move after review.",
+      "locked_planning_fields": [
+        "continuous 360 s DST profile",
+        "no rest between profiles",
+        "1 s maximum transition time",
+        "500 ms logging order of magnitude"
+      ],
+      "tailorable_fields": [
+        "DST scaling basis",
+        "performance versus baseline-life endpoint choice"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "drive_cycle_test": {
+    "label": "Drive cycle test",
+    "default_for_objective": false,
+    "objective_key": "drive_cycle",
+    "aliases": [
+      "drive cycle",
+      "nedc",
+      "wltp"
+    ],
+    "chapter_id": "battery_cell_performance__drive_cycle",
+    "source_title": "Drive cycle",
+    "source_pages": [
+      49,
+      50
+    ],
+    "handbook_source_id": "battery_understanding_v3_drive_cycle_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_drive_cycle_test_scope",
+      "battery_understanding_v3_drive_cycle_test_execution",
+      "battery_understanding_v3_drive_cycle_test_outputs"
+    ],
+    "complementary_literature_source_ids": [],
+    "intent": "Cycle the cell with a realistic NEDC or WLTP-style profile so life can be linked back to driven-distance style duty rather than a single constant C-rate.",
+    "applications": [
+      "Application-representative usage-profile screening",
+      "Vehicle-profile benchmarking before formal ageing campaigns"
+    ],
+    "supported_chemistries": [
+      "lfp",
+      "nmc811",
+      "nca"
+    ],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Battery cell tester",
+      "Temperature or climate chamber",
+      "Temperature sensors"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 30,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 30,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "standard_charge",
+          "name": "Standard charge",
+          "details": "Charge at approximately C/3 to the end-of-charge voltage before each drive-cycle discharge block.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_drive_cycle_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "pre_profile_pause",
+          "name": "Pre-profile pause",
+          "details": "Pause for {rest_minutes} minutes before starting the NEDC or WLTP profile.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_drive_cycle_test_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "run_drive_profile",
+          "name": "Run the drive profile",
+          "details": "Execute the selected NEDC or WLTP discharge profile until {discharge_cutoff_v} V or the approved end-of-discharge criterion.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_drive_cycle_test_execution",
+          "step_strictness": "tailorable_after_review"
+        },
+        {
+          "id": "repeat_to_eol",
+          "name": "Repeat to end of life",
+          "details": "Repeat the pause-profile-charge sequence until the agreed end-of-life threshold is reached.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_drive_cycle_test_outputs",
+          "step_strictness": "framework_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Preserve time-resolved current, voltage, and temperature through the non-constant-rate profile.",
+      "Track equivalent distance or equivalent cycles only after the exact drive-cycle mapping is frozen."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Profile current / power trace",
+        "Voltage trace across repeated drive cycles",
+        "Capacity or delivered energy vs repeated profile count"
+      ],
+      "tables": [
+        "Selected drive-cycle family",
+        "Per-block delivered energy summary",
+        "End-of-life threshold and stopping point"
+      ]
+    },
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Keep the charge-pause-drive-profile-repeat structure locked. The chosen drive-cycle family and end-of-life translation still need review.",
+      "locked_planning_fields": [
+        "standard charge before profile",
+        "30 min pause before the drive profile",
+        "repeat-until-end-of-life framing"
+      ],
+      "tailorable_fields": [
+        "NEDC versus WLTP or derived profile choice",
+        "distance-mapping and end-of-life definition"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  }
+}

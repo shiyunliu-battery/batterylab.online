@@ -1,0 +1,554 @@
+{
+  "soc_ocv": {
+    "label": "SOC-OCV / slow curve",
+    "default_for_objective": true,
+    "objective_key": "soc_ocv",
+    "aliases": [
+      "soc ocv",
+      "ocv",
+      "ocv curve",
+      "low c-rate cycle",
+      "slow discharge curve",
+      "emf"
+    ],
+    "chapter_id": "battery_cell_performance__low_c_rate_cycle_slow_dis_charge_curve",
+    "source_title": "Low C-rate cycle / Slow (dis)charge curve",
+    "source_pages": [24, 24],
+    "handbook_source_id": "battery_understanding_v3_soc_ocv",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_soc_ocv_scope",
+      "battery_understanding_v3_soc_ocv_execution",
+      "battery_understanding_v3_soc_ocv_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Derive low-rate charge and discharge voltage curves for OCV and EMF-oriented interpretation and modelling support.",
+    "supported_chemistries": ["lfp", "nmc811", "nca"],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor",
+      "target_temperature_c"
+    ],
+    "required_equipment": [
+      "Battery cell tester",
+      "Stable room-temperature environment"
+    ],
+    "recommended_defaults": {
+      "fixed_c_rate": 0.04,
+      "rest_minutes": 60
+    },
+    "protocol_template": {
+      "defaults": {
+        "fixed_c_rate": 0.04,
+        "rest_minutes": 60,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "standard_cycle_precharge",
+          "name": "Standard-cycle precharge",
+          "details": "Charge the cell as described in the standard cycle within 48 h before the slow curve.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_soc_ocv_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "thermal_acclimation",
+          "name": "Thermal acclimation",
+          "details": "Acclimate the cell at {target_temperature_c} C and rest for {rest_minutes} minutes before the slow curve.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_soc_ocv_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "slow_discharge",
+          "name": "Slow discharge",
+          "details": "Discharge at {discharge_c_rate}C to {discharge_cutoff_v} V while preserving the fine logging cadence.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_soc_ocv_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "slow_recharge_completion",
+          "name": "Slow recharge",
+          "details": "Recharge at {charge_c_rate}C to {charge_voltage_v} V and complete the CV taper to C/25.",
+          "source_backed": false,
+          "evidence_card_id": "battery_understanding_v3_soc_ocv_execution",
+          "step_strictness": "planner_completion",
+          "deviation_note": "The extracted handbook text is truncated, so the symmetric recharge completion remains a planner-added completion that must be reviewed."
+        },
+        {
+          "id": "ocv_emf_reconstruction",
+          "name": "OCV and EMF reconstruction",
+          "details": "Average the slow charge and discharge curves to derive the working OCV or EMF estimate and ICA or DVA-ready exports.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_soc_ocv_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Measure every minute, every 1 mV change, and every 0.2 K change.",
+      "Run at 25 +/- 2 C after sufficient thermal acclimation."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Slow charge and discharge curves vs capacity",
+        "Derived averaged OCV / EMF curve",
+        "Incremental capacity dQ/dV plot"
+      ],
+      "tables": [
+        "Test condition summary",
+        "Cutoff voltages, rest times, and logging settings"
+      ]
+    },
+    "planner_notes": [
+      "The PDF extraction truncates the white paper text after the slow-discharge bullet. The symmetric recharge step is added here as a planner completion and must be reviewed before release."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Use the handbook chapter as the primary executable reference. Literature may complement theory or interpretation but should not silently override the handbook sequence.",
+      "locked_planning_fields": [
+        "precharge requirement",
+        "rest and acclimation framing",
+        "slow-curve acquisition expectations",
+        "core output family"
+      ],
+      "tailorable_fields": [
+        "clarified recharge completion after explicit review"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "capacity_test": {
+    "label": "Capacity test",
+    "default_for_objective": true,
+    "objective_key": "rate_capability",
+    "aliases": [
+      "capacity",
+      "capacity test",
+      "energy and capacity"
+    ],
+    "chapter_id": "battery_cell_performance__capacity_test",
+    "source_title": "Capacity test",
+    "source_pages": [18, 23],
+    "handbook_source_id": "battery_understanding_v3_capacity_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_capacity_scope",
+      "battery_understanding_v3_capacity_execution",
+      "battery_understanding_v3_capacity_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Measure capacity and energy content versus C-rate and temperature while collecting voltage and thermal behaviour useful for direct evaluation and model checking.",
+    "supported_chemistries": ["lfp", "nmc811", "nca"],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor",
+      "target_temperature_c",
+      "charge_c_rate",
+      "discharge_c_rate"
+    ],
+    "required_equipment": [
+      "Battery cell tester with sufficient current headroom",
+      "Temperature sensors",
+      "Temperature chamber",
+      "Optional forced air flow and heat camera"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 60
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 60,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "initial_state_preparation",
+          "name": "Initial state preparation",
+          "details": "If the standard cycle was not completed within the previous 48 h, perform a standard-cycle discharge and recharge first.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "pre_discharge_rest",
+          "name": "Pre-discharge rest",
+          "details": "Rest for {rest_minutes} minutes before the main discharge.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "constant_current_discharge",
+          "name": "Constant-current discharge",
+          "details": "Discharge at {discharge_c_rate}C to {discharge_cutoff_v} V at the selected chamber temperature.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "optional_cv_discharge",
+          "name": "Optional CV discharge",
+          "details": "Optionally continue at the lower-voltage hold until C/25 to recover the C/25 capacity component.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "tailorable_after_review"
+        },
+        {
+          "id": "pre_charge_rest",
+          "name": "Pre-charge rest",
+          "details": "Rest for {rest_minutes} minutes before recharge.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "cc_cv_recharge",
+          "name": "CC-CV recharge",
+          "details": "Charge at {charge_c_rate}C to {charge_voltage_v} V and continue CV until C/25.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "repeat_across_matrix",
+          "name": "Repeat across matrix",
+          "details": "Repeat the discharge and charge block for each selected C-rate and temperature.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_capacity_execution",
+          "step_strictness": "tailorable_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Measure every minute, every 10 mV change, every 0.05 C change, and every 0.2 K change.",
+      "Wait at least two hours after changing chamber temperature before starting a discharge."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Voltage vs time",
+        "Voltage vs capacity / SOC",
+        "Temperature rise vs SOC",
+        "Capacity vs C-rate and temperature"
+      ],
+      "tables": [
+        "Test matrix of rates and temperatures",
+        "Capacity, energy, and efficiency summary"
+      ]
+    },
+    "planner_notes": [
+      "The white paper defines an extended test matrix. The planner may narrow that matrix to the requested chemistry, equipment, and project need."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Use the handbook chapter as the primary executable reference. Matrix narrowing is allowed only after explicit review and should preserve the core block structure.",
+      "locked_planning_fields": [
+        "rest-discharge-rest-charge block structure",
+        "core discharge and recharge sequence",
+        "capacity and temperature output family"
+      ],
+      "tailorable_fields": [
+        "temperature matrix size",
+        "rate matrix size",
+        "optional cv discharge continuation"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "pulse_hppc": {
+    "label": "Pulse test / HPPC",
+    "default_for_objective": true,
+    "objective_key": "hppc",
+    "aliases": [
+      "hppc",
+      "pulse",
+      "pulse test",
+      "hybrid pulse power characterization"
+    ],
+    "chapter_id": "battery_cell_performance__pulse_test",
+    "source_title": "Pulse test",
+    "source_pages": [31, 37],
+    "handbook_source_id": "battery_understanding_v3_pulse_test",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_pulse_scope",
+      "battery_understanding_v3_pulse_execution",
+      "battery_understanding_v3_pulse_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "barai_2019_noninvasive_characterisation_review"
+    ],
+    "intent": "Characterize charge and discharge pulse behaviour versus SOC and temperature for power capability analysis and equivalent-circuit parametrization.",
+    "supported_chemistries": ["lfp", "nmc811", "nca"],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor",
+      "target_temperature_c",
+      "charge_c_rate",
+      "discharge_c_rate"
+    ],
+    "required_equipment": [
+      "Battery cell tester",
+      "Temperature or climate chamber",
+      "Temperature sensors"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 60
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 60,
+        "pulse_duration_s": 18.0,
+        "recovery_duration_s": 60.0,
+        "pseudo_ocv_rest_minutes": 30.0,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "climate_chamber_acclimation",
+          "name": "Climate-chamber acclimation",
+          "details": "Set the chamber to 23 C and rest for 3 h before the initial full charge.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "reference_full_charge",
+          "name": "Reference full charge",
+          "details": "Charge per datasheet to cut-off voltage and continue CV until the current falls below C/25 or C/50 or until 2 h.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "reference_capacity_discharge",
+          "name": "Reference capacity discharge",
+          "details": "Rest 30 min, then discharge at 0.5C to the lower cut-off to define actual usable capacity.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "return_to_full_soc",
+          "name": "Return to full SOC",
+          "details": "Recharge with the same CC-CV method before each temperature sweep.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "soc_staircase",
+          "name": "SOC staircase",
+          "details": "Set chamber to {target_temperature_c} C, rest 6 h, then step the cell by 5% DoD (10% SOC) increments with 1 h rests.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "discharge_pulse",
+          "name": "Discharge pulse",
+          "details": "Apply a {discharge_c_rate}C discharge pulse for 18 s or until the lower voltage limit is reached, followed by a 60 s rest.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "charge_pulse",
+          "name": "Charge pulse",
+          "details": "Apply a {charge_c_rate}C charge pulse for 18 s or until the upper voltage limit is reached, followed by a 60 s rest.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "repeat_across_soc_rate_temperature",
+          "name": "Repeat across SOC, rate, and temperature",
+          "details": "Repeat the pulse pair at the selected current rates until 10% SOC, then repeat for each selected temperature.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_pulse_execution",
+          "step_strictness": "tailorable_after_review"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Rest segments: measure every minute or every 20 mV change or every 0.5 C change.",
+      "Charge and discharge blocks: measure every 5 s or every 20 mV change or every 0.5 C change.",
+      "Pulse segments: measure every 10 to 20 ms if possible, or at the fastest tester-supported sampling rate."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Current and voltage trace for each pulse",
+        "R_2s, R_10s, and R_18s vs SOC and temperature",
+        "Power capability map",
+        "OCV relaxation / RC-fit overlay"
+      ],
+      "tables": [
+        "Pulse matrix by temperature, SOC, and current rate",
+        "Resistance summary by time constant"
+      ]
+    },
+    "planner_notes": [
+      "The white paper allows a shortened variant when time is limited. The planner can reduce rate count or widen the SOC step after review."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Use the handbook chapter as the primary executable reference. Reduced rate count or widened SOC spacing must be treated as explicit reviewed deviations.",
+      "locked_planning_fields": [
+        "paired-pulse logic",
+        "soc staircase structure",
+        "core acclimation and reference-capacity steps",
+        "pulse-trace and resistance output family"
+      ],
+      "tailorable_fields": [
+        "rate count",
+        "temperature set",
+        "soc spacing"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  },
+  "cycle_life": {
+    "label": "Cycle life test",
+    "default_for_objective": true,
+    "objective_key": "cycle_life",
+    "aliases": [
+      "cycle life",
+      "cycle life test",
+      "aging",
+      "ageing"
+    ],
+    "chapter_id": "ageing_effects__cycle_life_test",
+    "source_title": "Cycle life test",
+    "source_pages": [53, 54],
+    "handbook_source_id": "battery_understanding_v3_cycle_life",
+    "primary_evidence_card_ids": [
+      "battery_understanding_v3_cycle_life_scope",
+      "battery_understanding_v3_cycle_life_execution",
+      "battery_understanding_v3_cycle_life_outputs"
+    ],
+    "complementary_literature_source_ids": [
+      "roman_ramirez_2022_doe_review",
+      "naylor_marlow_2024_parallel_pack_thermal_gradients"
+    ],
+    "intent": "Assess lifetime under selected use conditions by varying temperature, current or power profile, and voltage window while periodically checking reference performance.",
+    "supported_chemistries": ["lfp", "nmc811", "nca"],
+    "required_inputs": [
+      "chemistry",
+      "instrument",
+      "form_factor",
+      "target_temperature_c",
+      "charge_c_rate",
+      "discharge_c_rate",
+      "cycle_count"
+    ],
+    "required_equipment": [
+      "Battery cell tester with current headroom for periodic reference tests",
+      "Temperature chamber"
+    ],
+    "recommended_defaults": {
+      "rest_minutes": 30,
+      "minimum_cycle_count": 1
+    },
+    "protocol_template": {
+      "defaults": {
+        "rest_minutes": 30,
+        "minimum_cycle_count": 1
+      },
+      "steps": [
+        {
+          "id": "design_ageing_matrix",
+          "name": "Design the ageing matrix",
+          "details": "Select the temperature, current or power profile, and voltage window combinations relevant to the project objective.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_cycle_life_execution",
+          "step_strictness": "framework_after_review"
+        },
+        {
+          "id": "preconditioning_and_baseline",
+          "name": "Preconditioning and baseline",
+          "details": "Run the preconditioning test, then execute the initial reference performance test set at room temperature.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_cycle_life_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "thermal_stabilization",
+          "name": "Thermal stabilization",
+          "details": "Stabilize the cell at {target_temperature_c} C for 8 h before the ageing profile starts.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_cycle_life_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "ageing_block",
+          "name": "Ageing block",
+          "details": "Run the selected ageing profile for {cycle_count} cycles or the agreed throughput block, within the approved voltage window.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_cycle_life_execution",
+          "step_strictness": "framework_after_review"
+        },
+        {
+          "id": "periodic_check_up",
+          "name": "Periodic check-up",
+          "details": "Interrupt the ageing profile at the agreed cadence for standard cycle, capacity, and pulse reference tests.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_cycle_life_execution",
+          "step_strictness": "core_handbook_locked"
+        },
+        {
+          "id": "end_of_life_decision",
+          "name": "End-of-life decision",
+          "details": "Stop when the project end-of-life criterion is reached, often 80% SOH unless the project defines otherwise.",
+          "source_backed": true,
+          "evidence_card_id": "battery_understanding_v3_cycle_life_outputs",
+          "step_strictness": "core_handbook_locked"
+        }
+      ]
+    },
+    "data_acquisition": [
+      "Use a logging cadence that preserves the ageing profile, reference checks, and temperature excursions.",
+      "Store reference performance test outputs against equivalent cycle count or Ah throughput."
+    ],
+    "required_outputs": {
+      "graphs": [
+        "Capacity or SOH vs equivalent cycles / Ah throughput",
+        "Resistance or DCIR vs life fraction",
+        "Temperature trend during the ageing block"
+      ],
+      "tables": [
+        "Ageing matrix",
+        "Reference check schedule",
+        "End-of-life criterion summary"
+      ]
+    },
+    "planner_notes": [
+      "The white paper defines a DOE-style framework rather than one single executable protocol. The plan must be finalized per project."
+    ],
+    "strict_reference_policy": {
+      "mode": "core_handbook_primary",
+      "summary": "Use the handbook chapter as the primary planning frame. Project-specific matrix design is expected, but baseline, periodic-check, and end-of-life checkpoints remain mandatory review anchors.",
+      "locked_planning_fields": [
+        "baseline characterization",
+        "thermal stabilization",
+        "periodic reference check-ups",
+        "end-of-life decision gate"
+      ],
+      "tailorable_fields": [
+        "ageing matrix factors",
+        "throughput block size",
+        "project-specific end-of-life threshold"
+      ],
+      "deviation_review_required": true
+    },
+    "ui_renderer": "standard_method_planner"
+  }
+}

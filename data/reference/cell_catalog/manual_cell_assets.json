@@ -1,0 +1,188 @@
+{
+  "catalog_version": "manual_assets_v1",
+  "generated_at_utc": "2026-03-18T00:00:00+00:00",
+  "source_repository": "manual_literature_entry",
+  "cells": [
+    {
+      "cell_id": "Unknown_NFM_18650_NaIon",
+      "display_name": "Unknown NFM 18650 sodium-ion",
+      "manufacturer": "Unknown",
+      "model": "NFM_18650",
+      "schema_name": "NFM_18650",
+      "positive_electrode_type": "Na[Ni1/3 Fe1/3 Mn1/3]O2",
+      "project_chemistry_hint": "sodium_ion",
+      "case_types": [
+        "R18650"
+      ],
+      "form_factor": "cylindrical",
+      "electrical": {
+        "nominal_capacity_ah": 1.3,
+        "typical_capacity_ah": 1.35,
+        "nominal_voltage_v": 3.1,
+        "charge_voltage_v": 3.95,
+        "discharge_cutoff_v": 1.5,
+        "internal_resistance_mohm_ac_25c_max": 20.0
+      },
+      "physical": {
+        "diameter_m": 0.0184,
+        "height_m": 0.0653,
+        "diameter_mm": 18.4,
+        "height_mm": 65.3,
+        "mass_kg": 0.03,
+        "mass_g": 30.0
+      },
+      "currents": {
+        "recommended_charge_current_a": 1.3,
+        "recommended_discharge_current_a": 3.9,
+        "max_continuous_charge_current_a": 1.3,
+        "max_continuous_discharge_current_a": 3.9
+      },
+      "source_repository": "manual_literature_entry",
+      "source_file": "manual_cell_assets/Unknown_NFM_18650_NaIon.json",
+      "approval_basis": "literature_backed_manual_asset",
+      "required_field_waivers": [
+        "cycle_life_cycles"
+      ],
+      "approval_notes": [
+        "Retained as a formal sodium-ion literature asset even though the publication does not report cycle life.",
+        "Manufacturer is reported as Unknown because the source paper does not disclose the commercial supplier."
+      ],
+      "literature_reference": {
+        "citation_text": "Shiyun Liu, Kang Li, James Yu, Kailong Liu, Characterisation and performance evaluation of early-generation commercial sodium-ion batteries, Applied Energy, Volume 412, 2026, 127687, ISSN 0306-2619.",
+        "doi": "10.1016/j.apenergy.2026.127687",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261926003399"
+      },
+      "citations": [
+        "Shiyun Liu, Kang Li, James Yu, Kailong Liu, Characterisation and performance evaluation of early-generation commercial sodium-ion batteries, Applied Energy, Volume 412, 2026, 127687, ISSN 0306-2619.",
+        "DOI: 10.1016/j.apenergy.2026.127687",
+        "ScienceDirect: https://www.sciencedirect.com/science/article/pii/S0306261926003399"
+      ],
+      "normalization_notes": [
+        "Manual literature asset derived from a user-supplied table image.",
+        "Stored as sodium-ion reference metadata only; no controlled registry chemistry is mapped yet.",
+        "Recommended and maximum current fields both use the reported max constant C-rate because no separate standard current was reported.",
+        "Cycle life was not reported in the cited paper and is therefore waived for formal lookup and draft planning support."
+      ]
+    },
+    {
+      "cell_id": "Unknown_CFM_18650_NaIon",
+      "display_name": "Unknown CFM 18650 sodium-ion",
+      "manufacturer": "Unknown",
+      "model": "CFM_18650",
+      "schema_name": "CFM_18650",
+      "positive_electrode_type": "Na(Cu,Fe,Mn)O2",
+      "project_chemistry_hint": "sodium_ion",
+      "case_types": [
+        "R18650"
+      ],
+      "form_factor": "cylindrical",
+      "electrical": {
+        "nominal_capacity_ah": 1.3,
+        "nominal_voltage_v": 3.0,
+        "charge_voltage_v": 4.0,
+        "discharge_cutoff_v": 1.5,
+        "internal_resistance_mohm_ac_25c_max": 20.0
+      },
+      "physical": {
+        "diameter_m": 0.0184,
+        "height_m": 0.0654,
+        "diameter_mm": 18.4,
+        "height_mm": 65.4,
+        "mass_kg": 0.037,
+        "mass_g": 37.0
+      },
+      "currents": {
+        "recommended_charge_current_a": 0.26,
+        "recommended_discharge_current_a": 0.26,
+        "max_continuous_charge_current_a": 0.65,
+        "max_continuous_discharge_current_a": 6.5
+      },
+      "source_repository": "manual_literature_entry",
+      "source_file": "manual_cell_assets/Unknown_CFM_18650_NaIon.json",
+      "approval_basis": "literature_backed_manual_asset",
+      "required_field_waivers": [
+        "cycle_life_cycles"
+      ],
+      "approval_notes": [
+        "Retained as a formal sodium-ion literature asset even though the publication does not report cycle life.",
+        "Manufacturer is reported as Unknown because the source paper does not disclose the commercial supplier."
+      ],
+      "literature_reference": {
+        "citation_text": "Shiyun Liu, Kang Li, James Yu, Kailong Liu, Characterisation and performance evaluation of early-generation commercial sodium-ion batteries, Applied Energy, Volume 412, 2026, 127687, ISSN 0306-2619.",
+        "doi": "10.1016/j.apenergy.2026.127687",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261926003399"
+      },
+      "citations": [
+        "Shiyun Liu, Kang Li, James Yu, Kailong Liu, Characterisation and performance evaluation of early-generation commercial sodium-ion batteries, Applied Energy, Volume 412, 2026, 127687, ISSN 0306-2619.",
+        "DOI: 10.1016/j.apenergy.2026.127687",
+        "ScienceDirect: https://www.sciencedirect.com/science/article/pii/S0306261926003399"
+      ],
+      "normalization_notes": [
+        "Manual literature asset derived from a user-supplied table image.",
+        "Stored as sodium-ion reference metadata only; no controlled registry chemistry is mapped yet.",
+        "Recommended current fields use the reported standard charge and discharge current.",
+        "Cycle life was not reported in the cited paper and is therefore waived for formal lookup and draft planning support."
+      ]
+    },
+    {
+      "cell_id": "Unknown_NFPP_18650_NaIon",
+      "display_name": "Unknown NFPP 18650 sodium-ion",
+      "manufacturer": "Unknown",
+      "model": "NFPP_18650",
+      "schema_name": "NFPP_18650",
+      "positive_electrode_type": "Na4Fe3(PO4)2(P2O7)",
+      "project_chemistry_hint": "sodium_ion",
+      "case_types": [
+        "R18650"
+      ],
+      "form_factor": "cylindrical",
+      "electrical": {
+        "nominal_capacity_ah": 0.9,
+        "nominal_voltage_v": 3.0,
+        "charge_voltage_v": 3.7,
+        "discharge_cutoff_v": 1.5,
+        "internal_resistance_mohm_ac_25c_max": 20.0
+      },
+      "physical": {
+        "diameter_m": 0.0184,
+        "height_m": 0.0655,
+        "diameter_mm": 18.4,
+        "height_mm": 65.5,
+        "mass_kg": 0.033,
+        "mass_g": 33.0
+      },
+      "currents": {
+        "recommended_charge_current_a": 0.45,
+        "recommended_discharge_current_a": 0.45,
+        "max_continuous_charge_current_a": 2.7,
+        "max_continuous_discharge_current_a": 18.0
+      },
+      "source_repository": "manual_literature_entry",
+      "source_file": "manual_cell_assets/Unknown_NFPP_18650_NaIon.json",
+      "approval_basis": "literature_backed_manual_asset",
+      "required_field_waivers": [
+        "cycle_life_cycles"
+      ],
+      "approval_notes": [
+        "Retained as a formal sodium-ion literature asset even though the publication does not report cycle life.",
+        "Manufacturer is reported as Unknown because the source paper does not disclose the commercial supplier."
+      ],
+      "literature_reference": {
+        "citation_text": "Shiyun Liu, Kang Li, James Yu, Kailong Liu, Characterisation and performance evaluation of early-generation commercial sodium-ion batteries, Applied Energy, Volume 412, 2026, 127687, ISSN 0306-2619.",
+        "doi": "10.1016/j.apenergy.2026.127687",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261926003399"
+      },
+      "citations": [
+        "Shiyun Liu, Kang Li, James Yu, Kailong Liu, Characterisation and performance evaluation of early-generation commercial sodium-ion batteries, Applied Energy, Volume 412, 2026, 127687, ISSN 0306-2619.",
+        "DOI: 10.1016/j.apenergy.2026.127687",
+        "ScienceDirect: https://www.sciencedirect.com/science/article/pii/S0306261926003399"
+      ],
+      "normalization_notes": [
+        "Manual literature asset derived from a user-supplied table image.",
+        "Stored as sodium-ion reference metadata only; no controlled registry chemistry is mapped yet.",
+        "Recommended current fields use the reported standard charge and discharge current.",
+        "Cycle life was not reported in the cited paper and is therefore waived for formal lookup and draft planning support."
+      ]
+    }
+  ]
+}

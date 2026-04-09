@@ -1,0 +1,96 @@
+# 🚀🧠 Deep Agents UI
+
+[Deep Agents](https://github.com/langchain-ai/deepagents) is a simple, open source agent harness that implements a few generally useful tools, including planning (prior to task execution), computer access (giving the able access to a shell and a filesystem), and sub-agent delegation (isolated task execution). This is a UI for interacting with deepagents.
+
+## 🚀 Quickstart
+
+**Install dependencies and run the app**
+
+```bash
+git clone https://github.com/langchain-ai/deep-agents-ui.git
+cd deep-agents-ui
+yarn install
+yarn dev
+```
+
+**Deploy a Deep Agent**
+
+As an example, see our [Deep Agents quickstarts](https://github.com/langchain-ai/deepagents/tree/main/examples) for examples and run the `deep_research` example.
+
+The `langgraph.json` file has the assistant ID as the key:
+
+```
+  "graphs": {
+    "research": "./agent.py:agent"
+  },
+```
+
+Kick off the local LangGraph deployment:
+
+```bash
+cd deepagents-quickstarts/deep_research
+langgraph dev
+```
+
+You will see the local LangGraph deployment log to terminal:
+
+```
+╦  ┌─┐┌┐┌┌─┐╔═╗┬─┐┌─┐┌─┐┬ ┬
+║  ├─┤││││ ┬║ ╦├┬┘├─┤├─┘├─┤
+╩═╝┴ ┴┘└┘└─┘╚═╝┴└─┴ ┴┴  ┴ ┴
+
+- 🚀 API: http://127.0.0.1:2024
+- 🎨 Studio UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+- 📚 API Docs: http://127.0.0.1:2024/docs
+...
+```
+
+You can get the Assistant ID from `langgraph.json`, while the server-side
+LangGraph URL stays in the deployment environment:
+
+- Assistant ID: `research`
+
+**Open Deep Agents UI** at [http://localhost:3000](http://localhost:3000). The
+browser now talks to the built-in `/api/langgraph` proxy, so the LangGraph base
+URL and optional API key stay server-side instead of being entered in the UI.
+
+**Usage**
+
+You can interact with the deployment via the chat interface and edit settings at
+any time from the history sidebar footer.
+
+<img width="2039" height="1495" alt="Screenshot 2025-11-17 at 1 11 27 PM" src="https://github.com/user-attachments/assets/50e1b5f3-a626-4461-9ad9-90347e471e8c" />
+
+As the deepagent runs, you can see its files in LangGraph state.
+
+<img width="2039" height="1495" alt="Screenshot 2025-11-17 at 1 11 36 PM" src="https://github.com/user-attachments/assets/86cc6228-5414-4cf0-90f5-d206d30c005e" />
+
+You can click on any file to view it.
+
+<img width="2039" height="1495" alt="Screenshot 2025-11-17 at 1 11 40 PM" src="https://github.com/user-attachments/assets/9883677f-e365-428d-b941-992bdbfa79dd" />
+
+### Environment Variables
+
+Set these variables in the UI deployment environment:
+
+```env
+LANGGRAPH_API_URL="http://127.0.0.1:2026"
+LANGGRAPH_API_KEY=""
+NEXT_PUBLIC_ASSISTANT_ID="research"
+```
+
+`LANGGRAPH_API_URL` and `LANGGRAPH_API_KEY` are read only on the server. The UI
+settings dialog now stores local workspace preferences such as display density
+and lab defaults.
+
+### Usage
+
+You can run your Deep Agents in Debug Mode, which will execute the agent step by step. This will allow you to re-run the specific steps of the agent. This is intended to be used alongside the optimizer.
+
+You can also turn off Debug Mode to run the full agent end-to-end.
+
+### 📚 Resources
+
+If the term "Deep Agents" is new to you, check out these videos!
+[What are Deep Agents?](https://www.youtube.com/watch?v=433SmtTc0TA)
+[Implementing Deep Agents](https://www.youtube.com/watch?v=TTMYJAw5tiA&t=701s)

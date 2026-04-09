@@ -1,0 +1,71 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "sources": [
+    {
+      "source_id": "battery_understanding_v3_constant_power_discharge_test",
+      "method_id": "constant_power_discharge",
+      "title": "Constant power discharge test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__constant_power_discharge_test",
+      "chapter_file": "data/reference/knowledge/summaries/constant_power_discharge_test.md",
+      "start_page": 25,
+      "end_page": 27,
+      "citation_ieee": "[M7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Constant power discharge test,\" White Paper, 2018, pp. 25-27.",
+      "linked_reference_markdown": "[M7] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Constant power discharge test,\" White Paper, 2018, pp. 25-27.",
+      "complementary_literature_source_ids": [
+        "barai_2019_noninvasive_characterisation_review"
+      ],
+      "ingestion_notes": [
+        "Treat this chapter as the executable reference for constant-power energy characterization.",
+        "Matrix narrowing is allowed only after the standard precharge and three-repeat structure remain explicit."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/constant_power_discharge_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_dynamic_stress_test",
+      "method_id": "dynamic_stress_test",
+      "title": "Dynamic stress test",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__dynamic_stress_test",
+      "chapter_file": "data/reference/knowledge/summaries/dynamic_stress_test.md",
+      "start_page": 28,
+      "end_page": 30,
+      "citation_ieee": "[M8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Dynamic stress test,\" White Paper, 2018, pp. 28-30.",
+      "linked_reference_markdown": "[M8] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Dynamic stress test,\" White Paper, 2018, pp. 28-30.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Treat the chapter as the core reference for DST profile execution, not for inventing alternative automotive profiles.",
+        "Scaling-basis choice remains review-controlled, but the 360 s continuous profile logic should stay fixed."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/dynamic_stress_test.md"
+    },
+    {
+      "source_id": "battery_understanding_v3_drive_cycle_test",
+      "method_id": "drive_cycle_test",
+      "title": "Drive cycle",
+      "source_type": "core_handbook_chapter",
+      "source_role": "primary_protocol_reference",
+      "handbook_title": "Test methods for improved battery cell understanding",
+      "handbook_version": "v3.0",
+      "chapter_id": "battery_cell_performance__drive_cycle",
+      "chapter_file": "data/reference/knowledge/summaries/drive_cycle_test.md",
+      "start_page": 49,
+      "end_page": 50,
+      "citation_ieee": "[M9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drive cycle,\" White Paper, 2018, pp. 49-50.",
+      "linked_reference_markdown": "[M9] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding: Drive cycle,\" White Paper, 2018, pp. 49-50.",
+      "complementary_literature_source_ids": [],
+      "ingestion_notes": [
+        "Treat this chapter as the usage-profile execution reference for drive-cycle testing.",
+        "Keep the charge-pause-profile-repeat loop visible even when the drive cycle family is tailored."
+      ],
+      "summary_path": "data/reference/knowledge/summaries/drive_cycle_test.md"
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "version": "0.2.0",
+  "status": "extended_method_handbook",
+  "cards": [
+    {
+      "card_id": "battery_understanding_v3_electrochemical_impedance_test_scope",
+      "title": "EIS scope and planning role",
+      "source_id": "battery_understanding_v3_electrochemical_impedance_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M10]",
+        "style": "IEEE",
+        "ieee_reference": "[M10] \"Test methods for improved battery cell understanding,\" v3.0, \"Electrochemical impedance test,\" pp. 40-43.",
+        "title": "Electrochemical impedance test",
+        "url": "",
+        "linked_reference_markdown": "[M10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 40-43.",
+        "supporting_pages": "pp. 40-43"
+      },
+      "page_refs": [
+        "pp. 40-43"
+      ],
+      "key_takeaways": [
+        "The chapter treats EIS as an SOC- and SOH-resolved non-destructive diagnostic.",
+        "The measurement is framed at OCV rather than under dynamic load."
+      ],
+      "limitations": [
+        "Equivalent-circuit interpretation is still model- and setup-dependent."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Life-stage checkpoint count may move only after review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_electrochemical_impedance_test_execution",
+      "title": "EIS execution block",
+      "source_id": "battery_understanding_v3_electrochemical_impedance_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M10]",
+        "style": "IEEE",
+        "ieee_reference": "[M10] \"Test methods for improved battery cell understanding,\" v3.0, \"Electrochemical impedance test,\" pp. 40-43.",
+        "title": "Electrochemical impedance test",
+        "url": "",
+        "linked_reference_markdown": "[M10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 40-43.",
+        "supporting_pages": "pp. 40-43"
+      },
+      "page_refs": [
+        "pp. 40-43"
+      ],
+      "key_takeaways": [
+        "The execution loop is rest, spectrum, short rest, 20% SOC discharge step, then repeat until 0% SOC.",
+        "The handbook fixes the signal at 5 mV rms from 10 kHz to 10 mHz with 5-6 points per decade."
+      ],
+      "limitations": [
+        "Lead and holder impedance remain practical error sources."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not change the SOC staircase or frequency window without explicit review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_electrochemical_impedance_test_outputs",
+      "title": "EIS outputs and interpretation frame",
+      "source_id": "battery_understanding_v3_electrochemical_impedance_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M10]",
+        "style": "IEEE",
+        "ieee_reference": "[M10] \"Test methods for improved battery cell understanding,\" v3.0, \"Electrochemical impedance test,\" pp. 40-43.",
+        "title": "Electrochemical impedance test",
+        "url": "",
+        "linked_reference_markdown": "[M10] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 40-43.",
+        "supporting_pages": "pp. 40-43"
+      },
+      "page_refs": [
+        "pp. 40-43"
+      ],
+      "key_takeaways": [
+        "The chapter expects Nyquist-style spectra and resistance breakdowns such as Ra, Rb, Rt, and Rtot.",
+        "Equivalent-circuit fitting is an accepted quantitative output path."
+      ],
+      "limitations": [
+        "Operator experience still influences the manual resistance extrapolation route."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If a richer model is fitted, preserve the simpler handbook-aligned resistance summary too."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_thermal_characterisation_scope",
+      "title": "Thermal characterisation scope",
+      "source_id": "battery_understanding_v3_thermal_characterisation",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M11]",
+        "style": "IEEE",
+        "ieee_reference": "[M11] \"Test methods for improved battery cell understanding,\" v3.0, \"Thermal characterisation,\" pp. 38-39.",
+        "title": "Thermal characterisation",
+        "url": "",
+        "linked_reference_markdown": "[M11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 38-39.",
+        "supporting_pages": "pp. 38-39"
+      },
+      "page_refs": [
+        "pp. 38-39"
+      ],
+      "key_takeaways": [
+        "The method is about surface heat distribution during operation.",
+        "The intended use is thermal-model and cooling-system support."
+      ],
+      "limitations": [
+        "The chapter does not define one fixed electrical profile."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Electrical profile choice may vary after review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_thermal_characterisation_execution",
+      "title": "Thermal characterisation execution block",
+      "source_id": "battery_understanding_v3_thermal_characterisation",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M11]",
+        "style": "IEEE",
+        "ieee_reference": "[M11] \"Test methods for improved battery cell understanding,\" v3.0, \"Thermal characterisation,\" pp. 38-39.",
+        "title": "Thermal characterisation",
+        "url": "",
+        "linked_reference_markdown": "[M11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 38-39.",
+        "supporting_pages": "pp. 38-39"
+      },
+      "page_refs": [
+        "pp. 38-39"
+      ],
+      "key_takeaways": [
+        "The execution has two stages: a pseudo-adiabatic insulated stage and a thermostated-metal-plate repeat.",
+        "Sensor coverage across the whole surface is explicit."
+      ],
+      "limitations": [
+        "The chapter leaves duration open."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not remove the second cooled stage without an explicit review note."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_thermal_characterisation_outputs",
+      "title": "Thermal characterisation outputs",
+      "source_id": "battery_understanding_v3_thermal_characterisation",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M11]",
+        "style": "IEEE",
+        "ieee_reference": "[M11] \"Test methods for improved battery cell understanding,\" v3.0, \"Thermal characterisation,\" pp. 38-39.",
+        "title": "Thermal characterisation",
+        "url": "",
+        "linked_reference_markdown": "[M11] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 38-39.",
+        "supporting_pages": "pp. 38-39"
+      },
+      "page_refs": [
+        "pp. 38-39"
+      ],
+      "key_takeaways": [
+        "The post-processing frame is a 0D thermal model and a qualitative split of Joule, reversible, and cooling terms."
+      ],
+      "limitations": [
+        "The chapter explicitly describes the heat-source split as qualitative."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If a richer thermal model is added, preserve the simpler qualitative framing too."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_thermal_impedance_test_scope",
+      "title": "Thermal-impedance scope",
+      "source_id": "battery_understanding_v3_thermal_impedance_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M12]",
+        "style": "IEEE",
+        "ieee_reference": "[M12] \"Test methods for improved battery cell understanding,\" v3.0, \"Thermal impedance test,\" pp. 44-46.",
+        "title": "Thermal impedance test",
+        "url": "",
+        "linked_reference_markdown": "[M12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 44-46.",
+        "supporting_pages": "pp. 44-46"
+      },
+      "page_refs": [
+        "pp. 44-46"
+      ],
+      "key_takeaways": [
+        "The method aims at heat capacity, thermal conductivity, and heat exchange parameters.",
+        "The chapter positions it as a lower-cost, non-destructive alternative to calorimetry-style methods."
+      ],
+      "limitations": [
+        "The final parameter set still depends on model fitting."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Current amplitude may be tailored after review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_thermal_impedance_test_execution",
+      "title": "Thermal-impedance execution block",
+      "source_id": "battery_understanding_v3_thermal_impedance_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M12]",
+        "style": "IEEE",
+        "ieee_reference": "[M12] \"Test methods for improved battery cell understanding,\" v3.0, \"Thermal impedance test,\" pp. 44-46.",
+        "title": "Thermal impedance test",
+        "url": "",
+        "linked_reference_markdown": "[M12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 44-46.",
+        "supporting_pages": "pp. 44-46"
+      },
+      "page_refs": [
+        "pp. 44-46"
+      ],
+      "key_takeaways": [
+        "The execution keeps the cell at 25 C, uses sinusoidal self-heating, and scans several frequencies from 0.1 to 10 mHz.",
+        "The setup explicitly minimizes contact area and uses an IR thermopile."
+      ],
+      "limitations": [
+        "The complete test can take roughly a day."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not change the frequency window without explicit review."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_thermal_impedance_test_outputs",
+      "title": "Thermal-impedance outputs",
+      "source_id": "battery_understanding_v3_thermal_impedance_test",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M12]",
+        "style": "IEEE",
+        "ieee_reference": "[M12] \"Test methods for improved battery cell understanding,\" v3.0, \"Thermal impedance test,\" pp. 44-46.",
+        "title": "Thermal impedance test",
+        "url": "",
+        "linked_reference_markdown": "[M12] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 44-46.",
+        "supporting_pages": "pp. 44-46"
+      },
+      "page_refs": [
+        "pp. 44-46"
+      ],
+      "key_takeaways": [
+        "The expected outputs are a thermal-impedance spectrum and fitted thermal parameters from the finite-difference model."
+      ],
+      "limitations": [
+        "Output quality still depends on the harmonics fit and model fidelity."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If a different fitting model is used, preserve the measured spectrum itself."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_quasi_static_thermal_tests_scope",
+      "title": "Quasi-static swelling scope",
+      "source_id": "battery_understanding_v3_quasi_static_thermal_tests",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_method_scope",
+      "citation": {
+        "reference_id": "[M13]",
+        "style": "IEEE",
+        "ieee_reference": "[M13] \"Test methods for improved battery cell understanding,\" v3.0, \"Quasi-static thermal tests,\" pp. 47-48.",
+        "title": "Quasi-static thermal tests",
+        "url": "",
+        "linked_reference_markdown": "[M13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 47-48.",
+        "supporting_pages": "pp. 47-48"
+      },
+      "page_refs": [
+        "pp. 47-48"
+      ],
+      "key_takeaways": [
+        "Despite the chapter title, the method is really about swelling across SOC and ageing rather than a generic thermal transient.",
+        "The stated use cases include pack design and SoC / SoH indication."
+      ],
+      "limitations": [
+        "The chapter is concise and delegates most electrical detail to the paired capacity test."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Keep the link to the paired capacity-style cycle explicit."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_quasi_static_thermal_tests_execution",
+      "title": "Quasi-static swelling execution block",
+      "source_id": "battery_understanding_v3_quasi_static_thermal_tests",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_execution_steps",
+      "citation": {
+        "reference_id": "[M13]",
+        "style": "IEEE",
+        "ieee_reference": "[M13] \"Test methods for improved battery cell understanding,\" v3.0, \"Quasi-static thermal tests,\" pp. 47-48.",
+        "title": "Quasi-static thermal tests",
+        "url": "",
+        "linked_reference_markdown": "[M13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 47-48.",
+        "supporting_pages": "pp. 47-48"
+      },
+      "page_refs": [
+        "pp. 47-48"
+      ],
+      "key_takeaways": [
+        "The measurement is synchronized with the battery tester and runs during a capacity-style cycle.",
+        "A digital dilatometer is the extra required hardware."
+      ],
+      "limitations": [
+        "The chapter does not add extra timing detail beyond the paired capacity test."
+      ],
+      "system_targets": [
+        "protocol_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "Do not drop synchronization between electrical and swelling channels."
+      ]
+    },
+    {
+      "card_id": "battery_understanding_v3_quasi_static_thermal_tests_outputs",
+      "title": "Quasi-static swelling outputs",
+      "source_id": "battery_understanding_v3_quasi_static_thermal_tests",
+      "source_type": "core_handbook_chapter",
+      "evidence_kind": "handbook_outputs",
+      "citation": {
+        "reference_id": "[M13]",
+        "style": "IEEE",
+        "ieee_reference": "[M13] \"Test methods for improved battery cell understanding,\" v3.0, \"Quasi-static thermal tests,\" pp. 47-48.",
+        "title": "Quasi-static thermal tests",
+        "url": "",
+        "linked_reference_markdown": "[M13] G. Mulder, H. Popp, W. Kohs, K. Trad, K. de Craemer, W. Porcher, M. Montaru, M. A. Martinez, A. Marongiu, M. Oyarbide et al., \"Test methods for improved battery cell understanding,\" White Paper, 2018, pp. 47-48.",
+        "supporting_pages": "pp. 47-48"
+      },
+      "page_refs": [
+        "pp. 47-48"
+      ],
+      "key_takeaways": [
+        "The outputs are swelling traces that can be split into reversible and irreversible components."
+      ],
+      "limitations": [
+        "The chapter offers no special post-processing beyond the synchronized swelling trace."
+      ],
+      "system_targets": [
+        "protocol_agent",
+        "report_agent"
+      ],
+      "strictness": "core_handbook_primary",
+      "allowed_deviations": [
+        "If additional swelling metrics are added, preserve the raw synchronized trace."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "version": "0.1",
+  "global_defaults": {
+    "reference_temperature_c": 25.0,
+    "surface_temperature_abort_c": 60.0,
+    "default_cv_termination_rule": {
+      "summary": "Terminate CV when any one of the approved current or time thresholds is reached.",
+      "terminate_when_any": [
+        "current <= 0.06 A",
+        "current <= C/20",
+        "CV hold time >= 120 min"
+      ]
+    },
+    "environmental_chamber_required_outside_reference_window": {
+      "nominal_temperature_c": 25.0,
+      "tolerance_c": 2.0
+    },
+    "hard_stop_rules": [
+      "Stop immediately if measured cell-surface temperature reaches 60 C.",
+      "Stop immediately if cell voltage exceeds the approved upper voltage limit defined by the datasheet or approved test plan.",
+      "Stop immediately if cell voltage falls below the approved lower voltage limit defined by the datasheet or approved test plan."
+    ]
+  },
+  "thermocouple_placement": {
+    "minimum_requirement": "At least one thermocouple must be attached to the cell surface for energized tests where thermal excursion matters.",
+    "default_by_form_factor": {
+      "pouch": "Place the thermocouple at the centre of the largest surface.",
+      "cylindrical": "Place the thermocouple at mid-height on the outer can.",
+      "large_format": "Place the thermocouple at the hottest expected region, or use centre plus tab-near region when two channels are available.",
+      "general": "Attach the thermocouple to the cell surface at a location representative of the hottest expected region."
+    }
+  },
+  "objective_minimum_packages": {
+    "performance": {
+      "label": "Performance characterization",
+      "description": "Minimum recommended package for a performance-focused pretest campaign.",
+      "minimum_modules": [
+        "visual / metadata check",
+        "OCV",
+        "reference capacity test at 25 C",
+        "rate capability test",
+        "DCR / pulse power assessment"
+      ]
+    },
+    "rpt": {
+      "label": "Reference performance test",
+      "description": "Minimum recommended package for an RPT check-up bundle.",
+      "minimum_modules": [
+        "reference capacity test",
+        "DCR / HPPC",
+        "OCV check"
+      ],
+      "optional_modules": [
+        "EIS",
+        "SOC-OCV",
+        "ICA"
+      ]
+    },
+    "soh_modeling": {
+      "label": "SOH modeling",
+      "description": "Minimum recommended package for model-training or model-validation data collection.",
+      "minimum_modules": [
+        "baseline RPT",
+        "periodic reference capacity",
+        "periodic DCR / pulse features",
+        "temperature-linked metadata",
+        "degradation label definition"
+      ]
+    },
+    "cycle_life": {
+      "label": "Cycle life",
+      "description": "Minimum recommended package for a cycle-life campaign.",
+      "minimum_modules": [
+        "baseline RPT",
+        "ageing cycling block",
+        "intermediate RPT",
+        "end-of-life RPT"
+      ]
+    },
+    "calendar_ageing": {
+      "label": "Calendar ageing",
+      "description": "Minimum recommended package for a calendar-ageing campaign.",
+      "minimum_modules": [
+        "storage at defined SOC and temperature",
+        "periodic checkpoint RPT",
+        "end-point comparison"
+      ]
+    },
+    "hppc": {
+      "label": "HPPC screening",
+      "description": "Minimum recommended package for a pulse power characterisation.",
+      "minimum_modules": [
+        "thermal acclimation at 25 C",
+        "reference capacity discharge (0.5C)",
+        "SOC staircase with paired discharge and charge pulses",
+        "wait for pseudo-OCV before each pulse block"
+      ],
+      "optional_modules": [
+        "multi-temperature pulse sweep",
+        "reduced SOC grid for faster screening"
+      ]
+    },
+    "rate_capability": {
+      "label": "Rate capability",
+      "description": "Minimum recommended package for a rate-capability ladder.",
+      "minimum_modules": [
+        "standard-cycle precharge",
+        "discharge at each selected C-rate",
+        "rest between rate steps",
+        "recharge after each rate block"
+      ],
+      "optional_modules": [
+        "multi-temperature rate matrix",
+        "recovery cycle after high-rate step"
+      ]
+    },
+    "soc_ocv": {
+      "label": "SOC-OCV / slow curve",
+      "description": "Minimum recommended package for a slow-curve OCV/EMF measurement.",
+      "minimum_modules": [
+        "standard-cycle precharge within 48 h",
+        "thermal acclimation at 25 +/- 2 C",
+        "slow discharge at C/25 with fine logging (1 min / 1 mV / 0.2 K)",
+        "symmetric slow recharge (review-gated planner completion)"
+      ],
+      "optional_modules": [
+        "OCV/EMF averaging from charge and discharge curves",
+        "ICA and DVA post-processing"
+      ]
+    },
+    "eis": {
+      "label": "EIS",
+      "description": "Minimum recommended package for a SOC-resolved electrochemical impedance spectroscopy test.",
+      "minimum_modules": [
+        "thermal acclimation at 25 C",
+        "SOC staircase (100% to 0% in 20% steps)",
+        "1 h rest before each spectrum",
+        "potentiostatic EIS at 5 mV rms, 10 kHz to 10 mHz"
+      ],
+      "optional_modules": [
+        "ECM fitting",
+        "BOL-MOL-EOL comparison",
+        "multi-temperature EIS sweep"
+      ]
+    },
+    "preconditioning": {
+      "label": "Preconditioning",
+      "description": "Minimum recommended package for cell stabilisation before formal testing.",
+      "minimum_modules": [
+        "3 charge-discharge cycles at standard cycle rate",
+        "capacity stability gate: difference < 2% between successive discharges"
+      ],
+      "optional_modules": [
+        "extension to 10 cycles maximum if gate not met"
+      ]
+    }
+  },
+  "rpt_playbook": {
+    "baseline_rpt": [
+      "OCV",
+      "reference capacity at 25 C",
+      "DCR / HPPC",
+      "optional SOC-OCV or EIS if required by project"
+    ],
+    "intermediate_rpt": [
+      "reference capacity",
+      "reduced DCR / pulse package",
+      "optional EIS if degradation mechanism tracking is needed"
+    ],
+    "end_of_life_rpt": [
+      "reference capacity",
+      "DCR / HPPC",
+      "optional EIS / SOC-OCV / ICA if final diagnosis is required"
+    ],
+    "default_cadence_basis": {
+      "cycle_life": "cycle count",
+      "calendar_ageing": "elapsed time",
+      "cross_condition_comparability": "Ah throughput"
+    }
+  },
+  "approved_equipment_defaults": {
+    "default_cycler_id": "neware_ct4008_5v30a_na",
+    "default_cycler_label": "Neware CT-4008-5V30A-NA",
+    "default_thermal_chamber_id": "binder_lit_mk",
+    "default_thermal_chamber_label": "BINDER LIT MK 240 / 720",
+    "default_eis_instrument_id": "iviumstat2h_datasheet",
+    "default_eis_instrument_label": "Ivium Technologies IviumStat2.h"
+  }
+}
