@@ -94,25 +94,12 @@ function normalizeLabDefaults(value: unknown): LabDefaultsConfig | undefined {
   return normalized;
 }
 
-function normalizeOptionalBoolean(value: unknown): boolean | undefined {
-  return typeof value === "boolean" ? value : undefined;
-}
-
 function normalizeUiPreferences(value: unknown): UiPreferencesConfig | undefined {
   if (!value || typeof value !== "object") {
     return undefined;
   }
 
-  const record = value as Record<string, unknown>;
-  const smoothStreaming = normalizeOptionalBoolean(record.smoothStreaming);
-
-  if (smoothStreaming === undefined) {
-    return undefined;
-  }
-
-  return {
-    ...(smoothStreaming !== undefined ? { smoothStreaming } : {}),
-  };
+  return undefined;
 }
 
 function buildInitialConfig(): StandaloneConfig {

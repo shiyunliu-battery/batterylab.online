@@ -13,8 +13,10 @@ It is not a generic chatbot. The repository is intentionally organized so that h
 
 ## Documentation
 
-- Companion public docs repo:
-  `https://shiyunliu-battery.github.io/doc_batterylab.online/`
+- Public docs site:
+  `https://doc.batterylab.online`
+- Docs source repo:
+  `https://github.com/shiyunliu-battery/doc_batterylab.online`
 - Local architecture and workflow notes:
   [docs/](./docs)
 
@@ -46,7 +48,7 @@ The app is designed around a few narrow workflows:
 Workflow map and status:
 
 - Public docs mirror:
-  `https://shiyunliu-battery.github.io/doc_batterylab.online/`
+  `https://doc.batterylab.online`
 - [docs/workflow_map.md](./docs/workflow_map.md)
 - [docs/architecture.md](./docs/architecture.md)
 - [docs/project_status.md](./docs/project_status.md)
@@ -282,6 +284,10 @@ BATTERY_AGENT_CELL_DATASHEET_EXTRACTION_TEMPERATURE=0.0
 LANGSMITH_TRACING=false
 LANGSMITH_API_KEY=
 LANGSMITH_PROJECT=battery-lab-assistant
+NEXT_PUBLIC_PUBLIC_SITE_URL=https://batterylab.online
+NEXT_PUBLIC_DOCS_URL=https://doc.batterylab.online
+NEXT_PUBLIC_GITHUB_URL=https://github.com/shiyunliu-battery/batterylab.online
+NEXT_PUBLIC_ENABLE_ADMIN_REVIEW=false
 ```
 
 Notes:
@@ -289,6 +295,8 @@ Notes:
 - The backend will start even if `OPENAI_API_KEY` is still a placeholder.
 - Real model interactions still require a valid key.
 - Datasheet extraction can use a stricter model than the main chat agent without changing the main agent default.
+- The public Settings dialog reads `Website`, `Docs`, and `GitHub` links from the `NEXT_PUBLIC_*` values above.
+- Keep `NEXT_PUBLIC_ENABLE_ADMIN_REVIEW=false` on the public deployment. Only trusted internal deployments should enable the review tab.
 
 ## Local Setup
 
