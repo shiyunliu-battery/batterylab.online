@@ -14,7 +14,7 @@ It is not a generic chatbot. The repository is intentionally organized so that h
 ## Documentation
 
 - Companion public docs repo:
-  `https://github.com/shiyunliu-battery/doc_ionera_ai_v2`
+  `https://shiyunliu-battery.github.io/doc_batterylab.online/`
 - Local architecture and workflow notes:
   [docs/](./docs)
 
@@ -46,7 +46,7 @@ The app is designed around a few narrow workflows:
 Workflow map and status:
 
 - Public docs mirror:
-  `https://github.com/shiyunliu-battery/doc_ionera_ai_v2`
+  `https://shiyunliu-battery.github.io/doc_batterylab.online/`
 - [docs/workflow_map.md](./docs/workflow_map.md)
 - [docs/architecture.md](./docs/architecture.md)
 - [docs/project_status.md](./docs/project_status.md)
