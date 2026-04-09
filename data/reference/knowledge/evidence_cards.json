@@ -1163,7 +1163,6 @@
         "Parameter-identification value still depends on the chosen model family, measurement quality, and observability of the variables."
       ],
       "system_targets": [
-        "ecm_model_registry",
         "research_assistant"
       ],
       "keywords": [
