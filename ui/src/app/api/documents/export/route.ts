@@ -469,13 +469,18 @@ function resolveRepoRoot(): string {
 }
 
 function resolvePythonExecutable(repoRoot: string): string | null {
+  const configuredPython = process.env.BATTERY_LAB_PYTHON?.trim();
   const candidates = [
+    configuredPython,
     path.join(repoRoot, ".venv", "Scripts", "python.exe"),
     path.join(repoRoot, ".venv", "bin", "python"),
+    "/usr/bin/python3",
+    "/usr/local/bin/python3",
+    "/usr/bin/python",
   ];
 
   for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
+    if (candidate && fs.existsSync(candidate)) {
       return candidate;
     }
   }
@@ -560,63 +565,75 @@ function buildMarkdownDocument(content: string): string {
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as {
-    content?: unknown;
-    fileName?: unknown;
-    format?: unknown;
-  };
+  try {
+    const payload = (await request.json()) as {
+      content?: unknown;
+      fileName?: unknown;
+      format?: unknown;
+    };
 
-  const format = String(payload.format || "").toLowerCase() as ExportFormat;
-  const rawContent = typeof payload.content === "string" ? payload.content : "";
-  const fileName =
-    typeof payload.fileName === "string" && payload.fileName.trim().length > 0
-      ? payload.fileName
-      : "document";
+    const format = String(payload.format || "").toLowerCase() as ExportFormat;
+    const rawContent = typeof payload.content === "string" ? payload.content : "";
+    const fileName =
+      typeof payload.fileName === "string" && payload.fileName.trim().length > 0
+        ? payload.fileName
+        : "document";
 
-  if (!["md", "tex", "pdf"].includes(format)) {
+    if (!["md", "tex", "pdf"].includes(format)) {
+      return Response.json(
+        { error: "Supported export formats are md, tex, and pdf." },
+        { status: 400 }
+      );
+    }
+
+    if (!rawContent.trim()) {
+      return Response.json(
+        { error: "Cannot export an empty document." },
+        { status: 400 }
+      );
+    }
+
+    const content = normalizeContent(rawContent);
+    const title = inferTitle(fileName, content);
+    const downloadStem = sanitizeDownloadStem(fileName, "document");
+
+    let body: string | Buffer;
+    let contentType: string;
+    let extension: string;
+
+    if (format === "tex") {
+      body = buildLatexDocument(title, content);
+      contentType = "application/x-tex; charset=utf-8";
+      extension = "tex";
+    } else if (format === "pdf") {
+      body = buildRenderedPdf(title, content);
+      contentType = "application/pdf";
+      extension = "pdf";
+    } else {
+      body = buildMarkdownDocument(content);
+      contentType = "text/markdown; charset=utf-8";
+      extension = "md";
+    }
+
+    const responseBody =
+      typeof body === "string" ? body : new Uint8Array(body);
+
+    return new Response(responseBody, {
+      status: 200,
+      headers: {
+        "Content-Type": contentType,
+        "Content-Disposition": `attachment; filename="${downloadStem}.${extension}"`,
+      },
+    });
+  } catch (error) {
     return Response.json(
-      { error: "Supported export formats are md, tex, and pdf." },
-      { status: 400 }
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Failed to export the document.",
+      },
+      { status: 500 }
     );
   }
-
-  if (!rawContent.trim()) {
-    return Response.json(
-      { error: "Cannot export an empty document." },
-      { status: 400 }
-    );
-  }
-
-  const content = normalizeContent(rawContent);
-  const title = inferTitle(fileName, content);
-  const downloadStem = sanitizeDownloadStem(fileName, "document");
-
-  let body: string | Buffer;
-  let contentType: string;
-  let extension: string;
-
-  if (format === "tex") {
-    body = buildLatexDocument(title, content);
-    contentType = "application/x-tex; charset=utf-8";
-    extension = "tex";
-  } else if (format === "pdf") {
-    body = buildRenderedPdf(title, content);
-    contentType = "application/pdf";
-    extension = "pdf";
-  } else {
-    body = buildMarkdownDocument(content);
-    contentType = "text/markdown; charset=utf-8";
-    extension = "md";
-  }
-
-  const responseBody =
-    typeof body === "string" ? body : new Uint8Array(body);
-
-  return new Response(responseBody, {
-    status: 200,
-    headers: {
-      "Content-Type": contentType,
-      "Content-Disposition": `attachment; filename="${downloadStem}.${extension}"`,
-    },
-  });
 }
