@@ -14,11 +14,13 @@ import {
   Clock,
   ChevronDown,
 } from "lucide-react";
+import { toast } from "sonner";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { TodoItem, FileItem } from "@/app/types/types";
 import { useChatContext } from "@/providers/ChatProvider";
 import { cn } from "@/lib/utils";
 import { FileViewDialog } from "@/app/components/FileViewDialog";
+import { copyTextToClipboard } from "@/app/lib/clipboard";
 import { stripExperimentPlanTitleHeadingForPreview } from "@/app/lib/experimentPlan";
 import {
   createChatFileData,
@@ -108,10 +110,11 @@ class FileDialogBoundary extends React.Component<
   }
 
   private handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(this.getRenderableContent());
-    } catch (error) {
-      console.error("Failed to copy fallback file content:", error);
+    const copiedToClipboard = await copyTextToClipboard(this.getRenderableContent());
+    if (copiedToClipboard) {
+      toast.success("Copied file content.");
+    } else {
+      toast.error("Failed to copy file content.");
     }
   };
 

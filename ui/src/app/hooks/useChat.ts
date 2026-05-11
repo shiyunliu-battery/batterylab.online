@@ -15,7 +15,9 @@ import { useQueryState } from "nuqs";
 import { toast } from "sonner";
 import {
   isMissingThreadError,
+  isProviderAuthenticationError,
   MISSING_THREAD_TOAST_MESSAGE,
+  PROVIDER_AUTH_TOAST_MESSAGE,
 } from "@/app/lib/threadErrors";
 import {
   normalizeChatFiles,
@@ -71,6 +73,12 @@ export function useChat({
           await setThreadId(null);
         }
         toast.error(MISSING_THREAD_TOAST_MESSAGE);
+        setStreamErrorTick((current) => current + 1);
+        return;
+      }
+
+      if (isProviderAuthenticationError(error)) {
+        toast.error(PROVIDER_AUTH_TOAST_MESSAGE);
         setStreamErrorTick((current) => current + 1);
         return;
       }

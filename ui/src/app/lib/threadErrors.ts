@@ -46,4 +46,18 @@ export function isMissingThreadError(error: unknown): boolean {
   );
 }
 
-export { MISSING_THREAD_TOAST_MESSAGE };
+export function isProviderAuthenticationError(error: unknown): boolean {
+  const text = getErrorText(error);
+
+  return (
+    text.includes("authenticationerror") ||
+    text.includes("invalid_api_key") ||
+    text.includes("incorrect api key") ||
+    text.includes("401 unauthorized")
+  );
+}
+
+const PROVIDER_AUTH_TOAST_MESSAGE =
+  "OpenAI API key is missing or invalid. Update OPENAI_API_KEY in .env, then restart the backend.";
+
+export { MISSING_THREAD_TOAST_MESSAGE, PROVIDER_AUTH_TOAST_MESSAGE };

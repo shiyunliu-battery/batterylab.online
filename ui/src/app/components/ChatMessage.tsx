@@ -30,6 +30,7 @@ import {
   sanitizeAssistantDisplayText,
 } from "@/app/utils/utils";
 import { cn } from "@/lib/utils";
+import { copyTextToClipboard } from "@/app/lib/clipboard";
 
 interface ChatMessageProps {
   message: Message;
@@ -150,11 +151,10 @@ export const ChatMessage = React.memo<ChatMessageProps>(
 
     const handleCopyMessage = useCallback(async () => {
       if (!messageContent.trim()) return;
-      try {
-        await navigator.clipboard.writeText(messageContent);
+      const copiedToClipboard = await copyTextToClipboard(messageContent);
+      if (copiedToClipboard) {
         setCopied(true);
-      } catch (error) {
-        console.error("Failed to copy message content:", error);
+      } else {
         toast.error("Failed to copy the answer.");
       }
     }, [messageContent]);

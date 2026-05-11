@@ -306,7 +306,8 @@ Notes:
 .\scripts\bootstrap_backend.ps1
 ```
 
-This runs `uv sync` in the repo root.
+This runs `uv sync --extra pdf` in the repo root.
+It installs the `pdf` extra because chat PDF uploads need local text extraction.
 
 ### 2. Frontend dependencies
 
@@ -316,7 +317,7 @@ This runs `uv sync` in the repo root.
 
 This runs `corepack yarn install --ignore-engines` inside [ui/](./ui).
 
-### 3. Optional PDF extraction extras
+### 3. Manual PDF extraction utilities
 
 ```powershell
 uv sync --extra pdf

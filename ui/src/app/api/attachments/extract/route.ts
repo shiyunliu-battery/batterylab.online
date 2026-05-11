@@ -5,16 +5,14 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { NextResponse } from "next/server";
 import * as XLSX from "xlsx";
+import {
+  buildPythonUnavailableMessage,
+  resolvePythonExecutable,
+  resolveRepoRoot,
+} from "@/app/api/_lib/python";
 
 const execFileAsync = promisify(execFile);
-const repoRoot =
-  path.basename(process.cwd()).toLowerCase() === "ui"
-    ? path.resolve(process.cwd(), "..")
-    : process.cwd();
-const pythonExecutable =
-  process.platform === "win32"
-    ? path.join(repoRoot, ".venv", "Scripts", "python.exe")
-    : path.join(repoRoot, ".venv", "bin", "python");
+const repoRoot = resolveRepoRoot();
 const pdfExtractorScript = path.join(
   repoRoot,
   "scripts",
@@ -57,19 +55,77 @@ function sanitizeCellValue(value: unknown): string {
     .trim();
 }
 
+function extractBufferedOutput(value: unknown): string {
+  if (Buffer.isBuffer(value)) {
+    return value.toString("utf8").trim();
+  }
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function buildPythonExtractionError(error: unknown): Error {
+  const stdout = extractBufferedOutput((error as { stdout?: unknown })?.stdout);
+  const stderr = extractBufferedOutput((error as { stderr?: unknown })?.stderr);
+
+  if (stdout) {
+    try {
+      const payload = JSON.parse(stdout) as {
+        error?: string;
+        details?: unknown;
+      };
+      if (payload.error) {
+        const details = Array.isArray(payload.details)
+          ? payload.details.join("; ")
+          : typeof payload.details === "string"
+            ? payload.details
+            : "";
+        return new Error([payload.error, details].filter(Boolean).join(" "));
+      }
+    } catch {
+      // Fall through to the raw process error below.
+    }
+  }
+
+  if (stderr) {
+    return new Error(stderr);
+  }
+
+  return error instanceof Error
+    ? error
+    : new Error("PDF text extraction failed unexpectedly.");
+}
+
 async function extractPdfPreview(file: File): Promise<ExtractionPayload> {
+  const pythonExecutable = await resolvePythonExecutable(repoRoot);
+  if (!pythonExecutable) {
+    throw new Error(buildPythonUnavailableMessage("PDF text extraction"));
+  }
+
   const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "ionera-attachment-"));
   const tempPath = path.join(tempDir, file.name || "upload.pdf");
 
   try {
     await fs.writeFile(tempPath, Buffer.from(await file.arrayBuffer()));
-    const { stdout } = await execFileAsync(
-      pythonExecutable,
-      [pdfExtractorScript, tempPath, String(MAX_EXTRACTED_CHARS)],
-      {
-        maxBuffer: PDF_EXTRACTOR_MAX_BUFFER_BYTES,
-      }
-    );
+    let stdout: string;
+    try {
+      const execution = await execFileAsync(
+        pythonExecutable,
+        [pdfExtractorScript, tempPath, String(MAX_EXTRACTED_CHARS)],
+        {
+          cwd: repoRoot,
+          encoding: "utf8",
+          env: {
+            ...process.env,
+            PYTHONIOENCODING: "utf-8",
+          },
+          maxBuffer: PDF_EXTRACTOR_MAX_BUFFER_BYTES,
+          windowsHide: true,
+        }
+      );
+      stdout = String(execution.stdout);
+    } catch (error) {
+      throw buildPythonExtractionError(error);
+    }
+
     const payload = JSON.parse(stdout) as {
       text?: string;
       page_count?: number;

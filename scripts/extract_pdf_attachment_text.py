@@ -4,9 +4,6 @@ import json
 import sys
 from pathlib import Path
 
-import pdfplumber
-from pypdf import PdfReader
-
 
 def _append_page_text(
     page_text: list[str], text: str, max_chars: int | None
@@ -37,6 +34,8 @@ def _append_page_text(
 
 
 def _extract_with_pdfplumber(pdf_path: Path, max_chars: int | None) -> tuple[str, int, bool]:
+    import pdfplumber
+
     page_text: list[str] = []
     truncated = False
     with pdfplumber.open(pdf_path) as pdf:
@@ -50,6 +49,8 @@ def _extract_with_pdfplumber(pdf_path: Path, max_chars: int | None) -> tuple[str
 
 
 def _extract_with_pypdf(pdf_path: Path, max_chars: int | None) -> tuple[str, int, bool]:
+    from pypdf import PdfReader
+
     reader = PdfReader(str(pdf_path))
     page_text: list[str] = []
     truncated = False

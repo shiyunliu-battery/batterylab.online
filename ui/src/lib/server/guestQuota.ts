@@ -46,8 +46,6 @@ function getWindowSeconds(rawValue: string | undefined): number {
 }
 
 function getGuestQuotaConfig(): GuestQuotaConfig {
-  const rawLimit = Number(process.env.GUEST_USAGE_LIMIT ?? DEFAULT_USAGE_LIMIT);
-  const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.floor(rawLimit) : 0;
   const rawTimeoutMs = Number(process.env.GUEST_USAGE_TIMEOUT_MS ?? DEFAULT_TIMEOUT_MS);
   const timeoutMs =
     Number.isFinite(rawTimeoutMs) && rawTimeoutMs > 0
@@ -57,9 +55,13 @@ function getGuestQuotaConfig(): GuestQuotaConfig {
     process.env.REDIS_URL?.trim() ||
     process.env.AZURE_REDIS_URL?.trim() ||
     null;
+  const rawLimit = Number(
+    process.env.GUEST_USAGE_LIMIT ?? (redisUrl ? DEFAULT_USAGE_LIMIT : 0)
+  );
+  const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.floor(rawLimit) : 0;
 
   return {
-    enabled: limit > 0,
+    enabled: limit > 0 && Boolean(redisUrl),
     cookieName: process.env.GUEST_USAGE_COOKIE_NAME?.trim() || DEFAULT_COOKIE_NAME,
     cookieSecret: process.env.GUEST_USAGE_COOKIE_SECRET?.trim() || null,
     keyPrefix: process.env.GUEST_USAGE_KEY_PREFIX?.trim() || DEFAULT_KEY_PREFIX,
