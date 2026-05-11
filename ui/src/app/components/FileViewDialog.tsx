@@ -27,6 +27,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast } from "sonner";
 import { MarkdownContent } from "@/app/components/MarkdownContent";
 import type { FileItem } from "@/app/types/types";
+import { copyTextToClipboard } from "@/app/lib/clipboard";
 import { stripExperimentPlanTitleHeadingForPreview } from "@/app/lib/experimentPlan";
 
 type ExportFormat = "md" | "tex" | "pdf";
@@ -363,9 +364,14 @@ export const FileViewDialog = React.memo<{
     };
   }, [downloadMenuOpen]);
 
-  const handleCopy = useCallback(() => {
+  const handleCopy = useCallback(async () => {
     if (fileContent) {
-      navigator.clipboard.writeText(fileContent);
+      const copiedToClipboard = await copyTextToClipboard(fileContent);
+      if (copiedToClipboard) {
+        toast.success("Copied file content.");
+      } else {
+        toast.error("Failed to copy file content.");
+      }
     }
   }, [fileContent]);
 

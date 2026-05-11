@@ -7,4 +7,4 @@ $env:TEMP = $tempDir
 $env:TMP = $tempDir
 
 Set-Location $repoRoot
-uv sync
+uv sync --extra pdf

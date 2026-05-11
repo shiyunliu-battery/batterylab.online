@@ -2,13 +2,14 @@ import { execFile } from "node:child_process";
 import path from "node:path";
 import { promisify } from "node:util";
 import { NextResponse } from "next/server";
+import {
+  buildPythonUnavailableMessage,
+  resolvePythonExecutable,
+  resolveRepoRoot,
+} from "@/app/api/_lib/python";
 
 const execFileAsync = promisify(execFile);
-const repoRoot = path.resolve(process.cwd(), "..");
-const pythonExecutable =
-  process.platform === "win32"
-    ? path.join(repoRoot, ".venv", "Scripts", "python.exe")
-    : path.join(repoRoot, ".venv", "bin", "python");
+const repoRoot = resolveRepoRoot();
 const adminScript = path.join(
   repoRoot,
   "scripts",
@@ -33,16 +34,23 @@ function buildStatusCode(payload: ApiPayload): number {
 }
 
 async function runAdminScript(args: string[]): Promise<ApiPayload> {
+  const pythonExecutable = await resolvePythonExecutable(repoRoot);
+  if (!pythonExecutable) {
+    throw new Error(buildPythonUnavailableMessage("Provisional cell admin"));
+  }
+
   const { stdout } = await execFileAsync(
     pythonExecutable,
     [adminScript, ...args],
     {
       cwd: repoRoot,
+      encoding: "utf8",
       maxBuffer: MAX_BUFFER_BYTES,
+      windowsHide: true,
     }
   );
 
-  return JSON.parse(stdout) as ApiPayload;
+  return JSON.parse(String(stdout)) as ApiPayload;
 }
 
 export const runtime = "nodejs";

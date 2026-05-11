@@ -25,13 +25,15 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV BATTERY_LAB_PYTHON=/usr/bin/python3
 
-RUN apk add --no-cache python3 py3-reportlab font-dejavu
+RUN apk add --no-cache python3 py3-pip py3-reportlab font-dejavu \
+    && python3 -m pip install --no-cache-dir --break-system-packages pdfplumber pypdf
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY data/kb/equipment_rules.json ./data/kb/equipment_rules.json
 COPY data/reference/equipment_manuals/manual_index.json ./data/reference/equipment_manuals/manual_index.json
+COPY scripts/extract_pdf_attachment_text.py ./scripts/extract_pdf_attachment_text.py
 COPY scripts/render_experiment_plan_pdf.py ./scripts/render_experiment_plan_pdf.py
 
 EXPOSE 3000

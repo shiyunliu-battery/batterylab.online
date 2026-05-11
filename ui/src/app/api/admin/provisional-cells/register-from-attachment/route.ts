@@ -1,12 +1,13 @@
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { NextResponse } from "next/server";
+import {
+  buildPythonUnavailableMessage,
+  resolvePythonExecutable,
+  resolveRepoRoot,
+} from "@/app/api/_lib/python";
 
-const repoRoot = path.resolve(process.cwd(), "..");
-const pythonExecutable =
-  process.platform === "win32"
-    ? path.join(repoRoot, ".venv", "Scripts", "python.exe")
-    : path.join(repoRoot, ".venv", "bin", "python");
+const repoRoot = resolveRepoRoot();
 const registerScript = path.join(
   repoRoot,
   "scripts",
@@ -28,10 +29,20 @@ function buildStatusCode(payload: ApiPayload): number {
 }
 
 async function runRegistrationScript(payload: Record<string, unknown>): Promise<ApiPayload> {
+  const pythonExecutable = await resolvePythonExecutable(repoRoot);
+  if (!pythonExecutable) {
+    throw new Error(buildPythonUnavailableMessage("Uploaded datasheet registration"));
+  }
+
   return await new Promise<ApiPayload>((resolve, reject) => {
     const child = spawn(pythonExecutable, [registerScript], {
       cwd: repoRoot,
+      env: {
+        ...process.env,
+        PYTHONIOENCODING: "utf-8",
+      },
       stdio: ["pipe", "pipe", "pipe"],
+      windowsHide: true,
     });
 
     let stdout = "";
